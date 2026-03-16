@@ -1,0 +1,145 @@
+\documentclass[12pt]{report}
+\usepackage{polyglossia}
+\setdefaultlanguage{czech}
+
+
+\usepackage{graphicx} % Required for inserting images
+
+\usepackage{setspace}
+\setstretch{1.15}
+\usepackage{geometry}
+
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+
+\usepackage{titlesec}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{url}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+    pdftitle={\@title},
+    pdfpagemode=UseNone,
+}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    numbers=left,
+    numberstyle=\tiny,
+    numbersep=5pt,
+    tabsize=4,
+    frame=none,
+    breaklines=true,
+    language=C,
+    captionpos=b,
+}
+
+\titleformat{\chapter}
+  {\sffamily\textsixteen\bfseries}
+  {\thechapter}
+  {1em}
+  {}
+  
+\titleformat{\section}
+  {\sffamily\textfourteen\bfseries}
+  {\thesection}
+  {1em}
+  {}
+
+\titleformat{\subsection}
+  {\sffamily\textthirteen\bfseries}
+  {\thesubsection}
+  {1em}
+  {}
+  
+\titlespacing*{\chapter}
+  {0pt}
+  {0pt}
+  {20pt}
+
+\newcommand{\texttwenty}{\fontsize{20pt}{24pt}\selectfont}
+\newcommand{\textsixteen}{\fontsize{16pt}{20pt}\selectfont}
+\newcommand{\textfourteen}{\fontsize{14pt}{18pt}\selectfont}
+\newcommand{\textthirteen}{\fontsize{13pt}{17pt}\selectfont}
+
+
+\newgeometry{
+    top=0.98in,
+    bottom=0.98in,
+    outer=0.98in,
+    inner=0.98in,
+}
+
+
+
+
+
+\begin{document}
+
+\begin{titlepage}
+    \thispagestyle{empty}
+    
+    \begin{flushleft}
+        \includegraphics{img/0.png}
+
+        \vspace{1.15in}
+
+        {\sffamily \texttwenty \textbf{2D Videohra Salvation Path: Uživatelské rozhraní}\\}
+
+        \vspace{10pt}
+        
+        {\sffamily \textfourteen 2D Video game Salvation Path: User interface\\}
+
+        \vspace{40pt}
+        
+        {\sffamily \textsixteen Maturitní práce\\}
+        {\sffamily \textsixteen Vedoucí práce: Bc. Adam Tyroň\\}
+        {\sffamily \textsixteen 2025/26\\}
+        {\sffamily \textsixteen Jonáš Kyml, 4.D\\}
+    \end{flushleft}
+
+\end{titlepage}
+
+\section*{Abstrakt}
+Tato práce se zabývá vývojem videohry Surreal Bowling: Salvation Path a patří do skupiny tří maturitních prací ve třídě 4.D, které jsou na tuto videohru zaměřeny. Náš nezávislý tým se jmenuje Still Thinking Studio. Všechny tři maturitní práce řeší z většiny programovací a logickou část toho, jak videohra funguje, avšak má práce se zaměřuje i na audiovizuální stránku této videohry, jelikož mám na starosti veškerý audio design, vizuální efekty a post-processing. Co se týče kódové části, věnuji se zejména uživatelskému rozhraní a logice, která odpovídá za správný chod událostí a různých managerů.
+
+\section*{Klíčová slova}
+videohra, 2D plošinovka, Unity, C\#
+
+\section*{Abstract}
+This thesis examines the development of the video game Surreal Bowling: Salvation Path and is one of three graduation theses in class 4.D that focus on this particular video game. Our independent team is referred to as Still Thinking Studio. The three graduation projects primarily address the programming and logical components of the video game's functionality. However, my own work also focuses on the audiovisual elements of the video game, as I am responsible for all audio design, visual effects, and post-processing. As for the coding part, the primary focus is on the user interface and the logic that is responsible for the proper functioning of events and various managers.
+
+\section*{Key words}
+video game, 2D platformer, Unity, C\#
+
+\chapter*{Poděkování}
+Rád bych poděkoval panu Bc. Adamu Tyronovi za viceletou aktivitu na Discord serveru naseho vyvojarskeho tymu a ujmuti se nás jako mentor maturitní práce. Dále chci samozřejmě poděkovat svým spolupracovníkům a zároveň spolužákům, s kterými videohry vyvíjím - Danielu Baierovi a Simeonu Bednarzovi za vyvijeni kódu a Jakubu Wojtasovi za téměř veškeré grafické zpracování.
+
+
+\chapter*{Prohlášení}
+Prohlašuji, že jsem svou maturitní práci vypracoval/a samostatně. K práci jsem použil/a literaturu a prameny, uvedené v seznamu. Souhlasím s tím, aby moje ročníková práce byla využívána na Střední průmyslové škole Karviná, příspěvkové organizaci.
+
+V Karviné dne: ………………………. 	Podpis: ………………………. 
+
+\tableofcontents
+
+\include{Úvod}
+\include{Terminologie}
+\include{Použitý framework aplikace}
+\include{Celková koncepce řešení}
+\include{Popis aplikace}
+\include{Závěr}
+
+\listoffigures
+
+\bibliographystyle{plain}
+\bibliography{Zdroje}
+
+\end{document}

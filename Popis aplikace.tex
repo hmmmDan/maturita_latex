@@ -1,0 +1,167 @@
+\chapter{Popis aplikace}
+\label{sec:popis-aplikace}
+
+\section{Zpracování základního modelu hry}
+\label{sec:zpracovani-zakladniho-modelu-hry}
+
+\subsection{Struktura scén}
+\label{sec:struktura-scen}
+
+V Unity představují scény základní prostředí, ve kterých videohra operuje. Mohou to být například jednotlivé úrovně, avšak jejich využití je širší – mohou rovněž sloužit jako hlavní menu, nastavení, nebo jakékoliv jiné samostatné prostředí. V rámci této práce pracujeme se třemi základními scénami: \emph{MainMenu}, \emph{Level1} a \emph{Level2}.
+
+První scénou, se kterou se hráč setká po spuštění aplikace, je hlavní menu (\emph{MainMenu}). To nabízí několik základních možností: vstup do herního prostředí, přizpůsobení nastavení nebo ukončení aplikace. Logiku k přechodu z menu do první úrovně řeším ve skriptu \texttt{UIManager.cs} pomocí metody \texttt{PlayGame()}, která využívá vestavěnou třídu \texttt{SceneManager}:
+
+\begin{lstlisting}[caption={UIManager.cs}, label={lst:UIManager}]
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class UIManager : MonoBehaviour
+{
+    private void PlayGame()
+    {
+        // ==sem budu muset dat nejaky dalsi kod az budu delat input system==
+        SceneManager.LoadScene("Level1");
+    }
+}
+\end{lstlisting}
+
+Pro práci se scénami v Unity je nutné nejprve přidat požadované scény do seznamu scén v tzv. \emph{Build Settings}. V Unity editoru se tento seznam nachází v menu File > Build Settings > Scene List. Scéna musí být před přidáním otevřena v editoru a následně přidána pomocí tlačítka \emph{Add Open Scenes}. Po přidání lze na scénu odkazovat buď pomocí jejího indexu v seznamu, nebo pomocí jejího názvu. Já preferuji odkazování názvem pro lepší čitelnost kódu.
+
+Po úspěšném dokončení úrovně \emph{Level1} je hráč automaticky přesunut do \emph{Level2}. Z jakékoliv úrovně se hráč může vrátit do hlavního menu pozastavením hry a aktivací panelu \emph{Pause Menu}, což je podrobněji popsáno v podkapitole \ref{sec:ui-prvky}.
+
+\subsection{Herní manažery}
+\label{sec:herni-manazery}
+Herní manažery představují klíčové komponenty architektury videohry, které řídí specifické herní systémy a zajišťují komunikaci mezi různými částmi aplikace. V aktuální verzi využívám tři hlavní manažery:
+\begin{itemize}
+    \item \emph{UI Manager}
+    \item \emph{Audio Manager}
+    \item \emph{Cursor Manager}
+\end{itemize}
+
+\emph{UI Manager} je zodpovědný za veškerou logiku související s uživatelským rozhraním. Kromě dříve zmíněného přepínání mezi scénami řeší aktivaci jednotlivých panelů (například pause menu nebo nastavení) a komunikaci s knihovnou UI Toolkit, která je podrobněji popsána v podkapitole \ref{sec:ui-toolkit}.
+
+\emph{Audio Manager} spravuje zvukovou složku aplikace. Jeho úkolem je aktivace odpovídající hudby, zvuků vztahujících se k danému prostředí (ambience) a především komunikace s externím nástrojem FMOD Studio. Součástí \emph{Audio Manageru} je také objekt \emph{FMODEvents}, který propojuje konkrétní zvuky vytvořené v databázi FMOD Studio s rozhraním Unity editoru a zpřístupňuje jednotlivé zvukové soubory pro manipulaci v kódu.
+
+\emph{Cursor Manager} je funkčně nejjednodušším manažerem v celé struktuře. Jeho jedinou funkcí je vizuální kontrola kurzoru myši ve hře. V aktuální implementaci jsou používány dva stavy: normální kurzor a kurzor při stisku tlačítka. Zde je ukázka základní struktury tohoto skriptu:
+
+\begin{lstlisting}[caption={CursorManager.cs}, label={lst:CursorManager}, frame=none, backgroundcolor=\color{white}]
+using UnityEngine;
+
+public class CursorManager : MonoBehaviour
+{
+    [SerializeField] private Texture2D normalCursorTexture;
+    [SerializeField] private Texture2D clickedCursorTexture;
+
+    private bool isClicking = false;
+
+    private void Update()
+    {
+        bool currentlyClicking = Input.GetMouseButton(0);
+        
+        if (currentlyClicking != isClicking)
+        {
+            isClicking = currentlyClicking;
+            UpdateCursorSprite();
+        }
+    }
+
+    private void UpdateCursorSprite()
+    {
+        Texture2D currentTexture = isClicking ? clickedCursorTexture : normalCursorTexture;
+        
+        if (currentTexture == null)
+        {
+            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+            return;
+        }
+        
+        Cursor.SetCursor(currentTexture, Vector2.zero, CursorMode.Auto);
+    }
+}
+\end{lstlisting}
+
+Skript využívá metodu \texttt{DontDestroyOnLoad}, aby instance manažeru přetrvávala mezi scénami. V metodě \texttt{Update()} se každým snímkem kontroluje stav levého tlačítka myši – při změně stavu se zavolá \texttt{UpdateCursorSprite()}, která nastaví odpovídající texturu kurzoru.
+
+Na Linuxu se mi vyskytly problémy se zpožděním kurzoru, proto skript obsahuje dodatečná složitější řešení z internetu, která na něm zajišťují lepší odezvu.
+
+\subsection{Input systém}
+\label{sec:input-system}
+
+\newpage
+
+\subsection{Základní herní objekty}
+\label{sec:zakladni-herni-objekty}
+Mezi hlavní prvky ve scéně patří:
+
+\begin{enumerate}
+    \item Kamera, díky které může hráč vidět, co se děje. S kamerou je možno dělat mnoho věcí, na které se podíváme později.
+\end{enumerate}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{img/unity/mp51-unity-hierarchy.png}
+    \caption{Hierarchie scény}
+    \label{fig:unity-hierarchy}
+\end{figure}
+
+
+\section{Vytvoření uživatelského rozhraní}
+\label{sec:vytvoreni-uzivatelskeho-rozhrani}
+
+\subsection{UI Toolkit}
+\label{sec:ui-toolkit}
+\begin{itemize}
+    \item[ ] ukázka Canvas, jak jsem řešil UI a jak je UI Toolkit jiný
+    \item[ ] UI vs HUD
+    \item[ ] volume settings
+    \item[ ] hover akce
+    \item[ ] singletony, DontDestroyOnLoad scéna
+\end{itemize}
+
+\subsection{UI Prvky}
+\label{sec:ui-prvky}
+\begin{itemize}
+    \item[ ] pause menu
+    \item[ ] settings panel
+    \item[ ] altar ui
+\end{itemize}
+
+\subsection{Ostatní funkce UI}
+\label{sec:ostatni-funkce-ui}
+\begin{itemize}
+    \item[ ] showing that i have also started working on respawn/checkpoint system and altar UI.
+    \item[ ] zastavení času
+\end{itemize}
+
+\section{Tvorba vizuálních efektů}
+\label{sec:tvorba-vizualnich-efektu}
+
+\subsection{Particle System}
+\label{sec:particle-system}
+
+\subsection{Light 2D}
+\label{sec:light-2d}
+
+\subsection{Ostatní efekty}
+\label{sec:ostatni-efekty-vfx}
+
+\section{Tvorba zvukových efektů}
+\label{sec:tvorba-zvukovych-efektu}
+
+\subsection{Audio systém}
+\label{sec:audio-system}
+
+\subsection{Tvorba v FL Studio}
+\label{sec:tvorba-v-fl-studio}
+
+\subsection{Kategorizace zvuků}
+\label{sec:kategorizace-zvuku}
+
+\subsection{Hudba}
+\label{sec:hudba}
+
+\section{Post-processing hry}
+\label{sec:post-processing-hry}
+\begin{itemize}
+    \item ukázka Global Volume post processing prvku
+\end{itemize}
