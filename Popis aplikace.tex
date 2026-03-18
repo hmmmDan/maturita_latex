@@ -11,7 +11,7 @@ V Unity představují scény základní prostředí, ve kterých videohra operuj
 
 První scénou, se kterou se hráč setká po spuštění aplikace, je hlavní menu (\emph{MainMenu}). To nabízí několik základních možností: vstup do herního prostředí, přizpůsobení nastavení nebo ukončení aplikace. Logiku k přechodu z menu do první úrovně řeším ve skriptu \texttt{UIManager.cs} pomocí metody \texttt{PlayGame()}, která využívá vestavěnou třídu \texttt{SceneManager}:
 
-\begin{lstlisting}[caption={UIManager.cs}, label={lst:UIManager}]
+\begin{lstlisting}[caption={UIManager.PlayGame()}, label={lst:uimanager-playgame}]
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -19,7 +19,6 @@ public class UIManager : MonoBehaviour
 {
     private void PlayGame()
     {
-        // ==sem budu muset dat nejaky dalsi kod az budu delat input system==
         SceneManager.LoadScene("Level1");
     }
 }
@@ -87,7 +86,57 @@ Na Linuxu se mi vyskytly problémy se zpožděním kurzoru, proto skript obsahuj
 \subsection{Input systém}
 \label{sec:input-system}
 
-\newpage
+Input systém je jedním z více témat, ke kterému se dá přistupovat více způsoby. Můžeme ho řešit nízkoúrovňově, jako v tomto případě, kdy nasloucháme stisknutí kláves přímo pomocí C\#:
+
+\begin{lstlisting}[caption={Nízkoúrovňové zpracování vstupu}, label={lst:low-level-input}]
+if (Event.current.isKey)
+{
+    // klávesa, která byla stisknuta.
+    KeyCode key = Event.current.keyCode;
+}
+\end{lstlisting}
+
+Pro tento účel však existuje modernější systém, který zajišťuje mnohem přívětivější a flexibilnější workflow. Je jím \emph{Input System}, který je zobrazen na obrázku \ref{fig:unity-input-system}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{img/unity/mp51-unity-input-actions.png}
+    \caption{Rozhraní Unity Input System}
+    \label{fig:unity-input-system}
+\end{figure}
+
+Jak můžeme vidět na obrázku \ref{fig:unity-input-system}, v tomto rozhraní můžeme vytvářet \emph{Action Maps} (vlevo). Naše videohra momentálně využívá dvě \emph{Action Maps}, jednu pro herní mechaniky a druhou pro orientaci v uživatelském rozhraní. Toto velmi usnadňuje řešení toho, jaké akce chceme od hráče vyžadovat.
+
+Například jedním z nepříjemných problémů, které \emph{Action Maps} řeší, je následující: V minulosti, když jsem vstup řešil ještě zastaralým způsobem, UI fungovalo tak, že i když hráč pozastavil hru a dostal se do \emph{Pause Menu}, čas se zastavil – viz ukázka kódu \ref{lst:pause-code-old}.
+
+\begin{lstlisting}[caption={Starší kód pro pozastavení hry}, label={lst:pause-code-old}]
+//Starsi kod pro pausovani hry
+\end{lstlisting}
+
+Toto řešení zastavilo veškerý pohyb ve hře. Všechny vstupní akce však zůstaly povolené a byly rozházené po projektu ve skriptech pro ovládání hráče, střelbu nebo animace. Proto, i přes zastavený čas, když hráč například spustil akci pro střelbu, i v \emph{Pause Menu} se hráči objevila střela u těla a hned jak hráč hru znovu spustil, střela odpalovala. Nebo pokud se hráč pokoušel hýbat v \emph{Pause Menu}, fyzicky se hýbat nemohl, ale animace fungovaly a hráč se tak mohl stále otáčet ze strany na stranu. To vypadalo neprofesionálně.
+
+Za pomoci \emph{Action Maps} však složité ošetřování těchto chyb rychle mizí – viz ukázka \ref{lst:nejnoversi-pause-kod}.
+
+\begin{lstlisting}[caption={Nejnovější kód pro pozastavení videohry a přístupování k Action Maps}, label={lst:nejnoversi-pause-kod}]
+//Nejnovejsi kod, pausovani videohry a pristupovani k action mapam
+\end{lstlisting}
+
+Přes skript \texttt{UIManager.cs} mohu k tomuto \emph{Input Actions} souboru přistoupit a deaktivovat celou jednu \emph{Action Map}, která obsahuje jednotlivé \emph{Input Actions}. To znamená, že pokud hráč pozastaví hru a dostane se do \emph{Pause Menu}, mohu jednoduše zakázat \emph{Action Map} s názvem \emph{Player}, která obsahuje všechny možnosti ovládání herních mechanik, jako pohyb, speciální schopnosti nebo interakce se světem, a aktivovat \emph{Action Map} s názvem \emph{UI}, protože hráč se vskutku v daném momentu nachází v panelu uživatelského rozhraní, kde potřebuje pouze tyto \emph{Input Actions} včetně stisknutí klávesy \texttt{Esc}, která deaktivuje \emph{Pause Panel}, vrátí hráče do hry, deaktivuje \emph{Action Map} pro UI a aktivuje \emph{Action Map} pro ovládání hráče.
+
+Napravo od sekce \emph{Action Maps} se nachází sekce \emph{Actions}, kde již nastavujeme konkrétní \emph{Input Actions}. Ve verzi pro tuto maturitní práci využíváme pro \emph{Action Map} hráče:
+\begin{itemize}
+    \item pohyb,
+    \item interakce,
+    \item \dots
+\end{itemize}
+
+Pro \emph{Action Map} uživatelského rozhraní:
+\begin{itemize}
+    \item aktivace a deaktivace panelu,
+    \item \dots
+\end{itemize}
+
+Nakonec, v sekci \emph{Action Properties} pro danou \emph{Input Action} nastavuji, o jaký typ akce se jedná nebo možnost zaměřit na jiných platformách (klávesnice, myš, herní ovladač, VR ovladač\dots) pro případy, kdy chceme videohru vydávat na více platforem (průmyslový standard), jako například PC, macOS, PlayStation 5, Xbox Series X/S\dots
 
 \subsection{Základní herní objekty}
 \label{sec:zakladni-herni-objekty}

@@ -16,6 +16,7 @@
 \usepackage{titlesec}
 
 \usepackage{listings}
+\usepackage{tocbibind}
 \usepackage{xcolor}
 \usepackage{hyperref}
 \usepackage{url}
@@ -39,6 +40,10 @@
     breaklines=true,
     language=C,
     captionpos=b,
+}
+\gappto\captionsczech{%
+  \def\lstlistingname{Kód}%
+  \def\lstlistlistingname{Seznam kódů}%
 }
 
 \titleformat{\chapter}
