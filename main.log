@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Arch Linux) (preloaded format=xelatex 2026.3.6)  17 MAR 2026 17:22
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Arch Linux) (preloaded format=xelatex 2026.3.6)  18 MAR 2026 20:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -577,22 +577,22 @@ Overfull \hbox (0.63577pt too wide) in paragraph at lines 37--38
  []
 
 
-Overfull \hbox (20.57622pt too wide) in paragraph at lines 44--45
+Overfull \hbox (20.57622pt too wide) in paragraph at lines 45--46
 \TU/TimesNewRoman(0)/m/n/12 middleware) pro úpravu a implementaci zvuku do videoher, vyvinutý společností Firelight Technologies.
  []
 
 
-Overfull \hbox (23.87111pt too wide) in paragraph at lines 44--45
+Overfull \hbox (23.87111pt too wide) in paragraph at lines 45--46
 \TU/TimesNewRoman(0)/m/n/12 pomocí Unity integrace. FMOD nabízí pokročilé funkce jako pocit 3D prostoru, automatizace zvuku nebo
  []
 
 
-Overfull \hbox (10.23833pt too wide) in paragraph at lines 49--50
+Overfull \hbox (10.23833pt too wide) in paragraph at lines 50--51
 \TU/TimesNewRoman(0)/m/n/12 Pro efektivní spolupráci v týmu používáme poznámkový software Obsidian, u kterého jsme si společně
  []
 
 )
-Overfull \hbox (4.58403pt too wide) in paragraph at lines 51--140
+Overfull \hbox (4.58403pt too wide) in paragraph at lines 52--140
 \TU/TimesNewRoman(0)/m/n/12 Thinking Studio, na kterém jsou všichni členové týmu i spolupracující zvenčí. Discord nám umožňuje
  []
 
@@ -673,24 +673,71 @@ Overfull \hbox (4.04301pt too wide) in paragraph at lines 99--100
 []\TU/TimesNewRoman(0)/m/n/12 Pro tento účel však existuje modernější systém, který zajišťuje mnohem přívětivější a flexibilnější
  []
 
-File: img/unity/mp51-unity-input-actions.png Graphic file (type bmp)
-<img/unity/mp51-unity-input-actions.png>
+File: img/unity/unity-input-actions.png Graphic file (type bmp)
+<img/unity/unity-input-actions.png>
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[17] [18]
-File: img/unity/mp51-unity-hierarchy.png Graphic file (type bmp)
-<img/unity/mp51-unity-hierarchy.png>
+[17] [18] [19]
+Overfull \hbox (2.88773pt too wide) in paragraph at lines 175--176
+\TU/TimesNewRoman(0)/m/it/12 Value\TU/TimesNewRoman(0)/m/n/12 ), cílovou platformu (klávesnice, myš, herní ovladač, VR ovladač…) a případně další vlastnosti.
+ []
+
+File: img/unity/unity-hierarchy.png Graphic file (type bmp)
+<img/unity/unity-hierarchy.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: img/unity/unity-gameobject-player.png Graphic file (type bmp)
+<img/unity/unity-gameobject-player.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[20] [21]
+Overfull \hbox (46.44943pt too wide) in paragraph at lines 228--229
+[]\TU/TimesNewRoman(0)/m/n/12 Více samostatných \TU/TimesNewRoman(0)/m/it/12 Canvas \TU/TimesNewRoman(0)/m/n/12 objektů ve scéně (např. \TU/lmtt/m/n/12 CanvasGameOver\TU/TimesNewRoman(0)/m/n/12 , \TU/lmtt/m/n/12 Canvas HUD\TU/TimesNewRoman(0)/m/n/12 , \TU/lmtt/m/n/12 CanvasTutorial\TU/TimesNewRoman(0)/m/n/12 ) 
+ []
+
+
+Overfull \hbox (42.13255pt too wide) in paragraph at lines 231--232
+[]\TU/TimesNewRoman(0)/m/n/12 Rozptýlená logika mezi skripty jako \TU/lmtt/m/n/12 StripeCounterUI.cs\TU/TimesNewRoman(0)/m/n/12 , \TU/lmtt/m/n/12 OrbCounterUI.cs\TU/TimesNewRoman(0)/m/n/12 , \TU/lmtt/m/n/12 ButtonEffects.cs 
+ []
+
+
+Overfull \hbox (29.9987pt too wide) in paragraph at lines 239--240
+[]\TU/TimesNewRoman(0)/m/n/12 Skrývání a zobrazování pomocí \TU/lmtt/m/n/12 VisualElement.style.display = DisplayStyle.None/Flex 
+ []
+
+File: img/unity/unity-ui-toolkit.png Graphic file (type bmp)
+<img/unity/unity-ui-toolkit.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[22] [23]
+Overfull \hbox (18.18166pt too wide) in paragraph at lines 315--316
+[]\TU/TimesNewRoman(0)/b/n/12 HUD \TU/TimesNewRoman(0)/m/n/12 – zobrazuje informace perzistentní během hraní. V levém horním rohu je počítadlo zbývajících
+ []
+
+
+Overfull \hbox (20.4688pt too wide) in paragraph at lines 315--316
+\TU/TimesNewRoman(0)/m/n/12 Binding počítadel probíhá přímým dotazem na herní skripty – například \TU/lmtt/m/n/12 CFInventory.OnCFCollected
+ []
+
+[24]
+File: img/unity/unity-volume-controls.png Graphic file (type bmp)
+<img/unity/unity-volume-controls.png>
+File: img/unity/unity-hud.png Graphic file (type bmp)
+<img/unity/unity-hud.png>
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[19] [20]) [21]
+[25]) [26]
 \openout2 = `Závěr.aux'.
 
  (./Závěr.tex
 Kapitola 6.
-) [22
+) [27
 
 
 
@@ -701,7 +748,7 @@ Kapitola 6.
 
 
 No file main.bbl.
-[23
+[28
 
 
 
@@ -714,12 +761,12 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 20B366872BE16B74AC0B8DDDDC49086D;6550.
  ) 
 Here is how much of TeX's memory you used:
- 14265 strings out of 470191
- 276263 string characters out of 5479698
- 973660 words of memory out of 5000000
- 42614 multiletter control sequences out of 15000+600000
- 631177 words of font info for 95 fonts, out of 8000000 for 9000
+ 14422 strings out of 470191
+ 279191 string characters out of 5479698
+ 1006660 words of memory out of 5000000
+ 42766 multiletter control sequences out of 15000+600000
+ 631345 words of font info for 96 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 87i,8n,93p,894b,1772s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 87i,8n,93p,890b,1772s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (24 pages).
+Output written on main.pdf (29 pages).

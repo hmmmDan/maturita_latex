@@ -100,7 +100,7 @@ Pro tento účel však existuje modernější systém, který zajišťuje mnohem
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=1\textwidth]{img/unity/mp51-unity-input-actions.png}
+    \includegraphics[width=1\textwidth]{img/unity/unity-input-actions.png}
     \caption{Rozhraní Unity Input System}
     \label{fig:unity-input-system}
 \end{figure}
@@ -109,48 +109,102 @@ Jak můžeme vidět na obrázku \ref{fig:unity-input-system}, v tomto rozhraní 
 
 Například jedním z nepříjemných problémů, které \emph{Action Maps} řeší, je následující: V minulosti, když jsem vstup řešil ještě zastaralým způsobem, UI fungovalo tak, že i když hráč pozastavil hru a dostal se do \emph{Pause Menu}, čas se zastavil – viz ukázka kódu \ref{lst:pause-code-old}.
 
-\begin{lstlisting}[caption={Starší kód pro pozastavení hry}, label={lst:pause-code-old}]
-//Starsi kod pro pausovani hry
+\begin{lstlisting}[caption={Původní řešení pozastavení hry}, label={lst:pause-code-old}]
+private void SetPauseState(bool pause)
+{
+    if (pauseMenu != null)
+        pauseMenu.SetActive(pause);
+
+    if (pause)
+    {
+        Time.timeScale = 0f;
+        AudioManager.instance.PauseMusic();
+    }
+    else
+    {
+        Time.timeScale = 1f;
+        AudioManager.instance.ResumeMusic();
+    }
+}
 \end{lstlisting}
 
 Toto řešení zastavilo veškerý pohyb ve hře. Všechny vstupní akce však zůstaly povolené a byly rozházené po projektu ve skriptech pro ovládání hráče, střelbu nebo animace. Proto, i přes zastavený čas, když hráč například spustil akci pro střelbu, i v \emph{Pause Menu} se hráči objevila střela u těla a hned jak hráč hru znovu spustil, střela odpalovala. Nebo pokud se hráč pokoušel hýbat v \emph{Pause Menu}, fyzicky se hýbat nemohl, ale animace fungovaly a hráč se tak mohl stále otáčet ze strany na stranu. To vypadalo neprofesionálně.
 
-Za pomoci \emph{Action Maps} však složité ošetřování těchto chyb rychle mizí – viz ukázka \ref{lst:nejnoversi-pause-kod}.
+Za pomoci \emph{Action Maps} však složité ošetřování těchto chyb rychle mizí – viz ukázka \ref{lst:pause-code-new}.
 
-\begin{lstlisting}[caption={Nejnovější kód pro pozastavení videohry a přístupování k Action Maps}, label={lst:nejnoversi-pause-kod}]
-//Nejnovejsi kod, pausovani videohry a pristupovani k action mapam
+\begin{lstlisting}[caption={Moderní řešení pozastavení pomocí Input System}, label={lst:pause-code-new}]
+private void SetPauseState(bool pause)
+{
+    if (pause)
+    {
+        Time.timeScale = 0f;
+        playerActionMap.actionMap.Disable();
+        uiActionMap.actionMap.Enable();
+    }
+    else
+    {
+        Time.timeScale = 1f;
+        uiActionMap.actionMap.Disable();
+        playerActionMap.actionMap.Enable();
+    }
+}
 \end{lstlisting}
 
-Přes skript \texttt{UIManager.cs} mohu k tomuto \emph{Input Actions} souboru přistoupit a deaktivovat celou jednu \emph{Action Map}, která obsahuje jednotlivé \emph{Input Actions}. To znamená, že pokud hráč pozastaví hru a dostane se do \emph{Pause Menu}, mohu jednoduše zakázat \emph{Action Map} s názvem \emph{Player}, která obsahuje všechny možnosti ovládání herních mechanik, jako pohyb, speciální schopnosti nebo interakce se světem, a aktivovat \emph{Action Map} s názvem \emph{UI}, protože hráč se vskutku v daném momentu nachází v panelu uživatelského rozhraní, kde potřebuje pouze tyto \emph{Input Actions} včetně stisknutí klávesy \texttt{Esc}, která deaktivuje \emph{Pause Panel}, vrátí hráče do hry, deaktivuje \emph{Action Map} pro UI a aktivuje \emph{Action Map} pro ovládání hráče.
+Přes skript \texttt{UIManager.cs} mohu k \emph{Input Actions} souboru přistoupit a deaktivovat celou jednu \emph{Action Map}, která obsahuje jednotlivé \emph{Input Actions}. To znamená, že pokud hráč pozastaví hru a dostane se do \emph{Pause Menu}, mohu jednoduše zakázat \emph{Action Map} s názvem \emph{Player}, která obsahuje všechny možnosti ovládání herních mechanik, jako pohyb, speciální schopnosti nebo interakce se světem, a aktivovat \emph{Action Map} s názvem \emph{UI}, protože hráč se vskutku v daném momentu nachází v panelu uživatelského rozhraní, kde potřebuje pouze tyto \emph{Input Actions} včetně stisknutí klávesy \texttt{Esc}, která deaktivuje \emph{Pause Panel}, vrátí hráče do hry, deaktivuje \emph{Action Map} pro UI a aktivuje \emph{Action Map} pro ovládání hráče.
 
-Napravo od sekce \emph{Action Maps} se nachází sekce \emph{Actions}, kde již nastavujeme konkrétní \emph{Input Actions}. Ve verzi pro tuto maturitní práci využíváme pro \emph{Action Map} hráče:
+Napravo od sekce \emph{Action Maps} se nachází sekce \emph{Actions}, kde již nastavujeme konkrétní \emph{Input Actions}. Ve verzi pro tuto maturitní práci využívám pro \emph{Action Map} hráče následující akce:
+
 \begin{itemize}
-    \item pohyb,
-    \item interakce,
-    \item \dots
+    \item \textbf{Move} -- pohyb (WASD / šipky)
+    \item \textbf{Attack} -- střelba (K / Enter)
+    \item \textbf{Interact} -- interakce s objekty (E)
+    \item \textbf{Jump} -- skok (Space)
+    \item \textbf{Dash} -- rychlý úskok (Shift)
+    \item \textbf{Click} -- kliknutí myší pro střelbu
 \end{itemize}
 
-Pro \emph{Action Map} uživatelského rozhraní:
+Pro \emph{Action Map} uživatelského rozhraní pak:
+
 \begin{itemize}
-    \item aktivace a deaktivace panelu,
-    \item \dots
+    \item \textbf{Click / Point} -- kliknutí a pozice kurzoru myši
+    \item \textbf{ScrollWheel} -- scrollování
+    \item \textbf{TogglePause} -- pozastavení hry (Esc)
+    \item \textbf{ClosePanelSettings / ClosePanelAltar} -- zavření nastavení nebo oltáře (Esc / E)
 \end{itemize}
 
-Nakonec, v sekci \emph{Action Properties} pro danou \emph{Input Action} nastavuji, o jaký typ akce se jedná nebo možnost zaměřit na jiných platformách (klávesnice, myš, herní ovladač, VR ovladač\dots) pro případy, kdy chceme videohru vydávat na více platforem (průmyslový standard), jako například PC, macOS, PlayStation 5, Xbox Series X/S\dots
+Ke každé \emph{Input Action} lze v sekci \emph{Action Properties} nastavit typ akce (\emph{Button}, \emph{PassThrough}, \emph{Value}), cílovou platformu (klávesnice, myš, herní ovladač, VR ovladač\dots) a případně další vlastnosti. Toto umožňuje multiplatformní nasazení na PC, macOS, PlayStation 5, Xbox Series X/S nebo VR headsety bez nutnosti měnit kód.
 
+
+
+
+"
 \subsection{Základní herní objekty}
 \label{sec:zakladni-herni-objekty}
+
 Mezi hlavní prvky ve scéně patří:
 
-\begin{enumerate}
-    \item Kamera, díky které může hráč vidět, co se děje. S kamerou je možno dělat mnoho věcí, na které se podíváme později.
-\end{enumerate}
+\textbf{Kamera} -- díky ní může hráč vidět, co se děje. S kamerou je možno dělat mnoho věcí, na které se podíváme později.
+
+\textbf{GameObject hráče} -- objekt, na kterém je renderován sprite hráče a animace (viz obrázek \ref{fig:unity-gameobject-player}). Jsou na něm připnuty skripty jako \texttt{PlayerController.cs}, sloužící pro základní kontroly jako je pohyb, zvukový emitor atd. V naší hře je objekt hráče vždy na očích v oblasti středu okna aplikace.
+
+\textbf{Uživatelské rozhraní} -- to může být řešeno více způsoby. Způsob, který najdeme ve většině tutoriálů, je \emph{Canvas} (viz podkapitola \ref{sec:ui-toolkit}). V hierarchii Unity se přidá GameObject Canvas a do něj lze přidávat jednotlivé UI elementy jako další objekty (tlačítka, slidery, panely, text).
+
+Na již dříve zmíněném Brackeys Game Jam 2026.1 (viz podkapitola \ref{sec:fmod-studio}) jsem kromě jiného přišel k lepší alternativě i zde -- \emph{UI Toolkit}. Toto řešení vyžaduje mít ve scéně \emph{UI Document} (kde se řeší struktura) a \emph{UI Manager}, který s ním komunikuje a binduje k němu ostatní skripty.
+
+Hierarchie scény je zobrazena na obrázku \ref{fig:unity-hierarchy} úplně vlevo.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=1\textwidth]{img/unity/mp51-unity-hierarchy.png}
+    \includegraphics[width=1\textwidth]{img/unity/unity-hierarchy.png}
     \caption{Hierarchie scény}
     \label{fig:unity-hierarchy}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{img/unity/unity-gameobject-player.png}
+    \caption{GameObject hráče ve scéně}
+    \label{fig:unity-gameobject-player}
 \end{figure}
 
 
@@ -159,21 +213,142 @@ Mezi hlavní prvky ve scéně patří:
 
 \subsection{UI Toolkit}
 \label{sec:ui-toolkit}
+
+UI Toolkit je relativně novější způsob řešení uživatelského rozhraní než původní systém \emph{Canvas}. Od něj se liší například tím, že pro sestavení a stylizaci vizuálních elementů nepoužívá klasickou \emph{GameObject} strukturu, ale jazyky UXML (struktura) a USS (stylizace), které se svým provedením více podobají webovému vývoji.
+
+Psát UXML nebo USS kód však vůbec není nutné. UI Toolkit má své grafické rozhraní, ve kterém je možné elementy přidávat myší a v inspektoru jim upravovat různé parametry jako pozici, velikost, margin, padding, velikost textu, barvu pozadí nebo jaký sprite by kurzor myši měl nad daným elementem zobrazovat. Toto grafické rozhraní je napojeno na \emph{UIDocument}, který ve scéně musí být také.
+
+UI Toolkit však nepoužívá singleton logiku na \emph{UIDocument} -- ten není omezen na jednu scénu a je globální, podobně jako prefaby. Místo toho je singleton vzor aplikován na \emph{UIManager}, který drží reference na jednotlivé panely a spravuje jejich stav pomocí \emph{GameState} enumu. Tím se UI odděluje od datové vrstvy -- struktura UI je definována v UXML, zatímco logika je soustředěna v jednom centrálním skriptu.
+
+Strukturu uživatelského rozhraní lze rozdělit na dvě hlavní kategorie: UI a HUD. UI je obecný pojem pro všechny elementy uživatelského rozhraní, se kterými hráč může interagovat -- tlačítka, inventář, textové oblasti dialogů. Naproti tomu HUD (Heads-Up Display) se skládá z elementů, které jsou perzistentně zobrazovány na obrazovce hráče během hraní -- ukazatel zdraví, počítadlo nábojů nebo malá mapa na kraji obrazovky.
+
+Jak jsem postupně přecházel z \emph{Canvas} na UI Toolkit, mohl jsem porovnat obě řešení. Ve starších verzích bylo UI postaveno na principech:
+
 \begin{itemize}
-    \item[ ] ukázka Canvas, jak jsem řešil UI a jak je UI Toolkit jiný
-    \item[ ] UI vs HUD
-    \item[ ] volume settings
-    \item[ ] hover akce
-    \item[ ] singletony, DontDestroyOnLoad scéna
+    \item Více samostatných \emph{Canvas} objektů ve scéně (např. \texttt{CanvasGameOver}, \texttt{Canvas HUD}, \texttt{CanvasTutorial})
+    \item Každý panel jako samostatný \emph{GameObject} s komponentami jako \texttt{Image}, \texttt{Button}, \texttt{Text}
+    \item Skrývání a zobrazování panelů pomocí \texttt{GameObject.SetActive(true/false)}
+    \item Rozptýlená logika mezi skripty jako \texttt{StripeCounterUI.cs}, \texttt{OrbCounterUI.cs}, \texttt{ButtonEffects.cs}
 \end{itemize}
+
+S UI Toolkit v nejnovější verzi přichází zjednodušení:
+
+\begin{itemize}
+    \item Jeden \emph{UIDocument} definuje veškeré UI v jednom UXML souboru
+    \item Všechny panely (MainMenu, PanelSettings, PanelPause, PanelAltar, HUD) jsou dotazovány pomocí \texttt{root.Q<VisualElement>("NazevPanelu")}
+    \item Skrývání a zobrazování pomocí \texttt{VisualElement.style.display = DisplayStyle.None/Flex}
+    \item Centralizovaná správa stavu pomocí \texttt{GameState} enumu (None, Gameplay, Altar, Pause)
+\end{itemize}
+
+Rozhraní UI Toolkit je zobrazeno na obrázku \ref{fig:ui-toolkit}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{img/unity/unity-ui-toolkit.png}
+    \caption{Rozhraní UI Toolkit}
+    \label{fig:ui-toolkit}
+\end{figure}
+
+
+
+
 
 \subsection{UI Prvky}
 \label{sec:ui-prvky}
-\begin{itemize}
-    \item[ ] pause menu
-    \item[ ] settings panel
-    \item[ ] altar ui
-\end{itemize}
+
+Na centrálním \emph{UIManageru} je postavena veškerá logika jednotlivých UI prvků. Každý prvek je definován v UXML souboru a následně bindován k odpovídajícím skriptům.
+
+\textbf{Pause Menu} -- obsahuje tlačítko pro návrat do hlavního menu. Jeho řízení je součástí \texttt{GameState} systému, nikoliv pouze přes \texttt{Time.timeScale}. Metoda \texttt{SetState()} přepíná mezi stavy a při vstupu do \emph{Pause} zároveň aktivuje \emph{UI Action Map} a deaktivuje \emph{Player Action Map}, což je podrobně popsáno v podkapitole \ref{sec:input-system}. Přechod mezi stavy \emph{Gameplay}, \emph{Pause} a \emph{Altar} řeší jediná metoda:
+
+\begin{lstlisting}[caption={UIManager -- přepínání stavů pomocí GameState enumu}, label={lst:uimanager-gamestate}]
+void SetState(GameState newState)
+{
+    if (CurrentState == newState) return;
+    CurrentState = newState;
+
+    panelPause.style.display = DisplayStyle.None;
+    panelAltar.style.display = DisplayStyle.None;
+    HUD.style.display = DisplayStyle.None;
+
+    switch (newState)
+    {
+        case GameState.Gameplay:
+            Time.timeScale = 1f;
+            ActivatePlayerInput();
+            HUD.style.display = DisplayStyle.Flex;
+            break;
+        case GameState.Altar:
+            panelAltar.style.display = DisplayStyle.Flex;
+            ActivateUIInput();
+            Time.timeScale = 1f;
+            HUD.style.display = DisplayStyle.None;
+            break;
+        case GameState.Pause:
+            panelPause.style.display = DisplayStyle.Flex;
+            ActivateUIInput();
+            Time.timeScale = 0f;
+            HUD.style.display = DisplayStyle.None;
+            break;
+    }
+}
+\end{lstlisting}
+
+\textbf{Settings Panel} -- obsahuje slidery pro ovládání hlasitosti jednotlivých zvukových kanálů. Tyto slidery jsou bindovány na FMOD mixer prostřednictvím \texttt{AudioManageru}, který uchovává reference na FMOD \emph{Busy} pro master, hudbu, ambience a SFX. Propojení UI Toolkit sliderů s FMOD mixerem:
+
+\begin{lstlisting}[caption={Bindování sliderů k FMOD mixeru}, label={lst:volume-sliders}]
+private void BindVolumeSliders(VisualElement root)
+{
+    masterSlider = root.Q<Slider>("SliderVolumeMaster");
+    masterSlider.SetValueWithoutNotify(AudioManager.instance.masterVolume);
+    masterSlider.RegisterValueChangedCallback(evt =>
+    {
+        AudioManager.instance.masterVolume = evt.newValue;
+        AudioManager.instance.SaveVolumeSettings();
+    });
+}
+\end{lstlisting}
+
+Hodnoty jsou ukládány do \texttt{PlayerPrefs}, takže při dalším spuštění hry jsou obnoveny.
+
+Nastavení hlasitosti je zobrazeno na obrázku \ref{fig:unity-volume-controls}.
+
+\textbf{HUD} -- zobrazuje informace perzistentní během hraní. V levém horním rohu je počítadlo zbývajících střel (stripe shot), v pravém horním rohu pak počet nasbíraných konverzačních fragmentů (CFs). Binding počítadel probíhá přímým dotazem na herní skripty -- například \texttt{CFInventory.OnCFCollected} událost aktualizuje label v HUD:
+
+\begin{lstlisting}[caption={Bindování CF počítadla}]
+private void BindCFCounter(VisualElement root)
+{
+    cfCounterLabel = root.Q<Label>("LabelCFCount");
+    cfInventory = FindFirstObjectByType<CFInventory>();
+    
+    if (cfInventory != null)
+        cfInventory.OnCFCollected += OnCFCollected;
+}
+
+private void OnCFCollected(int count)
+{
+    cfCounterLabel.text = $"CFs: {count}";
+}
+\end{lstlisting}
+
+Podobně funguje i \texttt{StripeCounterUI}, který naslouchá událostem z herních skriptů a aktualizuje text v UI. Rozhraní HUD je zobrazeno na obrázku \ref{fig:unity-hud} -- levý horní roh znázorňuje počet střel a pravý horní roh počet sesbíraných CFs.
+
+\textbf{Altar / Inventory UI} -- panel oltáře slouží jako inventář nasbíraných předmětů a konverzačních fragmentů. Zatím je ve fázi vývoje a nelze jej považovat za hotový. Struktura se skládá z mřížky inventáře a obrázku oltáře. Otevření panelu je vyvoláno interakcí hráče s objektem oltáře ve scéně.
+
+Jakmile bude tato sekce plně implementována, umožní hráči procházet nasbíranými předměty a interagovat s nimi.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{img/unity/unity-volume-controls.png}
+    \caption{Nastavení hlasitosti}
+    \label{fig:unity-volume-controls}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{img/unity/unity-hud.png}
+    \caption{HUD ve hře -- levý horní roh: počet střel, pravý horní roh: počet CFs}
+    \label{fig:unity-hud}
+\end{figure}
 
 \subsection{Ostatní funkce UI}
 \label{sec:ostatni-funkce-ui}
