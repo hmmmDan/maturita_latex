@@ -353,6 +353,53 @@ Jakmile bude tato sekce plně implementována, umožní hráči procházet nasb�
 \subsection{Ostatní funkce UI}
 \label{sec:ostatni-funkce-ui}
 
+Kromě hlavních panelů a HUD prvků popsaných v předchozí podkapitole existuje v projektu několik dalších vizuálních komponent, které doplňují herní zážitek.
+
+\textbf{Respawn / Checkpoint systém} -- systém checkpointů umožňuje hráči ukládat pozici, na kterou bude respawnován po \emph{soft death} (používáno v \emph{The Exploration}). Checkpoint je objekt ve scéně, s nímž hráč může interagovat stisknutím klávesy \texttt{E}. Při aktivaci se uloží jako referenční bod v komponentě \texttt{DeathZoneSoft}, která po vstupu hráče do svého triggeru okamžitě přesune hráče na pozici posledního aktivovaného \texttt{CheckPoint}u:
+
+\begin{lstlisting}[caption={CheckPoint -- aktivace checkpointu}, label={lst:checkpoint}]
+public void Activate()
+{
+    if (lastActivated != null && lastActivated != this)
+        lastActivated.Deactivate();
+    lastActivated = this;
+    deathZoneSoft.respawnPoint = this.gameObject;
+    spriteRenderer.color = Color.green;
+}
+\end{lstlisting}
+
+V aktuální implementaci se při \emph{soft death} přesouvá pouze pozice hráče -- počet střel i \emph{conversation fragments} zůstávají zachovány. Toto odpovídá designovému rozhodnutí pro \emph{The Exploration}, kde je kladen důraz na průzkum bez trestu. Naproti tomu \emph{The Chase} bude implementovat \emph{hard death}, který skrze reload celé scény obnoví všechny proměnné do výchozího stavu.
+
+\textbf{Camera Respawn Catch} -- komponenta zajišťující plynulé přesunutí kamery k hráči po respawnu. Při volání metody \texttt{OnPlayerRespawn()} se cílová pozice okamžitě nastaví na pozici hráče, takže kamera může pomocí interpolace (\texttt{Vector3.Lerp}) hladce dohnat případný rozestup vzniklý během teleportace.
+
+\textbf{Parallax} -- vizuální komponenta pozadí, která simuluje hloubku prostoru pomocí odlišných rychlostí pohybu jednotlivých vrstev. Sprite renderer na každé vrstvě dostane koeficient \texttt{parallaxEffectX}; nižší hodnota znamená, že vrstva se pohybuje pomaleji než kamera a působí vzdáleněji. Na obrázcích \ref{fig:unity-parallax-close} a \ref{fig:unity-parallax-far} je vidět nastavení bližší vrstvy na 0.45x a vzdálenější vrstvy na 0.7x -- bližší vrstva se pohybuje výrazně pomaleji a působí staticky, zatímco vzdálenější vrstva rychleji následuje kameru, což navozuje dojem prostorové hloubky.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/unity/unity-parallax-close.png}
+    \caption{Blizší parallax vrstva (\texttt{parallaxEffectX} = 0.45)}
+    \label{fig:unity-parallax-close}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/unity/unity-parallax-far.png}
+    \caption{Vzdálenější parallax vrstva (\texttt{parallaxEffectX} = 0.7)}
+    \label{fig:unity-parallax-far}
+\end{figure}
+
+\textbf{Tlačítková hlasová odezva} -- rozšíření \texttt{UIToolkitAudioBinding} přidává k libovolnému \texttt{VisualElement} metodu \texttt{BindHoverSound()}, která registruje callback na událost \texttt{PointerEnterEvent}. Tím se při najetí kurzoru na libovolný element (nejen tlačítka) přehraje zvuk hover efektu, což výrazně zpříjemňuje navigaci v menu a panelech:
+
+\begin{lstlisting}[caption={UIToolkitAudioBinding -- hover zvuk}, label={lst:uitoolkit-hover}]
+public static class UIToolkitAudioBinding
+{
+    public static void BindHoverSound(this VisualElement ve, System.Action play)
+    {
+        ve.RegisterCallback<PointerEnterEvent>(_ => play());
+    }
+}
+\end{lstlisting}
+
 \section{Tvorba vizuálních efektů}
 \label{sec:tvorba-vizualnich-efektu}
 

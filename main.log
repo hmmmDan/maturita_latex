@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Arch Linux) (preloaded format=xelatex 2026.3.19)  20 MAR 2026 11:41
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Arch Linux) (preloaded format=xelatex 2026.3.19)  20 MAR 2026 12:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -732,12 +732,52 @@ File: img/unity/unity-hud.png Graphic file (type bmp)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[25]) [26]
+
+Overfull \hbox (23.05699pt too wide) in paragraph at lines 358--359
+\TU/TimesNewRoman(0)/m/n/12 s nímž hráč může interagovat stisknutím klávesy \TU/lmtt/m/n/12 E\TU/TimesNewRoman(0)/m/n/12 . Při aktivaci se uloží jako referenční bod v komponentě
+ []
+
+
+Overfull \hbox (9.2209pt too wide) in paragraph at lines 358--359
+\TU/lmtt/m/n/12 DeathZoneSoft\TU/TimesNewRoman(0)/m/n/12 , která po vstupu hráče do svého triggeru okamžitě přesune hráče na pozici posledního
+ []
+
+[25]
+Overfull \hbox (2.5303pt too wide) in paragraph at lines 371--372
+[]\TU/TimesNewRoman(0)/m/n/12 V aktuální implementaci se při \TU/TimesNewRoman(0)/m/it/12 soft death \TU/TimesNewRoman(0)/m/n/12 přesouvá pouze pozice hráče – počet střel i \TU/TimesNewRoman(0)/m/it/12 conversation
+ []
+
+
+Overfull \hbox (9.37505pt too wide) in paragraph at lines 373--374
+[]\TU/TimesNewRoman(0)/b/n/12 Camera Respawn Catch \TU/TimesNewRoman(0)/m/n/12 – komponenta zajišťující plynulé přesunutí kamery k hráči po respawnu.
+ []
+
+
+Overfull \hbox (36.82895pt too wide) in paragraph at lines 375--376
+\TU/TimesNewRoman(0)/m/n/12 rychlostí pohybu jednotlivých vrstev. Sprite renderer na každé vrstvě dostane koeficient \TU/lmtt/m/n/12 parallaxEffectX\TU/TimesNewRoman(0)/m/n/12 ;
+ []
+
+
+Overfull \hbox (1.16411pt too wide) in paragraph at lines 375--376
+\TU/TimesNewRoman(0)/m/n/12 nižší hodnota znamená, že vrstva se pohybuje pomaleji než kamera a působí vzdáleněji. Na obrázcích
+ []
+
+[26]
+File: img/unity/unity-parallax-close.png Graphic file (type bmp)
+<img/unity/unity-parallax-close.png>
+File: img/unity/unity-parallax-far.png Graphic file (type bmp)
+<img/unity/unity-parallax-far.png>
+
+Overfull \hbox (52.77238pt too wide) in paragraph at lines 391--392
+[]\TU/TimesNewRoman(0)/b/n/12 Tlačítková hlasová odezva \TU/TimesNewRoman(0)/m/n/12 – rozšíření \TU/lmtt/m/n/12 UIToolkitAudioBinding \TU/TimesNewRoman(0)/m/n/12 přidává k libovolnému \TU/lmtt/m/n/12 VisualElement
+ []
+
+[27]) [28]
 \openout2 = `Závěr.aux'.
 
  (./Závěr.tex
 Kapitola 6.
-) [27
+) [29
 
 
 
@@ -748,7 +788,7 @@ Kapitola 6.
 
 
 No file main.bbl.
-[28
+[30
 
 
 
@@ -757,20 +797,16 @@ No file main.bbl.
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 20B366872BE16B74AC0B8DDDDC49086D;6550.
  ) 
 Here is how much of TeX's memory you used:
- 14422 strings out of 470191
- 279191 string characters out of 5479697
+ 14485 strings out of 470191
+ 280531 string characters out of 5479697
  1006660 words of memory out of 5000000
- 42766 multiletter control sequences out of 15000+600000
+ 42827 multiletter control sequences out of 15000+600000
  631345 words of font info for 96 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  87i,8n,93p,890b,1772s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (29 pages).
+Output written on main.pdf (31 pages).
