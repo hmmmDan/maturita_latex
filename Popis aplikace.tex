@@ -377,7 +377,7 @@ V aktuální implementaci se při \emph{soft death} přesouvá pouze pozice hrá
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{img/unity/unity-parallax-close.png}
-    \caption{Blizší parallax vrstva (\texttt{parallaxEffectX} = 0.45)}
+    \caption{Bližší parallax vrstva (\texttt{parallaxEffectX} = 0.45)}
     \label{fig:unity-parallax-close}
 \end{figure}
 
@@ -403,14 +403,101 @@ public static class UIToolkitAudioBinding
 \section{Tvorba vizuálních efektů}
 \label{sec:tvorba-vizualnich-efektu}
 
-\subsection{Particle System}
-\label{sec:particle-system}
-
 \subsection{Light 2D}
 \label{sec:light-2d}
 
+Pro osvětlení 2D scény využívám systém \emph{Light 2D}, který je součástí \emph{Universal Render Pipeline}. Na rozdíl od tradičního 3D osvětlení, kde jsou světelné paprsky vysílány ze zdrojů a odrazy osvětlují okolní prostředí, Light 2D funguje invertovaně -- každý objekt ve scéně nese informaci o tom, jak má být osvětlen, a globální světlo tyto vlastnosti zprůměruje a aplikuje. Tento přístup je výrazně méně náročný na výkon a ideální pro stylizované 2D hry.
+
+Jedním z nejdůležitějších prvků osvětlení je \texttt{Light2D} typu \emph{Spot} připojený jako child object k objektu hráče. Toto řešení bylo inspirováno hrou \emph{Ori and the Blind Forest}, kde je postava neustále obklopena jemným světelným polem, které jí umožňuje vidět v temném prostředí. Díky tomu, že je \texttt{GameObject} světla child objectem hráče, automaticky se pohybuje spolu s ním bez nutnosti dalšího kódu.
+
+
+Kromě individuálních zdrojů světla je ve scéně přítomno také \emph{Global Light 2D}, které nastavuje základní intenzitu a barvu osvětlení pro celou scénu. Tím se zajistí, že objekty bez vlastního zdroje světla nejsou zcela ponořeny do tmy, ale zároveň jsou dostatečně kontrastní, aby vynikla atmosféra temnějších částí levelu.
+
+Dalším typem zdroje světla jsou \emph{světlušky} (\emph{Firefly Lights}) v korunách stromů. Každá instance komponenty \texttt{FireflyLight} řídí intenzitu připojeného \texttt{Light2D} pomocí funkce \texttt{Mathf.PingPong}, která vrací hodnotu v rozsahu 0 až 1 tak, že postupně roste a pak zase klesá, dokola -- výsledkem je hladké rozjasňování a zhasínání světla. Každá instance má navíc náhodný \texttt{randomOffset} (viz ukázka kódu), takže jednotlivé světlušky pulzují nezávisle na sobě a vytvářejí dynamičtější a přirozenější efekt:
+
+\begin{lstlisting}[caption={FireflyLight -- pulzující světlo}, label={lst:firefly-light}]
+void Update()
+{
+    float t = Mathf.PingPong(Time.time * speed + randomOffset, 1f);
+    light2D.intensity = Mathf.Lerp(minIntensity, maxIntensity, t);
+}
+\end{lstlisting}
+
+Collectible objekty (\emph{conversation fragments}) rovněž nesou vlastní \texttt{Light2D} zdroj, který je činí vizuálně nápadnými a usnadňuje hráči jejich vyhledávání v prostředí.
+
+Posledním významným případem využití Light 2D je \texttt{PortalActivator}, který při aktivaci portalu postupně zvyšuje intenzitu jeho světla pomocí \texttt{Mathf.Lerp} v čase -- světlo se rozsvítí v průběhu dvou sekund spolu se sprite průhledností a hlasitostí zvuku:
+
+\begin{lstlisting}[caption={PortalActivator -- fade in portalu}, label={lst:portal-light}]
+private IEnumerator FadeInPortalLight()
+{
+    Light2D portalLight = portalVisual.GetComponentInChildren<Light2D>();
+    portalLight.intensity = 0f;
+
+    float elapsed = 0f;
+    while (elapsed < fadeDuration)
+    {
+        elapsed += Time.deltaTime;
+        float progress = elapsed / fadeDuration;
+        portalLight.intensity = Mathf.Lerp(0f, targetLightIntensity, progress);
+        yield return null;
+    }
+    portalLight.intensity = targetLightIntensity;
+}
+\end{lstlisting}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/unity/unity-light-firefly.png}
+    \caption{Světlušky v korunách stromů ve scéně}
+    \label{fig:unity-light-firefly}
+\end{figure}
+
+\subsection{Particle System}
+\label{sec:particle-system}
+
+Systém částic (Particle System) v Unity umožňuje vytvářet efekt velkého množství malých objektů, které se chovají jako tekutina, kouř, jiskry, nebo v tomto případě -- efekt rychlého úskoku. Při provedení \emph{dash} schopnosti je volána statická metoda \texttt{PlayDashEffect()}, která spustí \texttt{ParticleSystem} na aktuální pozici hráče. Metoda \texttt{Play()} automaticky restartuje animaci částic od začátku, takže není třeba částice před novým spuštěním resetovat. Třída \texttt{DashParticles} využívá singleton vzor, takže může být volána odkudkoliv bez nutnosti držet přímou referenci:
+
+\begin{lstlisting}[caption={DashParticles -- spuštění částic}, label={lst:dash-particles}]
+public static void PlayDashEffect(Vector3 position)
+{
+    if (instance != null)
+        instance.TriggerDash(position);
+}
+
+private void TriggerDash(Vector3 position)
+{
+    transform.position = position;
+    dashParticles.Play();
+}
+\end{lstlisting}
+
+Samotný vizuální vzhled částic je definován přímo v Unity editoru v komponentě \texttt{ParticleSystem} -- barva, tvar emitoru, doba životnosti jednotlivých částic a trajektorie jsou nastaveny jako asset a nejsou řízeny kódem.
+
 \subsection{Ostatní efekty}
 \label{sec:ostatni-efekty-vfx}
+
+Dalším vizuálním prvkem je komponenta \texttt{OrbBehavior}, která ovlivňuje chování collectible objektů (CFs). Když se hráč nachází v blízkosti collectible, aktivuje se magnetický efekt -- objekt se pomocí \texttt{Vector3.MoveTowards} přibližuje k hráči, dokud ho není možné sebrat. Pokud se hráč od collectible vzdálí, objekt přejde do režimu idle, kdy jemně klesá a stoupá na vertikální ose pomocí funkce \texttt{Mathf.Sin}:
+
+\begin{lstlisting}[caption={OrbBehavior -- magnet a idle animace}, label={lst:orb-behavior}]
+float dist = Vector2.Distance(transform.position, player.position);
+magnetActive = dist <= magnetRadius;
+
+if (magnetActive)
+{
+    transform.position = Vector3.MoveTowards(
+        transform.position,
+        player.position,
+        pullSpeed * Time.deltaTime
+    );
+}
+else
+{
+    float newY = startY + Mathf.Sin(Time.time * frequency) * amplitude;
+    transform.position = new Vector3(transform.position.x, newY, transform.position.z);
+}
+\end{lstlisting}
+
+Další vizuální efekt, který zasahuje do herní mechaniky, je komponenta \texttt{DeathEffect}. Ta ovlivňuje proměnné \texttt{Volume} profilu v rámci \emph{Universal Render Pipeline} -- konkrétně snižuje saturaci obrazu a aplikuje tmavý overlay, čímž vytváří cinematický efekt úmrtí. Jedná se o vizuální efekt, který je však implementován pomocí post-processing nástrojů, a proto je podrobněji rozebrán v kapitole \ref{sec:post-processing-hry}.
 
 \section{Tvorba zvukových efektů}
 \label{sec:tvorba-zvukovych-efektu}

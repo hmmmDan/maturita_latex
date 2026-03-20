@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Arch Linux) (preloaded format=xelatex 2026.3.19)  20 MAR 2026 12:08
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Arch Linux) (preloaded format=xelatex 2026.3.19)  20 MAR 2026 15:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -772,12 +772,39 @@ Overfull \hbox (52.77238pt too wide) in paragraph at lines 391--392
 []\TU/TimesNewRoman(0)/b/n/12 Tlačítková hlasová odezva \TU/TimesNewRoman(0)/m/n/12 – rozšíření \TU/lmtt/m/n/12 UIToolkitAudioBinding \TU/TimesNewRoman(0)/m/n/12 přidává k libovolnému \TU/lmtt/m/n/12 VisualElement
  []
 
-[27]) [28]
+[27]
+Overfull \hbox (5.01357pt too wide) in paragraph at lines 416--417
+\TU/TimesNewRoman(0)/m/n/12 hladké rozjasňování a zhasínání světla. Každá instance má navíc náhodný \TU/lmtt/m/n/12 randomOffset \TU/TimesNewRoman(0)/m/n/12 (viz ukázka
+ []
+
+[28]
+File: img/unity/unity-light-firefly.png Graphic file (type bmp)
+<img/unity/unity-light-firefly.png>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (22.34732pt too wide) in paragraph at lines 458--459
+\TU/TimesNewRoman(0)/m/n/12 provedení \TU/TimesNewRoman(0)/m/it/12 dash \TU/TimesNewRoman(0)/m/n/12 schopnosti je volána statická metoda \TU/lmtt/m/n/12 PlayDashEffect()\TU/TimesNewRoman(0)/m/n/12 , která spustí \TU/lmtt/m/n/12 ParticleSystem
+ []
+
+[29]
+Overfull \hbox (14.44974pt too wide) in paragraph at lines 474--475
+[]\TU/TimesNewRoman(0)/m/n/12 Samotný vizuální vzhled částic je definován přímo v Unity editoru v komponentě \TU/lmtt/m/n/12 ParticleSystem
+ []
+
+[30]
+Overfull \hbox (13.9156pt too wide) in paragraph at lines 500--501
+[]\TU/TimesNewRoman(0)/m/n/12 Další vizuální efekt, který zasahuje do herní mechaniky, je komponenta \TU/lmtt/m/n/12 DeathEffect\TU/TimesNewRoman(0)/m/n/12 . Ta ovlivňuje
+ []
+
+) [31]
 \openout2 = `Závěr.aux'.
 
  (./Závěr.tex
 Kapitola 6.
-) [29
+) [32
 
 
 
@@ -788,7 +815,7 @@ Kapitola 6.
 
 
 No file main.bbl.
-[30
+[33
 
 
 
@@ -798,15 +825,15 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 20B366872BE16B74AC0B8DDDDC49086D;6550.
+(rerunfilecheck)             Checksum: D6851B5771FA1DBCBE06014DAAA7F481;6550.
  ) 
 Here is how much of TeX's memory you used:
- 14485 strings out of 470191
- 280531 string characters out of 5479697
+ 14591 strings out of 470191
+ 282204 string characters out of 5479697
  1006660 words of memory out of 5000000
- 42827 multiletter control sequences out of 15000+600000
+ 42932 multiletter control sequences out of 15000+600000
  631345 words of font info for 96 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  87i,8n,93p,890b,1772s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (31 pages).
+Output written on main.pdf (34 pages).
