@@ -63,7 +63,22 @@
   {\thesubsection}
   {1em}
   {}
-  
+
+\titleformat{\paragraph}
+  {\normalfont\normalsize\bfseries}
+  {\theparagraph}
+  {0.5em}
+  {}
+
+\titlespacing*{\paragraph}
+  {0pt}
+  {6pt}
+  {6pt}
+
+\makeatletter
+\@addtoreset{paragraph}{subsubsection}
+\makeatother
+   
 \titlespacing*{\chapter}
   {0pt}
   {0pt}

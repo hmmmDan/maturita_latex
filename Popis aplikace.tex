@@ -505,6 +505,250 @@ Další vizuální efekt, který zasahuje do herní mechaniky, je komponenta \te
 \subsection{Audio systém}
 \label{sec:audio-system}
 
+Práce se zvukem ve hrách je komplexní téma, které zahrnuje správu mnoha souběžných zvukových stop, jejich prostorové umístění, míchání hlasitostí jednotlivých kanálů a plynulé přechody mezi stavy. V rámci vývoje \emph{Surreal Bowling: Salvation Path} jsem prošel evolucí od čistě Unity AudioMixer řešení k profesionálnímu nástroji FMOD Studio, což přineslo výrazné zlepšení v organizaci, flexibilitě i kvalitě výsledného audia.
+
+%%%%% ---- PŮVODNÍ ŘEŠENÍ ---- %%%%%
+\subsubsection{Původní řešení -- Unity AudioMixer}
+\label{sec:puvodni-audiomixer}
+
+V původní verzi projektu byl audio systém postaven na Unity vestavěném \texttt{AudioMixeru} a centralizovaném skriptu \texttt{AudioManager.cs}, který využíval singleton vzor. Tento manažer spravoval tři hlavní zvukové kanály -- \emph{Music}, \emph{Diegetic} a \emph{Ambience} -- a byl perzistentní mezi scénami díky metodě \texttt{DontDestroyOnLoad}.
+
+\paragraph{Hierarchie AudioMixeru}
+Hierarchie AudioMixeru začíná na kořenovém kanálu \emph{Master}, pod nímž se nacházejí dva hlavní kanály: \emph{Music\_Player} a \emph{SFX\_Player} (viz obrázek \ref{fig:unity-audiomixer}). Kanál \emph{Music\_Player} obsahuje podřízený kanál \emph{Music\_Pause}, který řídí hlasitost hudby při pozastavení hry, a pod ním \emph{Music\_Internal}, kam směřuje samotný \texttt{AudioSource} přehrávající hudbu. Kanál \emph{SFX\_Player} se pak větví na \emph{SFX\_UI} pro uživatelské rozhraní, \emph{SFX\_Pause} pro diegetické zvuky při pauze, \emph{SFX\_Internal} jako centrální kanál pro všechny SFX, a ten se dále dělí na \emph{SFX\_Diegetic\_Ambience} (environmentální ambientní smyčky) a \emph{SFX\_Diegetic\_Player} (zvuky vztahující se k hráči).
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{img/unity/unity-audiomixer.png}
+    \caption{Struktura Unity AudioMixeru -- hierarchie kanálů}
+    \label{fig:unity-audiomixer}
+\end{figure}
+
+\paragraph{Plynulé přechody pomocí \texttt{Lerp}}
+Klíčovou funkcí původního systému byla metoda \texttt{FadeAudio()}, která zajišťovala plynulé přechody hlasitosti pomocí lineární interpolace (\texttt{Mathf.Lerp}) mezi aktuální a cílovou hodnotou v decibelech:
+
+\begin{lstlisting}[caption={AudioManager -- plynulý přechod hlasitosti pomocí Lerp}, label={lst:fade-audio-lerp}]
+private IEnumerator FadeAudio(string mixerParam, float targetDB, float fadeDuration)
+{
+    mixer.GetFloat(mixerParam, out float startDB);
+
+    float elapsed = 0f;
+    while (elapsed < fadeDuration)
+    {
+        elapsed += Time.unscaledDeltaTime;
+        float t = elapsed / fadeDuration;
+        mixer.SetFloat(mixerParam, Mathf.Lerp(startDB, targetDB, t));
+        yield return null;
+    }
+    mixer.SetFloat(mixerParam, targetDB);
+}
+\end{lstlisting}
+
+Tato korutina byla využívána pro všechny operace vyžadující plynulý přechod -- fade-in a fade-out hudby při přechodu mezi scénami, pozastavení hudby při \texttt{Time.timeScale = 0f}, nebo ztišení diegetických zvuků při úmrtí hráče (\texttt{MuteDiegetic()}). Hodnota \texttt{Time.unscaledDeltaTime} zajišťuje, že fade proběhne v reálném čase i při zastaveném herním čase, což je kritické pro správné fungování při pauze.
+
+Metoda \texttt{PlaySound()} přijímala \texttt{SoundType} enum, pole \texttt{AudioClipů} a přehrávala náhodný klip z pole. Tím se docílilo variace zvuků -- například pro footsteps existovaly tři různé zvukové soubory, z nichž byl pokaždé náhodně vybrán jeden:
+
+\begin{lstlisting}[caption={AudioManager -- přehrání zvuku s náhodnou variací}, label={lst:playsound-oldsystem}]
+public static void PlaySound(SoundType sound, AudioSource audioSource, float volume = 1f)
+{
+    if (instance == null || audioSource == null) return;
+
+    int soundIndex = (int)sound;
+    var clips = instance.soundList[soundIndex].Sounds;
+    var clip = clips[UnityEngine.Random.Range(0, clips.Length)];
+    audioSource.PlayOneShot(clip, volume);
+}
+\end{lstlisting}
+
+\paragraph{Nevýhody původního přístupu}
+Nevýhodou tohoto přístupu byla centralizace veškeré logiky do jednoho skriptu a absence nativní podpory pro pokročilé zvukové techniky jako je crossfading, shuffle (náhodný výběr z více variant s garantovanou unikátností) nebo prostorové zvuky. Proto jsem při přechodu na nejnovější verzi zvolil profesionální nástroj FMOD Studio.
+
+%%%%% ---- FMOD STUDIO ---- %%%%%
+\subsubsection{FMOD Studio}
+\label{sec:fmod-studio}
+
+FMOD Studio je profesionální zvukový middleware, který umožňuje návrh zvukového obsahu v dedikovaném editoru a následnou integraci do Unity. Pro každou akci ve hře lze vytvořit \emph{Event} -- kontejner, který může obsahovat jeden nebo více zvukových klipů, efekty (EQ, komprese, reverb), mixovací nastavení i parametrické ovladače. FMOD projekt (\texttt{FMOD\_SB.fspro}) obsahuje tři hlavní \emph{Banky}: \emph{Master}, \emph{Music} a \emph{SFX}. Master bank obsahuje globální nastavení a mixovací cesty (busy), Music bank obsahuje všechny hudební stopy, SFX bank pak veškeré jednotlivé zvukové efekty.
+
+Mixovací struktura v FMOD je podobná struktuře původního Unity AudioMixeru -- existují čtyři hlavní busy: \emph{Master}, \emph{Music}, \emph{Ambience} a \emph{SFX}. Hudba a ambience jsou kontinuální smyčky řízené skriptem, zatímco SFX bus obsahuje všechny jednorázové zvukové efekty.
+
+\paragraph{Architektura FMOD pluginu pro Unity}
+Integrace FMOD do Unity je zajištěna oficálním FMOD for Unity pluginem, který přidává do Unity editoru několik komponent a editorových oken. Základní architektura FMOD v Unity se skládá z několika vrstev:
+
+\begin{itemize}
+    \item \emph{RuntimeManager} -- inicializuje FMOD runtime při startu aplikace
+    \item \emph{StudioEventEmitter} -- komponenta připojená k \texttt{GameObjectu}, která přehrává FMOD eventy na základě herních událostí
+    \item \emph{EventReference} -- reference na konkrétní FMOD event, která se binduje v Inspectoru
+    \item \emph{EventHandler} -- abstraktní základní třída, která mapuje Unity události (Start, OnDestroy, OnEnable, kolize, triggery) na FMOD akce
+\end{itemize}
+
+\paragraph{Komponenta StudioEventEmitter a EmitterGameEvent}
+Komponenta \texttt{StudioEventEmitter} je jádrem FMOD integrace v Unity. Její klíčové vlastnosti jsou:
+
+\begin{itemize}
+    \item \texttt{EventReference} -- odkaz na FMOD event vytvořený v FMOD Studio
+    \item \texttt{EventPlayTrigger} / \texttt{EventStopTrigger} -- určují, jaká Unity událost spustí/zastaví přehrávání
+    \item \texttt{AllowFadeout} -- zda má event při zastavení použít fade-out nebo se zastavit okamžitě
+    \item \texttt{TriggerOnce} -- zda se event může přehrát pouze jednou
+    \item \texttt{Params} -- pole FMOD parametrů, které lze nastavit
+\end{itemize}
+
+Enum \texttt{EmitterGameEvent} definuje všechny podporované Unity události, na které lze event navázat:
+
+\begin{itemize}
+    \item \texttt{ObjectStart} / \texttt{ObjectDestroy} / \texttt{ObjectEnable} / \texttt{ObjectDisable}
+    \item \texttt{TriggerEnter} / \texttt{TriggerExit} a jejich 2D varianty
+    \item \texttt{CollisionEnter} / \texttt{CollisionExit} a jejich 2D varianty
+    \item \texttt{UIMouseEnter} / \texttt{UIMouseExit} / \texttt{UIMouseDown} / \texttt{UIMouseUp}
+\end{itemize}
+
+Základní třída \texttt{EventHandler} (ze které \texttt{StudioEventEmitter} dědí) registruje callbacky na tyto Unity události a při jejich vyvolání volá \texttt{HandleGameEvent()}, která porovnává typ události s nastaveným \texttt{EventPlayTrigger} a \texttt{EventStopTrigger}. Při shodě pak zavolá \texttt{Play()} nebo \texttt{Stop()} na FMOD instanci.
+
+\paragraph{FMODEvents -- centrální registr eventů}
+Propojení Unity a FMOD na úrovni kódu zajišťuje singleton \texttt{FMODEvents.cs}, který drží téměř všechny \texttt{EventReference} na jednom místě:
+
+\begin{lstlisting}[caption={FMODEvents -- centrální registr téměř všech FMOD eventů}, label={lst:fmodevents}]
+public class FMODEvents : MonoBehaviour
+{
+    [field: Header("Music")]
+    [field: SerializeField] public EventReference music { get; private set; }
+
+    [field: Header("UI")]
+    [field: SerializeField] public EventReference buttonClick { get; private set; }
+    [field: SerializeField] public EventReference pause { get; private set; }
+
+    [field: Header("Diegetic/Player")]
+    [field: SerializeField] public EventReference footsteps { get; private set; }
+    [field: SerializeField] public EventReference jump { get; private set; }
+    [field: SerializeField] public EventReference dash { get; private set; }
+
+    public static FMODEvents instance { get; private set; }
+}
+\end{lstlisting}
+
+Jednotlivé FMOD eventy jsou v tomto skriptu definovány jako serializovatelná pole, která lze nastavit v Unity Inspectoru. Tím se odděluje herní logika od konkrétního zvukového obsahu -- změna zvuku nevyžaduje úpravu kódu, pouze přebindování \texttt{EventReference} v editoru.
+
+%%%%% ---- ARCHITEKTURA PŘEHRÁVÁNÍ ---- %%%%%
+\subsubsection{Architektura přehrávání zvuků}
+\label{sec:architektura-prehravani}
+
+V nejnovější verzi projektu existují dva hlavní, odlišné přístupy k přehrávání zvuků, které odrážejí různou povahu zvukových zdrojů.
+
+\paragraph{PlayOneShot -- jednorázové zvuky}
+První přístup využívá \texttt{PlayOneShot()} -- metodu, která vytvoří dočasnou FMOD instanci, přehraje zvuk na zadané pozici a instanci ihned uvolní. Tento model je ideální pro krátké, jednorázové zvuky, u kterých nepotřebujeme sledovat jejich životní cyklus. Příkladem je smrt hráče, kde \texttt{PlayerDeath.cs} volá:
+
+\begin{lstlisting}[caption={PlayOneShot -- jednorázový zvuk}, label={lst:playoneshot}]
+AudioManager.instance.PlayOneShot(FMODEvents.instance.death, this.transform.position);
+\end{lstlisting}
+
+\paragraph{StudioEventEmitter -- looping objekty}
+Druhý přístup využívá \texttt{StudioEventEmitter} komponentu připojenou přímo k \texttt{GameObjectu}. Tento model je vhodný pro zvuky, které jsou vázány na životní cyklus objektu nebo na jeho herní stav. Pro \emph{looping} objekty, jako je valicí se \emph{Ball}, je na tomto \texttt{GameObjectu} v prefabu připojena komponenta \texttt{StudioEventEmitter} s nastavením \texttt{EventPlayTrigger = ObjectStart} a \texttt{EventStopTrigger = ObjectDestroy}. FMOD event se tak spustí při vytvoření objektu a hraje v nekonečné smyčce, dokud objekt není zničen (např. při dopadu do destrukční zóny), pak se event ukončí s fade-outem.
+
+\paragraph{One-shot objekty s vlastním emitorem}
+Pro \emph{one-shot objekty}, které mají svůj vlastní event emitor, existují dva přístupy. Prvním je vázání na \texttt{ObjectDestroy} -- když je \texttt{GameObject} zničen (například při sebrání collectible), FMOD event se přehraje. Typickým příkladem je \texttt{Collectible} (CF -- Conversation Fragment), kde druhý \texttt{StudioEventEmitter} na objektu přehrává zvuk sebrání:
+
+\begin{lstlisting}[caption={Collectible prefab -- dva FMOD emitory}, label={lst:collectible-emitters}]
+// Emitter 1 -- idle/ambient zvuk
+StudioEventEmitter:
+  EventReference: event:/SFX/Diegetic/Environment/CF/CFIdle
+  EventPlayTrigger: ObjectStart
+  EventStopTrigger: ObjectDestroy
+
+// Emitter 2 -- zvuk při sebrání
+StudioEventEmitter:
+  EventReference: event:/SFX/Diegetic/Environment/CF/CFCollect
+  EventPlayTrigger: ObjectDestroy
+  EventStopTrigger: None
+\end{lstlisting}
+
+Na objektu CF jsou tedy dva \texttt{StudioEventEmitter} komponenty -- první se spustí při vytvoření objektu a vydává ambientní zvuk, druhý se spustí až při zničení objektu (sebrání hráčem). Druhý přístup pro one-shot objekty spočívá ve využití \texttt{RuntimeManager.PlayOneShot()} přímo v kódu, což je vhodné pro situace, kdy chceme mít plnou kontrolu nad timingem přehrávání.
+
+%%%%% ---- VAZBA ZVUKŮ NA ANIMACE ---- %%%%%
+\subsubsection{Vazba zvuků na animace}
+\label{sec:vazba-zvuku-na-animace}
+
+Zvuky je možné navázat přímo na animace pomocí Unity \emph{Animation Events}. Tato technika umožňuje, aby v konkrétním snímku animace byla zavolána libovolná metoda na libovolném skriptu připojeném k \texttt{GameObjectu}. Příkladem jsou kroky hráče -- animace \texttt{player\_run.anim} obsahuje dva Animation Events:
+
+\begin{lstlisting}[caption={Animation Event v player\_run.anim -- PlayFootsteps}, label={lst:anim-event-footsteps}]
+m_Events:
+  - time: 0.1
+    functionName: PlayFootsteps
+    objectReferenceParameter: {fileID: 0}
+  - time: 0.33333334
+    functionName: PlayFootsteps
+    objectReferenceParameter: {fileID: 0}
+\end{lstlisting}
+
+Tyto events volají metodu \texttt{PlayFootsteps()} na skriptu \texttt{PlayerMovementAudio.cs}, který je připojen k objektu hráče:
+
+\begin{lstlisting}[caption={PlayerMovementAudio -- obsluha footsteps a jump}, label={lst:playermovementaudio}]
+public class PlayerMovementAudio : MonoBehaviour
+{
+    public void PlayFootsteps()
+    {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.footsteps, transform.position);
+    }
+
+    public void PlayJump()
+    {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.jump, transform.position);
+    }
+}
+\end{lstlisting}
+
+Metoda \texttt{PlayFootsteps()} je volána ve dvou snímcích běžící animace (na 0.1 s a 0.333 s), což odpovídá přirozenému rytmu běhu. Podobně animace \texttt{player\_jump.anim} obsahuje Animation Event na snímku 0s, který volá \texttt{PlayJump()}. Výhodou tohoto přístupu je dokonalá synchronizace zvuku s animací bez nutnosti sledovat stav animace v kódu.
+
+%%%%% ---- MUSIC A AMBIENCE ---- %%%%%
+\subsubsection{Hudba a Ambience}
+\label{sec:hudba-a-ambience}
+
+Hudba a ambience jsou v FMOD řešeny jako kontinuální eventy, které se nespouštějí přes \texttt{PlayOneShot()}, ale přes správu \emph{EventInstance}. Nový \texttt{AudioManager.cs} vytváří při startu dvě dlouhožijící instance -- jednu pro hudbu a jednu pro ambience:
+
+\begin{lstlisting}[caption={AudioManager -- správa hudby a ambience pomocí EventInstance}, label={lst:audio-manager-music}]
+public class AudioManager : MonoBehaviour
+{
+    private EventInstance musicEventInstance;
+    private EventInstance ambienceEventInstance;
+    private List<EventInstance> eventInstances;
+
+    private void Start()
+    {
+        InitializeAmbience(FMODEvents.instance.ambience);
+        InitializeMusic(FMODEvents.instance.music);
+    }
+
+    private void InitializeMusic(EventReference musicEventReference)
+    {
+        musicEventInstance = CreateEventInstance(musicEventReference);
+        musicEventInstance.start();
+    }
+}
+\end{lstlisting}
+
+Pro přepínání hudby a ambience mezi scénami využívám systémy \texttt{MusicChangeTrigger} a \newline \texttt{AmbienceChangeTrigger}, které reagují na událost \texttt{SceneManager.sceneLoaded}. Každá scéna má definovanou odpovídající hodnotu parametru:
+
+\begin{lstlisting}[caption={SceneMusic enum -- mapování scén na FMOD parametry}, label={lst:scenemusic-enum}]
+public enum SceneMusic
+{
+    MAIN_MENU = 0,
+    LEVEL_1 = 3,
+    LEVEL_2 = 7
+}
+\end{lstlisting}
+
+V FMOD Studiu je na hudebním eventu vytvořen diskrétní \texttt{Parameter} s názvem \texttt{SceneMusic}. Hudební event obsahuje pro každou hodnotu parametru navázanou jinou hudební stopu -- při změně parametru na hodnotu 3 se crossfadem začne přehrávat hudba pro Level 1, při změně na 0 hudba pro MainMenu. Unity skript pak volá:
+
+\begin{lstlisting}[caption={MusicChangeTrigger -- změna hudby při načtení scény}, label={lst:musicchangetrigger}]
+public void SetSceneMusic(SceneMusic scene)
+{
+    if (!musicEventInstance.isValid()) return;
+
+    float targetValue = (float)scene;
+    musicEventInstance.setParameterByName("SceneMusic", targetValue);
+}
+\end{lstlisting}
+
+Systém \texttt{AmbienceChangeTrigger} funguje identicky, pouze s enumem \texttt{SceneAmbience} a FMOD parametrem \texttt{SceneAmbience}. Toto řešení má výhodu v tom, že oba zvukové systémy jsou perzistentní mezi scénami a přechody jsou plynulé, protože crossfading řeší FMOD interně na základě nastavení parametru. Technicky je efekt plynulého přechodu realizován pomocí automatizace hlasitosti -- v FMOD Studiu je v \emph{Parameter Sheet} každé hudební stopy nastaven AHDSR (Attack-Hold-Decay-Sustain-Release) envelope, konkrétně modul \emph{Volume} s automatizační křivkou, která definuje hlasitostní křivku pro každou hodnotu parametru \texttt{SceneMusic} nebo \texttt{SceneAmbience}. Když skript změní hodnotu parametru, FMOD interpoluje mezi těmito automatizačními body a výsledkem je hladký crossfade mezi jednotlivými stopami bez nutnosti jakéhokoliv kódu navíc.
+
+
 \subsection{Tvorba v FL Studio}
 \label{sec:tvorba-v-fl-studio}
 

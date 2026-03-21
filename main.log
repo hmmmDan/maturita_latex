@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Arch Linux) (preloaded format=xelatex 2026.3.19)  20 MAR 2026 15:10
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Arch Linux) (preloaded format=xelatex 2026.3.19)  21 MAR 2026 13:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -362,29 +362,33 @@ File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
- (./main.aux (./Úvod.aux) (./Terminologie.aux) (./Použitý framework aplikace.aux) (./Celková koncepce řešení.aux) (./Popis aplikace.aux) (./Závěr.aux))
+ (./main.aux (./Úvod.aux) (./Terminologie.aux) (./Použitý framework aplikace.aux) (./Celková koncepce řešení.aux) (./Popis aplikace.aux
+
+LaTeX Warning: Label `sec:fmod-studio' multiply defined.
+
+) (./Závěr.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
 
 Package fontspec Info: 
 (fontspec)             Adjusting the maths setup (use [no-math] to avoid
@@ -392,57 +396,57 @@ Package fontspec Info:
 
 \symlegacymaths=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 89.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 89.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 89.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 89.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 89.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 89.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 89.
-LaTeX Font Info:    Redeclaring math accent \check on input line 89.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 89.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 89.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 89.
-LaTeX Font Info:    Redeclaring math symbol \colon on input line 89.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 89.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 89.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 89.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 89.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 89.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 89.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 89.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 89.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 89.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 89.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 89.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 89.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 89.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 104.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 104.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 104.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 104.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 104.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 104.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 104.
+LaTeX Font Info:    Redeclaring math accent \check on input line 104.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 104.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 104.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 104.
+LaTeX Font Info:    Redeclaring math symbol \colon on input line 104.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 104.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 104.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 104.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 104.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 104.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 104.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 104.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 104.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 104.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 104.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 104.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 104.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 104.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 89.
+(Font)              `operators' in the math version `normal' on input line 104.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/TimesNewRoman(0)/m/n on input line 89.
+(Font)                  OT1/cmr/m/n --> TU/TimesNewRoman(0)/m/n on input line 104.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 89.
+(Font)              `operators' in the math version `bold' on input line 104.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/TimesNewRoman(0)/m/n on input line 89.
+(Font)                  OT1/cmr/bx/n --> TU/TimesNewRoman(0)/m/n on input line 104.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  TU/TimesNewRoman(0)/m/n --> TU/TimesNewRoman(0)/m/n on input line 89.
+(Font)                  TU/TimesNewRoman(0)/m/n --> TU/TimesNewRoman(0)/m/n on input line 104.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/TimesNewRoman(0)/m/it on input line 89.
+(Font)                  OT1/cmr/m/it --> TU/TimesNewRoman(0)/m/it on input line 104.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/TimesNewRoman(0)/b/n on input line 89.
+(Font)                  OT1/cmr/bx/n --> TU/TimesNewRoman(0)/b/n on input line 104.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/Arial(0)/m/n on input line 89.
+(Font)                  OT1/cmss/m/n --> TU/Arial(0)/m/n on input line 104.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 89.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 104.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  TU/TimesNewRoman(0)/m/n --> TU/TimesNewRoman(0)/b/n on input line 89.
+(Font)                  TU/TimesNewRoman(0)/m/n --> TU/TimesNewRoman(0)/b/n on input line 104.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/TimesNewRoman(0)/b/it on input line 89.
+(Font)                  OT1/cmr/bx/it --> TU/TimesNewRoman(0)/b/it on input line 104.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/Arial(0)/b/n on input line 89.
+(Font)                  OT1/cmss/bx/n --> TU/Arial(0)/b/n on input line 104.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 89.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 104.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -479,7 +483,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \c@lstlisting=\count320
-Package hyperref Info: Link coloring ON on input line 89.
+Package hyperref Info: Link coloring ON on input line 104.
 (./main.out) (./main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
@@ -540,7 +544,7 @@ Overfull \hbox (7.55669pt too wide) in paragraph at lines 10--11
  []
 
 )
-Overfull \hbox (3.55473pt too wide) in paragraph at lines 13--139
+Overfull \hbox (3.55473pt too wide) in paragraph at lines 13--154
 \TU/TimesNewRoman(0)/m/n/12 Rozhraní Unity enginu, ve kterém se pracuje většinu času při vývoji videohry (podobně jako kreativní
  []
 
@@ -592,7 +596,7 @@ Overfull \hbox (10.23833pt too wide) in paragraph at lines 50--51
  []
 
 )
-Overfull \hbox (4.58403pt too wide) in paragraph at lines 52--140
+Overfull \hbox (4.58403pt too wide) in paragraph at lines 52--155
 \TU/TimesNewRoman(0)/m/n/12 Thinking Studio, na kterém jsou všichni členové týmu i spolupracující zvenčí. Discord nám umožňuje
  []
 
@@ -799,12 +803,107 @@ Overfull \hbox (13.9156pt too wide) in paragraph at lines 500--501
 []\TU/TimesNewRoman(0)/m/n/12 Další vizuální efekt, který zasahuje do herní mechaniky, je komponenta \TU/lmtt/m/n/12 DeathEffect\TU/TimesNewRoman(0)/m/n/12 . Ta ovlivňuje
  []
 
-) [31]
+
+Overfull \hbox (7.05179pt too wide) in paragraph at lines 508--509
+\TU/TimesNewRoman(0)/m/n/12 stavy. V rámci vývoje \TU/TimesNewRoman(0)/m/it/12 Surreal Bowling: Salvation Path \TU/TimesNewRoman(0)/m/n/12 jsem prošel evolucí od čistě Unity AudioMixer
+ []
+
+
+Overfull \hbox (7.67484pt too wide) in paragraph at lines 508--509
+\TU/TimesNewRoman(0)/m/n/12 řešení k profesionálnímu nástroji FMOD Studio, což přineslo výrazné zlepšení v organizaci, flexibilitě
+ []
+
+
+Overfull \hbox (31.20758pt too wide) in paragraph at lines 514--515
+\TU/TimesNewRoman(0)/m/n/12 V původní verzi projektu byl audio systém postaven na Unity vestavěném \TU/lmtt/m/n/12 AudioMixeru \TU/TimesNewRoman(0)/m/n/12 a centralizovaném
+ []
+
+
+Overfull \hbox (7.77231pt too wide) in paragraph at lines 514--515
+\TU/TimesNewRoman(0)/m/n/12 skriptu \TU/lmtt/m/n/12 AudioManager.cs\TU/TimesNewRoman(0)/m/n/12 , který využíval singleton vzor. Tento manažer spravoval tři hlavní zvukové
+ []
+
+
+Overfull \hbox (28.93895pt too wide) in paragraph at lines 514--515
+\TU/TimesNewRoman(0)/m/n/12 kanály – \TU/TimesNewRoman(0)/m/it/12 Music\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/it/12 Diegetic \TU/TimesNewRoman(0)/m/n/12 a \TU/TimesNewRoman(0)/m/it/12 Ambience \TU/TimesNewRoman(0)/m/n/12 – a byl perzistentní mezi scénami díky metodě \TU/lmtt/m/n/12 DontDestroyOnLoad\TU/TimesNewRoman(0)/m/n/12 . 
+ []
+
+[31]
+File: img/unity/unity-audiomixer.png Graphic file (type bmp)
+<img/unity/unity-audiomixer.png>
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <12> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 526.
+ [32]
+Overfull \hbox (18.86482pt too wide) in paragraph at lines 546--547
+\TU/TimesNewRoman(0)/m/n/12 diegetických zvuků při úmrtí hráče (\TU/lmtt/m/n/12 MuteDiegetic()\TU/TimesNewRoman(0)/m/n/12 ). Hodnota \TU/lmtt/m/n/12 Time.unscaledDeltaTime \TU/TimesNewRoman(0)/m/n/12 zajišťuje,
+ []
+
+[33]
+Overfull \hbox (11.41435pt too wide) in paragraph at lines 588--589
+[]\TU/lmtt/m/n/12 EventPlayTrigger \TU/TimesNewRoman(0)/m/n/12 / \TU/lmtt/m/n/12 EventStopTrigger \TU/TimesNewRoman(0)/m/n/12 – určují, jaká Unity událost spustí/zastaví přehrávání 
+ []
+
+
+Overfull \hbox (5.55092pt too wide) in paragraph at lines 603--604
+\TU/TimesNewRoman(0)/m/n/12 s nastaveným \TU/lmtt/m/n/12 EventPlayTrigger \TU/TimesNewRoman(0)/m/n/12 a \TU/lmtt/m/n/12 EventStopTrigger\TU/TimesNewRoman(0)/m/n/12 . Při shodě pak zavolá \TU/lmtt/m/n/12 Play() \TU/TimesNewRoman(0)/m/n/12 nebo \TU/lmtt/m/n/12 Stop()
+ []
+
+[34]
+Overfull \hbox (11.0806pt too wide) in paragraph at lines 636--637
+\TU/TimesNewRoman(0)/m/n/12 u kterých nepotřebujeme sledovat jejich životní cyklus. Příkladem je smrt hráče, kde \TU/lmtt/m/n/12 PlayerDeath.cs
+ []
+
+[35]
+Overfull \hbox (3.4271pt too wide) in paragraph at lines 643--644
+\TU/TimesNewRoman(0)/m/n/12 Druhý přístup využívá \TU/lmtt/m/n/12 StudioEventEmitter \TU/TimesNewRoman(0)/m/n/12 komponentu připojenou přímo k \TU/lmtt/m/n/12 GameObjectu\TU/TimesNewRoman(0)/m/n/12 . Tento
+ []
+
+
+Overfull \hbox (63.6468pt too wide) in paragraph at lines 646--647
+\TU/TimesNewRoman(0)/m/n/12 přehraje. Typickým příkladem je \TU/lmtt/m/n/12 Collectible \TU/TimesNewRoman(0)/m/n/12 (CF – Conversation Fragment), kde druhý \TU/lmtt/m/n/12 StudioEventEmitter
+ []
+
+
+Overfull \hbox (2.36333pt too wide) in paragraph at lines 668--669
+\TU/TimesNewRoman(0)/m/n/12 Zvuky je možné navázat přímo na animace pomocí Unity \TU/TimesNewRoman(0)/m/it/12 Animation Events\TU/TimesNewRoman(0)/m/n/12 . Tato technika umožňuje,
+ []
+
+
+Overfull \hbox (3.23442pt too wide) in paragraph at lines 668--669
+\TU/TimesNewRoman(0)/m/n/12 aby v konkrétním snímku animace byla zavolána libovolná metoda na libovolném skriptu připojeném
+ []
+
+[36]
+Overfull \hbox (31.47577pt too wide) in paragraph at lines 703--704
+\TU/TimesNewRoman(0)/m/n/12 Hudba a ambience jsou v FMOD řešeny jako kontinuální eventy, které se nespouštějí přes \TU/lmtt/m/n/12 PlayOneShot()\TU/TimesNewRoman(0)/m/n/12 ,
+ []
+
+[37]
+Overfull \hbox (6.98723pt too wide) in paragraph at lines 749--750
+[]\TU/TimesNewRoman(0)/m/n/12 Systém \TU/lmtt/m/n/12 AmbienceChangeTrigger \TU/TimesNewRoman(0)/m/n/12 funguje identicky, pouze s enumem \TU/lmtt/m/n/12 SceneAmbience \TU/TimesNewRoman(0)/m/n/12 a FMOD
+ []
+
+
+Overfull \hbox (6.74825pt too wide) in paragraph at lines 749--750
+\TU/TimesNewRoman(0)/m/n/12 parametrem \TU/lmtt/m/n/12 SceneAmbience\TU/TimesNewRoman(0)/m/n/12 . Toto řešení má výhodu v tom, že oba zvukové systémy jsou perzistentní
+ []
+
+
+Overfull \hbox (17.21684pt too wide) in paragraph at lines 749--750
+\TU/TimesNewRoman(0)/m/n/12 - Sustain-- Release) envelope, konkrétně modul \TU/TimesNewRoman(0)/m/it/12 Volume \TU/TimesNewRoman(0)/m/n/12 s automatizační křivkou, která definuje hlasitostní
+ []
+
+
+Overfull \hbox (9.75137pt too wide) in paragraph at lines 749--750
+\TU/TimesNewRoman(0)/m/n/12 křivku pro každou hodnotu parametru \TU/lmtt/m/n/12 SceneMusic \TU/TimesNewRoman(0)/m/n/12 nebo \TU/lmtt/m/n/12 SceneAmbience\TU/TimesNewRoman(0)/m/n/12 . Když skript změní hodnotu
+ []
+
+[38]) [39]
 \openout2 = `Závěr.aux'.
 
  (./Závěr.tex
 Kapitola 6.
-) [32
+) [40
 
 
 
@@ -815,7 +914,7 @@ Kapitola 6.
 
 
 No file main.bbl.
-[33
+[41
 
 
 
@@ -824,16 +923,26 @@ No file main.bbl.
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D6851B5771FA1DBCBE06014DAAA7F481;6550.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 85752EB40821C079DB17CC88F7367261;6551
+(rerunfilecheck)             After:  8228FD379F6670BAFC3CA0234669464A;6551.
  ) 
 Here is how much of TeX's memory you used:
- 14591 strings out of 470191
- 282204 string characters out of 5479697
- 1006660 words of memory out of 5000000
- 42932 multiletter control sequences out of 15000+600000
- 631345 words of font info for 96 fonts, out of 8000000 for 9000
+ 14780 strings out of 470191
+ 285265 string characters out of 5479697
+ 1018660 words of memory out of 5000000
+ 43119 multiletter control sequences out of 15000+600000
+ 631353 words of font info for 97 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 87i,8n,93p,890b,1772s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 87i,8n,93p,967b,1772s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (34 pages).
+Output written on main.pdf (42 pages).
