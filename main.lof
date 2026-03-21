@@ -15,8 +15,8 @@
 \contentsline {figure}{\numberline {5.10}{\ignorespaces \xpg@aux {}{czech}\ignorespaces Struktura Unity AudioMixeru -- hierarchie kanálů}}{32}{figure.5.10}%
 \contentsline {figure}{\numberline {5.11}{\ignorespaces \xpg@aux {}{czech}\ignorespaces FMOD Studio -- prostředí editoru s otevřeným eventem ButtonClick}}{34}{figure.5.11}%
 \contentsline {figure}{\numberline {5.12}{\ignorespaces \xpg@aux {}{czech}\ignorespaces Unity editor -- FMOD Integration Settings}}{35}{figure.5.12}%
-\contentsline {figure}{\numberline {5.13}{\ignorespaces \xpg@aux {}{czech}\ignorespaces Dvě komponenty \texttt {StudioEventEmitter} připojené k objektu CF -- horní emitor řídí idle zvuk (ObjectStart), spodní emitor řídí zvuk při sebrání (ObjectDestroy)}}{38}{figure.5.13}%
-\contentsline {figure}{\numberline {5.14}{\ignorespaces \xpg@aux {}{czech}\ignorespaces Animation Events v Unity Editoru -- na časové ose běžící animace jsou viditelné značky volající metodu \texttt {PlayFootsteps()} v příslušných framech}}{39}{figure.5.14}%
-\contentsline {figure}{\numberline {5.15}{\ignorespaces \xpg@aux {}{czech}\ignorespaces FMOD Studio -- multiinstrument footsteps s aktivním shuffle módem pro náhodný, ale unikátní výběr krokových zvuků}}{40}{figure.5.15}%
+\contentsline {figure}{\numberline {5.13}{\ignorespaces \xpg@aux {}{czech}\ignorespaces Dvě komponenty \texttt {StudioEventEmitter} připojené k objektu CF}}{38}{figure.5.13}%
+\contentsline {figure}{\numberline {5.14}{\ignorespaces \xpg@aux {}{czech}\ignorespaces Animation Events v Unity Editoru}}{39}{figure.5.14}%
+\contentsline {figure}{\numberline {5.15}{\ignorespaces \xpg@aux {}{czech}\ignorespaces FMOD Studio -- multiinstrument footsteps s aktivním shuffle módem}}{40}{figure.5.15}%
 \contentsline {figure}{\numberline {5.16}{\ignorespaces \xpg@aux {}{czech}\ignorespaces Parameter Sheet v FMOD Studiu}}{42}{figure.5.16}%
 \addvspace {10\p@ }
