@@ -566,12 +566,28 @@ Nevýhodou tohoto přístupu byla centralizace veškeré logiky do jednoho skrip
 \subsubsection{FMOD Studio}
 \label{sec:fmod-studio}
 
-FMOD Studio je profesionální zvukový middleware, který umožňuje návrh zvukového obsahu v dedikovaném editoru a následnou integraci do Unity. Pro každou akci ve hře lze vytvořit \emph{Event} -- kontejner, který může obsahovat jeden nebo více zvukových klipů, efekty (EQ, komprese, reverb), mixovací nastavení i parametrické ovladače. FMOD projekt (\texttt{FMOD\_SB.fspro}) obsahuje tři hlavní \emph{Banky}: \emph{Master}, \emph{Music} a \emph{SFX}. Master bank obsahuje globální nastavení a mixovací cesty (busy), Music bank obsahuje všechny hudební stopy, SFX bank pak veškeré jednotlivé zvukové efekty.
+FMOD Studio je profesionální zvukový middleware, který umožňuje návrh zvukového obsahu v dedikovaném editoru a následnou integraci do Unity. Pro každou akci ve hře lze vytvořit \emph{Event} -- kontejner, který může obsahovat jeden nebo více zvukových klipů, efekty (EQ, komprese, reverb), mixovací nastavení i parametrické ovladače. Na obrázku \ref{fig:fmod} je zobrazeno prostředí FMOD Studio s otevřeným eventem \texttt{ButtonClick}, který slouží jako ukázka struktury typického eventu -- jsou zde vidět Track s audio clipem, volume envelope a další moduly.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{img/fmod/fmod.png}
+    \caption{FMOD Studio -- prostředí editoru s otevřeným eventem ButtonClick}
+    \label{fig:fmod}
+\end{figure}
+
+FMOD projekt (\texttt{FMOD\_SB.fspro}) obsahuje tři hlavní \emph{Banky}: \emph{Master}, \emph{Music} a \emph{SFX}. Master bank obsahuje globální nastavení a mixovací cesty (busy), Music bank obsahuje všechny hudební stopy, SFX bank pak veškeré jednotlivé zvukové efekty.
 
 Mixovací struktura v FMOD je podobná struktuře původního Unity AudioMixeru -- existují čtyři hlavní busy: \emph{Master}, \emph{Music}, \emph{Ambience} a \emph{SFX}. Hudba a ambience jsou kontinuální smyčky řízené skriptem, zatímco SFX bus obsahuje všechny jednorázové zvukové efekty.
 
 \paragraph{Architektura FMOD pluginu pro Unity}
-Integrace FMOD do Unity je zajištěna oficálním FMOD for Unity pluginem, který přidává do Unity editoru několik komponent a editorových oken. Základní architektura FMOD v Unity se skládá z několika vrstev:
+Integrace FMOD do Unity je zajištěna oficálním FMOD for Unity pluginem, který přidává do Unity editoru několik komponent a editorových oken. Na obrázku \ref{fig:fmod-unity-wizard} je zobrazeno editační okno FMOD Integration Settings, kde se konfiguruje cesta k FMOD projektu, nastavení bank a parametry runtime inicializace. Základní architektura FMOD v Unity se skládá z několika vrstev:
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{img/fmod/fmod-unity-wizard.png}
+    \caption{Unity editor -- FMOD Integration Settings}
+    \label{fig:fmod-unity-wizard}
+\end{figure}
 
 \begin{itemize}
     \item \emph{RuntimeManager} -- inicializuje FMOD runtime při startu aplikace
@@ -659,7 +675,16 @@ StudioEventEmitter:
   EventStopTrigger: None
 \end{lstlisting}
 
-Na objektu CF jsou tedy dva \texttt{StudioEventEmitter} komponenty -- první se spustí při vytvoření objektu a vydává ambientní zvuk, druhý se spustí až při zničení objektu (sebrání hráčem). Druhý přístup pro one-shot objekty spočívá ve využití \texttt{RuntimeManager.PlayOneShot()} přímo v kódu, což je vhodné pro situace, kdy chceme mít plnou kontrolu nad timingem přehrávání.
+Na objektu CF jsou tedy dva \texttt{StudioEventEmitter} komponenty -- první se spustí při vytvoření objektu a vydává ambientní zvuk, druhý se spustí až při zničení objektu (sebrání hráčem). V Inspectoru Unity jsou tyto dvě komponenty zobrazeny v dolní části, jak ukazuje obrázek \ref{fig:fmod-unity-emitter}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{img/fmod/fmod-unity-emitter.png}
+    \caption{Dvě komponenty \texttt{StudioEventEmitter} připojené k objektu CF -- horní emitor řídí idle zvuk (ObjectStart), spodní emitor řídí zvuk při sebrání (ObjectDestroy)}
+    \label{fig:fmod-unity-emitter}
+\end{figure}
+
+Druhý přístup pro one-shot objekty spočívá ve využití \texttt{RuntimeManager.PlayOneShot()} přímo v kódu, což je vhodné pro situace, kdy chceme mít plnou kontrolu nad timingem přehrávání.
 
 %%%%% ---- VAZBA ZVUKŮ NA ANIMACE ---- %%%%%
 \subsubsection{Vazba zvuků na animace}
@@ -676,6 +701,15 @@ m_Events:
     functionName: PlayFootsteps
     objectReferenceParameter: {fileID: 0}
 \end{lstlisting}
+
+Na obrázku \ref{fig:fmod-unity-animation-event} je vidět, jak tyto Animation Events vypadají přímo v Unity Editoru -- na časové ose animace jsou zobrazeny značky událostí volající specifické metody.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{img/fmod/fmod-unity-animation-event.png}
+    \caption{Animation Events v Unity Editoru -- na časové ose běžící animace jsou viditelné značky volající metodu \texttt{PlayFootsteps()} v příslušných framech}
+    \label{fig:fmod-unity-animation-event}
+\end{figure}
 
 Tyto events volají metodu \texttt{PlayFootsteps()} na skriptu \texttt{PlayerMovementAudio.cs}, který je připojen k objektu hráče:
 
@@ -695,6 +729,15 @@ public class PlayerMovementAudio : MonoBehaviour
 \end{lstlisting}
 
 Metoda \texttt{PlayFootsteps()} je volána ve dvou snímcích běžící animace (na 0.1 s a 0.333 s), což odpovídá přirozenému rytmu běhu. Podobně animace \texttt{player\_jump.anim} obsahuje Animation Event na snímku 0s, který volá \texttt{PlayJump()}. Výhodou tohoto přístupu je dokonalá synchronizace zvuku s animací bez nutnosti sledovat stav animace v kódu.
+
+Na straně FMOD je footsteps event řešen jako \emph{multiinstrument} -- kontejner, který vybírá z více zvukových stop. Na obrázku \ref{fig:fmod-footsteps} je vidět nastavení shuffle módu, který zajišťuje, že při každém výběru stopy je vybrána vždy jiná varianta, dokud nejsou všechny vyčerpány. Teprve poté se cyklus opakuje -- tím je zaručena určitá míra náhoditosti, ale zároveň zajištěno, že dva po sobě jdoucí kroky nikdy nezní stejně.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{img/fmod/fmod-footsteps.png}
+    \caption{FMOD Studio -- multiinstrument footsteps s aktivním shuffle módem pro náhodný, ale unikátní výběr krokových zvuků}
+    \label{fig:fmod-footsteps}
+\end{figure}
 
 %%%%% ---- MUSIC A AMBIENCE ---- %%%%%
 \subsubsection{Hudba a Ambience}
@@ -747,6 +790,13 @@ public void SetSceneMusic(SceneMusic scene)
 \end{lstlisting}
 
 Systém \texttt{AmbienceChangeTrigger} funguje identicky, pouze s enumem \texttt{SceneAmbience} a FMOD parametrem \texttt{SceneAmbience}. Toto řešení má výhodu v tom, že oba zvukové systémy jsou perzistentní mezi scénami a přechody jsou plynulé, protože crossfading řeší FMOD interně na základě nastavení parametru. Technicky je efekt plynulého přechodu realizován pomocí automatizace hlasitosti -- v FMOD Studiu je v \emph{Parameter Sheet} každé hudební stopy nastaven AHDSR (Attack-Hold-Decay-Sustain-Release) envelope, konkrétně modul \emph{Volume} s automatizační křivkou, která definuje hlasitostní křivku pro každou hodnotu parametru \texttt{SceneMusic} nebo \texttt{SceneAmbience}. Když skript změní hodnotu parametru, FMOD interpoluje mezi těmito automatizačními body a výsledkem je hladký crossfade mezi jednotlivými stopami bez nutnosti jakéhokoliv kódu navíc.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{img/fmod/fmod-parameter-sheet.png}
+    \caption{Parameter Sheet v FMOD Studiu}
+    \label{fig:fmod-parameter-sheet}
+\end{figure}
 
 
 \subsection{Tvorba v FL Studio}

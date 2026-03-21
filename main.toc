@@ -53,16 +53,16 @@
 \contentsline {subsubsection}{FMOD Studio}{33}{subsubsection*.8}%
 \contentsline {paragraph}{Architektura FMOD pluginu pro Unity}{34}{paragraph*.9}%
 \contentsline {paragraph}{Komponenta StudioEventEmitter a EmitterGameEvent}{34}{paragraph*.10}%
-\contentsline {paragraph}{FMODEvents -- centrální registr eventů}{35}{paragraph*.11}%
-\contentsline {subsubsection}{Architektura přehrávání zvuků}{35}{subsubsection*.12}%
-\contentsline {paragraph}{PlayOneShot -- jednorázové zvuky}{35}{paragraph*.13}%
-\contentsline {paragraph}{StudioEventEmitter -- looping objekty}{36}{paragraph*.14}%
-\contentsline {paragraph}{One-shot objekty s vlastním emitorem}{36}{paragraph*.15}%
-\contentsline {subsubsection}{Vazba zvuků na animace}{36}{subsubsection*.16}%
-\contentsline {subsubsection}{Hudba a Ambience}{37}{subsubsection*.17}%
-\contentsline {subsection}{\numberline {5.4.2}Tvorba v FL Studio}{39}{subsection.5.4.2}%
-\contentsline {subsection}{\numberline {5.4.3}Kategorizace zvuků}{39}{subsection.5.4.3}%
-\contentsline {subsection}{\numberline {5.4.4}Hudba}{39}{subsection.5.4.4}%
-\contentsline {section}{\numberline {5.5}Post-processing hry}{39}{section.5.5}%
-\contentsline {chapter}{\numberline {6}Závěr}{40}{chapter.6}%
-\contentsline {chapter}{Seznam obrázků}{41}{chapter*.18}%
+\contentsline {paragraph}{FMODEvents -- centrální registr eventů}{36}{paragraph*.11}%
+\contentsline {subsubsection}{Architektura přehrávání zvuků}{36}{subsubsection*.12}%
+\contentsline {paragraph}{PlayOneShot -- jednorázové zvuky}{36}{paragraph*.13}%
+\contentsline {paragraph}{StudioEventEmitter -- looping objekty}{37}{paragraph*.14}%
+\contentsline {paragraph}{One-shot objekty s vlastním emitorem}{37}{paragraph*.15}%
+\contentsline {subsubsection}{Vazba zvuků na animace}{37}{subsubsection*.16}%
+\contentsline {subsubsection}{Hudba a Ambience}{40}{subsubsection*.17}%
+\contentsline {subsection}{\numberline {5.4.2}Tvorba v FL Studio}{42}{subsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.4.3}Kategorizace zvuků}{42}{subsection.5.4.3}%
+\contentsline {subsection}{\numberline {5.4.4}Hudba}{42}{subsection.5.4.4}%
+\contentsline {section}{\numberline {5.5}Post-processing hry}{42}{section.5.5}%
+\contentsline {chapter}{\numberline {6}Závěr}{43}{chapter.6}%
+\contentsline {chapter}{Seznam obrázků}{44}{chapter*.18}%

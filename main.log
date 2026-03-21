@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Arch Linux) (preloaded format=xelatex 2026.3.19)  21 MAR 2026 13:12
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Arch Linux) (preloaded format=xelatex 2026.3.19)  21 MAR 2026 13:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -838,72 +838,118 @@ Overfull \hbox (18.86482pt too wide) in paragraph at lines 546--547
 \TU/TimesNewRoman(0)/m/n/12 diegetických zvuků při úmrtí hráče (\TU/lmtt/m/n/12 MuteDiegetic()\TU/TimesNewRoman(0)/m/n/12 ). Hodnota \TU/lmtt/m/n/12 Time.unscaledDeltaTime \TU/TimesNewRoman(0)/m/n/12 zajišťuje,
  []
 
+File: img/fmod/fmod.png Graphic file (type bmp)
+<img/fmod/fmod.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 [33]
-Overfull \hbox (11.41435pt too wide) in paragraph at lines 588--589
+File: img/fmod/fmod-unity-wizard.png Graphic file (type bmp)
+<img/fmod/fmod-unity-wizard.png>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[34]
+Overfull \hbox (11.41435pt too wide) in paragraph at lines 604--605
 []\TU/lmtt/m/n/12 EventPlayTrigger \TU/TimesNewRoman(0)/m/n/12 / \TU/lmtt/m/n/12 EventStopTrigger \TU/TimesNewRoman(0)/m/n/12 – určují, jaká Unity událost spustí/zastaví přehrávání 
  []
 
 
-Overfull \hbox (5.55092pt too wide) in paragraph at lines 603--604
+Overfull \hbox (5.55092pt too wide) in paragraph at lines 619--620
 \TU/TimesNewRoman(0)/m/n/12 s nastaveným \TU/lmtt/m/n/12 EventPlayTrigger \TU/TimesNewRoman(0)/m/n/12 a \TU/lmtt/m/n/12 EventStopTrigger\TU/TimesNewRoman(0)/m/n/12 . Při shodě pak zavolá \TU/lmtt/m/n/12 Play() \TU/TimesNewRoman(0)/m/n/12 nebo \TU/lmtt/m/n/12 Stop()
  []
 
-[34]
-Overfull \hbox (11.0806pt too wide) in paragraph at lines 636--637
+[35]
+Overfull \hbox (11.0806pt too wide) in paragraph at lines 652--653
 \TU/TimesNewRoman(0)/m/n/12 u kterých nepotřebujeme sledovat jejich životní cyklus. Příkladem je smrt hráče, kde \TU/lmtt/m/n/12 PlayerDeath.cs
  []
 
-[35]
-Overfull \hbox (3.4271pt too wide) in paragraph at lines 643--644
+[36]
+Overfull \hbox (3.4271pt too wide) in paragraph at lines 659--660
 \TU/TimesNewRoman(0)/m/n/12 Druhý přístup využívá \TU/lmtt/m/n/12 StudioEventEmitter \TU/TimesNewRoman(0)/m/n/12 komponentu připojenou přímo k \TU/lmtt/m/n/12 GameObjectu\TU/TimesNewRoman(0)/m/n/12 . Tento
  []
 
 
-Overfull \hbox (63.6468pt too wide) in paragraph at lines 646--647
+Overfull \hbox (63.6468pt too wide) in paragraph at lines 662--663
 \TU/TimesNewRoman(0)/m/n/12 přehraje. Typickým příkladem je \TU/lmtt/m/n/12 Collectible \TU/TimesNewRoman(0)/m/n/12 (CF – Conversation Fragment), kde druhý \TU/lmtt/m/n/12 StudioEventEmitter
  []
 
 
-Overfull \hbox (2.36333pt too wide) in paragraph at lines 668--669
+Overfull \hbox (8.5303pt too wide) in paragraph at lines 678--679
+\TU/TimesNewRoman(0)/m/n/12 objektu a vydává ambientní zvuk, druhý se spustí až při zničení objektu (sebrání hráčem). V Inspectoru
+ []
+
+File: img/fmod/fmod-unity-emitter.png Graphic file (type bmp)
+<img/fmod/fmod-unity-emitter.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (3.68066pt too wide) in paragraph at lines 687--688
+[]\TU/TimesNewRoman(0)/m/n/12 Druhý přístup pro one-- shot objekty spočívá ve využití \TU/lmtt/m/n/12 RuntimeManager.PlayOneShot() \TU/TimesNewRoman(0)/m/n/12 přímo
+ []
+
+
+Overfull \hbox (2.36333pt too wide) in paragraph at lines 693--694
 \TU/TimesNewRoman(0)/m/n/12 Zvuky je možné navázat přímo na animace pomocí Unity \TU/TimesNewRoman(0)/m/it/12 Animation Events\TU/TimesNewRoman(0)/m/n/12 . Tato technika umožňuje,
  []
 
 
-Overfull \hbox (3.23442pt too wide) in paragraph at lines 668--669
+Overfull \hbox (3.23442pt too wide) in paragraph at lines 693--694
 \TU/TimesNewRoman(0)/m/n/12 aby v konkrétním snímku animace byla zavolána libovolná metoda na libovolném skriptu připojeném
  []
 
-[36]
-Overfull \hbox (31.47577pt too wide) in paragraph at lines 703--704
+[37]
+File: img/fmod/fmod-unity-animation-event.png Graphic file (type bmp)
+<img/fmod/fmod-unity-animation-event.png>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[38]
+File: img/fmod/fmod-footsteps.png Graphic file (type bmp)
+<img/fmod/fmod-footsteps.png>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (31.47577pt too wide) in paragraph at lines 746--747
 \TU/TimesNewRoman(0)/m/n/12 Hudba a ambience jsou v FMOD řešeny jako kontinuální eventy, které se nespouštějí přes \TU/lmtt/m/n/12 PlayOneShot()\TU/TimesNewRoman(0)/m/n/12 ,
  []
 
-[37]
-Overfull \hbox (6.98723pt too wide) in paragraph at lines 749--750
+[39] [40]
+Overfull \hbox (6.98723pt too wide) in paragraph at lines 792--793
 []\TU/TimesNewRoman(0)/m/n/12 Systém \TU/lmtt/m/n/12 AmbienceChangeTrigger \TU/TimesNewRoman(0)/m/n/12 funguje identicky, pouze s enumem \TU/lmtt/m/n/12 SceneAmbience \TU/TimesNewRoman(0)/m/n/12 a FMOD
  []
 
 
-Overfull \hbox (6.74825pt too wide) in paragraph at lines 749--750
+Overfull \hbox (6.74825pt too wide) in paragraph at lines 792--793
 \TU/TimesNewRoman(0)/m/n/12 parametrem \TU/lmtt/m/n/12 SceneAmbience\TU/TimesNewRoman(0)/m/n/12 . Toto řešení má výhodu v tom, že oba zvukové systémy jsou perzistentní
  []
 
 
-Overfull \hbox (17.21684pt too wide) in paragraph at lines 749--750
+Overfull \hbox (17.21684pt too wide) in paragraph at lines 792--793
 \TU/TimesNewRoman(0)/m/n/12 - Sustain-- Release) envelope, konkrétně modul \TU/TimesNewRoman(0)/m/it/12 Volume \TU/TimesNewRoman(0)/m/n/12 s automatizační křivkou, která definuje hlasitostní
  []
 
 
-Overfull \hbox (9.75137pt too wide) in paragraph at lines 749--750
+Overfull \hbox (9.75137pt too wide) in paragraph at lines 792--793
 \TU/TimesNewRoman(0)/m/n/12 křivku pro každou hodnotu parametru \TU/lmtt/m/n/12 SceneMusic \TU/TimesNewRoman(0)/m/n/12 nebo \TU/lmtt/m/n/12 SceneAmbience\TU/TimesNewRoman(0)/m/n/12 . Když skript změní hodnotu
  []
 
-[38]) [39]
+File: img/fmod/fmod-parameter-sheet.png Graphic file (type bmp)
+<img/fmod/fmod-parameter-sheet.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[41]) [42]
 \openout2 = `Závěr.aux'.
 
  (./Závěr.tex
 Kapitola 6.
-) [40
+) [43
 
 
 
@@ -914,7 +960,7 @@ Kapitola 6.
 
 
 No file main.bbl.
-[41
+[44
 
 
 
@@ -927,22 +973,16 @@ L3 programming layer <2026-01-19>
 
 LaTeX Warning: There were multiply-defined labels.
 
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 85752EB40821C079DB17CC88F7367261;6551
-(rerunfilecheck)             After:  8228FD379F6670BAFC3CA0234669464A;6551.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 8228FD379F6670BAFC3CA0234669464A;6551.
  ) 
 Here is how much of TeX's memory you used:
- 14780 strings out of 470191
- 285265 string characters out of 5479697
+ 14840 strings out of 470191
+ 287206 string characters out of 5479697
  1018660 words of memory out of 5000000
- 43119 multiletter control sequences out of 15000+600000
+ 43172 multiletter control sequences out of 15000+600000
  631353 words of font info for 97 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  87i,8n,93p,967b,1772s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (42 pages).
+Output written on main.pdf (45 pages).
