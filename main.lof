@@ -3,20 +3,20 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces \xpg@aux {}{czech}\ignorespaces Rozhraní Unity Input System}}{18}{figure.5.1}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces \xpg@aux {}{czech}\ignorespaces Hierarchie scény}}{21}{figure.5.2}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces \xpg@aux {}{czech}\ignorespaces GameObject hráče ve scéně}}{21}{figure.5.3}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces \xpg@aux {}{czech}\ignorespaces Rozhraní UI Toolkit}}{23}{figure.5.4}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces \xpg@aux {}{czech}\ignorespaces Nastavení hlasitosti}}{25}{figure.5.5}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces \xpg@aux {}{czech}\ignorespaces HUD ve hře -- levý horní roh: počet střel, pravý horní roh: počet CFs}}{26}{figure.5.6}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces \xpg@aux {}{czech}\ignorespaces Bližší parallax vrstva (\texttt {parallaxEffectX} = 0.45)}}{27}{figure.5.7}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces \xpg@aux {}{czech}\ignorespaces Vzdálenější parallax vrstva (\texttt {parallaxEffectX} = 0.7)}}{27}{figure.5.8}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces \xpg@aux {}{czech}\ignorespaces Světlušky v korunách stromů ve scéně}}{30}{figure.5.9}%
-\contentsline {figure}{\numberline {5.10}{\ignorespaces \xpg@aux {}{czech}\ignorespaces Struktura Unity AudioMixeru -- hierarchie kanálů}}{32}{figure.5.10}%
-\contentsline {figure}{\numberline {5.11}{\ignorespaces \xpg@aux {}{czech}\ignorespaces FMOD Studio -- prostředí editoru s otevřeným eventem ButtonClick}}{34}{figure.5.11}%
-\contentsline {figure}{\numberline {5.12}{\ignorespaces \xpg@aux {}{czech}\ignorespaces Unity editor -- FMOD Integration Settings}}{35}{figure.5.12}%
-\contentsline {figure}{\numberline {5.13}{\ignorespaces \xpg@aux {}{czech}\ignorespaces Dvě komponenty \texttt {StudioEventEmitter} připojené k objektu CF}}{38}{figure.5.13}%
-\contentsline {figure}{\numberline {5.14}{\ignorespaces \xpg@aux {}{czech}\ignorespaces Animation Events v Unity Editoru}}{39}{figure.5.14}%
-\contentsline {figure}{\numberline {5.15}{\ignorespaces \xpg@aux {}{czech}\ignorespaces FMOD Studio -- multiinstrument footsteps s aktivním shuffle módem}}{40}{figure.5.15}%
-\contentsline {figure}{\numberline {5.16}{\ignorespaces \xpg@aux {}{czech}\ignorespaces Parameter Sheet v FMOD Studiu}}{42}{figure.5.16}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces \xpg@aux {}{czech}\ignorespaces Rozhraní Unity Input System}}{19}{figure.5.1}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces \xpg@aux {}{czech}\ignorespaces Hierarchie scény}}{22}{figure.5.2}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces \xpg@aux {}{czech}\ignorespaces GameObject hráče ve scéně}}{22}{figure.5.3}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces \xpg@aux {}{czech}\ignorespaces Rozhraní UI Toolkit}}{24}{figure.5.4}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces \xpg@aux {}{czech}\ignorespaces Nastavení hlasitosti}}{26}{figure.5.5}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces \xpg@aux {}{czech}\ignorespaces HUD ve hře -- levý horní roh: počet střel, pravý horní roh: počet CFs}}{27}{figure.5.6}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces \xpg@aux {}{czech}\ignorespaces Bližší parallax vrstva (\texttt {parallaxEffectX} = 0.45)}}{28}{figure.5.7}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces \xpg@aux {}{czech}\ignorespaces Vzdálenější parallax vrstva (\texttt {parallaxEffectX} = 0.7)}}{28}{figure.5.8}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces \xpg@aux {}{czech}\ignorespaces Světlušky v korunách stromů ve scéně}}{31}{figure.5.9}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces \xpg@aux {}{czech}\ignorespaces Struktura Unity AudioMixeru -- hierarchie kanálů}}{33}{figure.5.10}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces \xpg@aux {}{czech}\ignorespaces FMOD Studio -- prostředí editoru s otevřeným eventem ButtonClick}}{35}{figure.5.11}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces \xpg@aux {}{czech}\ignorespaces Unity editor -- FMOD Integration Settings}}{36}{figure.5.12}%
+\contentsline {figure}{\numberline {5.13}{\ignorespaces \xpg@aux {}{czech}\ignorespaces Dvě komponenty \texttt {StudioEventEmitter} připojené k objektu CF}}{39}{figure.5.13}%
+\contentsline {figure}{\numberline {5.14}{\ignorespaces \xpg@aux {}{czech}\ignorespaces Animation Events v Unity Editoru}}{40}{figure.5.14}%
+\contentsline {figure}{\numberline {5.15}{\ignorespaces \xpg@aux {}{czech}\ignorespaces FMOD Studio -- multiinstrument footsteps s aktivním shuffle módem}}{41}{figure.5.15}%
+\contentsline {figure}{\numberline {5.16}{\ignorespaces \xpg@aux {}{czech}\ignorespaces Parameter Sheet v FMOD Studiu}}{43}{figure.5.16}%
 \addvspace {10\p@ }

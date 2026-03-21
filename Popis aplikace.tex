@@ -802,11 +802,68 @@ Systém \texttt{AmbienceChangeTrigger} funguje identicky, pouze s enumem \texttt
 \subsection{Tvorba v FL Studio}
 \label{sec:tvorba-v-fl-studio}
 
+Práce v FL Studio je jádrem mé audio workflow. Struktura projektu je navržena tak, aby podporovala jak jednotlivé skladby, tak jejich vzájemnou konzistenci v rámci budoucího alba.
+
+\subsubsection{Workflow pomocí Arrangements}
+Jedním z hlavních prvků mojí workflow je systém \emph{Arrangements} (Arrangement view). V jediném projektu vytvářím více arrangements, z nichž každý reprezentuje jednu skladbu nebo skupinu zvukových efektů. Důležité je, že všechny arrangements sdílejí stejnou sadu pluginových presetů a jsou napojeny na shodné Mixer kanály. Tím je zajištěno, že nástroje a zvuky použité napříč různými skladbami zní jednotně -- stejný syntezátor v odlišném arrangements posílá signál do stejného Mixer kanálu, což vytváří koherentní zvukový profil celého alba. Tento přístup eliminuje problém rozdílně nastavených kanálů mezi skladbami a značně zjednodušuje finální mix.
+
+\subsubsection{Sytrus}
+Sytrus je jeden z mých primárních synth pluginů. Jedná se o pokročilý FM syntezátor s možností importu \emph{scale souborů} (souborů s definicí stupnic). Tyto soubory podporují různé EDO (Equal Divisions of the Octave) formáty, což umožňuje pracovat s netemperovanými stupnicemi a mikrotonálním laděním. Tato schopnost je podrobněji rozebrána v podkapitole \ref{sec:hudba}.
+
+\subsubsection{LABs}
+LABs je bezplatný plugin od Spitfire Audio, který nabízí rozsáhlou knihovnu realisticky znějících a atmosferických nástrojů. Plugin poskytuje intuitivní ovládání nad základními parametry jako je reverb, hlasitost nebo citlivost, což umožňuje rychle přizpůsobit nástroj požadovanému kontextu bez nutnosti složitého nastavení.
+
+\subsubsection{Deelay}
+Deelay je delay plugin, který využívám pro vytváření prostorových echo efektů. Plugin nabízí pokročilé možnosti nastavení oproti běžným delayům -- různé módy filtrace, time/pitch modifikace a synchronizaci na tempo projektu. Speciálně se zaměřuji na využití efektu \emph{Chamber} a tvorbu komplexních, vrstvených delayů, které vytvářejí glitched/corrupted atmosférické zvuky. Tyto techniky přímo korespondují s narativem surrealistické hry, kde zvuková estetika odráží fragmentovanou a deformovanou realitu.
+
+\subsubsection{Zvukové efekty -- ZAPSPLAT}
+Většina zvukových efektů použitých ve hře pochází z knihovny ZAPSPLAT. Jsem zde Premium Member s aktivním předplatným \emph{Monthly Gold Access}, které mi umožňuje přístup k rozsáhlé databázi profesionálně nahraných zvuků. Tato knihovna pokrývá široké spektrum potřeb -- od prostých UI zvuků až po komplexní prostředí a diegetické efekty.
+
+\subsubsection{Nativní FL Studio pluginy pro zpracování zvuku}
+Kromě externích nástrojů využívám řadu vestavěných (nativních) pluginů FL Studia pro finální zpracování zvuku. Tyto pluginy tvoří základ mého signálového řetězce na jednotlivých Mixer kanálech.
+
+\textbf{Fruity Reverb} je můj primární reverb plugin, který používám jak na nástroje, tak na zvukové efekty. Umožňuje nastavit parametry jako \emph{Room Size}, \emph{Damping}, \emph{Freeze} nebo \emph{Dry/Wet} poměr, díky čemuž lze dosáhnout efektů od malých uzavřených prostorů až po rozsáhlé haly.
+
+\textbf{Destructor} je nástroj původně navržený pro simulaci zkreslení kytarových aparátů, ale jeho potenciál je širší. V mé práci jej používám pro přidání agresivity a textury k syntetickým zvukům nebo pro tvrdší údernost u různých efektů. Plugin nabízí širokou škálu přetížení a harmonického zkreslení, od jemné saturace až po plnohodnotné destruktivní zpracování.
+
+Tato sestava pluginů -- Sytrus a LABs pro generování zvuku, Deelay pro prostorové efekty, následované Destructorem a Fruity Reverb pro další zpracování -- vytváří komplexní, ale přehledný workflow, který mi umožňuje dosahovat profesionálně znějících výsledků.
+
 \subsection{Kategorizace zvuků}
 \label{sec:kategorizace-zvuku}
 
+Základní organizace zvukových zdrojů ve hře vychází z klasického dělení na diegetické a nediegetické zvuky. Toto rozdělení určuje nejen jejich umístění v mixovací struktuře, ale také pravidla pro jejich zpracování a implementaci.
+
+\textbf{Diegetické zvuky} jsou ty, které existují uvnitř herního světa -- jsou slyšitelné pro postavy ve hře. Do této kategorie spadá ambience prostředí (kapání v jeskyni, šum vesmíru), zvuky interaktivních objektů (konverzační fragmenty, portál) a zvuky vztahující se k hráči (kroky, skok, útok). Diegetické zvuky typicky využívají prostorové umístění, což znamená, že jejich hlasitost závisí na pozici zdroje vůči hráči.
+
+\textbf{Nediegetické zvuky} existují mimo herní svět -- nejsou součástí příběhu a hráč je slyší pouze jako prostředek komunikace. Patří sem uživatelské rozhraní (kliknutí tlačítek, otevření menu), atmosférické prvky, které nejsou součástí prostředí (například pulzující drone podkres), a samozřejmě hudba.
+
+\subsubsection{Výběr zvukového formátu}
+Volba zvukového formátu má přímý dopad na kvalitu i funkčnost zvukového obsahu. Vyzkoušel jsem několik přístupů.
+
+MP3 formát není vhodný pro zvuky, které mají být loopované (opakovaně přehrávané v smyčce). Přestože je MP3 oblíbený pro svou malou velikost, na konec audio souboru vždy přidává metadata, která při loopování vytvářejí nepatrný, ale znatelný klik. Tento zvuk, byť krátký, dokáže zničit atmosféru u jinak plynulé smyčky prostředí.
+
+WAV je můj standardní pracovní formát v FL Studiu. Jelikož nevyužívá žádnou kompresi, zachovává veškerý detail původního zvuku. Pro export do herního projektu se však nehodí kvůli velikosti souborů -- hudební stopy a delší ambience by zabíraly zbytečně mnoho místa.
+
+Experimentoval jsem také s OGG, ale nakonec jsem dospěl k formátu FLAC. Ten nabízí podobnou kvalitu jako WAV, ale umožňuje nastavit vyšší úroveň komprese. Důležité je, že na rozdíl od MP3 formát FLAC na konec souboru nepřidává žádné dodatečné informace, které by při loopování vytvářely klikavé zvuky. FLAC tak představuje ideální kompromis mezi kvalitou, velikostí souborů a spolehlivostí loopování.
+
 \subsection{Hudba}
 \label{sec:hudba}
+
+V rámci této verze maturitní práce vznikly tři hudební stopy: \emph{Main Menu Theme}, \emph{Caves -- The Chase} a \emph{Outer Space -- The Chase}. Každá z těchto skladeb plní specifickou roli v celkové zvukové identitě hry.
+
+\subsubsection{Main Menu Theme}
+Úvodní skladba main menu je pojata retro stylem, který evokuje éru ragtime hudby z dvacátých let dvacátého století. Hudebně využívá stupnici D Mixolydian, která svým charakteristickým mollovým sedmým stupněm dodává skladbě jazzovou atmosféru. Na celou nahrávku je aplikován efekt \emph{low cut filter}, simulující frekvenční omezení starých audio technologií té doby. Dále je nasimulován charakteristický šum starého vinylového gramofonu. Tyto volby nejsou náhodné -- přímo korespondují s narativem videohry, kde hlavní komunikátor (\emph{The Manager}), bowling alley manažer, promlouvá k hráči (\emph{Pin}) skrze jeho sny pomocí gramofonu. Retro estetika skladby tak vytváří bezprostřední spojení mezi hudební složkou a příběhem.
+
+\subsubsection{Caves -- The Chase}
+Tento track patří do úrovně \emph{Caves} a reprezentuje akční pasáže ve stylu \emph{The Chase}. Skladba využívá pětičtvrťový takt (5/4), který svým nepravidelným rytmem vyvolává pocit neznáma a napětí -- posluchač není tolik seznámen s tím, kdy přijde další strong beat. Hlavním nástrojem je krystalická celesta, která svým jasným, zvonivým tónem vytváří kontrast s temným prostředím jeskyní. Hudebně skladba pracuje se stupnicí D\# Phrygian, jež svým sníženým druhým stupněm přidává typický orientální, napjatý charakter. Kromě rytmické linky obsahuje rozsáhlé atmosférické soundscapes s glitch efekty, které budují napětí a evokují nebezpečí blížícího se pronásledujícího Ball.
+
+\subsubsection{Outer Space -- The Chase}
+Třetí stopa je koncipována jako sci-fi atmosférický track. Její \emph{arpeggio} linka okamžitě vtahuje posluchače do vesmírného prostředí. Hudebně využívá stupnici G Harmonic Minor. V pozdější části skladby se objevují mikrotonální melodie využívající formát EDO 24 (24 rovnoměrných dělení oktávy), což dále posiluje atmosféru neznáma a surrealismu typickou pro celou hru.
+
+\subsubsection{Plány do budoucna -- leitmotif a struktura alba}
+Standardem v herním průmyslu je komponovat hudební stopy s ohledem na jednotlivé postavy, emoce nebo herní situace. Leitmotif je hudební technika, kdy je určitému tématu (postavě, místu, konceptu) přiřazena specifická melodická nebo harmonická fráze, která se vrací v různých obměnách napříč celým dílem. Tím se vytváří silné emocionální a narativní propojení.
+
+V budoucnu plánuji mít pro všech devět levelů dvě hlavní skladby: jednu pro pasáže \emph{The Chase} (akčnější, rytmická, upoutávající pozornost, zdůrazňující rychlé tempo a napětí z útěku před Ball) a jednu pro pasáže \emph{The Exploration} (uklidňující, převážně ambientní, která nevyžaduje pozornost posluchače, ale spíše jej podněcuje k hlubšímu soustředění a zamyšlení). Kromě toho budou vytvořeny specifické skladby pro důležité momenty a postavy. V tomto kontextu začíná hrát leitmotif klíčovou roli -- \emph{The Manager}, \emph{The Ball} i další prvky si postupně vybudují své vlastní hudební identity, které se budou vracet napříč celým albem.
 
 \section{Post-processing hry}
 \label{sec:post-processing-hry}
