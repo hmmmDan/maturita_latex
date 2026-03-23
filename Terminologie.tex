@@ -1,7 +1,7 @@
 \chapter{Terminologie}
 
 \section{GameObject}
-Základní stavební prvek Unity enginu, reprezentující jakýkoli objekt ve scéně. To mohou být například postavy, budovy, zdroje světla, zdroje zvuku, textová pole nebo neviditelné objekty, které slouží čistě pro funkční účely (za pomoci skriptů připojených jako komponent na daný GameObject).
+Základní stavební prvek Unity enginu, reprezentující jakýkoli objekt ve scéně. To mohou být například postavy, budovy, zdroje světla, zdroje zvuku, textová pole nebo neviditelné objekty, které slouží čistě pro funkční účely (za pomoci skriptů připojených jako komponent na daný GameObject) \cite{unity-key-concepts}.
 
 \section{OST}
 Zkratka OST (Original Soundtrack) označuje hudební složku vytvořenou přímo pro daný film, seriál, videohru nebo jiné podobné médium.
@@ -10,7 +10,19 @@ Zkratka OST (Original Soundtrack) označuje hudební složku vytvořenou přímo
 Post-processing je proces aplikování vizuálních vylepšení, filtrů a posílení žádoucí atmosféry různými efekty. Mezi často používané efekty patří Color Grading, Bloom nebo Depth of Field.
 
 \section{Singleton}
-Singleton je návrhový vzor (design pattern) v objektově orientovaném programování, který zajišťuje, že daná třída má pouze jednu instanci a poskytuje globální přístup k této instanci. V kontextu Unity se singleton často používá pro manažery (například AudioManager nebo UIManager), kteří musí být přístupní z jakéhokoli místa v kódu a zároveň musí existovat pouze v jediné instanci. Singleton se typicky implementuje pomocí statické vlastnosti Instance a privátního konstruktoru, případně pomocí metody DontDestroyOnLoad pro perzistenci mezi scénami.
+Návrhový vzor zajišťující existenci pouze jedné instance třídy s globálním přístupem. V Unity se používá pro manažery (AudioManager, UIManager), které" musí být dostupní z jakéhokoli místa v kódu.
+
+\section{Crossfade}
+Plynulý přechod mezi dvěma zvuky nebo obrazy, kdy jeden postupně zaniká zatímco druhý nastupuje. V kontextu hry se typicky používá pro hudbu při přechodu mezi scénami.
 
 \section{Unity Editor}
 Rozhraní Unity enginu, ve kterém se pracuje většinu času při vývoji videohry (podobně jako kreativní programy Blender, DaVinci Resolve nebo FL Studio).
+
+\section{Prefab}
+Vytvořený GameObject (včetně všech komponent a nastavení), který lze opakovaně používat ve scéně jako předlohu. Změny provedené na prefabu se automaticky projeví ve všech jeho instancích.
+
+\section{Sprite}
+2D grafický prvek používaný ve hře. Jedná se o obrázek nebo sekvenci obrázků (pro animace), které jsou vykreslovány ve scéně.
+
+\section{Asset}
+Libovolný soubor nebo zdroj používaný ve hře -- obrázky, zvuky, modely, skripty, prefaby aj.

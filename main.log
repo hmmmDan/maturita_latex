@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Arch Linux) (preloaded format=xelatex 2026.3.19)  23 MAR 2026 18:27
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Arch Linux) (preloaded format=xelatex 2026.3.19)  23 MAR 2026 18:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -314,16 +314,22 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 284.
 )
 \Hy@SectionHShift=\skip53
+) (/usr/share/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip54
+\bibsep=\skip55
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count320
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 31.
+Package hyperref Info: Option `colorlinks' set `true' on input line 32.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\spacefactor' on input line 31.
+(hyperref)                removing `\spacefactor' on input line 32.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@m' on input line 31.
+(hyperref)                removing `\@m' on input line 32.
 
 (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
@@ -369,26 +375,26 @@ LaTeX Warning: Label `sec:fmod-studio' multiply defined.
 ) (./Závěr.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 105.
+LaTeX Font Info:    ... okay on input line 105.
 
 Package fontspec Info: 
 (fontspec)             Adjusting the maths setup (use [no-math] to avoid
@@ -396,57 +402,57 @@ Package fontspec Info:
 
 \symlegacymaths=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 104.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 104.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 104.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 104.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 104.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 104.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 104.
-LaTeX Font Info:    Redeclaring math accent \check on input line 104.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 104.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 104.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 104.
-LaTeX Font Info:    Redeclaring math symbol \colon on input line 104.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 104.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 104.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 104.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 104.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 104.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 104.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 104.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 104.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 104.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 104.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 104.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 104.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 104.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 105.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 105.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 105.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 105.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 105.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 105.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 105.
+LaTeX Font Info:    Redeclaring math accent \check on input line 105.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 105.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 105.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 105.
+LaTeX Font Info:    Redeclaring math symbol \colon on input line 105.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 105.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 105.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 105.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 105.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 105.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 105.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 105.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 105.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 105.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 105.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 105.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 105.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 105.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 104.
+(Font)              `operators' in the math version `normal' on input line 105.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/TimesNewRoman(0)/m/n on input line 104.
+(Font)                  OT1/cmr/m/n --> TU/TimesNewRoman(0)/m/n on input line 105.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 104.
+(Font)              `operators' in the math version `bold' on input line 105.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/TimesNewRoman(0)/m/n on input line 104.
+(Font)                  OT1/cmr/bx/n --> TU/TimesNewRoman(0)/m/n on input line 105.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  TU/TimesNewRoman(0)/m/n --> TU/TimesNewRoman(0)/m/n on input line 104.
+(Font)                  TU/TimesNewRoman(0)/m/n --> TU/TimesNewRoman(0)/m/n on input line 105.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/TimesNewRoman(0)/m/it on input line 104.
+(Font)                  OT1/cmr/m/it --> TU/TimesNewRoman(0)/m/it on input line 105.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/TimesNewRoman(0)/b/n on input line 104.
+(Font)                  OT1/cmr/bx/n --> TU/TimesNewRoman(0)/b/n on input line 105.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/Arial(0)/m/n on input line 104.
+(Font)                  OT1/cmss/m/n --> TU/Arial(0)/m/n on input line 105.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 104.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 105.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  TU/TimesNewRoman(0)/m/n --> TU/TimesNewRoman(0)/b/n on input line 104.
+(Font)                  TU/TimesNewRoman(0)/m/n --> TU/TimesNewRoman(0)/b/n on input line 105.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/TimesNewRoman(0)/b/it on input line 104.
+(Font)                  OT1/cmr/bx/it --> TU/TimesNewRoman(0)/b/it on input line 105.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/Arial(0)/b/n on input line 104.
+(Font)                  OT1/cmss/bx/n --> TU/Arial(0)/b/n on input line 105.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 104.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 105.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -482,8 +488,8 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count320
-Package hyperref Info: Link coloring ON on input line 104.
+\c@lstlisting=\count321
+Package hyperref Info: Link coloring ON on input line 105.
 (./main.out) (./main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
@@ -534,6 +540,9 @@ Overfull \hbox (15.53716pt too wide) in paragraph at lines 3--4
  (./Terminologie.tex
 Kapitola 2.
 
+Package natbib Warning: Citation `unity-key-concepts' on page 7 undefined on input line 4.
+
+
 Overfull \hbox (9.04301pt too wide) in paragraph at lines 4--5
 \TU/TimesNewRoman(0)/m/n/12 Základní stavební prvek Unity enginu, reprezentující jakýkoli objekt ve scéně. To mohou být například
  []
@@ -544,12 +553,12 @@ Overfull \hbox (7.55669pt too wide) in paragraph at lines 10--11
  []
 
 
-Overfull \hbox (2.34184pt too wide) in paragraph at lines 13--14
-\TU/TimesNewRoman(0)/m/n/12 Singleton je návrhový vzor (design pattern) v objektově orientovaném programování, který zajišťuje,
+Overfull \hbox (5.76762pt too wide) in paragraph at lines 16--17
+\TU/TimesNewRoman(0)/m/n/12 Plynulý přechod mezi dvěma zvuky nebo obrazy, kdy jeden postupně zaniká zatímco druhý nastupuje.
  []
 
-)
-Overfull \hbox (3.55473pt too wide) in paragraph at lines 16--154
+
+Overfull \hbox (3.55473pt too wide) in paragraph at lines 19--20
 \TU/TimesNewRoman(0)/m/n/12 Rozhraní Unity enginu, ve kterém se pracuje většinu času při vývoji videohry (podobně jako kreativní
  []
 
@@ -558,7 +567,7 @@ Overfull \hbox (3.55473pt too wide) in paragraph at lines 16--154
 
 
 
-]
+]) [8]
 \openout2 = `"Použitý framework aplikace.aux"'.
 
  (./Použitý framework aplikace.tex
@@ -568,7 +577,7 @@ Overfull \hbox (2.57231pt too wide) in paragraph at lines 4--5
 \TU/TimesNewRoman(0)/m/n/12 systém Linux. Já konkrétně používám distribuci Arch Linux, ale v našem týmu můžeme najít i Fedora
  []
 
-[8
+[9
 
 
 
@@ -580,7 +589,7 @@ Overfull \hbox (6.88676pt too wide) in paragraph at lines 28--29
 \TU/TimesNewRoman(0)/m/n/12 objeví úvodní obrazovka (splash screen) s nápisem „Made with Unity“, což našemu týmu momentálně
  []
 
-[9]
+[10]
 Overfull \hbox (0.63577pt too wide) in paragraph at lines 37--38
 []\TU/TimesNewRoman(0)/m/n/12 FL Studio je software (Digital Audio Workstation) pro skládání, produkci a mix hudby za pomocí
  []
@@ -610,12 +619,12 @@ Overfull \hbox (10.23833pt too wide) in paragraph at lines 52--53
 \TU/TimesNewRoman(0)/m/n/12 Pro efektivní spolupráci v týmu používáme poznámkový software Obsidian, u kterého jsme si společně
  []
 
-[10])
-Overfull \hbox (4.58403pt too wide) in paragraph at lines 54--155
+[11])
+Overfull \hbox (4.58403pt too wide) in paragraph at lines 54--156
 \TU/TimesNewRoman(0)/m/n/12 Thinking Studio, na kterém jsou všichni členové týmu i spolupracující zvenčí. Discord nám umožňuje
  []
 
-[11]
+[12]
 \openout2 = `"Celková koncepce řešení.aux"'.
 
  (./Celková koncepce řešení.tex
@@ -635,7 +644,7 @@ Overfull \hbox (12.1856pt too wide) in paragraph at lines 15--16
 \TU/TimesNewRoman(0)/m/n/12 jinak povede zemřít, místo toho, aby se scéna načetla od začátku, tak je hráč jen přemístěn k poslednímu
  []
 
-[12
+[13
 
 
 
@@ -655,12 +664,12 @@ Overfull \hbox (0.2227pt too wide) in paragraph at lines 32--33
 []\TU/TimesNewRoman(0)/m/n/12 Poté, co videohra ví, jaké vstupy mají jaký učel, potřebujeme s těmito signály pracovat a používat
  []
 
-[13]
+[14]
 Overfull \hbox (2.21294pt too wide) in paragraph at lines 61--62
 []\TU/TimesNewRoman(0)/m/n/12 Další inspiraci jsem si vzal například ze skladeb „It’s Just a Burning Memory“ (The Caretaker),
  []
 
-[14]
+[15]
 Overfull \hbox (1.2188pt too wide) in paragraph at lines 65--66
 \TU/TimesNewRoman(0)/m/n/12 útok, aktivace portálu, sbírání předmětů, dopad na zem, simulace komunikace s ostatními postavami)
  []
@@ -669,7 +678,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 67.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 67.
-) [15]
+) [16]
 \openout2 = `"Popis aplikace.aux"'.
 
  (./Popis aplikace.tex
@@ -677,7 +686,7 @@ Kapitola 5.
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 14.
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.95> not available
 (Font)              Font shape `TU/lmtt/b/n' tried instead on input line 20.
-[16
+[17
 
 
 
@@ -687,7 +696,7 @@ Overfull \hbox (1.3106pt too wide) in paragraph at lines 42--43
 []\TU/TimesNewRoman(0)/m/it/12 Audio Manager \TU/TimesNewRoman(0)/m/n/12 spravuje zvukovou složku aplikace. Jeho úkolem je aktivace odpovídající hudby,
  []
 
-[17]
+[18]
 Overfull \hbox (4.04301pt too wide) in paragraph at lines 99--100
 []\TU/TimesNewRoman(0)/m/n/12 Pro tento účel však existuje modernější systém, který zajišťuje mnohem přívětivější a flexibilnější
  []
@@ -697,7 +706,7 @@ File: img/unity/unity-input-actions.png Graphic file (type bmp)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[18] [19] [20]
+[19] [20] [21]
 Overfull \hbox (2.88773pt too wide) in paragraph at lines 175--176
 \TU/TimesNewRoman(0)/m/it/12 Value\TU/TimesNewRoman(0)/m/n/12 ), cílovou platformu (klávesnice, myš, herní ovladač, VR ovladač…) a případně další vlastnosti.
  []
@@ -712,7 +721,7 @@ File: img/unity/unity-gameobject-player.png Graphic file (type bmp)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[21] [22]
+[22] [23]
 Overfull \hbox (46.44943pt too wide) in paragraph at lines 228--229
 []\TU/TimesNewRoman(0)/m/n/12 Více samostatných \TU/TimesNewRoman(0)/m/it/12 Canvas \TU/TimesNewRoman(0)/m/n/12 objektů ve scéně (např. \TU/lmtt/m/n/12 CanvasGameOver\TU/TimesNewRoman(0)/m/n/12 , \TU/lmtt/m/n/12 Canvas HUD\TU/TimesNewRoman(0)/m/n/12 , \TU/lmtt/m/n/12 CanvasTutorial\TU/TimesNewRoman(0)/m/n/12 ) 
  []
@@ -732,7 +741,7 @@ File: img/unity/unity-ui-toolkit.png Graphic file (type bmp)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[23] [24]
+[24] [25]
 Overfull \hbox (18.18166pt too wide) in paragraph at lines 315--316
 []\TU/TimesNewRoman(0)/b/n/12 HUD \TU/TimesNewRoman(0)/m/n/12 – zobrazuje informace perzistentní během hraní. V levém horním rohu je počítadlo zbývajících
  []
@@ -742,7 +751,7 @@ Overfull \hbox (20.4688pt too wide) in paragraph at lines 315--316
 \TU/TimesNewRoman(0)/m/n/12 Binding počítadel probíhá přímým dotazem na herní skripty – například \TU/lmtt/m/n/12 CFInventory.OnCFCollected
  []
 
-[25]
+[26]
 File: img/unity/unity-volume-controls.png Graphic file (type bmp)
 <img/unity/unity-volume-controls.png>
 File: img/unity/unity-hud.png Graphic file (type bmp)
@@ -761,7 +770,7 @@ Overfull \hbox (9.2209pt too wide) in paragraph at lines 358--359
 \TU/lmtt/m/n/12 DeathZoneSoft\TU/TimesNewRoman(0)/m/n/12 , která po vstupu hráče do svého triggeru okamžitě přesune hráče na pozici posledního
  []
 
-[26]
+[27]
 Overfull \hbox (2.5303pt too wide) in paragraph at lines 371--372
 []\TU/TimesNewRoman(0)/m/n/12 V aktuální implementaci se při \TU/TimesNewRoman(0)/m/it/12 soft death \TU/TimesNewRoman(0)/m/n/12 přesouvá pouze pozice hráče – počet střel i \TU/TimesNewRoman(0)/m/it/12 conversation
  []
@@ -781,7 +790,7 @@ Overfull \hbox (1.16411pt too wide) in paragraph at lines 375--376
 \TU/TimesNewRoman(0)/m/n/12 nižší hodnota znamená, že vrstva se pohybuje pomaleji než kamera a působí vzdáleněji. Na obrázcích
  []
 
-[27]
+[28]
 File: img/unity/unity-parallax-close.png Graphic file (type bmp)
 <img/unity/unity-parallax-close.png>
 File: img/unity/unity-parallax-far.png Graphic file (type bmp)
@@ -791,12 +800,12 @@ Overfull \hbox (52.77238pt too wide) in paragraph at lines 391--392
 []\TU/TimesNewRoman(0)/b/n/12 Tlačítková hlasová odezva \TU/TimesNewRoman(0)/m/n/12 – rozšíření \TU/lmtt/m/n/12 UIToolkitAudioBinding \TU/TimesNewRoman(0)/m/n/12 přidává k libovolnému \TU/lmtt/m/n/12 VisualElement
  []
 
-[28]
+[29]
 Overfull \hbox (5.01357pt too wide) in paragraph at lines 416--417
 \TU/TimesNewRoman(0)/m/n/12 hladké rozjasňování a zhasínání světla. Každá instance má navíc náhodný \TU/lmtt/m/n/12 randomOffset \TU/TimesNewRoman(0)/m/n/12 (viz ukázka
  []
 
-[29]
+[30]
 File: img/unity/unity-light-firefly.png Graphic file (type bmp)
 <img/unity/unity-light-firefly.png>
 
@@ -808,12 +817,12 @@ Overfull \hbox (22.34732pt too wide) in paragraph at lines 458--459
 \TU/TimesNewRoman(0)/m/n/12 provedení \TU/TimesNewRoman(0)/m/it/12 dash \TU/TimesNewRoman(0)/m/n/12 schopnosti je volána statická metoda \TU/lmtt/m/n/12 PlayDashEffect()\TU/TimesNewRoman(0)/m/n/12 , která spustí \TU/lmtt/m/n/12 ParticleSystem
  []
 
-[30]
+[31]
 Overfull \hbox (14.44974pt too wide) in paragraph at lines 474--475
 []\TU/TimesNewRoman(0)/m/n/12 Samotný vizuální vzhled částic je definován přímo v Unity editoru v komponentě \TU/lmtt/m/n/12 ParticleSystem
  []
 
-[31]
+[32]
 Overfull \hbox (13.9156pt too wide) in paragraph at lines 500--501
 []\TU/TimesNewRoman(0)/m/n/12 Další vizuální efekt, který zasahuje do herní mechaniky, je komponenta \TU/lmtt/m/n/12 DeathEffect\TU/TimesNewRoman(0)/m/n/12 . Ta ovlivňuje
  []
@@ -843,12 +852,12 @@ Overfull \hbox (28.93895pt too wide) in paragraph at lines 514--515
 \TU/TimesNewRoman(0)/m/n/12 kanály – \TU/TimesNewRoman(0)/m/it/12 Music\TU/TimesNewRoman(0)/m/n/12 , \TU/TimesNewRoman(0)/m/it/12 Diegetic \TU/TimesNewRoman(0)/m/n/12 a \TU/TimesNewRoman(0)/m/it/12 Ambience \TU/TimesNewRoman(0)/m/n/12 – a byl perzistentní mezi scénami díky metodě \TU/lmtt/m/n/12 DontDestroyOnLoad\TU/TimesNewRoman(0)/m/n/12 . 
  []
 
-[32]
+[33]
 File: img/unity/unity-audiomixer.png Graphic file (type bmp)
 <img/unity/unity-audiomixer.png>
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <12> not available
 (Font)              Font shape `TU/lmtt/b/n' tried instead on input line 526.
- [33]
+ [34]
 Overfull \hbox (18.86482pt too wide) in paragraph at lines 546--547
 \TU/TimesNewRoman(0)/m/n/12 diegetických zvuků při úmrtí hráče (\TU/lmtt/m/n/12 MuteDiegetic()\TU/TimesNewRoman(0)/m/n/12 ). Hodnota \TU/lmtt/m/n/12 Time.unscaledDeltaTime \TU/TimesNewRoman(0)/m/n/12 zajišťuje,
  []
@@ -858,14 +867,14 @@ File: img/fmod/fmod.png Graphic file (type bmp)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[34]
+[35]
 File: img/fmod/fmod-unity-wizard.png Graphic file (type bmp)
 <img/fmod/fmod-unity-wizard.png>
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[35]
+[36]
 Overfull \hbox (11.41435pt too wide) in paragraph at lines 604--605
 []\TU/lmtt/m/n/12 EventPlayTrigger \TU/TimesNewRoman(0)/m/n/12 / \TU/lmtt/m/n/12 EventStopTrigger \TU/TimesNewRoman(0)/m/n/12 – určují, jaká Unity událost spustí/zastaví přehrávání 
  []
@@ -875,12 +884,12 @@ Overfull \hbox (5.55092pt too wide) in paragraph at lines 619--620
 \TU/TimesNewRoman(0)/m/n/12 s nastaveným \TU/lmtt/m/n/12 EventPlayTrigger \TU/TimesNewRoman(0)/m/n/12 a \TU/lmtt/m/n/12 EventStopTrigger\TU/TimesNewRoman(0)/m/n/12 . Při shodě pak zavolá \TU/lmtt/m/n/12 Play() \TU/TimesNewRoman(0)/m/n/12 nebo \TU/lmtt/m/n/12 Stop()
  []
 
-[36]
+[37]
 Overfull \hbox (11.0806pt too wide) in paragraph at lines 652--653
 \TU/TimesNewRoman(0)/m/n/12 u kterých nepotřebujeme sledovat jejich životní cyklus. Příkladem je smrt hráče, kde \TU/lmtt/m/n/12 PlayerDeath.cs
  []
 
-[37]
+[38]
 Overfull \hbox (3.4271pt too wide) in paragraph at lines 659--660
 \TU/TimesNewRoman(0)/m/n/12 Druhý přístup využívá \TU/lmtt/m/n/12 StudioEventEmitter \TU/TimesNewRoman(0)/m/n/12 komponentu připojenou přímo k \TU/lmtt/m/n/12 GameObjectu\TU/TimesNewRoman(0)/m/n/12 . Tento
  []
@@ -915,14 +924,14 @@ Overfull \hbox (3.23442pt too wide) in paragraph at lines 693--694
 \TU/TimesNewRoman(0)/m/n/12 aby v konkrétním snímku animace byla zavolána libovolná metoda na libovolném skriptu připojeném
  []
 
-[38]
+[39]
 File: img/fmod/fmod-unity-animation-event.png Graphic file (type bmp)
 <img/fmod/fmod-unity-animation-event.png>
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[39]
+[40]
 File: img/fmod/fmod-footsteps.png Graphic file (type bmp)
 <img/fmod/fmod-footsteps.png>
 
@@ -934,7 +943,7 @@ Overfull \hbox (31.47577pt too wide) in paragraph at lines 746--747
 \TU/TimesNewRoman(0)/m/n/12 Hudba a ambience jsou v FMOD řešeny jako kontinuální eventy, které se nespouštějí přes \TU/lmtt/m/n/12 PlayOneShot()\TU/TimesNewRoman(0)/m/n/12 ,
  []
 
-[40] [41]
+[41] [42]
 Overfull \hbox (6.98723pt too wide) in paragraph at lines 792--793
 []\TU/TimesNewRoman(0)/m/n/12 Systém \TU/lmtt/m/n/12 AmbienceChangeTrigger \TU/TimesNewRoman(0)/m/n/12 funguje identicky, pouze s enumem \TU/lmtt/m/n/12 SceneAmbience \TU/TimesNewRoman(0)/m/n/12 a FMOD
  []
@@ -974,7 +983,7 @@ Overfull \hbox (1.36919pt too wide) in paragraph at lines 808--809
 \TU/TimesNewRoman(0)/m/n/12 vytváří koherentní zvukový profil celého alba. Tento přístup eliminuje problém rozdílně nastavených
  []
 
-[42]
+[43]
 File: img/flstudio/flstudio-arrangement.png Graphic file (type bmp)
 <img/flstudio/flstudio-arrangement.png>
 
@@ -991,7 +1000,7 @@ File: img/flstudio/flstudio-sytrus.png Graphic file (type bmp)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[43] [44]
+[44] [45]
 File: img/flstudio/flstudio-labs.png Graphic file (type bmp)
 <img/flstudio/flstudio-labs.png>
 
@@ -1019,7 +1028,7 @@ File: img/flstudio/flstudio-sfx.png Graphic file (type bmp)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[45] [46]
+[46] [47]
 Overfull \hbox (13.67583pt too wide) in paragraph at lines 868--869
 \TU/TimesNewRoman(0)/m/n/12 zpracování zvuku. Tyto pluginy tvoří základ mého signálového řetězce na jednotlivých Mixer kanálech. 
  []
@@ -1034,7 +1043,7 @@ Overfull \hbox (10.1856pt too wide) in paragraph at lines 883--884
 \TU/TimesNewRoman(0)/m/n/12 prostředek komunikace. Patří sem uživatelské rozhraní (kliknutí tlačítek, otevření menu), atmosférické
  []
 
-[47]
+[48]
 Overfull \hbox (7.07036pt too wide) in paragraph at lines 892--893
 []\TU/TimesNewRoman(0)/m/n/12 Experimentoval jsem také s OGG, ale nakonec jsem dospěl k formátu FLAC. Ten nabízí podobnou
  []
@@ -1054,7 +1063,7 @@ Overfull \hbox (2.2559pt too wide) in paragraph at lines 903--904
 \TU/TimesNewRoman(0)/m/n/12 celesta, která svým jasným, zvonivým tónem vytváří kontrast s temným prostředím jeskyní. Hudebně
  []
 
-[48]
+[49]
 Overfull \hbox (1.44731pt too wide) in paragraph at lines 909--910
 \TU/TimesNewRoman(0)/m/n/12 konceptu) přiřazena specifická melodická nebo harmonická fráze, která se vrací v různých obměnách
  []
@@ -1084,7 +1093,7 @@ Overfull \hbox (39.51077pt too wide) in paragraph at lines 938--939
 \TU/TimesNewRoman(0)/m/n/12 V rámci post-- processingu využívám několik specifických efektů, které dohromady vytvářejí charakteristický
  []
 
-[49]
+[50]
 Overfull \hbox (4.17778pt too wide) in paragraph at lines 941--942
 \TU/TimesNewRoman(0)/m/n/12 jasné části obrazu prosakují do okolních pixelů, čímž vzniká charakteristické záření kolem světelných
  []
@@ -1111,12 +1120,12 @@ Overfull \hbox (3.73051pt too wide) in paragraph at lines 958--959
 \TU/TimesNewRoman(0)/m/n/12 ukazuje scénu tak, jak by vypadala bez jakýchkoliv vizuálních efektů – tmavší, plochá, bez atmosféry.
  []
 
-[50]
+[51]
 Overfull \hbox (11.44974pt too wide) in paragraph at lines 966--967
 []\TU/TimesNewRoman(0)/m/n/12 Komponenta \TU/lmtt/m/n/12 DeathEffect.cs \TU/TimesNewRoman(0)/m/n/12 je skript, který dynamicky manipuluje s post-- processing parametry
  []
 
-[51]
+[52]
 Overfull \hbox (27.8721pt too wide) in paragraph at lines 999--1000
 []\TU/TimesNewRoman(0)/m/n/12 V aktuální implementaci skript snižuje post-- exposure při úmrtí hráče, čímž vytváří tmavý, cinematický
  []
@@ -1126,7 +1135,7 @@ Overfull \hbox (30.59122pt too wide) in paragraph at lines 1001--1002
 []\TU/TimesNewRoman(0)/m/n/12 Tento efekt je aktivován v momentě, kdy hráč vstoupí do \TU/lmtt/m/n/12 DeathZone \TU/TimesNewRoman(0)/m/n/12 triggeru. Skript \TU/lmtt/m/n/12 PlayerDeath.cs
  []
 
-[52]) [53]
+[53]) [54]
 \openout2 = `Závěr.aux'.
 
  (./Závěr.tex
@@ -1141,7 +1150,7 @@ Overfull \hbox (11.12895pt too wide) in paragraph at lines 14--15
 \TU/TimesNewRoman(0)/m/n/12 kde budeme prezentovat nejen \TU/TimesNewRoman(0)/m/it/12 Surreal Bowling: Salvation Path\TU/TimesNewRoman(0)/m/n/12 , ale také náš druhý projekt \TU/TimesNewRoman(0)/m/it/12 Dissonantia
  []
 
-) [54
+) [55
 
 
 
@@ -1152,7 +1161,10 @@ Overfull \hbox (11.12895pt too wide) in paragraph at lines 14--15
 
 
 No file main.bbl.
-[55
+
+Package natbib Warning: There were undefined citations.
+
+[56
 
 
 
@@ -1166,15 +1178,15 @@ L3 programming layer <2026-01-19>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 423E1FEED64165916FDA27243AF6B82D;7293.
+(rerunfilecheck)             Checksum: 57A193E5478B713929C2D436791645EF;7643.
  ) 
 Here is how much of TeX's memory you used:
- 14971 strings out of 470191
- 290942 string characters out of 5479697
- 1018660 words of memory out of 5000000
- 43294 multiletter control sequences out of 15000+600000
+ 15300 strings out of 470191
+ 294999 string characters out of 5479697
+ 1024689 words of memory out of 5000000
+ 43619 multiletter control sequences out of 15000+600000
  631353 words of font info for 97 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  87i,8n,93p,967b,1772s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (56 pages).
+Output written on main.pdf (57 pages).
