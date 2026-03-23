@@ -1,0 +1,79 @@
+\xpg@aux {}{czech}
+\contentsline {chapter}{Obsah}{4}{chapter*.3}%
+\contentsline {chapter}{\numberline {1}Úvod}{6}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Terminologie}{7}{chapter.2}%
+\contentsline {section}{\numberline {2.1}GameObject}{7}{section.2.1}%
+\contentsline {section}{\numberline {2.2}OST}{7}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Post-processing}{7}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Unity Editor}{7}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Použitý framework aplikace}{8}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Operační systém}{8}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Programování}{8}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}C\#}{8}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}IDE}{8}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Version Control}{8}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Vim}{9}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}AI}{9}{subsection.3.2.5}%
+\contentsline {section}{\numberline {3.3}Herní engine}{9}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Hudba a zvuk}{10}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}FL Studio}{10}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}FMOD Studio}{10}{subsection.3.4.2}%
+\contentsline {section}{\numberline {3.5}Ostatní}{10}{section.3.5}%
+\contentsline {chapter}{\numberline {4}Celková koncepce řešení}{12}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Game Manager}{12}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Umírání}{12}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Checkpoint System}{12}{subsection.4.2.1}%
+\contentsline {section}{\numberline {4.3}Emotion System}{13}{section.4.3}%
+\contentsline {section}{\numberline {4.4}UI}{13}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Vizuální efekty}{14}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Audio}{14}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}OST}{14}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}SFX}{15}{subsection.4.6.2}%
+\contentsline {section}{\numberline {4.7}Post-processing}{15}{section.4.7}%
+\contentsline {chapter}{\numberline {5}Popis aplikace}{16}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Zpracování základního modelu hry}{16}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Struktura scén}{16}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Herní manažery}{16}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Input systém}{18}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}Základní herní objekty}{21}{subsection.5.1.4}%
+\contentsline {section}{\numberline {5.2}Vytvoření uživatelského rozhraní}{21}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}UI Toolkit}{21}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}UI Prvky}{23}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Ostatní funkce UI}{26}{subsection.5.2.3}%
+\contentsline {section}{\numberline {5.3}Tvorba vizuálních efektů}{29}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Light 2D}{29}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Particle System}{30}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Ostatní efekty}{31}{subsection.5.3.3}%
+\contentsline {section}{\numberline {5.4}Tvorba zvukových efektů}{32}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Audio systém}{32}{subsection.5.4.1}%
+\contentsline {subsubsection}{Původní řešení -- Unity AudioMixer}{32}{subsubsection*.4}%
+\contentsline {paragraph}{Hierarchie AudioMixeru}{32}{paragraph*.5}%
+\contentsline {paragraph}{Plynulé přechody pomocí \texttt {Lerp}}{33}{paragraph*.6}%
+\contentsline {paragraph}{Nevýhody původního přístupu}{34}{paragraph*.7}%
+\contentsline {subsubsection}{FMOD Studio}{34}{subsubsection*.8}%
+\contentsline {paragraph}{Architektura FMOD pluginu pro Unity}{35}{paragraph*.9}%
+\contentsline {paragraph}{Komponenta StudioEventEmitter a EmitterGameEvent}{35}{paragraph*.10}%
+\contentsline {paragraph}{FMODEvents -- centrální registr eventů}{37}{paragraph*.11}%
+\contentsline {subsubsection}{Architektura přehrávání zvuků}{37}{subsubsection*.12}%
+\contentsline {paragraph}{PlayOneShot -- jednorázové zvuky}{37}{paragraph*.13}%
+\contentsline {paragraph}{StudioEventEmitter -- looping objekty}{38}{paragraph*.14}%
+\contentsline {paragraph}{One-shot objekty s vlastním emitorem}{38}{paragraph*.15}%
+\contentsline {subsubsection}{Vazba zvuků na animace}{38}{subsubsection*.16}%
+\contentsline {subsubsection}{Hudba a Ambience}{41}{subsubsection*.17}%
+\contentsline {subsection}{\numberline {5.4.2}Tvorba v FL Studio}{42}{subsection.5.4.2}%
+\contentsline {subsubsection}{Workflow pomocí Arrangements}{43}{subsubsection*.18}%
+\contentsline {subsubsection}{Sytrus}{43}{subsubsection*.19}%
+\contentsline {subsubsection}{LABs}{43}{subsubsection*.20}%
+\contentsline {subsubsection}{Deelay}{44}{subsubsection*.21}%
+\contentsline {subsubsection}{Zvukové efekty -- ZAPSPLAT}{44}{subsubsection*.22}%
+\contentsline {subsubsection}{Nativní FL Studio pluginy pro zpracování zvuku}{44}{subsubsection*.23}%
+\contentsline {subsection}{\numberline {5.4.3}Kategorizace zvuků}{44}{subsection.5.4.3}%
+\contentsline {subsubsection}{Výběr zvukového formátu}{45}{subsubsection*.24}%
+\contentsline {subsection}{\numberline {5.4.4}Hudba}{45}{subsection.5.4.4}%
+\contentsline {subsubsection}{Main Menu Theme}{45}{subsubsection*.25}%
+\contentsline {subsubsection}{Caves -- The Chase}{46}{subsubsection*.26}%
+\contentsline {subsubsection}{Outer Space -- The Chase}{46}{subsubsection*.27}%
+\contentsline {subsubsection}{Plány do budoucna -- leitmotif a struktura alba}{46}{subsubsection*.28}%
+\contentsline {section}{\numberline {5.5}Post-processing hry}{46}{section.5.5}%
+\contentsline {chapter}{\numberline {6}Závěr}{47}{chapter.6}%
+\contentsline {chapter}{Seznam obrázků}{48}{chapter*.29}%
