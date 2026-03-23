@@ -16,7 +16,7 @@
   {}
 \endgroup
 
-\datalist[entry]{nty/global//global/global/global}
+\datalist[entry]{none/global//global/global/global}
   \entry{unity-docs}{misc}{}{}
     \name{author}{1}{}{%
       {{hash=TU}{%
@@ -30,14 +30,97 @@
     \strng{fullhash}{TU1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{sortinit}{T}
-    \field{sortinithash}{T}
     \field{addendum}{[cit. 2025-03-23]}
     \field{title}{Unity --- Key Concepts}
     \verb{url}
     \verb https://docs.unity3d.com/Manual/key-concepts.html
     \endverb
     \field{year}{2025}
+  \endentry
+
+  \entry{unity-postprocessing}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=TU}{%
+         family={Technologies},
+         familyi={T\bibinitperiod},
+         given={Unity},
+         giveni={U\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TU1}
+    \strng{fullhash}{TU1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-23]}
+    \field{title}{Post-processing overview}
+    \verb{url}
+    \verb https://docs.unity3d.com/560/Documentation//Manual/PostProcessingOver
+    \verb view.html
+    \endverb
+    \field{year}{2017}
+  \endentry
+
+  \entry{unity-editor}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=TU}{%
+         family={Technologies},
+         familyi={T\bibinitperiod},
+         given={Unity},
+         giveni={U\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TU1}
+    \strng{fullhash}{TU1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-23]}
+    \field{title}{Unity Editor interface}
+    \verb{url}
+    \verb https://docs.unity3d.com/Manual/unity-editor.html
+    \endverb
+    \field{year}{2026}
+  \endentry
+
+  \entry{linux-gamedev}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=BB}{%
+         family={Brooks},
+         familyi={B\bibinitperiod},
+         given={Brody},
+         giveni={B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BB1}
+    \strng{fullhash}{BB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-23]}
+    \field{title}{Switching to Linux as a Game Developer}
+    \verb{url}
+    \verb https://brodybrooks.com/posts/2024-linuxgamedev/
+    \endverb
+    \field{year}{2024}
+  \endentry
+
+  \entry{hyprland}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=CH}{%
+         family={Community},
+         familyi={C\bibinitperiod},
+         given={Hyprland},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CH1}
+    \strng{fullhash}{CH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-23]}
+    \field{title}{Hyprland}
+    \verb{url}
+    \verb https://hypr.land/
+    \endverb
+    \field{year}{2026}
   \endentry
 \enddatalist
 \endinput

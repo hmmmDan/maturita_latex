@@ -18,7 +18,11 @@
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{url}
-\usepackage[backend=bibtex]{biblatex}
+\usepackage[backend=bibtex,style=numeric,sorting=none]{biblatex}
+
+\makeatletter
+\patchcmd{\blx@theformat@labelnumber}{\the\value{instcount}}{\arabic{instcount}}{}{}
+\makeatother
 \addbibresource{Zdroje.bib}
 \DeclareLanguageMapping{czech}{czech}
 \usepackage{hyperref}
