@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Arch Linux) (preloaded format=xelatex 2026.3.19)  23 MAR 2026 17:17
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Arch Linux) (preloaded format=xelatex 2026.3.19)  23 MAR 2026 18:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -543,8 +543,13 @@ Overfull \hbox (7.55669pt too wide) in paragraph at lines 10--11
 \TU/TimesNewRoman(0)/m/n/12 Post-- processing je proces aplikování vizuálních vylepšení, filtrů a posílení žádoucí atmosféry různými
  []
 
+
+Overfull \hbox (2.34184pt too wide) in paragraph at lines 13--14
+\TU/TimesNewRoman(0)/m/n/12 Singleton je návrhový vzor (design pattern) v objektově orientovaném programování, který zajišťuje,
+ []
+
 )
-Overfull \hbox (3.55473pt too wide) in paragraph at lines 13--154
+Overfull \hbox (3.55473pt too wide) in paragraph at lines 16--154
 \TU/TimesNewRoman(0)/m/n/12 Rozhraní Unity enginu, ve kterém se pracuje většinu času při vývoji videohry (podobně jako kreativní
  []
 
@@ -970,100 +975,127 @@ Overfull \hbox (1.36919pt too wide) in paragraph at lines 808--809
  []
 
 [42]
-Overfull \hbox (26.0977pt too wide) in paragraph at lines 811--812
+File: img/flstudio/flstudio-arrangement.png Graphic file (type bmp)
+<img/flstudio/flstudio-arrangement.png>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (26.0977pt too wide) in paragraph at lines 820--821
 \TU/TimesNewRoman(0)/m/n/12 Divisions of the Octave) formáty, což umožňuje pracovat s netemperovanými stupnicemi a mikrotonálním
  []
 
-[43]
-Overfull \hbox (9.90825pt too wide) in paragraph at lines 817--818
+File: img/flstudio/flstudio-sytrus.png Graphic file (type bmp)
+<img/flstudio/flstudio-sytrus.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[43] [44]
+File: img/flstudio/flstudio-labs.png Graphic file (type bmp)
+<img/flstudio/flstudio-labs.png>
+
+Overfull \hbox (9.90825pt too wide) in paragraph at lines 844--845
 \TU/TimesNewRoman(0)/m/n/12 komplexních, vrstvených delayů, které vytvářejí glitched/corrupted atmosférické zvuky. Tyto techniky
  []
 
+File: img/flstudio/flstudio-deelay.png Graphic file (type bmp)
+<img/flstudio/flstudio-deelay.png>
 
-Overfull \hbox (4.88286pt too wide) in paragraph at lines 820--821
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (4.88286pt too wide) in paragraph at lines 856--857
 \TU/TimesNewRoman(0)/m/n/12 Member s aktivním předplatným \TU/TimesNewRoman(0)/m/it/12 Monthly Gold Access\TU/TimesNewRoman(0)/m/n/12 , které mi umožňuje přístup k rozsáhlé databázi
  []
 
 
-Overfull \hbox (12.05374pt too wide) in paragraph at lines 820--821
+Overfull \hbox (12.05374pt too wide) in paragraph at lines 856--857
 \TU/TimesNewRoman(0)/m/n/12 profesionálně nahraných zvuků. Tato knihovna pokrývá široké spektrum potřeb – od prostých UI zvuků
  []
 
+File: img/flstudio/flstudio-sfx.png Graphic file (type bmp)
+<img/flstudio/flstudio-sfx.png>
 
-Overfull \hbox (13.67583pt too wide) in paragraph at lines 823--824
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[45] [46]
+Overfull \hbox (13.67583pt too wide) in paragraph at lines 868--869
 \TU/TimesNewRoman(0)/m/n/12 zpracování zvuku. Tyto pluginy tvoří základ mého signálového řetězce na jednotlivých Mixer kanálech. 
  []
 
 
-Overfull \hbox (7.57231pt too wide) in paragraph at lines 834--835
+Overfull \hbox (7.57231pt too wide) in paragraph at lines 879--880
 \TU/TimesNewRoman(0)/m/n/12 Základní organizace zvukových zdrojů ve hře vychází z klasického dělení na diegetické a nediegetické
  []
 
-[44]
-Overfull \hbox (10.1856pt too wide) in paragraph at lines 838--839
+
+Overfull \hbox (10.1856pt too wide) in paragraph at lines 883--884
 \TU/TimesNewRoman(0)/m/n/12 prostředek komunikace. Patří sem uživatelské rozhraní (kliknutí tlačítek, otevření menu), atmosférické
  []
 
-
-Overfull \hbox (7.07036pt too wide) in paragraph at lines 847--848
+[47]
+Overfull \hbox (7.07036pt too wide) in paragraph at lines 892--893
 []\TU/TimesNewRoman(0)/m/n/12 Experimentoval jsem také s OGG, ale nakonec jsem dospěl k formátu FLAC. Ten nabízí podobnou
  []
 
 
-Overfull \hbox (0.57523pt too wide) in paragraph at lines 855--856
+Overfull \hbox (0.57523pt too wide) in paragraph at lines 900--901
 \TU/TimesNewRoman(0)/m/n/12 dvacátého století. Hudebně využívá stupnici D Mixolydian, která svým charakteristickým mollovým
  []
 
 
-Overfull \hbox (8.752pt too wide) in paragraph at lines 855--856
+Overfull \hbox (8.752pt too wide) in paragraph at lines 900--901
 \TU/TimesNewRoman(0)/m/n/12 charakteristický šum starého vinylového gramofonu. Tyto volby nejsou náhodné – přímo korespondují
  []
 
 
-Overfull \hbox (2.2559pt too wide) in paragraph at lines 858--859
+Overfull \hbox (2.2559pt too wide) in paragraph at lines 903--904
 \TU/TimesNewRoman(0)/m/n/12 celesta, která svým jasným, zvonivým tónem vytváří kontrast s temným prostředím jeskyní. Hudebně
  []
 
-[45]
-Overfull \hbox (1.44731pt too wide) in paragraph at lines 864--865
+[48]
+Overfull \hbox (1.44731pt too wide) in paragraph at lines 909--910
 \TU/TimesNewRoman(0)/m/n/12 konceptu) přiřazena specifická melodická nebo harmonická fráze, která se vrací v různých obměnách
  []
 
 
-Overfull \hbox (8.5684pt too wide) in paragraph at lines 866--867
+Overfull \hbox (8.5684pt too wide) in paragraph at lines 911--912
 \TU/TimesNewRoman(0)/m/n/12 posluchače, ale spíše jej podněcuje k hlubšímu soustředění a zamyšlení). Kromě toho budou vytvořeny
  []
 
 
-Overfull \hbox (17.4688pt too wide) in paragraph at lines 871--872
+Overfull \hbox (17.4688pt too wide) in paragraph at lines 916--917
 \TU/TimesNewRoman(0)/m/n/12 Post-- processing je klíčovou součástí moderního vizuálního stylu videohry, jelikož dokáže transformovat
  []
 
 
-Overfull \hbox (11.80179pt too wide) in paragraph at lines 871--872
+Overfull \hbox (11.80179pt too wide) in paragraph at lines 916--917
 \TU/TimesNewRoman(0)/m/n/12 i jednoduchou grafiku v něco vizuálně působivého. V rámci \TU/TimesNewRoman(0)/m/it/12 Surreal Bowling: Salvation Path \TU/TimesNewRoman(0)/m/n/12 využívám
  []
 
-[46]
 File: img/unity/unity-global-volume.png Graphic file (type bmp)
 <img/unity/unity-global-volume.png>
 
-Overfull \hbox (39.51077pt too wide) in paragraph at lines 893--894
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (39.51077pt too wide) in paragraph at lines 938--939
 \TU/TimesNewRoman(0)/m/n/12 V rámci post-- processingu využívám několik specifických efektů, které dohromady vytvářejí charakteristický
  []
 
-
-Overfull \hbox (4.17778pt too wide) in paragraph at lines 896--897
+[49]
+Overfull \hbox (4.17778pt too wide) in paragraph at lines 941--942
 \TU/TimesNewRoman(0)/m/n/12 jasné části obrazu prosakují do okolních pixelů, čímž vzniká charakteristické záření kolem světelných
  []
 
-[47]
-Overfull \hbox (9.96098pt too wide) in paragraph at lines 901--902
+
+Overfull \hbox (9.96098pt too wide) in paragraph at lines 946--947
 \TU/TimesNewRoman(0)/m/n/12 jednotlivé barevné kanály (červená, zelená, modrá) mírně posouvají. Tento efekt je tradičně považován
  []
 
 
-Overfull \hbox (14.45804pt too wide) in paragraph at lines 903--904
+Overfull \hbox (14.45804pt too wide) in paragraph at lines 948--949
 []\TU/TimesNewRoman(0)/m/n/12 V \TU/TimesNewRoman(0)/m/it/12 Surreal Bowling: Salvation Path \TU/TimesNewRoman(0)/m/n/12 slouží chromatic aberration k navození snivého, surrealistického
  []
 
@@ -1072,26 +1104,29 @@ File: img/unity/unity-postprocessing-off.png Graphic file (type bmp)
 File: img/unity/unity-postprocessing-on.png Graphic file (type bmp)
 <img/unity/unity-postprocessing-on.png>
 
-Overfull \hbox (3.73051pt too wide) in paragraph at lines 913--914
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (3.73051pt too wide) in paragraph at lines 958--959
 \TU/TimesNewRoman(0)/m/n/12 ukazuje scénu tak, jak by vypadala bez jakýchkoliv vizuálních efektů – tmavší, plochá, bez atmosféry.
  []
 
-
-Overfull \hbox (11.44974pt too wide) in paragraph at lines 921--922
+[50]
+Overfull \hbox (11.44974pt too wide) in paragraph at lines 966--967
 []\TU/TimesNewRoman(0)/m/n/12 Komponenta \TU/lmtt/m/n/12 DeathEffect.cs \TU/TimesNewRoman(0)/m/n/12 je skript, který dynamicky manipuluje s post-- processing parametry
  []
 
-[48]
-Overfull \hbox (27.8721pt too wide) in paragraph at lines 954--955
+[51]
+Overfull \hbox (27.8721pt too wide) in paragraph at lines 999--1000
 []\TU/TimesNewRoman(0)/m/n/12 V aktuální implementaci skript snižuje post-- exposure při úmrtí hráče, čímž vytváří tmavý, cinematický
  []
 
 
-Overfull \hbox (30.59122pt too wide) in paragraph at lines 956--957
+Overfull \hbox (30.59122pt too wide) in paragraph at lines 1001--1002
 []\TU/TimesNewRoman(0)/m/n/12 Tento efekt je aktivován v momentě, kdy hráč vstoupí do \TU/lmtt/m/n/12 DeathZone \TU/TimesNewRoman(0)/m/n/12 triggeru. Skript \TU/lmtt/m/n/12 PlayerDeath.cs
  []
 
-[49]) [50]
+[52]) [53]
 \openout2 = `Závěr.aux'.
 
  (./Závěr.tex
@@ -1106,7 +1141,7 @@ Overfull \hbox (11.12895pt too wide) in paragraph at lines 14--15
 \TU/TimesNewRoman(0)/m/n/12 kde budeme prezentovat nejen \TU/TimesNewRoman(0)/m/it/12 Surreal Bowling: Salvation Path\TU/TimesNewRoman(0)/m/n/12 , ale také náš druhý projekt \TU/TimesNewRoman(0)/m/it/12 Dissonantia
  []
 
-) [51
+) [54
 
 
 
@@ -1117,7 +1152,7 @@ Overfull \hbox (11.12895pt too wide) in paragraph at lines 14--15
 
 
 No file main.bbl.
-[52
+[55
 
 
 
@@ -1131,15 +1166,15 @@ L3 programming layer <2026-01-19>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B590728BACC8DF91C5FFFA43C485B9FA;7193.
+(rerunfilecheck)             Checksum: 423E1FEED64165916FDA27243AF6B82D;7293.
  ) 
 Here is how much of TeX's memory you used:
- 14920 strings out of 470191
- 289209 string characters out of 5479697
+ 14971 strings out of 470191
+ 290942 string characters out of 5479697
  1018660 words of memory out of 5000000
- 43249 multiletter control sequences out of 15000+600000
+ 43294 multiletter control sequences out of 15000+600000
  631353 words of font info for 97 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  87i,8n,93p,967b,1772s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (53 pages).
+Output written on main.pdf (56 pages).

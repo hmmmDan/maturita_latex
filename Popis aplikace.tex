@@ -807,17 +807,62 @@ Práce v FL Studio je jádrem mé audio workflow. Struktura projektu je navržen
 \subsubsection{Workflow pomocí Arrangements}
 Jedním z hlavních prvků mojí workflow je systém \emph{Arrangements} (Arrangement view). V jediném projektu vytvářím více arrangements, z nichž každý reprezentuje jednu skladbu nebo skupinu zvukových efektů. Důležité je, že všechny arrangements sdílejí stejnou sadu pluginových presetů a jsou napojeny na shodné Mixer kanály. Tím je zajištěno, že nástroje a zvuky použité napříč různými skladbami zní jednotně -- stejný syntezátor v odlišném arrangements posílá signál do stejného Mixer kanálu, což vytváří koherentní zvukový profil celého alba. Tento přístup eliminuje problém rozdílně nastavených kanálů mezi skladbami a značně zjednodušuje finální mix.
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{img/flstudio/flstudio-arrangement.png}
+    \caption{FL Studio -- Arrangement view}
+    \label{fig:flstudio-arrangement}
+\end{figure}
+
+Jak je vidět na obrázku \ref{fig:flstudio-arrangement}, každý arrangement obsahuje více stop (tracks), přičemž každá stopa může obsahovat jeden nebo více zvukových vzorků (samples) nebo MIDI stop. Toto uspořádání umožňuje přehlednou organizaci i komplexních projektů.
+
 \subsubsection{Sytrus}
 Sytrus je jeden z mých primárních synth pluginů. Jedná se o pokročilý FM syntezátor s možností importu \emph{scale souborů} (souborů s definicí stupnic). Tyto soubory podporují různé EDO (Equal Divisions of the Octave) formáty, což umožňuje pracovat s netemperovanými stupnicemi a mikrotonálním laděním. Tato schopnost je podrobněji rozebrána v podkapitole \ref{sec:hudba}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{img/flstudio/flstudio-sytrus.png}
+    \caption{FL Studio -- Sytrus plugin}
+    \label{fig:flstudio-sytrus}
+\end{figure}
+
+Na obrázku \ref{fig:flstudio-sytrus} je zobrazeno rozhraní Sytrus s několika aktivními operátory a nastavením modulační matice.
 
 \subsubsection{LABs}
 LABs je bezplatný plugin od Spitfire Audio, který nabízí rozsáhlou knihovnu realisticky znějících a atmosferických nástrojů. Plugin poskytuje intuitivní ovládání nad základními parametry jako je reverb, hlasitost nebo citlivost, což umožňuje rychle přizpůsobit nástroj požadovanému kontextu bez nutnosti složitého nastavení.
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{img/flstudio/flstudio-labs.png}
+    \caption{FL Studio -- LABs plugin}
+    \label{fig:flstudio-labs}
+\end{figure}
+
+Na obrázku \ref{fig:flstudio-labs} je zobrazeno rozhraní LABs pluginu s několika dostupnými nástroji.
+
 \subsubsection{Deelay}
 Deelay je delay plugin, který využívám pro vytváření prostorových echo efektů. Plugin nabízí pokročilé možnosti nastavení oproti běžným delayům -- různé módy filtrace, time/pitch modifikace a synchronizaci na tempo projektu. Speciálně se zaměřuji na využití efektu \emph{Chamber} a tvorbu komplexních, vrstvených delayů, které vytvářejí glitched/corrupted atmosférické zvuky. Tyto techniky přímo korespondují s narativem surrealistické hry, kde zvuková estetika odráží fragmentovanou a deformovanou realitu.
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{img/flstudio/flstudio-deelay.png}
+    \caption{FL Studio -- Deelay plugin}
+    \label{fig:flstudio-deelay}
+\end{figure}
+
+Na obrázku \ref{fig:flstudio-deelay} je zobrazeno rozhraní Deelay pluginu s pokročilými možnostmi nastavení.
+
 \subsubsection{Zvukové efekty -- ZAPSPLAT}
 Většina zvukových efektů použitých ve hře pochází z knihovny ZAPSPLAT. Jsem zde Premium Member s aktivním předplatným \emph{Monthly Gold Access}, které mi umožňuje přístup k rozsáhlé databázi profesionálně nahraných zvuků. Tato knihovna pokrývá široké spektrum potřeb -- od prostých UI zvuků až po komplexní prostředí a diegetické efekty.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{img/flstudio/flstudio-sfx.png}
+    \caption{FL Studio -- organizace zvukových efektů v jednom arrangements}
+    \label{fig:flstudio-sfx}
+\end{figure}
+
+Na obrázku \ref{fig:flstudio-sfx} je zobrazena má workflow pro práci se zvukovými efekty. Všechny zvukové efekty mám rozmístěny v jednom dlouhém arrangements, kde každý zvuk zabírá specifickou část časové osy. Při exportu vždy renderuji pouze konkrétní zvuk -- pomocí \emph{Solo} funkce (odmutuje pouze danou stopu) exportuji zvuk do FLAC formátu. Tento přístup mi umožňuje mít rychlý přístup ke všem podobným nebo souvisejícím zvukům na jednom místě a snadno tvořit zvuk celého herního světa. Každý zvuk je tak vždy po ruce a mohu jej kdykoliv upravit či nahradit bez složitého hledání v adresářové struktuře.
 
 \subsubsection{Nativní FL Studio pluginy pro zpracování zvuku}
 Kromě externích nástrojů využívám řadu vestavěných (nativních) pluginů FL Studia pro finální zpracování zvuku. Tyto pluginy tvoří základ mého signálového řetězce na jednotlivých Mixer kanálech.
