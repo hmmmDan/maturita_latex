@@ -20,7 +20,8 @@
 \usepackage{xcolor}
 \usepackage{hyperref}
 \usepackage{url}
-\usepackage{natbib}
+\usepackage[backend=bibtex]{biblatex}
+\addbibresource{Zdroje.bib}
 
 \hypersetup{
     colorlinks=true,
@@ -153,14 +154,13 @@ V Karviné dne: ………………………. 	Podpis: ……………………�
 
 \include{Úvod}
 \include{Terminologie}
-\include{Použitý framework aplikace}
-\include{Celková koncepce řešení}
-\include{Popis aplikace}
+\include{Pouzity-framework-aplikace}
+\include{Celkova-koncepce-reseni}
+\include{Popis-aplikace}
 \include{Závěr}
 
 \listoffigures
 
-\bibliographystyle{plain}
-\bibliography{Zdroje}
+\printbibliography
 
 \end{document}

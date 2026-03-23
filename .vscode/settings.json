@@ -9,13 +9,18 @@
                 "-file-line-error",
                 "%DOC%"
             ]
+        },
+        {
+            "name": "bibtex",
+            "command": "/usr/bin/bibtex",
+            "args": ["%DOCFILE%"]
         }
     ],
     "latex-workshop.latex.recipes": [
         {
-            "name": "XeLaTeX",
-            "tools": ["xelatex"]
+            "name": "XeLaTeX + BibTeX (biblatex)",
+            "tools": ["xelatex", "bibtex", "xelatex", "xelatex"]
         }
     ],
-    "latex-workshop.latex.mainRecipe": "XeLaTeX"
+    "latex-workshop.latex.mainRecipe": "XeLaTeX + BibTeX (biblatex)"
 }
