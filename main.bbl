@@ -30,12 +30,11 @@
     \strng{fullhash}{TU1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{addendum}{[cit. 2025-03-23]}
+    \field{addendum}{[cit. 2026-03-23]}
     \field{title}{Unity --- Key Concepts}
     \verb{url}
     \verb https://docs.unity3d.com/Manual/key-concepts.html
     \endverb
-    \field{year}{2025}
   \endentry
 
   \entry{unity-postprocessing}{misc}{}{}
@@ -57,7 +56,6 @@
     \verb https://docs.unity3d.com/560/Documentation//Manual/PostProcessingOver
     \verb view.html
     \endverb
-    \field{year}{2017}
   \endentry
 
   \entry{unity-editor}{misc}{}{}
@@ -78,7 +76,6 @@
     \verb{url}
     \verb https://docs.unity3d.com/Manual/unity-editor.html
     \endverb
-    \field{year}{2026}
   \endentry
 
   \entry{linux-gamedev}{misc}{}{}
@@ -99,7 +96,6 @@
     \verb{url}
     \verb https://brodybrooks.com/posts/2024-linuxgamedev/
     \endverb
-    \field{year}{2024}
   \endentry
 
   \entry{hyprland}{misc}{}{}
@@ -120,7 +116,6 @@
     \verb{url}
     \verb https://hypr.land/
     \endverb
-    \field{year}{2026}
   \endentry
 \enddatalist
 \endinput
