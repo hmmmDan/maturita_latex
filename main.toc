@@ -75,5 +75,10 @@
 \contentsline {subsubsection}{Outer Space -- The Chase}{46}{subsubsection*.27}%
 \contentsline {subsubsection}{Plány do budoucna -- leitmotif a struktura alba}{46}{subsubsection*.28}%
 \contentsline {section}{\numberline {5.5}Post-processing hry}{46}{section.5.5}%
-\contentsline {chapter}{\numberline {6}Závěr}{47}{chapter.6}%
-\contentsline {chapter}{Seznam obrázků}{48}{chapter*.29}%
+\contentsline {subsection}{\numberline {5.5.1}Global Volume}{47}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Použité efekty, jejich nastavení a bindnutí do kódu}{47}{subsection.5.5.2}%
+\contentsline {subsubsection}{Bloom}{47}{subsubsection*.29}%
+\contentsline {subsubsection}{Chromatic Aberration}{48}{subsubsection*.30}%
+\contentsline {subsection}{\numberline {5.5.3}Vizuální styl hry}{50}{subsection.5.5.3}%
+\contentsline {chapter}{\numberline {6}Závěr}{51}{chapter.6}%
+\contentsline {chapter}{Seznam obrázků}{52}{chapter*.31}%

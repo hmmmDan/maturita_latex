@@ -867,6 +867,128 @@ V budoucnu plánuji mít pro všech devět levelů dvě hlavní skladby: jednu p
 
 \section{Post-processing hry}
 \label{sec:post-processing-hry}
+
+Post-processing je klíčovou součástí moderního vizuálního stylu videohry, jelikož dokáže transformovat i jednoduchou grafiku v něco vizuálně působivého. V rámci \emph{Surreal Bowling: Salvation Path} využívám Unity Universal Render Pipeline (URP), která poskytuje výkonný a flexibilní systém pro aplikaci grafických efektů.
+
+\subsection{Global Volume}
+\label{sec:global-volume}
+
+V URP je centrem veškerého post-processingu objekt \emph{Global Volume}. Ten funguje jako kontejner, který sdružuje všechny efekty a aplikuje je na celou scénu. V hierarchii Unity je tento objekt typicky umístěn jako samostatný \texttt{GameObject} s připojenou komponentou \texttt{Volume}, která obsahuje seznam jednotlivých \emph{Volume Overrides} -- tedy konkrétních efektů, které mají být aplikovány.
+
+Global Volume je nakonfigurován tak, aby pokrýval celou herní plochu (\emph{Global} režim) a byl perzistentní mezi scénami, což zajišťuje konzistentní vizuální styl bez nutnosti znovu nastavovat efekty při přechodu mezi úrovněmi. V editoru je toto nastavení zobrazeno na obrázku \ref{fig:unity-global-volume}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/unity/unity-global-volume.png}
+    \caption{Global Volume v Unity Editoru}
+    \label{fig:unity-global-volume}
+\end{figure}
+
+Každý efekt v rámci Global Volume má svou prioritu a intenzitu. Priorita určuje pořadí aplikace efektů, zatímco intenzita umožňuje jemné doladění -- například plný bloom může být příliš agresivní, a proto jej nastavuji na 60\% intenzitu.
+
+\subsection{Použité efekty, jejich nastavení a bindnutí do kódu}
+\label{sec:pouzite-efekty}
+
+V rámci post-processingu využívám několik specifických efektů, které dohromady vytvářejí charakteristický vizuální styl hry.
+
+\subsubsection{Bloom}
+Bloom je jeden z nejdůležitějších efektů pro celkovou vizuální kvalitu hry. Princip spočívá v tom, že jasné části obrazu prosakují do okolních pixelů, čímž vzniká charakteristické záření kolem světelných zdrojů. V kontextu hry bloom zdůrazňuje světlušky v korunách stromů, collectible objekty i světelný efekt kolem hráče. Toto nastavení je dostatečně výrazné, aby hra působila vizuálně zajímavě, ale ne natolik agresivní, aby rušilo herní mechaniky.
+
+Bloom je součástí defaultního URP assetu a nevyžaduje žádné bindování do kódu -- je aktivní trvale přes Global Volume.
+
+\subsubsection{Chromatic Aberration}
+Chromatic aberration (chromatická vada) způsobuje rozklad barev na okrajích obrazovky, kde se jednotlivé barevné kanály (červená, zelená, modrá) mírně posouvají. Tento efekt je tradičně považován za nedostatky optiky, ale v herním designu se využívá pro vytvoření specifické atmosféry.
+
+V \emph{Surreal Bowling: Salvation Path} slouží chromatic aberration k navození snivého, surrealistického pocitu, který odpovídá celkovému tématu hry. Podobně jako bloom, i tento efekt je aktivní trvale přes Global Volume a není manipulován v žádném kódu.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.45\textwidth]{img/unity/unity-postprocessing-off.png}
+    \includegraphics[width=0.45\textwidth]{img/unity/unity-postprocessing-on.png}
+    \caption{Vlevo: Scéna bez post-processingu a osvětlení. Vpravo: Stejná scéna s aktivním post-processingem a Light 2D}
+    \label{fig:unity-postprocessing}
+\end{figure}
+
+Na obrázku \ref{fig:unity-postprocessing} je vidět zásadní rozdíl, který post-processing a osvětlení přináší. Levý obrázek ukazuje scénu tak, jak by vypadala bez jakýchkoliv vizuálních efektů -- tmavší, plochá, bez atmosféry. Pravý obrázek pak ukazuje tutéž scénu s aplikovaným post-processingem a Light 2D systémem -- prostředí získává hloubku, atmosféru a vizuální zajímavost.
+
+Velmi mírný motion blur je využit pro zjemnění rychlých pohybů kamery a hráče. Na rozdíl od filmového motion blur, který může být velmi výrazný, je zde nastaven na minimální úroveň, aby nepůsobil rušivě, ale přesto přidal určitou dynamiku.
+
+Color adjustments jsou klíčové pro celkovou atmosféru hry. Nejdůležitějším parametrem je \emph{Post Exposure}, který je nastaven na hodnotu 0.5. Tím se celkový jas sníží, což vytváří temnější prostředí odpovídající atmosféře hry. Toto nastavení je rovněž součástí Global Volume a je aktivní trvale.
+
+%\subsection{Death Screen -- DeathEffect.cs}
+%\subsubsection{DeathEffect.cs}
+Komponenta \texttt{DeathEffect.cs} je skript, který dynamicky manipuluje s post-processing parametry při úmrtí hráče. Jak již bylo zmíněno v podkapitole \ref{sec:ostatni-efekty-vfx}, tento skript ovlivňuje proměnné \texttt{Volume} profilu.
+
+\begin{lstlisting}[caption={DeathEffect.cs -- základní struktura}, label={lst:deatheffect}]
+using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
+
+public class DeathEffect : MonoBehaviour
+{
+    private Volume volume;
+    private ColorAdjustments colorAdjustments;
+    
+    [SerializeField] private float targetExposure = -2f;
+    [SerializeField] private float transitionSpeed = 2f;
+    
+    private void Start()
+    {
+        volume = GetComponent<Volume>();
+        volume.profile.TryGet(out colorAdjustments);
+    }
+    
+    private void Update()
+    {
+        if (colorAdjustments != null)
+        {
+            float currentExposure = colorAdjustments.postExposure.value;
+            float newExposure = Mathf.Lerp(currentExposure, targetExposure, Time.deltaTime * transitionSpeed);
+            colorAdjustments.postExposure.value = newExposure;
+        }
+    }
+}
+\end{lstlisting}
+
+V aktuální implementaci skript snižuje post-exposure při úmrtí hráče, čímž vytváří tmavý, cinematický efekt -- obraz postupně ztmavne, dokud není hráč respawnován. Po respawnu se hodnota post-exposure vrací zpět na výchozí 0.5.
+
+Tento efekt je aktivován v momentě, kdy hráč vstoupí do \texttt{DeathZone} triggeru. Skript \texttt{PlayerDeath.cs} detekuje kolizi a aktivuje \texttt{DeathEffect} komponentu, která následně ovlivňuje post-processing parametry.
+
+\begin{lstlisting}[caption={PlayerDeath.cs -- aktivace Death Effectu}, label={lst:playerdeath-deatheffect}]
+private void OnTriggerEnter2D(Collider2D collision)
+{
+    if (collision.CompareTag("DeathZone"))
+    {
+        ActivateDeathEffect();
+    }
+}
+
+private void ActivateDeathEffect()
+{
+    DeathEffect deathEffect = FindFirstObjectByType<DeathEffect>();
+    if (deathEffect != null)
+    {
+        deathEffect.TriggerDeathEffect();
+    }
+}
+\end{lstlisting}
+
+Kromě snižování exposure může \texttt{DeathEffect.cs} v budoucnu ovlivňovat i saturaci (snížení na 0 pro černobílý efekt) a přidávat vinceetting (tmavé rohy obrazovky), čímž se ještě více zdůrazní cinematický charakter úmrtí.
+
+\subsection{Vizuální styl hry}
+\label{sec:vizualni-styl-hry}
+
+Vizuální styl \emph{Surreal Bowling: Salvation Path} je záměrně navržen tak, aby vyvolával pocit snu, surrealismu a melancholie. Kombinace výše zmíněných post-processing efektů vytváří jedinečnou atmosféru, která hru odlišuje od začátečnických indie herních projektů a blíží se profesionálním designovým standardům.
+
+Temný prostředí (díky post-exposure -0.5) vytváří pocit nebezpečí a tajemna. Hráč se pohybuje v temném prostředí, což podporuje explorativní herní mechaniky \emph{The Exploration} pasáží.
+
+Chromatic aberration a mírný bloom dodávají hře surreální vzhled. Hranice mezi světem hry a snem se rozmazávají, což odpovídá celkovému příběhu o hledání cesty ke spasení.
+
+V budoucnu je plánováno rozšíření vizuálního stylu o další prvky:
 \begin{itemize}
-    \item ukázka Global Volume post processing prvku
+    \item \textbf{Vignette} -- tmavé rohy obrazovky, které ještě více zdůrazní cinematický vzhled
+    \item \textbf{Film Grain} -- jemný šum, který přidá na textuře a retro pocitu
+    \item \textbf{Další color grading} -- specifické barevné korekce pro různé části hry (jiné barvy pro \emph{The Chase} pasáže, jiné pro \emph{The Exploration})
 \end{itemize}
+
+Celkově post-processing hraje klíčovou roli v tom, jak hráč vnímá herní svět. Bez něj by grafika byla pouze funkční -- s ním se stává profesionálnějším výrazem.

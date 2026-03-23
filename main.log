@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Arch Linux) (preloaded format=xelatex 2026.3.19)  23 MAR 2026 15:37
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Arch Linux) (preloaded format=xelatex 2026.3.19)  23 MAR 2026 16:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1034,12 +1034,69 @@ Overfull \hbox (8.5684pt too wide) in paragraph at lines 866--867
 \TU/TimesNewRoman(0)/m/n/12 posluchače, ale spíše jej podněcuje k hlubšímu soustředění a zamyšlení). Kromě toho budou vytvořeny
  []
 
-) [46]
+
+Overfull \hbox (17.4688pt too wide) in paragraph at lines 871--872
+\TU/TimesNewRoman(0)/m/n/12 Post-- processing je klíčovou součástí moderního vizuálního stylu videohry, jelikož dokáže transformovat
+ []
+
+
+Overfull \hbox (11.80179pt too wide) in paragraph at lines 871--872
+\TU/TimesNewRoman(0)/m/n/12 i jednoduchou grafiku v něco vizuálně působivého. V rámci \TU/TimesNewRoman(0)/m/it/12 Surreal Bowling: Salvation Path \TU/TimesNewRoman(0)/m/n/12 využívám
+ []
+
+[46]
+File: img/unity/unity-global-volume.png Graphic file (type bmp)
+<img/unity/unity-global-volume.png>
+
+Overfull \hbox (39.51077pt too wide) in paragraph at lines 892--893
+\TU/TimesNewRoman(0)/m/n/12 V rámci post-- processingu využívám několik specifických efektů, které dohromady vytvářejí charakteristický
+ []
+
+
+Overfull \hbox (4.17778pt too wide) in paragraph at lines 895--896
+\TU/TimesNewRoman(0)/m/n/12 jasné části obrazu prosakují do okolních pixelů, čímž vzniká charakteristické záření kolem světelných
+ []
+
+[47]
+Overfull \hbox (9.96098pt too wide) in paragraph at lines 900--901
+\TU/TimesNewRoman(0)/m/n/12 jednotlivé barevné kanály (červená, zelená, modrá) mírně posouvají. Tento efekt je tradičně považován
+ []
+
+
+Overfull \hbox (14.45804pt too wide) in paragraph at lines 902--903
+[]\TU/TimesNewRoman(0)/m/n/12 V \TU/TimesNewRoman(0)/m/it/12 Surreal Bowling: Salvation Path \TU/TimesNewRoman(0)/m/n/12 slouží chromatic aberration k navození snivého, surrealistického
+ []
+
+File: img/unity/unity-postprocessing-off.png Graphic file (type bmp)
+<img/unity/unity-postprocessing-off.png>
+File: img/unity/unity-postprocessing-on.png Graphic file (type bmp)
+<img/unity/unity-postprocessing-on.png>
+
+Overfull \hbox (3.73051pt too wide) in paragraph at lines 912--913
+\TU/TimesNewRoman(0)/m/n/12 ukazuje scénu tak, jak by vypadala bez jakýchkoliv vizuálních efektů – tmavší, plochá, bez atmosféry.
+ []
+
+
+Overfull \hbox (11.44974pt too wide) in paragraph at lines 920--921
+[]\TU/TimesNewRoman(0)/m/n/12 Komponenta \TU/lmtt/m/n/12 DeathEffect.cs \TU/TimesNewRoman(0)/m/n/12 je skript, který dynamicky manipuluje s post-- processing parametry
+ []
+
+[48]
+Overfull \hbox (27.8721pt too wide) in paragraph at lines 953--954
+[]\TU/TimesNewRoman(0)/m/n/12 V aktuální implementaci skript snižuje post-- exposure při úmrtí hráče, čímž vytváří tmavý, cinematický
+ []
+
+
+Overfull \hbox (30.59122pt too wide) in paragraph at lines 955--956
+[]\TU/TimesNewRoman(0)/m/n/12 Tento efekt je aktivován v momentě, kdy hráč vstoupí do \TU/lmtt/m/n/12 DeathZone \TU/TimesNewRoman(0)/m/n/12 triggeru. Skript \TU/lmtt/m/n/12 PlayerDeath.cs
+ []
+
+[49]) [50]
 \openout2 = `Závěr.aux'.
 
  (./Závěr.tex
 Kapitola 6.
-) [47
+) [51
 
 
 
@@ -1050,7 +1107,7 @@ Kapitola 6.
 
 
 No file main.bbl.
-[48
+[52
 
 
 
@@ -1064,15 +1121,15 @@ L3 programming layer <2026-01-19>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 73E802372F6C81DCF317BB06C61B99A2;6551.
+(rerunfilecheck)             Checksum: B590728BACC8DF91C5FFFA43C485B9FA;7193.
  ) 
 Here is how much of TeX's memory you used:
- 14840 strings out of 470191
- 287206 string characters out of 5479697
+ 14919 strings out of 470191
+ 289198 string characters out of 5479697
  1018660 words of memory out of 5000000
- 43172 multiletter control sequences out of 15000+600000
+ 43248 multiletter control sequences out of 15000+600000
  631353 words of font info for 97 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  87i,8n,93p,967b,1772s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (49 pages).
+Output written on main.pdf (53 pages).
