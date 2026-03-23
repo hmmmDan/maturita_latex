@@ -1,5 +1,4 @@
 \xpg@aux {}{czech}
-\contentsline {chapter}{Obsah}{4}{chapter*.3}%
 \contentsline {chapter}{\numberline {1}Úvod}{6}{chapter.1}%
 \contentsline {chapter}{\numberline {2}Terminologie}{7}{chapter.2}%
 \contentsline {section}{\numberline {2.1}GameObject}{7}{section.2.1}%
@@ -86,4 +85,3 @@
 \contentsline {subsubsection}{Chromatic Aberration}{51}{subsubsection*.30}%
 \contentsline {subsection}{\numberline {5.5.3}Vizuální styl hry}{54}{subsection.5.5.3}%
 \contentsline {chapter}{\numberline {6}Závěr}{55}{chapter.6}%
-\contentsline {chapter}{Seznam obrázků}{56}{chapter*.31}%

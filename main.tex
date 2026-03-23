@@ -16,12 +16,12 @@
 \usepackage{titlesec}
 
 \usepackage{listings}
-\usepackage{tocbibind}
 \usepackage{xcolor}
-\usepackage{hyperref}
 \usepackage{url}
 \usepackage[backend=bibtex]{biblatex}
 \addbibresource{Zdroje.bib}
+\DeclareLanguageMapping{czech}{czech}
+\usepackage{hyperref}
 
 \hypersetup{
     colorlinks=true,
@@ -46,6 +46,18 @@
 \gappto\captionsczech{%
   \def\lstlistingname{Kód}%
   \def\lstlistlistingname{Seznam kódů}%
+}
+\DefineBibliographyStrings{czech}{
+  bibliography = {Seznam použitých zdrojů},
+  url = {Dostupné z},
+  and = {a},
+}
+\DefineBibliographyExtras{czech}{\def\urldateformat{czech}}
+\DeclareFieldFormat{url}{\bibstring{url}\addcolon\space\url{#1}}
+
+\defbibheading{czech bibliography}[\bibname]{%
+  \chapter*{Seznam použitých zdrojů}%
+  \addcontentsline{toc}{chapter}{Seznam použitých zdrojů}%
 }
 
 \titleformat{\chapter}
