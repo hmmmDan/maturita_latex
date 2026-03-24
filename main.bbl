@@ -117,5 +117,194 @@
     \verb https://hypr.land/
     \endverb
   \endentry
+
+  \entry{csharp}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=M}{%
+         family={Microsoft},
+         familyi={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{M1}
+    \strng{fullhash}{M1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-24]}
+    \field{title}{{C\#} programming language}
+    \verb{url}
+    \verb https://dotnet.microsoft.com/en-us/languages/csharp
+    \endverb
+  \endentry
+
+  \entry{vscode-vs-codium}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=PS}{%
+         family={Pandewad},
+         familyi={P\bibinitperiod},
+         given={Sachin},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PS1}
+    \strng{fullhash}{PS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-24]}
+    \field{title}{Making the Right Choice: VS Code vs VSCodium}
+    \verb{url}
+    \verb https://medium.com/@SachinPandewad/making-right-choice-vs-code-vs-vs-
+    \verb codium-986f08d63336
+    \endverb
+  \endentry
+
+  \entry{git-intro}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=W}{%
+         family={W3Schools},
+         familyi={W\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{W1}
+    \strng{fullhash}{W1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-24]}
+    \field{title}{Git Introduction}
+    \verb{url}
+    \verb https://www.w3schools.com/git/git_intro.asp?remote=github
+    \endverb
+  \endentry
+
+  \entry{vim}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=CV}{%
+         family={Community},
+         familyi={C\bibinitperiod},
+         given={Vim},
+         giveni={V\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CV1}
+    \strng{fullhash}{CV1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-24]}
+    \field{title}{Vim}
+    \verb{url}
+    \verb https://www.vim.org/
+    \endverb
+  \endentry
+
+  \entry{chatgpt}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=O}{%
+         family={OpenAI},
+         familyi={O\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{O1}
+    \strng{fullhash}{O1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-24]}
+    \field{title}{ChatGPT}
+    \verb{url}
+    \verb https://openai.com/index/chatgpt/
+    \endverb
+  \endentry
+
+  \entry{augment}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         family={Augment},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{A1}
+    \strng{fullhash}{A1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-24]}
+    \field{title}{Augment Code}
+    \verb{url}
+    \verb https://www.augmentcode.com/
+    \endverb
+  \endentry
+
+  \entry{lmstudio}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=SL}{%
+         family={Studio},
+         familyi={S\bibinitperiod},
+         given={LM},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SL1}
+    \strng{fullhash}{SL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-24]}
+    \field{title}{LM Studio}
+    \verb{url}
+    \verb https://lmstudio.ai/
+    \endverb
+  \endentry
+
+  \entry{qwen}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=Q}{%
+         family={Qwen},
+         familyi={Q\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{Q1}
+    \strng{fullhash}{Q1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-24]}
+    \field{title}{Qwen3.5-9B}
+    \verb{url}
+    \verb https://huggingface.co/Qwen/Qwen3.5-9B
+    \endverb
+  \endentry
+
+  \entry{opencode}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=O}{%
+         family={OpenCode},
+         familyi={O\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{O2}
+    \strng{fullhash}{O2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-24]}
+    \field{title}{OpenCode}
+    \verb{url}
+    \verb https://opencode.ai/
+    \endverb
+  \endentry
+
+  \entry{unity}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=TU}{%
+         family={Technologies},
+         familyi={T\bibinitperiod},
+         given={Unity},
+         giveni={U\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TU1}
+    \strng{fullhash}{TU1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-24]}
+    \field{title}{Unity Game Engine}
+    \verb{url}
+    \verb https://unity.com
+    \endverb
+  \endentry
 \enddatalist
 \endinput

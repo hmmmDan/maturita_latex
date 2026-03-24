@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Arch Linux) (preloaded format=xelatex 2026.3.19)  23 MAR 2026 21:12
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Arch Linux) (preloaded format=xelatex 2026.3.19)  24 MAR 2026 11:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -818,44 +818,48 @@ Overfull \hbox (2.57231pt too wide) in paragraph at lines 4--5
 
 
 ]
+Overfull \hbox (5.08989pt too wide) in paragraph at lines 27--28
+\TU/TimesNewRoman(0)/m/n/12 multiplatformní herní engine Unity vyvinutý společností Unity Technologies [[][]15[][]] z několika prostých
+ []
+
 Missing character: There is no   (U+202F) in font Times New Roman/OT:language=dflt;mapping=tex-text;!
 
-Overfull \hbox (6.88676pt too wide) in paragraph at lines 28--29
+Overfull \hbox (6.88676pt too wide) in paragraph at lines 29--30
 \TU/TimesNewRoman(0)/m/n/12 objeví úvodní obrazovka (splash screen) s nápisem „Made with Unity“, což našemu týmu momentálně
  []
 
 [10]
-Overfull \hbox (0.63577pt too wide) in paragraph at lines 37--38
+Overfull \hbox (0.63577pt too wide) in paragraph at lines 38--39
 []\TU/TimesNewRoman(0)/m/n/12 FL Studio je software (Digital Audio Workstation) pro skládání, produkci a mix hudby za pomocí
  []
 
 
-Overfull \hbox (12.56937pt too wide) in paragraph at lines 39--40
+Overfull \hbox (12.56937pt too wide) in paragraph at lines 40--41
 []\TU/TimesNewRoman(0)/m/n/12 Je důležité zmínit, že FL Studio neexistuje pro Linux. Experimentoval jsem s různými alternativami
  []
 
 
-Overfull \hbox (0.17778pt too wide) in paragraph at lines 41--42
+Overfull \hbox (0.17778pt too wide) in paragraph at lines 42--43
 \TU/TimesNewRoman(0)/m/n/12 časové a výškové modifikace a efekty jako Chamber nebo vrstvené komplexní delaye, které dodávají
  []
 
 
-Overfull \hbox (20.57622pt too wide) in paragraph at lines 47--48
+Overfull \hbox (20.57622pt too wide) in paragraph at lines 48--49
 \TU/TimesNewRoman(0)/m/n/12 middleware) pro úpravu a implementaci zvuku do videoher, vyvinutý společností Firelight Technologies.
  []
 
 
-Overfull \hbox (23.87111pt too wide) in paragraph at lines 47--48
+Overfull \hbox (23.87111pt too wide) in paragraph at lines 48--49
 \TU/TimesNewRoman(0)/m/n/12 pomocí Unity integrace. FMOD nabízí pokročilé funkce jako pocit 3D prostoru, automatizace zvuku nebo
  []
 
 
-Overfull \hbox (10.23833pt too wide) in paragraph at lines 52--53
+Overfull \hbox (10.23833pt too wide) in paragraph at lines 53--54
 \TU/TimesNewRoman(0)/m/n/12 Pro efektivní spolupráci v týmu používáme poznámkový software Obsidian, u kterého jsme si společně
  []
 
 [11])
-Overfull \hbox (4.58403pt too wide) in paragraph at lines 54--173
+Overfull \hbox (4.58403pt too wide) in paragraph at lines 55--173
 \TU/TimesNewRoman(0)/m/n/12 Thinking Studio, na kterém jsou všichni členové týmu i spolupracující zvenčí. Discord nám umožňuje
  []
 
@@ -1399,7 +1403,7 @@ Overfull \hbox (11.12895pt too wide) in paragraph at lines 14--15
 
 
 ]
-Overfull \hbox (3.59143pt too wide) in paragraph at lines 181--181
+Overfull \hbox (9.59143pt too wide) in paragraph at lines 181--181
 []\TU/TimesNewRoman(0)/m/n/12 Brody Brooks. \TU/TimesNewRoman(0)/m/it/12 Switching to Linux as a Game Developer\TU/TimesNewRoman(0)/m/n/12 . Dostupné z: [][]$[][][][][] [] [] [] [][][][][][][][][][][] []
  []
 
@@ -1429,12 +1433,12 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 22190 strings out of 470191
- 436671 string characters out of 5479697
+ 22231 strings out of 470191
+ 438291 string characters out of 5479697
  1326993 words of memory out of 5000000
- 50462 multiletter control sequences out of 15000+600000
+ 50503 multiletter control sequences out of 15000+600000
  631353 words of font info for 97 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 87i,8n,93p,1873b,4959s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 87i,8n,93p,1873b,4960s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on main.pdf (58 pages).
