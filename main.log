@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Arch Linux) (preloaded format=xelatex 2026.3.19)  24 MAR 2026 12:01
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Arch Linux) (preloaded format=xelatex 2026.3.19)  24 MAR 2026 13:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -742,7 +742,12 @@ File: img/0.png Graphic file (type bmp)
  [1
 
 
-] [1] [2
+]
+Overfull \hbox (4.83794pt too wide) in paragraph at lines 149--150
+\TU/TimesNewRoman(0)/m/n/12 věnuji se zejména uživatelskému rozhraní a logice, která odpovídá za správný chod událostí a různých
+ []
+
+[1] [2
 
 ] [3
 
@@ -844,7 +849,7 @@ Overfull \hbox (8.54884pt too wide) in paragraph at lines 48--49
  []
 
 [11])
-Overfull \hbox (29.51176pt too wide) in paragraph at lines 55--173
+Overfull \hbox (29.51176pt too wide) in paragraph at lines 55--175
 \TU/TimesNewRoman(0)/m/n/12 umožňuje psát si jako v každé běžné chatovací aplikaci, spravovat desítky různých textových a hovorových
  []
 
@@ -1393,14 +1398,14 @@ Overfull \hbox (11.12895pt too wide) in paragraph at lines 14--15
 
 
 ]
-Overfull \hbox (9.59143pt too wide) in paragraph at lines 181--181
+Overfull \hbox (9.59143pt too wide) in paragraph at lines 183--183
 []\TU/TimesNewRoman(0)/m/n/12 Brody Brooks. \TU/TimesNewRoman(0)/m/it/12 Switching to Linux as a Game Developer\TU/TimesNewRoman(0)/m/n/12 . Dostupné z: [][]$[][][][][] [] [] [] [][][][][][][][][][][] []
  []
 
 [57
 
 ]
-Overfull \hbox (23.33893pt too wide) in paragraph at lines 181--181
+Overfull \hbox (23.33893pt too wide) in paragraph at lines 183--183
 []\TU/TimesNewRoman(0)/m/n/12 Alex Scral. \TU/TimesNewRoman(0)/m/it/12 Fun with Unity’s Particle System\TU/TimesNewRoman(0)/m/n/12 . Dostupné z: [][]$[][][][][] [] [] [] [][][][][][] [] [][][] [] [][][][][][][][][][][] []
  []
 
