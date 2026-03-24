@@ -17,6 +17,24 @@
 \endgroup
 
 \datalist[entry]{none/global//global/global/global}
+  \entry{super-mario-bros}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=N}{%
+         family={Nintendo},
+         familyi={N\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{N1}
+    \strng{fullhash}{N1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-24]}
+    \field{title}{Super Mario Bros.}
+    \verb{url}
+    \verb https://supermario-game.com/
+    \endverb
+  \endentry
+
   \entry{unity-docs}{misc}{}{}
     \name{author}{1}{}{%
       {{hash=TU}{%
@@ -58,6 +76,27 @@
     \endverb
   \endentry
 
+  \entry{unity-singleton}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=SS}{%
+         family={Smith},
+         familyi={S\bibinitperiod},
+         given={Shane},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SS2}
+    \strng{fullhash}{SS2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-24]}
+    \field{title}{How to use Singletons in Unity}
+    \verb{url}
+    \verb https://medium.com/@shanesmith822/how-to-use-singletons-in-unity-4bc5
+    \verb bbd74393
+    \endverb
+  \endentry
+
   \entry{unity-editor}{misc}{}{}
     \name{author}{1}{}{%
       {{hash=TU}{%
@@ -75,6 +114,66 @@
     \field{title}{Unity Editor interface}
     \verb{url}
     \verb https://docs.unity3d.com/Manual/unity-editor.html
+    \endverb
+  \endentry
+
+  \entry{unity-prefab}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=TU}{%
+         family={Technologies},
+         familyi={T\bibinitperiod},
+         given={Unity},
+         giveni={U\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TU1}
+    \strng{fullhash}{TU1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-24]}
+    \field{title}{Prefabs}
+    \verb{url}
+    \verb https://docs.unity3d.com/Manual/Prefabs.html
+    \endverb
+  \endentry
+
+  \entry{unity-sprite}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=TU}{%
+         family={Technologies},
+         familyi={T\bibinitperiod},
+         given={Unity},
+         giveni={U\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TU1}
+    \strng{fullhash}{TU1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-24]}
+    \field{title}{Sprites}
+    \verb{url}
+    \verb https://docs.unity3d.com/Manual/sprite/sprite-landing.html
+    \endverb
+  \endentry
+
+  \entry{unity-asset}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=TU}{%
+         family={Technologies},
+         familyi={T\bibinitperiod},
+         given={Unity},
+         giveni={U\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TU1}
+    \strng{fullhash}{TU1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-24]}
+    \field{title}{Asset Workflow}
+    \verb{url}
+    \verb https://docs.unity3d.com/Manual/AssetWorkflow.html
     \endverb
   \endentry
 

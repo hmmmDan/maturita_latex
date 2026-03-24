@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Arch Linux) (preloaded format=xelatex 2026.3.19)  24 MAR 2026 13:14
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Arch Linux) (preloaded format=xelatex 2026.3.19)  24 MAR 2026 13:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -824,7 +824,7 @@ Overfull \hbox (2.57231pt too wide) in paragraph at lines 4--5
 
 ]
 Overfull \hbox (5.08989pt too wide) in paragraph at lines 27--28
-\TU/TimesNewRoman(0)/m/n/12 multiplatformní herní engine Unity vyvinutý společností Unity Technologies [[][]15[][]] z několika prostých
+\TU/TimesNewRoman(0)/m/n/12 multiplatformní herní engine Unity vyvinutý společností Unity Technologies [[][]20[][]] z několika prostých
  []
 
 Missing character: There is no   (U+202F) in font Times New Roman/OT:language=dflt;mapping=tex-text;!
@@ -840,7 +840,7 @@ Overfull \hbox (12.56937pt too wide) in paragraph at lines 40--41
 
 
 Overfull \hbox (30.07828pt too wide) in paragraph at lines 48--49
-\TU/TimesNewRoman(0)/m/n/12 Technologies [[][]24[][]]. Umožňuje sound designerům vytvářet komplexní zvukové systémy pomocí přívětivého
+\TU/TimesNewRoman(0)/m/n/12 Technologies [[][]29[][]]. Umožňuje sound designerům vytvářet komplexní zvukové systémy pomocí přívětivého
  []
 
 
@@ -895,7 +895,7 @@ Overfull \hbox (0.2227pt too wide) in paragraph at lines 32--33
 
 [14]
 Overfull \hbox (13.26672pt too wide) in paragraph at lines 43--44
-\TU/TimesNewRoman(0)/m/n/12 [[][]27[][]], experimentování s Unity Particle System [[][]28[][]] nebo manipulování určitývh prvků Post-- processing. 
+\TU/TimesNewRoman(0)/m/n/12 [[][]32[][]], experimentování s Unity Particle System [[][]33[][]] nebo manipulování určitývh prvků Post-- processing. 
  []
 
 
@@ -1398,6 +1398,16 @@ Overfull \hbox (11.12895pt too wide) in paragraph at lines 14--15
 
 
 ]
+Overfull \hbox (42.13281pt too wide) in paragraph at lines 183--183
+[]\TU/TimesNewRoman(0)/m/n/12 Shane Smith. \TU/TimesNewRoman(0)/m/it/12 How to use Singletons in Unity\TU/TimesNewRoman(0)/m/n/12 . Dostupné z: [][]$[][][][][] [] [] [] [][][][][][] [] [][][] [] [][][][][][][][][][][][][][] []
+ []
+
+
+Overfull \hbox (5.24597pt too wide) in paragraph at lines 183--183
+[]\TU/TimesNewRoman(0)/m/n/12 Unity Technologies. \TU/TimesNewRoman(0)/m/it/12 Prefabs\TU/TimesNewRoman(0)/m/n/12 . Dostupné z: [][]$[][][][][] [] [] [] [][][][] [] [][][][][][][] [] [][][] [] [][][][][][] [] [][][][][][][] []
+ []
+
+
 Overfull \hbox (9.59143pt too wide) in paragraph at lines 183--183
 []\TU/TimesNewRoman(0)/m/n/12 Brody Brooks. \TU/TimesNewRoman(0)/m/it/12 Switching to Linux as a Game Developer\TU/TimesNewRoman(0)/m/n/12 . Dostupné z: [][]$[][][][][] [] [] [] [][][][][][][][][][][] []
  []
@@ -1433,10 +1443,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 22283 strings out of 470191
- 440514 string characters out of 5479697
+ 22303 strings out of 470191
+ 441433 string characters out of 5479697
  1326993 words of memory out of 5000000
- 50555 multiletter control sequences out of 15000+600000
+ 50575 multiletter control sequences out of 15000+600000
  631353 words of font info for 97 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  87i,8n,93p,1873b,4986s stack positions out of 10000i,1000n,20000p,200000b,200000s
