@@ -17,7 +17,7 @@
 \contentsline {subsection}{\numberline {3.2.2}IDE}{9}{subsection.3.2.2}%
 \contentsline {subsection}{\numberline {3.2.3}Version Control}{9}{subsection.3.2.3}%
 \contentsline {subsection}{\numberline {3.2.4}Vim}{10}{subsection.3.2.4}%
-\contentsline {subsection}{\numberline {3.2.5}AI}{10}{subsection.3.2.5}%
+\contentsline {subsection}{\numberline {3.2.5}AI (Umělá Inteligence)}{10}{subsection.3.2.5}%
 \contentsline {section}{\numberline {3.3}Herní engine}{10}{section.3.3}%
 \contentsline {section}{\numberline {3.4}Hudba a zvuk}{11}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}FL Studio}{11}{subsection.3.4.1}%
@@ -30,10 +30,10 @@
 \contentsline {section}{\numberline {4.3}Emotion System}{14}{section.4.3}%
 \contentsline {section}{\numberline {4.4}UI}{14}{section.4.4}%
 \contentsline {section}{\numberline {4.5}Vizuální efekty}{15}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Audio}{15}{section.4.6}%
-\contentsline {subsection}{\numberline {4.6.1}OST}{15}{subsection.4.6.1}%
+\contentsline {section}{\numberline {4.6}Audio}{16}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}OST}{16}{subsection.4.6.1}%
 \contentsline {subsection}{\numberline {4.6.2}SFX}{16}{subsection.4.6.2}%
-\contentsline {section}{\numberline {4.7}Post-processing}{16}{section.4.7}%
+\contentsline {section}{\numberline {4.7}Post-processing}{17}{section.4.7}%
 \contentsline {chapter}{\numberline {5}Popis aplikace}{18}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Zpracování základního modelu hry}{18}{section.5.1}%
 \contentsline {subsection}{\numberline {5.1.1}Struktura scén}{18}{subsection.5.1.1}%
