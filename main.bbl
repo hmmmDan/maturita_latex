@@ -338,7 +338,7 @@
     \strng{fullhash}{P1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{addendum}{[cit. 2026-03-26]}
+    \field{addendum}{[cit. 2026-03-24]}
     \field{title}{Comparing Popular Game Engines}
     \verb{url}
     \verb https://www.pubnub.com/blog/comparing-popular-game-engines
@@ -511,6 +511,48 @@
     \field{title}{Discord}
     \verb{url}
     \verb https://discord.com/
+    \endverb
+  \endentry
+
+  \entry{unity-point-light}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=TU}{%
+         family={Technologies},
+         familyi={T\bibinitperiod},
+         given={Unity},
+         giveni={U\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TU1}
+    \strng{fullhash}{TU1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-24]}
+    \field{title}{Point Light}
+    \verb{url}
+    \verb https://docs.unity3d.com/Packages/com.unity.render-pipelines.universa
+    \verb l@7.1/manual/LightTypes.html#point
+    \endverb
+  \endentry
+
+  \entry{unity-particle-system}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=SA}{%
+         family={Scral},
+         familyi={S\bibinitperiod},
+         given={Alex},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SA1}
+    \strng{fullhash}{SA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-24]}
+    \field{title}{Fun with Unity's Particle System}
+    \verb{url}
+    \verb https://medium.com/@scralex421/fun-with-unitys-particle-system-b85caf
+    \verb 8692c6
     \endverb
   \endentry
 \enddatalist
