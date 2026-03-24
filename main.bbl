@@ -202,8 +202,8 @@
          familyi={O\bibinitperiod},
       }}%
     }
-    \strng{namehash}{O1}
-    \strng{fullhash}{O1}
+    \strng{namehash}{O2}
+    \strng{fullhash}{O2}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{addendum}{[cit. 2026-03-24]}
@@ -276,8 +276,8 @@
          familyi={O\bibinitperiod},
       }}%
     }
-    \strng{namehash}{O2}
-    \strng{fullhash}{O2}
+    \strng{namehash}{O3}
+    \strng{fullhash}{O3}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{addendum}{[cit. 2026-03-24]}
@@ -304,6 +304,213 @@
     \field{title}{Unity Game Engine}
     \verb{url}
     \verb https://unity.com
+    \endverb
+  \endentry
+
+  \entry{unity-pricing}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=TU}{%
+         family={Technologies},
+         familyi={T\bibinitperiod},
+         given={Unity},
+         giveni={U\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TU1}
+    \strng{fullhash}{TU1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-24]}
+    \field{title}{Unity Products}
+    \verb{url}
+    \verb https://unity.com/products
+    \endverb
+  \endentry
+
+  \entry{unity-small-projects}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=P}{%
+         family={PubNub},
+         familyi={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{P1}
+    \strng{fullhash}{P1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-26]}
+    \field{title}{Comparing Popular Game Engines}
+    \verb{url}
+    \verb https://www.pubnub.com/blog/comparing-popular-game-engines
+    \endverb
+  \endentry
+
+  \entry{labs}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=AS}{%
+         family={Audio},
+         familyi={A\bibinitperiod},
+         given={Spitfire},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AS1}
+    \strng{fullhash}{AS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-24]}
+    \field{title}{LABS}
+    \verb{url}
+    \verb https://labs.spitfireaudio.com/
+    \endverb
+  \endentry
+
+  \entry{flex}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=IL}{%
+         family={Image-Line},
+         familyi={I\bibinithyphendelim L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{IL1}
+    \strng{fullhash}{IL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-24]}
+    \field{title}{FLEX}
+    \verb{url}
+    \verb https://www.image-line.com/fl-studio/plugins/flex
+    \endverb
+  \endentry
+
+  \entry{sytrus}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=IL}{%
+         family={Image-Line},
+         familyi={I\bibinithyphendelim L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{IL1}
+    \strng{fullhash}{IL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-24]}
+    \field{title}{Sytrus}
+    \verb{url}
+    \verb https://www.image-line.com/fl-studio-learning/fl-studio-online-manual
+    \verb /html/plugins/Sytrus.htm
+    \endverb
+  \endentry
+
+  \entry{deelay}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=SS}{%
+         family={Sample},
+         familyi={S\bibinitperiod},
+         given={Sixth},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SS1}
+    \strng{fullhash}{SS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-24]}
+    \field{title}{Deelay}
+    \verb{url}
+    \verb https://sixthsample.com/deelay/
+    \endverb
+  \endentry
+
+  \entry{flstudio}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=IL}{%
+         family={Image-Line},
+         familyi={I\bibinithyphendelim L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{IL1}
+    \strng{fullhash}{IL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-24]}
+    \field{title}{FL Studio}
+    \verb{url}
+    \verb https://www.image-line.com/
+    \endverb
+  \endentry
+
+  \entry{brackeys-jam}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=B}{%
+         family={Brackeys},
+         familyi={B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{B1}
+    \strng{fullhash}{B1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-24]}
+    \field{title}{Brackeys Game Jam 2026.1}
+    \verb{url}
+    \verb https://itch.io/jam/brackeys-15
+    \endverb
+  \endentry
+
+  \entry{fmod}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=TF}{%
+         family={Technologies},
+         familyi={T\bibinitperiod},
+         given={Firelight},
+         giveni={F\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TF1}
+    \strng{fullhash}{TF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-24]}
+    \field{title}{FMOD Studio}
+    \verb{url}
+    \verb https://fmod.com/studio
+    \endverb
+  \endentry
+
+  \entry{obsidian}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=O}{%
+         family={Obsidian},
+         familyi={O\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{O1}
+    \strng{fullhash}{O1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-24]}
+    \field{title}{Obsidian}
+    \verb{url}
+    \verb https://obsidian.md/
+    \endverb
+  \endentry
+
+  \entry{discord}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=D}{%
+         family={Discord},
+         familyi={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{D1}
+    \strng{fullhash}{D1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-24]}
+    \field{title}{Discord}
+    \verb{url}
+    \verb https://discord.com/
     \endverb
   \endentry
 \enddatalist

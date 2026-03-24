@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Arch Linux) (preloaded format=xelatex 2026.3.19)  24 MAR 2026 11:42
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Arch Linux) (preloaded format=xelatex 2026.3.19)  24 MAR 2026 11:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -823,11 +823,6 @@ Overfull \hbox (5.08989pt too wide) in paragraph at lines 27--28
  []
 
 Missing character: There is no   (U+202F) in font Times New Roman/OT:language=dflt;mapping=tex-text;!
-
-Overfull \hbox (6.88676pt too wide) in paragraph at lines 29--30
-\TU/TimesNewRoman(0)/m/n/12 objeví úvodní obrazovka (splash screen) s nápisem „Made with Unity“, což našemu týmu momentálně
- []
-
 [10]
 Overfull \hbox (0.63577pt too wide) in paragraph at lines 38--39
 []\TU/TimesNewRoman(0)/m/n/12 FL Studio je software (Digital Audio Workstation) pro skládání, produkci a mix hudby za pomocí
@@ -839,28 +834,18 @@ Overfull \hbox (12.56937pt too wide) in paragraph at lines 40--41
  []
 
 
-Overfull \hbox (0.17778pt too wide) in paragraph at lines 42--43
-\TU/TimesNewRoman(0)/m/n/12 časové a výškové modifikace a efekty jako Chamber nebo vrstvené komplexní delaye, které dodávají
+Overfull \hbox (30.07828pt too wide) in paragraph at lines 48--49
+\TU/TimesNewRoman(0)/m/n/12 Technologies [[][]24[][]]. Umožňuje sound designerům vytvářet komplexní zvukové systémy pomocí přívětivého
  []
 
 
-Overfull \hbox (20.57622pt too wide) in paragraph at lines 48--49
-\TU/TimesNewRoman(0)/m/n/12 middleware) pro úpravu a implementaci zvuku do videoher, vyvinutý společností Firelight Technologies.
- []
-
-
-Overfull \hbox (23.87111pt too wide) in paragraph at lines 48--49
-\TU/TimesNewRoman(0)/m/n/12 pomocí Unity integrace. FMOD nabízí pokročilé funkce jako pocit 3D prostoru, automatizace zvuku nebo
- []
-
-
-Overfull \hbox (10.23833pt too wide) in paragraph at lines 53--54
-\TU/TimesNewRoman(0)/m/n/12 Pro efektivní spolupráci v týmu používáme poznámkový software Obsidian, u kterého jsme si společně
+Overfull \hbox (8.54884pt too wide) in paragraph at lines 48--49
+\TU/TimesNewRoman(0)/m/n/12 s kódem pomocí Unity integrace. FMOD nabízí pokročilé funkce jako pocit 3D prostoru, automatizace
  []
 
 [11])
-Overfull \hbox (4.58403pt too wide) in paragraph at lines 55--173
-\TU/TimesNewRoman(0)/m/n/12 Thinking Studio, na kterém jsou všichni členové týmu i spolupracující zvenčí. Discord nám umožňuje
+Overfull \hbox (29.51176pt too wide) in paragraph at lines 55--173
+\TU/TimesNewRoman(0)/m/n/12 umožňuje psát si jako v každé běžné chatovací aplikaci, spravovat desítky různých textových a hovorových
  []
 
 [12]
@@ -1319,126 +1304,4 @@ Overfull \hbox (17.4688pt too wide) in paragraph at lines 916--917
 
 
 Overfull \hbox (11.80179pt too wide) in paragraph at lines 916--917
-\TU/TimesNewRoman(0)/m/n/12 i jednoduchou grafiku v něco vizuálně působivého. V rámci \TU/TimesNewRoman(0)/m/it/12 Surreal Bowling: Salvation Path \TU/TimesNewRoman(0)/m/n/12 využívám
- []
-
-File: img/unity/unity-global-volume.png Graphic file (type bmp)
-<img/unity/unity-global-volume.png>
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Overfull \hbox (39.51077pt too wide) in paragraph at lines 938--939
-\TU/TimesNewRoman(0)/m/n/12 V rámci post-- processingu využívám několik specifických efektů, které dohromady vytvářejí charakteristický
- []
-
-[50]
-Overfull \hbox (4.17778pt too wide) in paragraph at lines 941--942
-\TU/TimesNewRoman(0)/m/n/12 jasné části obrazu prosakují do okolních pixelů, čímž vzniká charakteristické záření kolem světelných
- []
-
-
-Overfull \hbox (9.96098pt too wide) in paragraph at lines 946--947
-\TU/TimesNewRoman(0)/m/n/12 jednotlivé barevné kanály (červená, zelená, modrá) mírně posouvají. Tento efekt je tradičně považován
- []
-
-
-Overfull \hbox (14.45804pt too wide) in paragraph at lines 948--949
-[]\TU/TimesNewRoman(0)/m/n/12 V \TU/TimesNewRoman(0)/m/it/12 Surreal Bowling: Salvation Path \TU/TimesNewRoman(0)/m/n/12 slouží chromatic aberration k navození snivého, surrealistického
- []
-
-File: img/unity/unity-postprocessing-off.png Graphic file (type bmp)
-<img/unity/unity-postprocessing-off.png>
-File: img/unity/unity-postprocessing-on.png Graphic file (type bmp)
-<img/unity/unity-postprocessing-on.png>
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Overfull \hbox (3.73051pt too wide) in paragraph at lines 958--959
-\TU/TimesNewRoman(0)/m/n/12 ukazuje scénu tak, jak by vypadala bez jakýchkoliv vizuálních efektů – tmavší, plochá, bez atmosféry.
- []
-
-[51]
-Overfull \hbox (11.44974pt too wide) in paragraph at lines 966--967
-[]\TU/TimesNewRoman(0)/m/n/12 Komponenta \TU/lmtt/m/n/12 DeathEffect.cs \TU/TimesNewRoman(0)/m/n/12 je skript, který dynamicky manipuluje s post-- processing parametry
- []
-
-[52]
-Overfull \hbox (27.8721pt too wide) in paragraph at lines 999--1000
-[]\TU/TimesNewRoman(0)/m/n/12 V aktuální implementaci skript snižuje post-- exposure při úmrtí hráče, čímž vytváří tmavý, cinematický
- []
-
-
-Overfull \hbox (30.59122pt too wide) in paragraph at lines 1001--1002
-[]\TU/TimesNewRoman(0)/m/n/12 Tento efekt je aktivován v momentě, kdy hráč vstoupí do \TU/lmtt/m/n/12 DeathZone \TU/TimesNewRoman(0)/m/n/12 triggeru. Skript \TU/lmtt/m/n/12 PlayerDeath.cs
- []
-
-[53]) [54]
-\openout2 = `Závěr.aux'.
-
- (./Závěr.tex
-Kapitola 6.
-
-Overfull \hbox (7.5889pt too wide) in paragraph at lines 6--7
-[]\TU/TimesNewRoman(0)/m/n/12 Během tvorby této práce se mi podařilo vytvořit komplexní audiovizuální systém pro 2D videohru,
- []
-
-
-Overfull \hbox (11.12895pt too wide) in paragraph at lines 14--15
-\TU/TimesNewRoman(0)/m/n/12 kde budeme prezentovat nejen \TU/TimesNewRoman(0)/m/it/12 Surreal Bowling: Salvation Path\TU/TimesNewRoman(0)/m/n/12 , ale také náš druhý projekt \TU/TimesNewRoman(0)/m/it/12 Dissonantia
- []
-
-) [55
-
-
-
-
-] (./main.lof)
-\tf@lof=\write6
-\openout6 = `main.lof'.
-
- [56
-
-
-
-]
-Overfull \hbox (9.59143pt too wide) in paragraph at lines 181--181
-[]\TU/TimesNewRoman(0)/m/n/12 Brody Brooks. \TU/TimesNewRoman(0)/m/it/12 Switching to Linux as a Game Developer\TU/TimesNewRoman(0)/m/n/12 . Dostupné z: [][]$[][][][][] [] [] [] [][][][][][][][][][][] []
- []
-
-[57
-
-] (./main.aux (./Úvod.aux) (./Terminologie.aux) (./Pouzity-framework-aplikace.aux) (./Celkova-koncepce-reseni.aux) (./Popis-aplikace.aux) (./Závěr.aux))
- ***********
-LaTeX2e <2025-11-01>
-L3 programming layer <2026-01-19>
- ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 7AD0E6080681E8188BD25F25779C0EC1;7448.
-
-Package biblatex Warning: Please (re)run BibTeX on the file(s):
-(biblatex)                main
-(biblatex)                and rerun LaTeX afterwards.
-
-Package logreq Info: Writing requests to 'main.run.xml'.
-\openout1 = `main.run.xml'.
-
- ) 
-Here is how much of TeX's memory you used:
- 22231 strings out of 470191
- 438291 string characters out of 5479697
- 1326993 words of memory out of 5000000
- 50503 multiletter control sequences out of 15000+600000
- 631353 words of font info for 97 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 87i,8n,93p,1873b,4960s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-Output written on main.pdf (58 pages).
+\TU/Time
