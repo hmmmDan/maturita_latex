@@ -59,6 +59,9 @@
 \DefineBibliographyExtras{czech}{\def\urldateformat{czech}}
 \DeclareFieldFormat{url}{\bibstring{url}\addcolon\space\url{#1}}
 
+\DeclareFieldFormat[misc]{title}{\emph{#1}}
+\DeclareFieldFormat[misc]{note}{Online.\addspace In: \emph{#1}\adddot}
+
 \defbibheading{czech bibliography}[\bibname]{%
   \chapter*{Seznam použitých zdrojů}%
   \addcontentsline{toc}{chapter}{Seznam použitých zdrojů}%

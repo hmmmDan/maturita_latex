@@ -29,6 +29,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{addendum}{[cit. 2026-03-24]}
+    \field{note}{Nintendo}
     \field{title}{Super Mario Bros.}
     \verb{url}
     \verb https://supermario-game.com/
@@ -49,6 +50,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{addendum}{[cit. 2026-03-23]}
+    \field{note}{Unity Technologies}
     \field{title}{Unity --- Key Concepts}
     \verb{url}
     \verb https://docs.unity3d.com/Manual/key-concepts.html
@@ -69,6 +71,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{addendum}{[cit. 2026-03-23]}
+    \field{note}{Unity Technologies}
     \field{title}{Post-processing overview}
     \verb{url}
     \verb https://docs.unity3d.com/560/Documentation//Manual/PostProcessingOver
@@ -90,6 +93,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{addendum}{[cit. 2026-03-24]}
+    \field{note}{Medium}
     \field{title}{How to use Singletons in Unity}
     \verb{url}
     \verb https://medium.com/@shanesmith822/how-to-use-singletons-in-unity-4bc5
@@ -111,6 +115,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{addendum}{[cit. 2026-03-23]}
+    \field{note}{Unity Technologies}
     \field{title}{Unity Editor interface}
     \verb{url}
     \verb https://docs.unity3d.com/Manual/unity-editor.html
@@ -131,6 +136,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{addendum}{[cit. 2026-03-24]}
+    \field{note}{Unity Technologies}
     \field{title}{Prefabs}
     \verb{url}
     \verb https://docs.unity3d.com/Manual/Prefabs.html
@@ -151,6 +157,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{addendum}{[cit. 2026-03-24]}
+    \field{note}{Unity Technologies}
     \field{title}{Sprites}
     \verb{url}
     \verb https://docs.unity3d.com/Manual/sprite/sprite-landing.html
@@ -171,6 +178,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{addendum}{[cit. 2026-03-24]}
+    \field{note}{Unity Technologies}
     \field{title}{Asset Workflow}
     \verb{url}
     \verb https://docs.unity3d.com/Manual/AssetWorkflow.html
@@ -191,6 +199,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{addendum}{[cit. 2026-03-23]}
+    \field{note}{Brody Brooks}
     \field{title}{Switching to Linux as a Game Developer}
     \verb{url}
     \verb https://brodybrooks.com/posts/2024-linuxgamedev/
@@ -211,6 +220,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{addendum}{[cit. 2026-03-23]}
+    \field{note}{Hyprland Community}
     \field{title}{Hyprland}
     \verb{url}
     \verb https://hypr.land/
@@ -229,6 +239,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{addendum}{[cit. 2026-03-24]}
+    \field{note}{Microsoft}
     \field{title}{{C\#} programming language}
     \verb{url}
     \verb https://dotnet.microsoft.com/en-us/languages/csharp
@@ -249,6 +260,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{addendum}{[cit. 2026-03-24]}
+    \field{note}{Medium}
     \field{title}{Making the Right Choice: VS Code vs VSCodium}
     \verb{url}
     \verb https://medium.com/@SachinPandewad/making-right-choice-vs-code-vs-vs-
@@ -268,6 +280,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{addendum}{[cit. 2026-03-24]}
+    \field{note}{W3Schools}
     \field{title}{Git Introduction}
     \verb{url}
     \verb https://www.w3schools.com/git/git_intro.asp?remote=github
@@ -288,6 +301,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{addendum}{[cit. 2026-03-24]}
+    \field{note}{Vim Community}
     \field{title}{Vim}
     \verb{url}
     \verb https://www.vim.org/
@@ -306,6 +320,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{addendum}{[cit. 2026-03-24]}
+    \field{note}{OpenAI}
     \field{title}{ChatGPT}
     \verb{url}
     \verb https://openai.com/index/chatgpt/
@@ -324,6 +339,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{addendum}{[cit. 2026-03-24]}
+    \field{note}{Augment}
     \field{title}{Augment Code}
     \verb{url}
     \verb https://www.augmentcode.com/
@@ -344,6 +360,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{addendum}{[cit. 2026-03-24]}
+    \field{note}{LM Studio}
     \field{title}{LM Studio}
     \verb{url}
     \verb https://lmstudio.ai/
@@ -362,6 +379,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{addendum}{[cit. 2026-03-24]}
+    \field{note}{Hugging Face}
     \field{title}{Qwen3.5-9B}
     \verb{url}
     \verb https://huggingface.co/Qwen/Qwen3.5-9B
@@ -380,6 +398,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{addendum}{[cit. 2026-03-24]}
+    \field{note}{OpenCode}
     \field{title}{OpenCode}
     \verb{url}
     \verb https://opencode.ai/
@@ -400,6 +419,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{addendum}{[cit. 2026-03-24]}
+    \field{note}{Unity Technologies}
     \field{title}{Unity Game Engine}
     \verb{url}
     \verb https://unity.com
@@ -420,6 +440,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{addendum}{[cit. 2026-03-24]}
+    \field{note}{Unity Technologies}
     \field{title}{Unity Products}
     \verb{url}
     \verb https://unity.com/products
@@ -438,6 +459,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{addendum}{[cit. 2026-03-24]}
+    \field{note}{PubNub}
     \field{title}{Comparing Popular Game Engines}
     \verb{url}
     \verb https://www.pubnub.com/blog/comparing-popular-game-engines
@@ -458,6 +480,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{addendum}{[cit. 2026-03-24]}
+    \field{note}{Spitfire Audio}
     \field{title}{LABS}
     \verb{url}
     \verb https://labs.spitfireaudio.com/
@@ -476,6 +499,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{addendum}{[cit. 2026-03-24]}
+    \field{note}{Image-Line}
     \field{title}{FLEX}
     \verb{url}
     \verb https://www.image-line.com/fl-studio/plugins/flex
@@ -494,6 +518,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{addendum}{[cit. 2026-03-24]}
+    \field{note}{Image-Line}
     \field{title}{Sytrus}
     \verb{url}
     \verb https://www.image-line.com/fl-studio-learning/fl-studio-online-manual
@@ -515,6 +540,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{addendum}{[cit. 2026-03-24]}
+    \field{note}{Sixth Sample}
     \field{title}{Deelay}
     \verb{url}
     \verb https://sixthsample.com/deelay/
@@ -533,6 +559,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{addendum}{[cit. 2026-03-24]}
+    \field{note}{Image-Line}
     \field{title}{FL Studio}
     \verb{url}
     \verb https://www.image-line.com/
@@ -551,6 +578,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{addendum}{[cit. 2026-03-24]}
+    \field{note}{itch.io}
     \field{title}{Brackeys Game Jam 2026.1}
     \verb{url}
     \verb https://itch.io/jam/brackeys-15
@@ -571,6 +599,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{addendum}{[cit. 2026-03-24]}
+    \field{note}{Firelight Technologies}
     \field{title}{FMOD Studio}
     \verb{url}
     \verb https://fmod.com/studio
@@ -589,6 +618,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{addendum}{[cit. 2026-03-24]}
+    \field{note}{Obsidian}
     \field{title}{Obsidian}
     \verb{url}
     \verb https://obsidian.md/
@@ -607,6 +637,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{addendum}{[cit. 2026-03-24]}
+    \field{note}{Discord}
     \field{title}{Discord}
     \verb{url}
     \verb https://discord.com/
@@ -627,6 +658,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{addendum}{[cit. 2026-03-24]}
+    \field{note}{Unity Technologies}
     \field{title}{Point Light}
     \verb{url}
     \verb https://docs.unity3d.com/Packages/com.unity.render-pipelines.universa
@@ -648,6 +680,7 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{addendum}{[cit. 2026-03-24]}
+    \field{note}{Medium}
     \field{title}{Fun with Unity's Particle System}
     \verb{url}
     \verb https://medium.com/@scralex421/fun-with-unitys-particle-system-b85caf
