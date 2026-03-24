@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Arch Linux) (preloaded format=xelatex 2026.3.19)  24 MAR 2026 15:22
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Arch Linux) (preloaded format=xelatex 2026.3.19)  24 MAR 2026 19:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -867,14 +867,14 @@ Underfull \hbox (badness 1163) in paragraph at lines 8--9
 
 ] [14] [15]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 67.
+(Font)              <7> on input line 69.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 67.
+(Font)              <5> on input line 69.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-) [16]
+ [16]) [17]
 \openout2 = `Popis-aplikace.aux'.
 
  (./Popis-aplikace.tex
@@ -882,158 +882,142 @@ Kapitola 5.
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 14.
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10.95> not available
 (Font)              Font shape `TU/lmtt/b/n' tried instead on input line 20.
-[17
+[18
 
 
 
 
-] [18]
-Underfull \hbox (badness 4303) in paragraph at lines 99--100
+] [19] [20]
+Underfull \hbox (badness 4303) in paragraph at lines 103--104
 []\TU/TimesNewRoman(0)/m/n/12 Pro tento účel však existuje modernější systém, který zajišťuje mnohem přívětivější
  []
 
 File: img/unity/unity-input-actions.png Graphic file (type bmp)
 <img/unity/unity-input-actions.png>
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[19] [20] [21]
-Underfull \hbox (badness 1168) in paragraph at lines 175--176
+[21] [22]
+Underfull \hbox (badness 1168) in paragraph at lines 181--182
 \TU/TimesNewRoman(0)/m/it/12 Value\TU/TimesNewRoman(0)/m/n/12 ), cílovou platformu (klávesnice, myš, herní ovladač, VR ovladač…) a případně další
  []
 
+[23]
 File: img/unity/unity-hierarchy.png Graphic file (type bmp)
 <img/unity/unity-hierarchy.png>
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 File: img/unity/unity-gameobject-player.png Graphic file (type bmp)
 <img/unity/unity-gameobject-player.png>
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[22] [23]
-File: img/unity/unity-ui-toolkit.png Graphic file (type bmp)
-<img/unity/unity-ui-toolkit.png>
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [24] [25]
-Underfull \hbox (badness 1048) in paragraph at lines 315--316
+File: img/unity/unity-ui-toolkit.png Graphic file (type bmp)
+<img/unity/unity-ui-toolkit.png>
+ [26] [27]
+File: img/unity/unity-volume-controls.png Graphic file (type bmp)
+<img/unity/unity-volume-controls.png>
+
+Underfull \hbox (badness 1048) in paragraph at lines 324--325
 \TU/TimesNewRoman(0)/m/n/12 zbývajících střel (stripe shot), v pravém horním rohu pak počet nasbíraných konverzačních
  []
 
 
-Underfull \hbox (badness 1577) in paragraph at lines 315--316
+Underfull \hbox (badness 1577) in paragraph at lines 324--325
 \TU/TimesNewRoman(0)/m/n/12 fragmentů (CFs). Binding počítadel probíhá přímým dotazem na herní skripty – například
  []
 
-[26]
+[28]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-File: img/unity/unity-volume-controls.png Graphic file (type bmp)
-<img/unity/unity-volume-controls.png>
 File: img/unity/unity-hud.png Graphic file (type bmp)
 <img/unity/unity-hud.png>
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[27]
-Underfull \hbox (badness 2096) in paragraph at lines 371--372
+ [29]
+Underfull \hbox (badness 2096) in paragraph at lines 377--378
 []\TU/TimesNewRoman(0)/m/n/12 V aktuální implementaci se při \TU/TimesNewRoman(0)/m/it/12 soft death \TU/TimesNewRoman(0)/m/n/12 přesouvá pouze pozice hráče – počet střel
  []
 
 
-Underfull \hbox (badness 2173) in paragraph at lines 371--372
+Underfull \hbox (badness 2173) in paragraph at lines 377--378
 \TU/TimesNewRoman(0)/m/n/12 i \TU/TimesNewRoman(0)/m/it/12 conversation fragments \TU/TimesNewRoman(0)/m/n/12 zůstávají zachovány. Toto odpovídá designovému rozhodnutí pro
  []
 
-[28]
-Underfull \hbox (badness 3977) in paragraph at lines 375--376
+
+Underfull \hbox (badness 3977) in paragraph at lines 381--382
 \TU/TimesNewRoman(0)/m/n/12 rychlostí pohybu jednotlivých vrstev. Sprite renderer na každé vrstvě dostane koeficient
  []
 
 File: img/unity/unity-parallax-close.png Graphic file (type bmp)
 <img/unity/unity-parallax-close.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 File: img/unity/unity-parallax-far.png Graphic file (type bmp)
 <img/unity/unity-parallax-far.png>
-
-Overfull \hbox (22.495pt too wide) in paragraph at lines 391--392
-\TU/lmtt/m/n/12 VisualElement \TU/TimesNewRoman(0)/m/n/12 metodu \TU/lmtt/m/n/12 BindHoverSound()\TU/TimesNewRoman(0)/m/n/12 , která registruje callback na událost \TU/lmtt/m/n/12 PointerEnterEvent\TU/TimesNewRoman(0)/m/n/12 .
- []
-
-[29] [30]
-File: img/unity/unity-light-firefly.png Graphic file (type bmp)
-<img/unity/unity-light-firefly.png>
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 1014) in paragraph at lines 458--459
+Overfull \hbox (22.495pt too wide) in paragraph at lines 397--398
+\TU/lmtt/m/n/12 VisualElement \TU/TimesNewRoman(0)/m/n/12 metodu \TU/lmtt/m/n/12 BindHoverSound()\TU/TimesNewRoman(0)/m/n/12 , která registruje callback na událost \TU/lmtt/m/n/12 PointerEnterEvent\TU/TimesNewRoman(0)/m/n/12 .
+ []
+
+[30] [31] [32]
+File: img/unity/unity-light-firefly.png Graphic file (type bmp)
+<img/unity/unity-light-firefly.png>
+
+Underfull \hbox (badness 1014) in paragraph at lines 467--468
 \TU/TimesNewRoman(0)/m/n/12 Systém částic (Particle System) v Unity umožňuje vytvářet efekt velkého množství malých
  []
 
-[31]
-Underfull \hbox (badness 5578) in paragraph at lines 474--475
+[33]
+Underfull \hbox (badness 5578) in paragraph at lines 483--484
 []\TU/TimesNewRoman(0)/m/n/12 Samotný vizuální vzhled částic je definován přímo v Unity editoru v komponentě
  []
 
 
-Underfull \hbox (badness 3460) in paragraph at lines 474--475
+Underfull \hbox (badness 3460) in paragraph at lines 483--484
 \TU/lmtt/m/n/12 ParticleSystem \TU/TimesNewRoman(0)/m/n/12 – barva, tvar emitoru, doba životnosti jednotlivých částic a trajektorie
  []
 
-[32]
-Underfull \hbox (badness 1048) in paragraph at lines 508--509
+[34]
+Underfull \hbox (badness 1048) in paragraph at lines 519--520
 \TU/TimesNewRoman(0)/m/n/12 AudioMixer řešení k profesionálnímu nástroji FMOD Studio, což přineslo výrazné zlepšení
  []
 
 
-Underfull \hbox (badness 2285) in paragraph at lines 514--515
+Underfull \hbox (badness 2285) in paragraph at lines 525--526
 \TU/TimesNewRoman(0)/m/n/12 V původní verzi projektu byl audio systém postaven na Unity vestavěném \TU/lmtt/m/n/12 AudioMixeru
  []
 
 
-Underfull \hbox (badness 1184) in paragraph at lines 514--515
+Underfull \hbox (badness 1184) in paragraph at lines 525--526
 \TU/TimesNewRoman(0)/m/n/12 a centralizovaném skriptu \TU/lmtt/m/n/12 AudioManager.cs\TU/TimesNewRoman(0)/m/n/12 , který využíval singleton vzor. Tento manažer
  []
 
-[33]
+[35]
 File: img/unity/unity-audiomixer.png Graphic file (type bmp)
 <img/unity/unity-audiomixer.png>
+ [36]
 LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 526.
- [34]
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 539.
+ [37]
 File: img/fmod/fmod.png Graphic file (type bmp)
 <img/fmod/fmod.png>
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[35]
+ [38]
 File: img/fmod/fmod-unity-wizard.png Graphic file (type bmp)
 <img/fmod/fmod-unity-wizard.png>
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[36]
-Underfull \hbox (badness 2245) in paragraph at lines 604--605
+ [39]
+Underfull \hbox (badness 2245) in paragraph at lines 619--620
 []\TU/lmtt/m/n/12 EventPlayTrigger \TU/TimesNewRoman(0)/m/n/12 / \TU/lmtt/m/n/12 EventStopTrigger \TU/TimesNewRoman(0)/m/n/12 – určují, jaká Unity událost spustí/zastaví
  []
 
-[37] [38]
-Underfull \hbox (badness 2005) in paragraph at lines 659--660
+[40] [41]
+Underfull \hbox (badness 2005) in paragraph at lines 676--677
 \TU/TimesNewRoman(0)/m/n/12 Tento model je vhodný pro zvuky, které jsou vázány na životní cyklus objektu nebo na
  []
 
 
-Underfull \hbox (badness 1275) in paragraph at lines 678--679
+Underfull \hbox (badness 1275) in paragraph at lines 695--696
 []\TU/TimesNewRoman(0)/m/n/12 Na objektu CF jsou tedy dva \TU/lmtt/m/n/12 StudioEventEmitter \TU/TimesNewRoman(0)/m/n/12 komponenty – první se spustí při
  []
 
@@ -1042,70 +1026,62 @@ File: img/fmod/fmod-unity-emitter.png Graphic file (type bmp)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[39]
+[42]
 File: img/fmod/fmod-unity-animation-event.png Graphic file (type bmp)
 <img/fmod/fmod-unity-animation-event.png>
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[40]
+[43] [44]
 File: img/fmod/fmod-footsteps.png Graphic file (type bmp)
 <img/fmod/fmod-footsteps.png>
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[41] [42]
-Underfull \hbox (badness 2326) in paragraph at lines 792--793
+ [45] [46]
+Underfull \hbox (badness 2326) in paragraph at lines 817--818
 []\TU/TimesNewRoman(0)/m/n/12 Systém \TU/lmtt/m/n/12 AmbienceChangeTrigger \TU/TimesNewRoman(0)/m/n/12 funguje identicky, pouze s enumem \TU/lmtt/m/n/12 SceneAmbience
  []
 
 
-Underfull \hbox (badness 2573) in paragraph at lines 792--793
+Underfull \hbox (badness 2573) in paragraph at lines 817--818
 \TU/TimesNewRoman(0)/m/n/12 jsou perzistentní mezi scénami a přechody jsou plynulé, protože crossfading řeší FMOD
  []
 
 
-Underfull \hbox (badness 1803) in paragraph at lines 792--793
+Underfull \hbox (badness 1803) in paragraph at lines 817--818
 \TU/TimesNewRoman(0)/m/n/12 interně na základě nastavení parametru. Technicky je efekt plynulého přechodu realizován
  []
 
 
-Underfull \hbox (badness 3148) in paragraph at lines 792--793
+Underfull \hbox (badness 3148) in paragraph at lines 817--818
 \TU/TimesNewRoman(0)/m/n/12 nastaven AHDSR (Attack-- Hold-- Decay-- Sustain-- Release) envelope, konkrétně modul \TU/TimesNewRoman(0)/m/it/12 Volume
  []
 
 
-Underfull \hbox (badness 3219) in paragraph at lines 792--793
+Underfull \hbox (badness 3219) in paragraph at lines 817--818
 \TU/TimesNewRoman(0)/m/n/12 s automatizační křivkou, která definuje hlasitostní křivku pro každou hodnotu parametru
  []
 
 File: img/fmod/fmod-parameter-sheet.png Graphic file (type bmp)
 <img/fmod/fmod-parameter-sheet.png>
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[43]
+[47]
 File: img/flstudio/flstudio-arrangement.png Graphic file (type bmp)
 <img/flstudio/flstudio-arrangement.png>
 
+Underfull \hbox (badness 2617) in paragraph at lines 845--846
+\TU/TimesNewRoman(0)/m/n/12 Divisions of the Octave) formáty, což umožňuje pracovat s netemperovanými stupnicemi
+ []
+
+[48]
+File: img/flstudio/flstudio-sytrus.png Graphic file (type bmp)
+<img/flstudio/flstudio-sytrus.png>
+File: img/flstudio/flstudio-labs.png Graphic file (type bmp)
+<img/flstudio/flstudio-labs.png>
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 2617) in paragraph at lines 820--821
-\TU/TimesNewRoman(0)/m/n/12 Divisions of the Octave) formáty, což umožňuje pracovat s netemperovanými stupnicemi
- []
-
-[44]
-File: img/flstudio/flstudio-sytrus.png Graphic file (type bmp)
-<img/flstudio/flstudio-sytrus.png>
- [45]
-File: img/flstudio/flstudio-labs.png Graphic file (type bmp)
-<img/flstudio/flstudio-labs.png>
-
-Underfull \hbox (badness 3815) in paragraph at lines 844--845
+Underfull \hbox (badness 3815) in paragraph at lines 869--870
 \TU/TimesNewRoman(0)/m/n/12 techniky přímo korespondují s narativem surrealistické hry, kde zvuková estetika odráží
  []
 
@@ -1114,58 +1090,53 @@ File: img/flstudio/flstudio-deelay.png Graphic file (type bmp)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[46]
+[49] [50]
 File: img/flstudio/flstudio-sfx.png Graphic file (type bmp)
 <img/flstudio/flstudio-sfx.png>
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[47]
-Underfull \hbox (badness 3009) in paragraph at lines 879--880
+ [51]
+Underfull \hbox (badness 3009) in paragraph at lines 904--905
 \TU/TimesNewRoman(0)/m/n/12 Základní organizace zvukových zdrojů ve hře vychází z klasického dělení na diegetické
  []
 
 
-Underfull \hbox (badness 1072) in paragraph at lines 883--884
+Underfull \hbox (badness 1072) in paragraph at lines 908--909
 []\TU/TimesNewRoman(0)/b/n/12 Nediegetické zvuky \TU/TimesNewRoman(0)/m/n/12 existují mimo herní svět – nejsou součástí příběhu a hráč je slyší
  []
 
-[48]
-Underfull \hbox (badness 1472) in paragraph at lines 903--904
+[52]
+Underfull \hbox (badness 1472) in paragraph at lines 928--929
 \TU/TimesNewRoman(0)/m/n/12 typický orientální, napjatý charakter. Kromě rytmické linky obsahuje rozsáhlé atmosférické
  []
 
-[49]
-Underfull \hbox (badness 1303) in paragraph at lines 909--910
+
+Underfull \hbox (badness 1303) in paragraph at lines 934--935
 \TU/TimesNewRoman(0)/m/n/12 konceptu) přiřazena specifická melodická nebo harmonická fráze, která se vrací v různých
  []
 
-
-Underfull \hbox (badness 3189) in paragraph at lines 916--917
+[53]
+Underfull \hbox (badness 3189) in paragraph at lines 941--942
 \TU/TimesNewRoman(0)/m/n/12 Post-- processing je klíčovou součástí moderního vizuálního stylu videohry, jelikož dokáže
  []
 
 
-Underfull \hbox (badness 1033) in paragraph at lines 916--917
+Underfull \hbox (badness 1033) in paragraph at lines 941--942
 \TU/TimesNewRoman(0)/m/it/12 Salvation Path \TU/TimesNewRoman(0)/m/n/12 využívám Unity Universal Render Pipeline (URP), která poskytuje výkonný
  []
 
-[50]
 File: img/unity/unity-global-volume.png Graphic file (type bmp)
 <img/unity/unity-global-volume.png>
-
-Underfull \hbox (badness 1158) in paragraph at lines 938--939
+[54]
+Underfull \hbox (badness 1158) in paragraph at lines 963--964
 \TU/TimesNewRoman(0)/m/n/12 V rámci post-- processingu využívám několik specifických efektů, které dohromady vytvářejí
  []
 
 
-Underfull \hbox (badness 1033) in paragraph at lines 946--947
+Underfull \hbox (badness 1033) in paragraph at lines 971--972
 \TU/TimesNewRoman(0)/m/n/12 považován za nedostatky optiky, ale v herním designu se využívá pro vytvoření specifické
  []
 
-[51]
-Underfull \hbox (badness 4927) in paragraph at lines 948--949
+
+Underfull \hbox (badness 4927) in paragraph at lines 973--974
 []\TU/TimesNewRoman(0)/m/n/12 V \TU/TimesNewRoman(0)/m/it/12 Surreal Bowling: Salvation Path \TU/TimesNewRoman(0)/m/n/12 slouží chromatic aberration k navození snivého,
  []
 
@@ -1173,17 +1144,17 @@ File: img/unity/unity-postprocessing-off.png Graphic file (type bmp)
 <img/unity/unity-postprocessing-off.png>
 File: img/unity/unity-postprocessing-on.png Graphic file (type bmp)
 <img/unity/unity-postprocessing-on.png>
-
-Underfull \hbox (badness 1748) in paragraph at lines 966--967
+[55]
+Underfull \hbox (badness 1748) in paragraph at lines 991--992
 []\TU/TimesNewRoman(0)/m/n/12 Komponenta \TU/lmtt/m/n/12 DeathEffect.cs \TU/TimesNewRoman(0)/m/n/12 je skript, který dynamicky manipuluje s post-- processing
  []
 
-[52]
-Underfull \hbox (badness 1661) in paragraph at lines 1001--1002
+[56]
+Underfull \hbox (badness 1661) in paragraph at lines 1028--1029
 []\TU/TimesNewRoman(0)/m/n/12 Tento efekt je aktivován v momentě, kdy hráč vstoupí do \TU/lmtt/m/n/12 DeathZone \TU/TimesNewRoman(0)/m/n/12 triggeru. Skript
  []
 
-[53]) [54]
+[57]) [58]
 \openout2 = `Závěr.aux'.
 
  (./Závěr.tex
@@ -1198,7 +1169,7 @@ Underfull \hbox (badness 1038) in paragraph at lines 6--7
 \TU/TimesNewRoman(0)/m/n/12 a moderní uživatelské rozhraní založené na UI Toolkitu. Práce mi umožnila prohloubit mé
  []
 
-) [55
+) [59
 
 
 
@@ -1207,7 +1178,7 @@ Underfull \hbox (badness 1038) in paragraph at lines 6--7
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
- [56
+ [60
 
 
 
@@ -1221,14 +1192,14 @@ Underfull \hbox (badness 1205) in paragraph at lines 189--189
 []\TU/TimesNewRoman(0)/m/n/12 W3Schools. \TU/TimesNewRoman(0)/m/it/12 Git Introduction\TU/TimesNewRoman(0)/m/n/12 . Online. In: \TU/TimesNewRoman(0)/m/it/12 W3Schools\TU/TimesNewRoman(0)/m/n/12 . Dostupné z: [][]$[][][][][] [] [] [] [][][] []
  []
 
-[57
+[61
 
 ]
 Underfull \hbox (badness 2409) in paragraph at lines 189--189
 []\TU/TimesNewRoman(0)/m/n/12 Spitfire Audio. \TU/TimesNewRoman(0)/m/it/12 LABS\TU/TimesNewRoman(0)/m/n/12 . Online. In: \TU/TimesNewRoman(0)/m/it/12 Spitfire Audio\TU/TimesNewRoman(0)/m/n/12 . Dostupné z: [][]$[][][][][] [] [] [] [][][][] []
  []
 
-[58] [59] (./main.aux (./Úvod.aux) (./Terminologie.aux) (./Pouzity-framework-aplikace.aux) (./Celkova-koncepce-reseni.aux) (./Popis-aplikace.aux) (./Závěr.aux))
+[62] [63] (./main.aux (./Úvod.aux) (./Terminologie.aux) (./Pouzity-framework-aplikace.aux) (./Celkova-koncepce-reseni.aux) (./Popis-aplikace.aux) (./Závěr.aux))
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -1252,12 +1223,12 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 24078 strings out of 470191
- 473590 string characters out of 5479697
- 1383621 words of memory out of 5000000
- 52338 multiletter control sequences out of 15000+600000
+ 24086 strings out of 470191
+ 473944 string characters out of 5479697
+ 1386621 words of memory out of 5000000
+ 52346 multiletter control sequences out of 15000+600000
  631353 words of font info for 97 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  87i,8n,93p,1895b,4995s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (60 pages).
+Output written on main.pdf (64 pages).

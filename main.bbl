@@ -644,6 +644,48 @@
     \endverb
   \endentry
 
+  \entry{hollow-knight}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=CT}{%
+         family={Cherry},
+         familyi={C\bibinitperiod},
+         given={Team},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CT1}
+    \strng{fullhash}{CT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-24]}
+    \field{note}{Team Cherry}
+    \field{title}{Hollow Knight}
+    \verb{url}
+    \verb https://www.hollowknight.com/
+    \endverb
+  \endentry
+
+  \entry{happy-game}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=DA}{%
+         family={Design},
+         familyi={D\bibinitperiod},
+         given={Amanita},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DA1}
+    \strng{fullhash}{DA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-24]}
+    \field{note}{Amanita Design}
+    \field{title}{Happy Game}
+    \verb{url}
+    \verb https://amanita-design.net/games/happy.html
+    \endverb
+  \endentry
+
   \entry{unity-point-light}{misc}{}{}
     \name{author}{1}{}{%
       {{hash=TU}{%

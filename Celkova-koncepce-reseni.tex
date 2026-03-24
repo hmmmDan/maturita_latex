@@ -27,7 +27,7 @@ Díky tomuto konceptu naše hra obsahuje i mírný puzzle-solving a integraci p�
 \section{UI}
 Velkou kapitolou, která musí být v nějakém měřítku v každé videohře, je uživatelské rozhraní (dále také anglická zkratka UI). Jakákoli tlačítka, nastavení herního zážitku nebo interakce se světem videohry musí projít přes skripty, které řeší uživatelské rozhraní.
 
-Jedna z nejzákladnějších částí UI je Input System, který řeší, jaké hardware vstupy způsobují jakou akci ve videohře. Dvě základní vstupní zařízení, kterými dnešní počítače disponují, jsou klávesnice a myš. Některé videohry používají pouze klávesnici (Hollow Knight od studia Team Cherry) a některé zas pouze myš (Happy Game od studia Amanita Design). Častěji se však můžeme setkat s kombinací obou. Ve vývoji naší videohry jsme se ještě úplně nerozhodli na definitivním způsobu ovládání naší hry, takže zatím naše hra po levé ruce vyžaduje veškerý pohyb, včetně skákání a dashe (výbušný posun kupředu), zatímco pravá ruka zaujímá pozici na myši, kterou využívá pro míření, střílení a „camera peeking“ (vysvětleno později).
+Jedna z nejzákladnějších částí UI je Input System, který řeší, jaké hardware vstupy způsobují jakou akci ve videohře. Dvě základní vstupní zařízení, kterými dnešní počítače disponují, jsou klávesnice a myš. Některé videohry používají pouze klávesnici (Hollow Knight od studia Team Cherry \cite{hollow-knight}) a některé zas pouze myš (Happy Game od studia Amanita Design \cite{happy-game}). Častěji se však můžeme setkat s kombinací obou. Dříve jsme ve vývoji naší videohry používali kombinaci obou -- levá ruka obsluhovala veškerý pohyb včetně skákání a dashe (rychlý posun kupředu), zatímco pravá ruka zaujímala pozici na myši, kterou jsme využívali pro míření, střílení a „camera peeking". Postupem času jsme se však rozhodli přejít výhradně na klávesnici, jelikož tato varianta lépe rozloží aktivitu mezi obě ruce a eliminuje potřebu přesunu ruky mezi zařízeními. V budoucnu zvažujeme implementaci více možností ovládání, aby si každý hráč mohl vybrat variantu, která mu nejvíce vyhovuje.
 
 Poté, co videohra ví, jaké vstupy mají jaký učel, potřebujeme s těmito signály pracovat a používat je pro kontroly, mechaniky a orientaci v programu videohry. Nejčastější případ UI jsou panely, které mají různé účely. Například Pause Panel je lišta, která se objeví při pozastavení hry (nejčastěji stisknutím klávesy Escape), kde se mohou objevovat informace o aktuálním stavu hráče, nastavení hlasitosti zvuku nebo možnosti opuštění levelu a ukončení hry.
 
@@ -36,9 +36,11 @@ Dokonce hned první věc, kterou hráč po zapnutí videohry vidí, je nejčast�
 \section{Vizuální efekty}
 Vizuální efekty by, jako každá část, měly podpořit uvěřitelnost digitálního světa a angažovanost do něj. Neměly by na sebe lákat až moc pozornosti, pokud tak vyloženě nechceme. Příklady klasických vizuálních efektů ve hrách jsou:
 
-efekt smrti (Death Screen)
-impact effect (například dopad na zem, dash)
-glow effect (na hráči, aby viděl kolem sebe, nebo na jiných předmětech, aby byly rychle zaregistrovatelné)
+\begin{itemize}
+    \item efekt smrti (Death Screen) 
+    \item impact effect (například dopad na zem, dash)
+    \item glow effect (na hráči, aby viděl kolem sebe, nebo na jiných předmětech, aby byly rychle zaregistrovatelné)
+\end{itemize}
 
 Dosáhnout těchto efektů můžeme různými způsoby: přidání prvků světla na určitý GameObject \cite{unity-point-light}, experimentování s Unity Particle System \cite{unity-particle-system} nebo manipulování určitývh prvků Post-processing.
 

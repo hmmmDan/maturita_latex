@@ -28,6 +28,8 @@ Pro práci se scénami v Unity je nutné nejprve přidat požadované scény do 
 
 Po úspěšném dokončení úrovně \emph{Level1} je hráč automaticky přesunut do \emph{Level2}. Z jakékoliv úrovně se hráč může vrátit do hlavního menu pozastavením hry a aktivací panelu \emph{Pause Menu}, což je podrobněji popsáno v podkapitole \ref{sec:ui-prvky}.
 
+\newpage
+
 \subsection{Herní manažery}
 \label{sec:herni-manazery}
 Herní manažery představují klíčové komponenty architektury videohry, které řídí specifické herní systémy a zajišťují komunikaci mezi různými částmi aplikace. V aktuální verzi využívám tři hlavní manažery:
@@ -42,6 +44,8 @@ Herní manažery představují klíčové komponenty architektury videohry, kter
 \emph{Audio Manager} spravuje zvukovou složku aplikace. Jeho úkolem je aktivace odpovídající hudby, zvuků vztahujících se k danému prostředí (ambience) a především komunikace s externím nástrojem FMOD Studio. Součástí \emph{Audio Manageru} je také objekt \emph{FMODEvents}, který propojuje konkrétní zvuky vytvořené v databázi FMOD Studio s rozhraním Unity editoru a zpřístupňuje jednotlivé zvukové soubory pro manipulaci v kódu.
 
 \emph{Cursor Manager} je funkčně nejjednodušším manažerem v celé struktuře. Jeho jedinou funkcí je vizuální kontrola kurzoru myši ve hře. V aktuální implementaci jsou používány dva stavy: normální kurzor a kurzor při stisku tlačítka. Zde je ukázka základní struktury tohoto skriptu:
+
+\newpage
 
 \begin{lstlisting}[caption={CursorManager.cs}, label={lst:CursorManager}, frame=none, backgroundcolor=\color{white}]
 using UnityEngine;
@@ -109,6 +113,8 @@ Jak můžeme vidět na obrázku \ref{fig:unity-input-system}, v tomto rozhraní 
 
 Například jedním z nepříjemných problémů, které \emph{Action Maps} řeší, je následující: V minulosti, když jsem vstup řešil ještě zastaralým způsobem, UI fungovalo tak, že i když hráč pozastavil hru a dostal se do \emph{Pause Menu}, čas se zastavil – viz ukázka kódu \ref{lst:pause-code-old}.
 
+\newpage
+
 \begin{lstlisting}[caption={Původní řešení pozastavení hry}, label={lst:pause-code-old}]
 private void SetPauseState(bool pause)
 {
@@ -174,10 +180,8 @@ Pro \emph{Action Map} uživatelského rozhraní pak:
 
 Ke každé \emph{Input Action} lze v sekci \emph{Action Properties} nastavit typ akce (\emph{Button}, \emph{PassThrough}, \emph{Value}), cílovou platformu (klávesnice, myš, herní ovladač, VR ovladač\dots) a případně další vlastnosti. Toto umožňuje multiplatformní nasazení na PC, macOS, PlayStation 5, Xbox Series X/S nebo VR headsety bez nutnosti měnit kód.
 
+\newpage
 
-
-
-"
 \subsection{Základní herní objekty}
 \label{sec:zakladni-herni-objekty}
 
@@ -244,14 +248,12 @@ Rozhraní UI Toolkit je zobrazeno na obrázku \ref{fig:ui-toolkit}.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=1\textwidth]{img/unity/unity-ui-toolkit.png}
+    \includegraphics[width=0.9\textwidth]{img/unity/unity-ui-toolkit.png}
     \caption{Rozhraní UI Toolkit}
     \label{fig:ui-toolkit}
 \end{figure}
 
-
-
-
+\newpage
 
 \subsection{UI Prvky}
 \label{sec:ui-prvky}
@@ -312,7 +314,16 @@ Hodnoty jsou ukládány do \texttt{PlayerPrefs}, takže při dalším spuštěn�
 
 Nastavení hlasitosti je zobrazeno na obrázku \ref{fig:unity-volume-controls}.
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{img/unity/unity-volume-controls.png}
+    \caption{Nastavení hlasitosti}
+    \label{fig:unity-volume-controls}
+\end{figure}
+
 \textbf{HUD} -- zobrazuje informace perzistentní během hraní. V levém horním rohu je počítadlo zbývajících střel (stripe shot), v pravém horním rohu pak počet nasbíraných konverzačních fragmentů (CFs). Binding počítadel probíhá přímým dotazem na herní skripty -- například   \texttt{CFInventory.OnCFCollected} událost aktualizuje label v HUD:
+
+\newpage
 
 \begin{lstlisting}[caption={Bindování CF počítadla}]
 private void BindCFCounter(VisualElement root)
@@ -338,17 +349,12 @@ Jakmile bude tato sekce plně implementována, umožní hráči procházet nasb�
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=1\textwidth]{img/unity/unity-volume-controls.png}
-    \caption{Nastavení hlasitosti}
-    \label{fig:unity-volume-controls}
-\end{figure}
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=1\textwidth]{img/unity/unity-hud.png}
+    \includegraphics[width=0.9\textwidth]{img/unity/unity-hud.png}
     \caption{HUD ve hře -- levý horní roh: počet střel, pravý horní roh: počet CFs}
     \label{fig:unity-hud}
 \end{figure}
+
+\newpage
 
 \subsection{Ostatní funkce UI}
 \label{sec:ostatni-funkce-ui}
@@ -390,6 +396,8 @@ V aktuální implementaci se při \emph{soft death} přesouvá pouze pozice hrá
 
 \textbf{Tlačítková hlasová odezva} -- rozšíření \texttt{UIToolkitAudioBinding} přidává k libovolnému   \texttt{VisualElement} metodu \texttt{BindHoverSound()}, která registruje callback na událost \texttt{PointerEnterEvent}. Tím se při najetí kurzoru na libovolný element (nejen tlačítka) přehraje zvuk hover efektu, což výrazně zpříjemňuje navigaci v menu a panelech:
 
+\newpage
+
 \begin{lstlisting}[caption={UIToolkitAudioBinding -- hover zvuk}, label={lst:uitoolkit-hover}]
 public static class UIToolkitAudioBinding
 {
@@ -410,7 +418,6 @@ Pro osvětlení 2D scény využívám systém \emph{Light 2D}, který je součá
 
 Jedním z nejdůležitějších prvků osvětlení je \texttt{Light2D} typu \emph{Spot} připojený jako child object k objektu hráče. Toto řešení bylo inspirováno hrou \emph{Ori and the Blind Forest}, kde je postava neustále obklopena jemným světelným polem, které jí umožňuje vidět v temném prostředí. Díky tomu, že je \texttt{GameObject} světla child objectem hráče, automaticky se pohybuje spolu s ním bez nutnosti dalšího kódu.
 
-
 Kromě individuálních zdrojů světla je ve scéně přítomno také \emph{Global Light 2D}, které nastavuje základní intenzitu a barvu osvětlení pro celou scénu. Tím se zajistí, že objekty bez vlastního zdroje světla nejsou zcela ponořeny do tmy, ale zároveň jsou dostatečně kontrastní, aby vynikla atmosféra temnějších částí levelu.
 
 Dalším typem zdroje světla jsou \emph{světlušky} (\emph{Firefly Lights}) v korunách stromů. Každá instance komponenty \texttt{FireflyLight} řídí intenzitu připojeného \texttt{Light2D} pomocí funkce \texttt{Mathf.PingPong}, která vrací hodnotu v rozsahu 0 až 1 tak, že postupně roste a pak zase klesá, dokola -- výsledkem je hladké rozjasňování a zhasínání světla. Každá instance má navíc náhodný \texttt{randomOffset} (viz ukázka kódu), takže jednotlivé světlušky pulzují nezávisle na sobě a vytvářejí dynamičtější a přirozenější efekt:
@@ -426,6 +433,8 @@ void Update()
 Collectible objekty (\emph{conversation fragments}) rovněž nesou vlastní \texttt{Light2D} zdroj, který je činí vizuálně nápadnými a usnadňuje hráči jejich vyhledávání v prostředí.
 
 Posledním významným případem využití Light 2D je \texttt{PortalActivator}, který při aktivaci portalu postupně zvyšuje intenzitu jeho světla pomocí \texttt{Mathf.Lerp} v čase -- světlo se rozsvítí v průběhu dvou sekund spolu se sprite průhledností a hlasitostí zvuku:
+
+\newpage
 
 \begin{lstlisting}[caption={PortalActivator -- fade in portalu}, label={lst:portal-light}]
 private IEnumerator FadeInPortalLight()
@@ -472,6 +481,8 @@ private void TriggerDash(Vector3 position)
 \end{lstlisting}
 
 Samotný vizuální vzhled částic je definován přímo v Unity editoru v komponentě   \texttt{ParticleSystem} -- barva, tvar emitoru, doba životnosti jednotlivých částic a trajektorie jsou nastaveny jako asset a nejsou řízeny kódem.
+
+\newpage
 
 \subsection{Ostatní efekty}
 \label{sec:ostatni-efekty-vfx}
@@ -522,6 +533,8 @@ Hierarchie AudioMixeru začíná na kořenovém kanálu \emph{Master}, pod ním�
     \caption{Struktura Unity AudioMixeru -- hierarchie kanálů}
     \label{fig:unity-audiomixer}
 \end{figure}
+
+\newpage
 
 \paragraph{Plynulé přechody pomocí \texttt{Lerp}}
 Klíčovou funkcí původního systému byla metoda \texttt{FadeAudio()}, která zajišťovala plynulé přechody hlasitosti pomocí lineární interpolace (\texttt{Mathf.Lerp}) mezi aktuální a cílovou hodnotou v decibelech:
@@ -596,6 +609,8 @@ Integrace FMOD do Unity je zajištěna oficálním FMOD for Unity pluginem, kter
     \item \emph{EventHandler} -- abstraktní základní třída, která mapuje Unity události (Start, OnDestroy, OnEnable, kolize, triggery) na FMOD akce
 \end{itemize}
 
+\newpage
+
 \paragraph{Komponenta StudioEventEmitter a EmitterGameEvent}
 Komponenta \texttt{StudioEventEmitter} je jádrem FMOD integrace v Unity. Její klíčové vlastnosti jsou:
 
@@ -617,6 +632,8 @@ Enum \texttt{EmitterGameEvent} definuje všechny podporované Unity události, n
 \end{itemize}
 
 Základní třída \texttt{EventHandler} (ze které \texttt{StudioEventEmitter} dědí) registruje callbacky na tyto Unity události a při jejich vyvolání volá \texttt{HandleGameEvent()}, která porovnává typ události s nastaveným \texttt{EventPlayTrigger} a \texttt{EventStopTrigger}. Při shodě pak zavolá \texttt{Play()} nebo \texttt{Stop()} na FMOD instanci.
+
+\newpage
 
 \paragraph{FMODEvents -- centrální registr eventů}
 Propojení Unity a FMOD na úrovni kódu zajišťuje singleton \texttt{FMODEvents.cs}, který drží téměř všechny \texttt{EventReference} na jednom místě:
@@ -686,6 +703,8 @@ Na objektu CF jsou tedy dva \texttt{StudioEventEmitter} komponenty -- první se 
 
 Druhý přístup pro one-shot objekty spočívá ve využití \texttt{RuntimeManager.PlayOneShot()} přímo v kódu, což je vhodné pro situace, kdy chceme mít plnou kontrolu nad timingem přehrávání.
 
+\newpage
+
 %%%%% ---- VAZBA ZVUKŮ NA ANIMACE ---- %%%%%
 \subsubsection{Vazba zvuků na animace}
 \label{sec:vazba-zvuku-na-animace}
@@ -713,6 +732,8 @@ Na obrázku \ref{fig:fmod-unity-animation-event} je vidět, jak tyto Animation E
 
 Tyto events volají metodu \texttt{PlayFootsteps()} na skriptu \texttt{PlayerMovementAudio.cs}, který je připojen k objektu hráče:
 
+\newpage
+
 \begin{lstlisting}[caption={PlayerMovementAudio -- obsluha footsteps a jump}, label={lst:playermovementaudio}]
 public class PlayerMovementAudio : MonoBehaviour
 {
@@ -738,6 +759,8 @@ Na straně FMOD je footsteps event řešen jako \emph{multiinstrument} -- kontej
     \caption{FMOD Studio -- multiinstrument footsteps s aktivním shuffle módem}
     \label{fig:fmod-footsteps}
 \end{figure}
+
+\newpage
 
 %%%%% ---- MUSIC A AMBIENCE ---- %%%%%
 \subsubsection{Hudba a Ambience}
@@ -778,6 +801,8 @@ public enum SceneMusic
 \end{lstlisting}
 
 V FMOD Studiu je na hudebním eventu vytvořen diskrétní \texttt{Parameter} s názvem \texttt{SceneMusic}. Hudební event obsahuje pro každou hodnotu parametru navázanou jinou hudební stopu -- při změně parametru na hodnotu 3 se crossfadem začne přehrávat hudba pro Level 1, při změně na 0 hudba pro MainMenu. Unity skript pak volá:
+
+\newpage
 
 \begin{lstlisting}[caption={MusicChangeTrigger -- změna hudby při načtení scény}, label={lst:musicchangetrigger}]
 public void SetSceneMusic(SceneMusic scene)
@@ -965,6 +990,8 @@ Color adjustments jsou klíčové pro celkovou atmosféru hry. Nejdůležitějš
 %\subsubsection{DeathEffect.cs}
 Komponenta \texttt{DeathEffect.cs} je skript, který dynamicky manipuluje s post-processing parametry při úmrtí hráče. Jak již bylo zmíněno v podkapitole \ref{sec:ostatni-efekty-vfx}, tento skript ovlivňuje proměnné \texttt{Volume} profilu.
 
+\newpage
+
 \begin{lstlisting}[caption={DeathEffect.cs -- základní struktura}, label={lst:deatheffect}]
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -999,6 +1026,8 @@ public class DeathEffect : MonoBehaviour
 V aktuální implementaci skript snižuje post-exposure při úmrtí hráče, čímž vytváří tmavý, cinematický efekt -- obraz postupně ztmavne, dokud není hráč respawnován. Po respawnu se hodnota post-exposure vrací zpět na výchozí 0.5.
 
 Tento efekt je aktivován v momentě, kdy hráč vstoupí do \texttt{DeathZone} triggeru. Skript \texttt{PlayerDeath.cs} detekuje kolizi a aktivuje \texttt{DeathEffect} komponentu, která následně ovlivňuje post-processing parametry.
+
+\newpage
 
 \begin{lstlisting}[caption={PlayerDeath.cs -- aktivace Death Effectu}, label={lst:playerdeath-deatheffect}]
 private void OnTriggerEnter2D(Collider2D collision)
