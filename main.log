@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Arch Linux) (preloaded format=xelatex 2026.3.19)  24 MAR 2026 15:06
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Arch Linux) (preloaded format=xelatex 2026.3.19)  24 MAR 2026 15:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -855,6 +855,11 @@ Underfull \hbox (badness 1158) in paragraph at lines 40--41
 
  (./Celkova-koncepce-reseni.tex
 Kapitola 4.
+
+Underfull \hbox (badness 1163) in paragraph at lines 8--9
+\TU/TimesNewRoman(0)/m/n/12 jednoduché uživatelské rozhraní…), Audio Manager (zajišťuje správný chod veškeré logiky
+ []
+
 [13
 
 
@@ -919,6 +924,11 @@ Underfull \hbox (badness 1048) in paragraph at lines 315--316
 \TU/TimesNewRoman(0)/m/n/12 zbývajících střel (stripe shot), v pravém horním rohu pak počet nasbíraných konverzačních
  []
 
+
+Underfull \hbox (badness 1577) in paragraph at lines 315--316
+\TU/TimesNewRoman(0)/m/n/12 fragmentů (CFs). Binding počítadel probíhá přímým dotazem na herní skripty – například
+ []
+
 [26]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
@@ -943,6 +953,10 @@ Underfull \hbox (badness 2173) in paragraph at lines 371--372
  []
 
 [28]
+Underfull \hbox (badness 3977) in paragraph at lines 375--376
+\TU/TimesNewRoman(0)/m/n/12 rychlostí pohybu jednotlivých vrstev. Sprite renderer na každé vrstvě dostane koeficient
+ []
+
 File: img/unity/unity-parallax-close.png Graphic file (type bmp)
 <img/unity/unity-parallax-close.png>
 File: img/unity/unity-parallax-far.png Graphic file (type bmp)
@@ -959,9 +973,29 @@ File: img/unity/unity-light-firefly.png Graphic file (type bmp)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[31] [32]
+
+Underfull \hbox (badness 1014) in paragraph at lines 458--459
+\TU/TimesNewRoman(0)/m/n/12 Systém částic (Particle System) v Unity umožňuje vytvářet efekt velkého množství malých
+ []
+
+[31]
+Underfull \hbox (badness 5578) in paragraph at lines 474--475
+[]\TU/TimesNewRoman(0)/m/n/12 Samotný vizuální vzhled částic je definován přímo v Unity editoru v komponentě
+ []
+
+
+Underfull \hbox (badness 3460) in paragraph at lines 474--475
+\TU/lmtt/m/n/12 ParticleSystem \TU/TimesNewRoman(0)/m/n/12 – barva, tvar emitoru, doba životnosti jednotlivých částic a trajektorie
+ []
+
+[32]
 Underfull \hbox (badness 1048) in paragraph at lines 508--509
 \TU/TimesNewRoman(0)/m/n/12 AudioMixer řešení k profesionálnímu nástroji FMOD Studio, což přineslo výrazné zlepšení
+ []
+
+
+Underfull \hbox (badness 2285) in paragraph at lines 514--515
+\TU/TimesNewRoman(0)/m/n/12 V původní verzi projektu byl audio systém postaven na Unity vestavěném \TU/lmtt/m/n/12 AudioMixeru
  []
 
 
@@ -1059,6 +1093,11 @@ File: img/flstudio/flstudio-arrangement.png Graphic file (type bmp)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+
+Underfull \hbox (badness 2617) in paragraph at lines 820--821
+\TU/TimesNewRoman(0)/m/n/12 Divisions of the Octave) formáty, což umožňuje pracovat s netemperovanými stupnicemi
+ []
+
 [44]
 File: img/flstudio/flstudio-sytrus.png Graphic file (type bmp)
 <img/flstudio/flstudio-sytrus.png>
@@ -1100,6 +1139,11 @@ Underfull \hbox (badness 1472) in paragraph at lines 903--904
 [49]
 Underfull \hbox (badness 1303) in paragraph at lines 909--910
 \TU/TimesNewRoman(0)/m/n/12 konceptu) přiřazena specifická melodická nebo harmonická fráze, která se vrací v různých
+ []
+
+
+Underfull \hbox (badness 3189) in paragraph at lines 916--917
+\TU/TimesNewRoman(0)/m/n/12 Post-- processing je klíčovou součástí moderního vizuálního stylu videohry, jelikož dokáže
  []
 
 
