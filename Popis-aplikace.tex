@@ -225,10 +225,10 @@ Strukturu uživatelského rozhraní lze rozdělit na dvě hlavní kategorie: UI 
 Jak jsem postupně přecházel z \emph{Canvas} na UI Toolkit, mohl jsem porovnat obě řešení. Ve starších verzích bylo UI postaveno na principech:
 
 \begin{itemize}
-    \item Více samostatných \emph{Canvas} objektů ve scéně (např. \texttt{CanvasGameOver}, \texttt{Canvas HUD}, \texttt{CanvasTutorial})
+    \item Více samostatných \emph{Canvas} objektů ve scéně (např. \texttt{CanvasGameOver}, \texttt{Canvas HUD})
     \item Každý panel jako samostatný \emph{GameObject} s komponentami jako \texttt{Image}, \texttt{Button}, \texttt{Text}
     \item Skrývání a zobrazování panelů pomocí \texttt{GameObject.SetActive(true/false)}
-    \item Rozptýlená logika mezi skripty jako \texttt{StripeCounterUI.cs}, \texttt{OrbCounterUI.cs}, \texttt{ButtonEffects.cs}
+    \item Rozptýlená logika mezi skripty jako \texttt{StripeCounterUI.cs}, \texttt{OrbCounterUI.cs}
 \end{itemize}
 
 S UI Toolkit v nejnovější verzi přichází zjednodušení:
@@ -236,7 +236,7 @@ S UI Toolkit v nejnovější verzi přichází zjednodušení:
 \begin{itemize}
     \item Jeden \emph{UIDocument} definuje veškeré UI v jednom UXML souboru
     \item Všechny panely (MainMenu, PanelSettings, PanelPause, PanelAltar, HUD) jsou dotazovány pomocí \texttt{root.Q<VisualElement>("NazevPanelu")}
-    \item Skrývání a zobrazování pomocí \texttt{VisualElement.style.display = DisplayStyle.None/Flex}
+    \item Zobrazování pomocí \texttt{VisualElement.style.display = DisplayStyle.None/Flex}
     \item Centralizovaná správa stavu pomocí \texttt{GameState} enumu (None, Gameplay, Altar, Pause)
 \end{itemize}
 
@@ -312,7 +312,7 @@ Hodnoty jsou ukládány do \texttt{PlayerPrefs}, takže při dalším spuštěn�
 
 Nastavení hlasitosti je zobrazeno na obrázku \ref{fig:unity-volume-controls}.
 
-\textbf{HUD} -- zobrazuje informace perzistentní během hraní. V levém horním rohu je počítadlo zbývajících střel (stripe shot), v pravém horním rohu pak počet nasbíraných konverzačních fragmentů (CFs). Binding počítadel probíhá přímým dotazem na herní skripty -- například \texttt{CFInventory.OnCFCollected} událost aktualizuje label v HUD:
+\textbf{HUD} -- zobrazuje informace perzistentní během hraní. V levém horním rohu je počítadlo zbývajících střel (stripe shot), v pravém horním rohu pak počet nasbíraných konverzačních fragmentů (CFs). Binding počítadel probíhá přímým dotazem na herní skripty -- například \newline \texttt{CFInventory.OnCFCollected} událost aktualizuje label v HUD:
 
 \begin{lstlisting}[caption={Bindování CF počítadla}]
 private void BindCFCounter(VisualElement root)
@@ -355,7 +355,7 @@ Jakmile bude tato sekce plně implementována, umožní hráči procházet nasb�
 
 Kromě hlavních panelů a HUD prvků popsaných v předchozí podkapitole existuje v projektu několik dalších vizuálních komponent, které doplňují herní zážitek.
 
-\textbf{Respawn / Checkpoint systém} -- systém checkpointů umožňuje hráči ukládat pozici, na kterou bude respawnován po \emph{soft death} (používáno v \emph{The Exploration}). Checkpoint je objekt ve scéně, s nímž hráč může interagovat stisknutím klávesy \texttt{E}. Při aktivaci se uloží jako referenční bod v komponentě \texttt{DeathZoneSoft}, která po vstupu hráče do svého triggeru okamžitě přesune hráče na pozici posledního aktivovaného \texttt{CheckPoint}u:
+\textbf{Respawn / Checkpoint systém} -- systém checkpointů umožňuje hráči ukládat pozici, na kterou bude respawnován po \emph{soft death} (používáno v \emph{The Exploration}). Checkpoint je objekt ve scéně, s nímž hráč může interagovat stisknutím klávesy \texttt{E}. Při aktivaci se uloží jako referenční bod \newline v komponentě \texttt{DeathZoneSoft}, která po vstupu hráče do svého triggeru okamžitě přesune hráče na pozici posledního aktivovaného \texttt{CheckPoint}u:
 
 \begin{lstlisting}[caption={CheckPoint -- aktivace checkpointu}, label={lst:checkpoint}]
 public void Activate()
@@ -372,7 +372,7 @@ V aktuální implementaci se při \emph{soft death} přesouvá pouze pozice hrá
 
 \textbf{Camera Respawn Catch} -- komponenta zajišťující plynulé přesunutí kamery k hráči po respawnu. Při volání metody \texttt{OnPlayerRespawn()} se cílová pozice okamžitě nastaví na pozici hráče, takže kamera může pomocí interpolace (\texttt{Vector3.Lerp}) hladce dohnat případný rozestup vzniklý během teleportace.
 
-\textbf{Parallax} -- vizuální komponenta pozadí, která simuluje hloubku prostoru pomocí odlišných rychlostí pohybu jednotlivých vrstev. Sprite renderer na každé vrstvě dostane koeficient \texttt{parallaxEffectX}; nižší hodnota znamená, že vrstva se pohybuje pomaleji než kamera a působí vzdáleněji. Na obrázcích \ref{fig:unity-parallax-close} a \ref{fig:unity-parallax-far} je vidět nastavení bližší vrstvy na 0.45x a vzdálenější vrstvy na 0.7x -- bližší vrstva se pohybuje výrazně pomaleji a působí staticky, zatímco vzdálenější vrstva rychleji následuje kameru, což navozuje dojem prostorové hloubky.
+\textbf{Parallax} -- vizuální komponenta pozadí, která simuluje hloubku prostoru pomocí odlišných rychlostí pohybu jednotlivých vrstev. Sprite renderer na každé vrstvě dostane koeficient \newline \texttt{parallaxEffectX}; nižší hodnota znamená, že vrstva se pohybuje pomaleji než kamera a působí vzdáleněji. Na obrázcích \ref{fig:unity-parallax-close} a \ref{fig:unity-parallax-far} je vidět nastavení bližší vrstvy na 0.45x a vzdálenější vrstvy na 0.7x -- bližší vrstva se pohybuje výrazně pomaleji a působí staticky, zatímco vzdálenější vrstva rychleji následuje kameru, což navozuje dojem prostorové hloubky.
 
 \begin{figure}[h!]
     \centering
@@ -388,7 +388,7 @@ V aktuální implementaci se při \emph{soft death} přesouvá pouze pozice hrá
     \label{fig:unity-parallax-far}
 \end{figure}
 
-\textbf{Tlačítková hlasová odezva} -- rozšíření \texttt{UIToolkitAudioBinding} přidává k libovolnému \texttt{VisualElement} metodu \texttt{BindHoverSound()}, která registruje callback na událost \texttt{PointerEnterEvent}. Tím se při najetí kurzoru na libovolný element (nejen tlačítka) přehraje zvuk hover efektu, což výrazně zpříjemňuje navigaci v menu a panelech:
+\textbf{Tlačítková hlasová odezva} -- rozšíření \texttt{UIToolkitAudioBinding} přidává k libovolnému \newline \texttt{VisualElement} metodu \texttt{BindHoverSound()}, která registruje callback na událost \texttt{PointerEnterEvent}. Tím se při najetí kurzoru na libovolný element (nejen tlačítka) přehraje zvuk hover efektu, což výrazně zpříjemňuje navigaci v menu a panelech:
 
 \begin{lstlisting}[caption={UIToolkitAudioBinding -- hover zvuk}, label={lst:uitoolkit-hover}]
 public static class UIToolkitAudioBinding
@@ -455,7 +455,7 @@ private IEnumerator FadeInPortalLight()
 \subsection{Particle System}
 \label{sec:particle-system}
 
-Systém částic (Particle System) v Unity umožňuje vytvářet efekt velkého množství malých objektů, které se chovají jako tekutina, kouř, jiskry, nebo v tomto případě -- efekt rychlého úskoku. Při provedení \emph{dash} schopnosti je volána statická metoda \texttt{PlayDashEffect()}, která spustí \texttt{ParticleSystem} na aktuální pozici hráče. Metoda \texttt{Play()} automaticky restartuje animaci částic od začátku, takže není třeba částice před novým spuštěním resetovat. Třída \texttt{DashParticles} využívá singleton vzor, takže může být volána odkudkoliv bez nutnosti držet přímou referenci:
+Systém částic (Particle System) v Unity umožňuje vytvářet efekt velkého množství malých objektů, které se chovají jako tekutina, kouř, jiskry, nebo v tomto případě -- efekt rychlého úskoku. \newline Při provedení \emph{dash} schopnosti je volána statická metoda \texttt{PlayDashEffect()}, která spustí \newline \texttt{ParticleSystem} na aktuální pozici hráče. Metoda \texttt{Play()} automaticky restartuje animaci částic od začátku, takže není třeba částice před novým spuštěním resetovat. Třída \texttt{DashParticles} využívá singleton vzor, takže může být volána odkudkoliv bez nutnosti držet přímou referenci:
 
 \begin{lstlisting}[caption={DashParticles -- spuštění částic}, label={lst:dash-particles}]
 public static void PlayDashEffect(Vector3 position)
@@ -471,7 +471,7 @@ private void TriggerDash(Vector3 position)
 }
 \end{lstlisting}
 
-Samotný vizuální vzhled částic je definován přímo v Unity editoru v komponentě \texttt{ParticleSystem} -- barva, tvar emitoru, doba životnosti jednotlivých částic a trajektorie jsou nastaveny jako asset a nejsou řízeny kódem.
+Samotný vizuální vzhled částic je definován přímo v Unity editoru v komponentě \newline \texttt{ParticleSystem} -- barva, tvar emitoru, doba životnosti jednotlivých částic a trajektorie jsou nastaveny jako asset a nejsou řízeny kódem.
 
 \subsection{Ostatní efekty}
 \label{sec:ostatni-efekty-vfx}
@@ -497,7 +497,7 @@ else
 }
 \end{lstlisting}
 
-Další vizuální efekt, který zasahuje do herní mechaniky, je komponenta \texttt{DeathEffect}. Ta ovlivňuje proměnné \texttt{Volume} profilu v rámci \emph{Universal Render Pipeline} -- konkrétně snižuje saturaci obrazu a aplikuje tmavý overlay, čímž vytváří cinematický efekt úmrtí. Jedná se o vizuální efekt, který je však implementován pomocí post-processing nástrojů, a proto je podrobněji rozebrán v kapitole \ref{sec:post-processing-hry}.
+Další vizuální efekt, který zasahuje do herní mechaniky, je komponenta \texttt{DeathEffect}. \newline Ta ovlivňuje proměnné \texttt{Volume} profilu v rámci \emph{Universal Render Pipeline} -- konkrétně snižuje saturaci obrazu a aplikuje tmavý overlay, čímž vytváří cinematický efekt úmrtí. Jedná se o vizuální efekt, který je však implementován pomocí post-processing nástrojů, a proto je podrobněji rozebrán v kapitole \ref{sec:post-processing-hry}.
 
 \section{Tvorba zvukových efektů}
 \label{sec:tvorba-zvukovych-efektu}
@@ -511,7 +511,7 @@ Práce se zvukem ve hrách je komplexní téma, které zahrnuje správu mnoha so
 \subsubsection{Původní řešení -- Unity AudioMixer}
 \label{sec:puvodni-audiomixer}
 
-V původní verzi projektu byl audio systém postaven na Unity vestavěném \texttt{AudioMixeru} a centralizovaném skriptu \texttt{AudioManager.cs}, který využíval singleton vzor. Tento manažer spravoval tři hlavní zvukové kanály -- \emph{Music}, \emph{Diegetic} a \emph{Ambience} -- a byl perzistentní mezi scénami díky metodě \texttt{DontDestroyOnLoad}.
+V původní verzi projektu byl audio systém postaven na Unity vestavěném \texttt{AudioMixeru} \newline a centralizovaném skriptu \texttt{AudioManager.cs}, který využíval singleton vzor. Tento manažer spravoval tři hlavní zvukové kanály -- \emph{Music}, \emph{Diegetic} a \emph{Ambience} -- a byl perzistentní mezi scénami díky metodě \texttt{DontDestroyOnLoad}.
 
 \paragraph{Hierarchie AudioMixeru}
 Hierarchie AudioMixeru začíná na kořenovém kanálu \emph{Master}, pod nímž se nacházejí dva hlavní kanály: \emph{Music\_Player} a \emph{SFX\_Player} (viz obrázek \ref{fig:unity-audiomixer}). Kanál \emph{Music\_Player} obsahuje podřízený kanál \emph{Music\_Pause}, který řídí hlasitost hudby při pozastavení hry, a pod ním \emph{Music\_Internal}, kam směřuje samotný \texttt{AudioSource} přehrávající hudbu. Kanál \emph{SFX\_Player} se pak větví na \emph{SFX\_UI} pro uživatelské rozhraní, \emph{SFX\_Pause} pro diegetické zvuky při pauze, \emph{SFX\_Internal} jako centrální kanál pro všechny SFX, a ten se dále dělí na \emph{SFX\_Diegetic\_Ambience} (environmentální ambientní smyčky) a \emph{SFX\_Diegetic\_Player} (zvuky vztahující se k hráči).
@@ -543,7 +543,7 @@ private IEnumerator FadeAudio(string mixerParam, float targetDB, float fadeDurat
 }
 \end{lstlisting}
 
-Tato korutina byla využívána pro všechny operace vyžadující plynulý přechod -- fade-in a fade-out hudby při přechodu mezi scénami, pozastavení hudby při \texttt{Time.timeScale = 0f}, nebo ztišení diegetických zvuků při úmrtí hráče (\texttt{MuteDiegetic()}). Hodnota \texttt{Time.unscaledDeltaTime} zajišťuje, že fade proběhne v reálném čase i při zastaveném herním čase, což je kritické pro správné fungování při pauze.
+Tato korutina byla využívána pro všechny operace vyžadující plynulý přechod -- fade-in a fade-out hudby při přechodu mezi scénami, pozastavení hudby při \texttt{Time.timeScale = 0f}, nebo ztišení diegetických zvuků při úmrtí hráče (\texttt{MuteDiegetic()}). Hodnota \texttt{Time.unscaledDeltaTime} \newline zajišťuje, že fade proběhne v reálném čase i při zastaveném herním čase, což je kritické pro správné fungování při pauze.
 
 Metoda \texttt{PlaySound()} přijímala \texttt{SoundType} enum, pole \texttt{AudioClipů} a přehrávala náhodný klip z pole. Tím se docílilo variace zvuků -- například pro footsteps existovaly tři různé zvukové soubory, z nichž byl pokaždé náhodně vybrán jeden:
 
@@ -649,7 +649,7 @@ Jednotlivé FMOD eventy jsou v tomto skriptu definovány jako serializovatelná 
 V nejnovější verzi projektu existují dva hlavní, odlišné přístupy k přehrávání zvuků, které odrážejí různou povahu zvukových zdrojů.
 
 \paragraph{PlayOneShot -- jednorázové zvuky}
-První přístup využívá \texttt{PlayOneShot()} -- metodu, která vytvoří dočasnou FMOD instanci, přehraje zvuk na zadané pozici a instanci ihned uvolní. Tento model je ideální pro krátké, jednorázové zvuky, u kterých nepotřebujeme sledovat jejich životní cyklus. Příkladem je smrt hráče, kde \texttt{PlayerDeath.cs} volá:
+První přístup využívá \texttt{PlayOneShot()} -- metodu, která vytvoří dočasnou FMOD instanci, přehraje zvuk na zadané pozici a instanci ihned uvolní. Tento model je ideální pro krátké, jednorázové zvuky, u kterých nepotřebujeme sledovat jejich životní cyklus. Příkladem je smrt hráče, \newline kde \texttt{PlayerDeath.cs} volá:
 
 \begin{lstlisting}[caption={PlayOneShot -- jednorázový zvuk}, label={lst:playoneshot}]
 AudioManager.instance.PlayOneShot(FMODEvents.instance.death, this.transform.position);
@@ -659,7 +659,7 @@ AudioManager.instance.PlayOneShot(FMODEvents.instance.death, this.transform.posi
 Druhý přístup využívá \texttt{StudioEventEmitter} komponentu připojenou přímo k \texttt{GameObjectu}. Tento model je vhodný pro zvuky, které jsou vázány na životní cyklus objektu nebo na jeho herní stav. Pro \emph{looping} objekty, jako je valicí se \emph{Ball}, je na tomto \texttt{GameObjectu} v prefabu připojena komponenta \texttt{StudioEventEmitter} s nastavením \texttt{EventPlayTrigger = ObjectStart} a \texttt{EventStopTrigger = ObjectDestroy}. FMOD event se tak spustí při vytvoření objektu a hraje v nekonečné smyčce, dokud objekt není zničen (např. při dopadu do destrukční zóny), pak se event ukončí s fade-outem.
 
 \paragraph{One-shot objekty s vlastním emitorem}
-Pro \emph{one-shot objekty}, které mají svůj vlastní event emitor, existují dva přístupy. Prvním je vázání na \texttt{ObjectDestroy} -- když je \texttt{GameObject} zničen (například při sebrání collectible), FMOD event se přehraje. Typickým příkladem je \texttt{Collectible} (CF -- Conversation Fragment), kde druhý \texttt{StudioEventEmitter} na objektu přehrává zvuk sebrání:
+Pro \emph{one-shot objekty}, které mají svůj vlastní event emitor, existují dva přístupy. Prvním je vázání na \texttt{ObjectDestroy} -- když je \texttt{GameObject} zničen (například při sebrání collectible), FMOD event se přehraje. Typickým příkladem je \texttt{Collectible} (CF -- Conversation Fragment), kde druhý \newline \texttt{StudioEventEmitter} na objektu přehrává zvuk sebrání:
 
 \begin{lstlisting}[caption={Collectible prefab -- dva FMOD emitory}, label={lst:collectible-emitters}]
 // Emitter 1 -- idle/ambient zvuk
@@ -743,7 +743,7 @@ Na straně FMOD je footsteps event řešen jako \emph{multiinstrument} -- kontej
 \subsubsection{Hudba a Ambience}
 \label{sec:hudba-a-ambience}
 
-Hudba a ambience jsou v FMOD řešeny jako kontinuální eventy, které se nespouštějí přes \texttt{PlayOneShot()}, ale přes správu \emph{EventInstance}. Nový \texttt{AudioManager.cs} vytváří při startu dvě dlouhožijící instance -- jednu pro hudbu a jednu pro ambience:
+Hudba a ambience jsou v FMOD řešeny jako kontinuální eventy, které se nespouštějí přes \newline \texttt{PlayOneShot()}, ale přes správu \emph{EventInstance}. Nový \texttt{AudioManager.cs} vytváří při startu dvě dlouhožijící instance -- jednu pro hudbu a jednu pro ambience:
 
 \begin{lstlisting}[caption={AudioManager -- správa hudby a ambience pomocí EventInstance}, label={lst:audio-manager-music}]
 public class AudioManager : MonoBehaviour
@@ -805,7 +805,7 @@ Systém \texttt{AmbienceChangeTrigger} funguje identicky, pouze s enumem \texttt
 Práce v FL Studio je jádrem mé audio workflow. Struktura projektu je navržena tak, aby podporovala jak jednotlivé skladby, tak jejich vzájemnou konzistenci v rámci budoucího alba.
 
 \subsubsection{Workflow pomocí Arrangements}
-Jedním z hlavních prvků mojí workflow je systém \emph{Arrangements} (Arrangement view). V jediném projektu vytvářím více arrangements, z nichž každý reprezentuje jednu skladbu nebo skupinu zvukových efektů. Důležité je, že všechny arrangements sdílejí stejnou sadu pluginových presetů a jsou napojeny na shodné Mixer kanály. Tím je zajištěno, že nástroje a zvuky použité napříč různými skladbami zní jednotně -- stejný syntezátor v odlišném arrangements posílá signál do stejného Mixer kanálu, což vytváří koherentní zvukový profil celého alba. Tento přístup eliminuje problém rozdílně nastavených kanálů mezi skladbami a značně zjednodušuje finální mix.
+Jedním z hlavních prvků mojí workflow je systém \emph{Arrangements} (Arrangement view). V jediném projektu vytvářím více arrangements, z nichž každý reprezentuje jednu skladbu nebo skupinu \newline zvukových efektů. Důležité je, že všechny arrangements sdílejí stejnou sadu pluginových presetů a jsou napojeny na shodné Mixer kanály. Tím je zajištěno, že nástroje a zvuky použité napříč různými skladbami zní jednotně -- stejný syntezátor v odlišném arrangements posílá signál do stejného Mixer kanálu, což vytváří koherentní zvukový profil celého alba. Tento přístup eliminuje problém rozdílně nastavených kanálů mezi skladbami a značně zjednodušuje finální mix.
 
 \begin{figure}[h!]
     \centering
@@ -817,7 +817,7 @@ Jedním z hlavních prvků mojí workflow je systém \emph{Arrangements} (Arrang
 Jak je vidět na obrázku \ref{fig:flstudio-arrangement}, každý arrangement obsahuje více stop (tracks), přičemž každá stopa může obsahovat jeden nebo více zvukových vzorků (samples) nebo MIDI stop. Toto uspořádání umožňuje přehlednou organizaci i komplexních projektů.
 
 \subsubsection{Sytrus}
-Sytrus je jeden z mých primárních synth pluginů. Jedná se o pokročilý FM syntezátor s možností importu \emph{scale souborů} (souborů s definicí stupnic). Tyto soubory podporují různé EDO (Equal Divisions of the Octave) formáty, což umožňuje pracovat s netemperovanými stupnicemi a mikrotonálním laděním. Tato schopnost je podrobněji rozebrána v podkapitole \ref{sec:hudba}.
+Sytrus je jeden z mých primárních synth pluginů. Jedná se o pokročilý FM syntezátor s možností importu \emph{scale souborů} (souborů s definicí stupnic). Tyto soubory podporují různé EDO (Equal Divisions of the Octave) formáty, což umožňuje pracovat s netemperovanými stupnicemi \newline a mikrotonálním laděním. Tato schopnost je podrobněji rozebrána v podkapitole \ref{sec:hudba}.
 
 \begin{figure}[h!]
     \centering
@@ -887,7 +887,7 @@ Volba zvukového formátu má přímý dopad na kvalitu i funkčnost zvukového 
 
 MP3 formát není vhodný pro zvuky, které mají být loopované (opakovaně přehrávané v smyčce). Přestože je MP3 oblíbený pro svou malou velikost, na konec audio souboru vždy přidává metadata, která při loopování vytvářejí nepatrný, ale znatelný klik. Tento zvuk, byť krátký, dokáže zničit atmosféru u jinak plynulé smyčky prostředí.
 
-WAV je můj standardní pracovní formát v FL Studiu. Jelikož nevyužívá žádnou kompresi, zachovává veškerý detail původního zvuku. Pro export do herního projektu se však nehodí kvůli velikosti souborů -- hudební stopy a delší ambience by zabíraly zbytečně mnoho místa.
+WAV je můj standardní pracovní formát v FL Studiu. Jelikož nevyužívá žádnou kompresi, \newline zachovává veškerý detail původního zvuku. Pro export do herního projektu se však nehodí kvůli velikosti souborů -- hudební stopy a delší ambience by zabíraly zbytečně mnoho místa.
 
 Experimentoval jsem také s OGG, ale nakonec jsem dospěl k formátu FLAC. Ten nabízí podobnou kvalitu jako WAV, ale umožňuje nastavit vyšší úroveň komprese. Důležité je, že na rozdíl od MP3 formát FLAC na konec souboru nepřidává žádné dodatečné informace, které by při loopování vytvářely klikavé zvuky. FLAC tak představuje ideální kompromis mezi kvalitou, velikostí souborů a spolehlivostí loopování.
 
@@ -913,7 +913,7 @@ V budoucnu plánuji mít pro všech devět levelů dvě hlavní skladby: jednu p
 \section{Post-processing hry}
 \label{sec:post-processing-hry}
 
-Post-processing je klíčovou součástí moderního vizuálního stylu videohry, jelikož dokáže transformovat i jednoduchou grafiku v něco vizuálně působivého. V rámci \emph{Surreal Bowling: Salvation Path} využívám Unity Universal Render Pipeline (URP), která poskytuje výkonný a flexibilní systém pro aplikaci grafických efektů.
+Post-processing je klíčovou součástí moderního vizuálního stylu videohry, jelikož dokáže \newline transformovat i jednoduchou grafiku v něco vizuálně působivého. V rámci \emph{Surreal Bowling: Salvation Path} využívám Unity Universal Render Pipeline (URP), která poskytuje výkonný a flexibilní systém pro aplikaci grafických efektů.
 
 
 \subsection{Global Volume}
