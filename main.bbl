@@ -839,5 +839,26 @@
     \verb https://www.zapsplat.com/
     \endverb
   \endentry
+
+  \entry{steam}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=CV}{%
+         family={Corporation},
+         familyi={C\bibinitperiod},
+         given={Valve},
+         giveni={V\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CV1}
+    \strng{fullhash}{CV1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-25]}
+    \field{note}{Valve Corporation}
+    \field{title}{Steam}
+    \verb{url}
+    \verb https://store.steampowered.com/
+    \endverb
+  \endentry
 \enddatalist
 \endinput
