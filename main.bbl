@@ -206,27 +206,6 @@
     \endverb
   \endentry
 
-  \entry{hyprland}{misc}{}{}
-    \name{author}{1}{}{%
-      {{hash=CH}{%
-         family={Community},
-         familyi={C\bibinitperiod},
-         given={Hyprland},
-         giveni={H\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{CH1}
-    \strng{fullhash}{CH1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{addendum}{[cit. 2026-03-23]}
-    \field{note}{Hyprland Community}
-    \field{title}{Hyprland}
-    \verb{url}
-    \verb https://hypr.land/
-    \endverb
-  \endentry
-
   \entry{csharp}{misc}{}{}
     \name{author}{1}{}{%
       {{hash=M}{%
@@ -284,27 +263,6 @@
     \field{title}{Git Introduction}
     \verb{url}
     \verb https://www.w3schools.com/git/git_intro.asp?remote=github
-    \endverb
-  \endentry
-
-  \entry{vim}{misc}{}{}
-    \name{author}{1}{}{%
-      {{hash=CV}{%
-         family={Community},
-         familyi={C\bibinitperiod},
-         given={Vim},
-         giveni={V\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{CV1}
-    \strng{fullhash}{CV1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{addendum}{[cit. 2026-03-24]}
-    \field{note}{Vim Community}
-    \field{title}{Vim}
-    \verb{url}
-    \verb https://www.vim.org/
     \endverb
   \endentry
 
@@ -566,25 +524,6 @@
     \endverb
   \endentry
 
-  \entry{brackeys-jam}{misc}{}{}
-    \name{author}{1}{}{%
-      {{hash=B}{%
-         family={Brackeys},
-         familyi={B\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{B1}
-    \strng{fullhash}{B1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{addendum}{[cit. 2026-03-24]}
-    \field{note}{itch.io}
-    \field{title}{Brackeys Game Jam 2026.1}
-    \verb{url}
-    \verb https://itch.io/jam/brackeys-15
-    \endverb
-  \endentry
-
   \entry{fmod}{misc}{}{}
     \name{author}{1}{}{%
       {{hash=TF}{%
@@ -653,8 +592,8 @@
          giveni={T\bibinitperiod},
       }}%
     }
-    \strng{namehash}{CT1}
-    \strng{fullhash}{CT1}
+    \strng{namehash}{CT2}
+    \strng{fullhash}{CT2}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{addendum}{[cit. 2026-03-24]}
@@ -727,6 +666,49 @@
     \verb{url}
     \verb https://medium.com/@scralex421/fun-with-unitys-particle-system-b85caf
     \verb 8692c6
+    \endverb
+  \endentry
+
+  \entry{caretaker-burning-memory}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=CT}{%
+         family={Caretaker},
+         familyi={C\bibinitperiod},
+         given={The},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CT1}
+    \strng{fullhash}{CT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-25]}
+    \field{note}{Spotify}
+    \field{title}{A1 - It's just a burning memory}
+    \verb{url}
+    \verb https://open.spotify.com/track/0uEec9a0RsYeQiaeyJapjY?si=8b6991c2de98
+    \verb 4340
+    \endverb
+  \endentry
+
+  \entry{ori-blind-forest}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=SM}{%
+         family={Studios},
+         familyi={S\bibinitperiod},
+         given={Moon},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SM1}
+    \strng{fullhash}{SM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-25]}
+    \field{note}{Moon Studios}
+    \field{title}{Ori and the Blind Forest}
+    \verb{url}
+    \verb https://www.orithegame.com/blind-forest/
     \endverb
   \endentry
 \enddatalist

@@ -1,35 +1,33 @@
 \chapter{Celková koncepce řešení}
 
 \section{Game Manager}
-Videohry se obvykle skládají z různých scén, které mohou představovat jednotlivé levely, tutorial část, hlavní menu nebo závěrečné titulky. Kdyby videohry musely načítat všechny tyto scény najednou, zabralo by to zbytečně moc času a výpočetní síly i přesto, že se hráč nachází jen na jednom z těchto míst. To je jeden z příkladů optimalizace a logiky, které jsou klíčové pro příjemný chod videohry.
+Videohry se obvykle skládají z různých scén, které mohou představovat jednotlivé levely, tutorial část, hlavní menu nebo závěrečné titulky. Kdyby videohry musely načítat všechny tyto scény najednou, zabralo by to zbytečně moc času a výpočetní síly i přesto, že se hráč nachází jen na jednom z těchto míst. To je jeden z příkladů optimalizace a logiky, které jsou klíčové pro příjemný chod videohry. Pro tyto účely je jsou používány objekty typu \emph{Game Manager} (dále také „herní manažer“).
 
-Na jednom game jamu se našemu týmu stalo, že jsme měli navrhnutých více levelů, ale na game manager jsme se vrhli příliš pozdě, vyskytly se problémy a tak jsme do finálního výsledku dané levely nakonec nemohli dostat a čas strávený prací nad těmito levely byl „k zahození“. Proto jsem se do této důležité části ponořil důkladněji, abychom naším časem a zdroji nemuseli plýtvat.
+Herních manažerů se ve videoherních projektech vyskytuje hned několik a každý má na starosti odlišnou funkční část videohry: Game Manager (základ -- stará se o přepínání mezi scénami, správné zmrazení času, jednoduché uživatelské rozhraní…), Audio Manager (zajišťuje správný chod veškeré logiky zvuku   v prostředí hry nebo v UI), Cursor Manager (upravuje vlastnosti kurzoru počítače pro účely videohry) a další manažery, které nejsou zas tak časté, ale mohou se hodit pro konkrétní případy (Tutorial Manager, Collectible Manager, DontDestroyOnLoad, Death Manager).
 
-Game managerů se v herních projektech vyskytuje hned několik a každý má na starosti odlišnou funkční část videohry: Game Manager (stará se o přepínání mezi scénami, správné zmrazení času, jednoduché uživatelské rozhraní…), Audio Manager (zajišťuje správný chod veškeré logiky zvuku   v prostředí hry nebo v UI), Cursor Manager (upravuje vlastnosti kurzoru počítače pro účely videohry) a další managery, které nejsou zas tak časté, ale mohou se hodit pro konkrétní případy (Tutorial Manager, Collectible Manager, DontDestroyOnLoad, Death Manager).
-
-Game Manager je (zejména v Unity) tedy „empty GameObject“ ve scéně, který má na sobě připojený stejnojmenný skript jako komponent, do kterého můžeme přidávat reference k dalším objektům ve scéně nebo v projektu (tělo hráče, další scéna, textové pole) a upravovat jakékoli parametry tohoto skriptu, které zpřístupníme Unity Editoru.
+Herní manažer je (zejména v Unity) tedy „empty GameObject“ ve scéně, který má na sobě připojený stejnojmenný skript jako komponent, do kterého můžeme přidávat reference k dalším objektům ve scéně nebo v projektu (tělo hráče, další scéna, textové pole) a upravovat jakékoli parametry tohoto skriptu, které zpřístupníme Unity Editoru.
 
 \section{Umírání}
-Naši hru jsme navrhli tak, že každý level má dvě části: \emph{The Chase} a \emph{The Exploration}. V \emph{The Chase} je hráč naháněn masivní bowlingovou koulí, která, pokud hráče dožene a přejede ho, tím ho i zabije a hráč bude muset začít znovu. Toto je způsob smrti \emph{hard death}, kdy se po zabití hráče znovu načte celý level, všechny parametry se restartují a hráč si tak musí \emph{The Chase} zapamatovat celou nazpaměť včetně všech překážek.
+Videohra je navrnuta tak, že každý level má dvě části: \emph{The Chase} a \emph{The Exploration}. V \emph{The Chase} je hráč naháněn masivní bowlingovou koulí, která, pokud hráče dožene a přejede ho, tím ho i zabije a hráč bude muset začít znovu. Toto je způsob smrti \emph{hard death}, kdy se po zabití hráče znovu načte celý level, všechny parametry se restartují a hráč si tak musí \emph{The Chase} zapamatovat celou nazpaměť včetně všech překážek.
 
-\emph{The Exploration} využívá více milosrdnou \emph{soft death}, kdy, pokud hráč spadne nebo se mu nějak jinak povede zemřít, místo toho, aby se scéna načetla od začátku, tak je hráč jen přemístěn   k poslednímu aktivovanému checkpointu. Můžeme říct, že naše videohra tak používá hybridní systém smrti.
+\emph{The Exploration} využívá více milosrdnou \emph{soft death}, kdy, pokud hráč spadne nebo se mu nějak jinak povede zemřít, místo toho, aby se scéna načetla od začátku, tak je hráč jen přemístěn   k poslednímu aktivovanému checkpointu. Je možné říct, že tato videohra tak používá hybridní systém smrti.
 
 \subsection{Checkpoint System}
-Do naší videohry je dobrý nápad zakomponovat \emph{Checkpoint System}, který zajistí, že pokud hráč bude umírat v pozdějších fázích daného levelu, nemusí celým levelem procházet znova, ale hra ho transportuje k nejbližšímu checkpointu, který si uložil.
+Do této videohry je dobrý nápad zakomponovat \emph{Checkpoint System}, který zajistí, že pokud hráč bude umírat v pozdějších fázích daného levelu, nemusí celým levelem procházet znova, ale hra ho transportuje k nejbližšímu checkpointu, který si uložil.
 
-Některé hry používají i auto-save systém, kdy hra ukládá progres skoro každým momentem, tudíž kdykoli videohru můžete vypnout, zapnout a objevit se na tom samém místě, kde jste hru opustili, avšak to je ideálnější spíš pro videohry žánru open-world a naší hře bohatě stačí, pokud hráč bude docházet k checkpointům a aktivovat je.
+Některé hry používají i auto-save systém, kdy hra ukládá progres skoro každým momentem, tudíž kdykoli videohru můžete vypnout, zapnout a objevit se na tom samém místě, kde jste hru opustili, avšak to je ideálnější spíš pro videohry žánru open-world a v této videohře bude stačit, pokud hráč bude docházet k checkpointům a aktivovat je.
 
 \section{Emotion System}
-Pro zpestření herního zážitku naší hry jsem přišel s konceptem \emph{Emotion System}. Hráč bude muset v části \emph{The Exploration} sbírat Conversation~Fragments (části konverzace), které obsahují atributy emocí, a na základě kontextu celé konverzace musí hráč správně určit, jestli má daný Conversation~Fragment pozitivní, negativní nebo neutrální emoci. Podle toho pak bude potřeba sesbírané Conversation~Fragments správně umístit na „The Altar“ (oltář), který je schopen aktivovat portál do dalšího levelu v případě správné kombinace.
+Pro zpestření herního zážitku této videohry byl vymyšlen koncept \emph{Emotion System}. Hráč bude muset v části \emph{The Exploration} sbírat \emph{Conversation~Fragments} (úlomky konverzace), které obsahují atributy emocí, a na základě kontextu celé konverzace bude hráč muset správně určit, jestli má daný \emph{Conversation~Fragment} pozitivní, negativní, nebo neutrální emoci. Podle toho pak bude potřeba sesbírané \emph{Conversation~Fragments} správně umístit na \emph{The Altar} (oltář), který je schopen aktivovat portál do dalšího levelu v případě správné kombinace.
 
-Díky tomuto konceptu naše hra obsahuje i mírný puzzle-solving a integraci příběhu, které posílí atmosféru surrealismu, kterého chceme v naší videohře docílit. Je totiž důležité, aby videohra   neobsahovala pouze akci, ale i části, kde si hráč může oddechnout a připravit se na další akci. Stejně jako v hudbě, kde je složit komplikované mít majestátní, hlasité momenty, pokud správně nepracujete i s tichem. Všechno je to o kontrastu.
+Díky tomuto konceptu videohra bude obsahovat i mírný puzzle-solving a integraci příběhu, které posílí atmosféru surrealismu, kterého videohra má docílit. Je totiž důležité, aby videohra neobsahovala pouze akci, ale i části, kde si hráč může oddechnout a připravit se na další akci. Stejně jako v hudbě, kde je komplikované mít majestátní, hlasité momenty, pokud není správně zacházeno s tichem. Vše je o kontrastu.
 
 \section{UI}
 Velkou kapitolou, která musí být v nějakém měřítku v každé videohře, je uživatelské rozhraní (dále také anglická zkratka UI). Jakákoli tlačítka, nastavení herního zážitku nebo interakce se světem videohry musí projít přes skripty, které řeší uživatelské rozhraní.
 
-Jedna z nejzákladnějších částí UI je Input System, který řeší, jaké hardware vstupy způsobují jakou akci ve videohře. Dvě základní vstupní zařízení, kterými dnešní počítače disponují, jsou klávesnice a myš. Některé videohry používají pouze klávesnici (Hollow Knight od studia Team Cherry \cite{hollow-knight}) a některé zas pouze myš (Happy Game od studia Amanita Design \cite{happy-game}). Častěji se však můžeme setkat s kombinací obou. Dříve jsme ve vývoji naší videohry používali kombinaci obou -- levá ruka obsluhovala veškerý pohyb včetně skákání a dashe (rychlý posun kupředu), zatímco pravá ruka zaujímala pozici na myši, kterou jsme využívali pro míření, střílení a „camera peeking". Postupem času jsme se však rozhodli přejít výhradně na klávesnici, jelikož tato varianta lépe rozloží aktivitu mezi obě ruce a eliminuje potřebu přesunu ruky mezi zařízeními. V budoucnu zvažujeme implementaci více možností ovládání, aby si každý hráč mohl vybrat variantu, která mu nejvíce vyhovuje.
+Jedna z nejzákladnějších částí UI je Input System, který řeší, jaké hardware vstupy způsobují jakou akci ve videohře. Dvě základní vstupní zařízení, kterými dnešní počítače disponují, jsou klávesnice a myš. Některé videohry používají pouze klávesnici (Hollow Knight od studia Team Cherry \cite{hollow-knight}) a některé zas pouze myš (Happy Game od studia Amanita Design \cite{happy-game}). Častěji se však můžete setkat s kombinací obou. Dříve byla ve vývoji této videohry používána kombinace obou -- levá ruka obsluhovala veškerý pohyb včetně skákání a dashe (rychlý posun kupředu), zatímco pravá ruka zaujímala pozici na myši, která byla využívána pro míření, střílení a „camera peeking". Postupem času se v projektu však přešlo výhradně na klávesnici, jelikož tato varianta lépe rozloží aktivitu mezi obě ruce a eliminuje potřebu přesunu ruky mezi zařízeními. V budoucnu je zvažována implementace více možností ovládání, aby si každý hráč mohl vybrat variantu, která mu nejvíce vyhovuje.
 
-Poté, co videohra ví, jaké vstupy mají jaký učel, potřebujeme s těmito signály pracovat a používat je pro kontroly, mechaniky a orientaci v programu videohry. Nejčastější případ UI jsou panely, které mají různé účely. Například Pause Panel je lišta, která se objeví při pozastavení hry (nejčastěji stisknutím klávesy Escape), kde se mohou objevovat informace o aktuálním stavu hráče, nastavení hlasitosti zvuku nebo možnosti opuštění levelu a ukončení hry.
+Poté, co videohra ví, jaké vstupy mají jaký učel, je třeba s těmito signály pracovat a používat je pro kontroly, mechaniky a orientaci v programu videohry. Nejčastější případ UI jsou panely, které mají různé účely. Například Pause Panel je lišta, která se objeví při pozastavení hry (nejčastěji stisknutím klávesy Escape), kde se mohou objevovat informace o aktuálním stavu hráče, nastavení hlasitosti zvuku nebo možnosti opuštění levelu a ukončení hry.
 
 Dokonce hned první věc, kterou hráč po zapnutí videohry vidí, je nejčastěji obrazovka hlavního menu, která se ve většině případech skládá pouze z UI komponentů. Častá jsou tlačítka „Hrát“, „Nastavení“, „Ukončit“ a „Titulky“ s pozadím, názvem herního titulu a Main Menu hudbou hrající na pozadí.
 
@@ -42,7 +40,7 @@ Vizuální efekty by, jako každá část, měly podpořit uvěřitelnost digit�
     \item glow effect (na hráči, aby viděl kolem sebe, nebo na jiných předmětech, aby byly rychle zaregistrovatelné)
 \end{itemize}
 
-Dosáhnout těchto efektů můžeme různými způsoby: přidání prvků světla na určitý GameObject \cite{unity-point-light}, experimentování s Unity Particle System \cite{unity-particle-system} nebo manipulování určitývh prvků Post-processing.
+Dosáhnout těchto efektů je možno různými způsoby: přidání prvků světla na určitý GameObject \cite{unity-point-light}, experimentování s Unity Particle System \cite{unity-particle-system} nebo manipulování určitývh prvků Post-processing.
 
 \newpage
 
@@ -50,11 +48,9 @@ Dosáhnout těchto efektů můžeme různými způsoby: přidání prvků světl
 
 \subsection{OST}
 
-OST (original soundtrack), neboli hudební složka videohry, je část vývoje her, do které jsem osobně zapálen nejvíce, jelikož práce s hudbou a zvukem je mým dlouholetým zájmem.
+Skládat hudbu pro hru je samozřejmě více kreativní postup, kdy její tvůrce může strávit hodiny sezením u hudebního nástroje nebo vybíráním či tvorbou ideálních zvuků, které má v hlavě. Hudba většinou podporuje již hotovou vizuální a příběhovou stránku videoher (nebo i filmů) -- málokdy se stává, že se svět videohry staví kolem hudby. Tato videohra má surreální, snovou a tajemnou atmosféru, jelikož sleduje příběh postavy, která hledá sebe sama, má neustálý strach, neví, co může čekat od nastávající chvíle, a chce se dostat do bezpečí. Během této cesty se potkává s nadpřirozenými jevy, které nedávají smysl a je v neustálém stavu zmatení.
 
-Skládat hudbu pro hru je samozřejmě více kreativní postup, kdy mohu strávit hodiny sezením u el. keyboardu nebo vybíráním či tvorbou ideálních zvuků, které mám v hlavě. Hudba většinou podporuje již hotovou vizuální a příběhovou stránku videoher (nebo i filmů) – málokdy se stává, že se svět videohry staví kolem hudby. Naše videohra má surreální, snovou a tajemnou atmosféru – sleduje příběh postavy, která hledá sebe sama, má neustálý strach, neví, co může čekat od nastávající chvíle, a chce se dostat do bezpečí. Během této cesty se potkává s nadpřirozenými jevy, které nedávají smysl. Je v neustálém stavu zmatení.
-
-Pro tato témata jsem si vybral následující sonické elementy:
+Pro tato témata byly vybrány následující sonické elementy:
 
 \begin{itemize}
     \item vzdušné, retro tóny inspirované interpretem Joe Hisaishim (populární japonský skladatel pro legendární filmy od Studio Ghibli), zejména skladbou „The Path of the Wind – Instrumental“
@@ -62,7 +58,7 @@ Pro tato témata jsem si vybral následující sonické elementy:
     \item mixolydický modus, dórský modus, ukrajinská dórská / rumunská mollová stupnice
     \item mikrotonální hudba, xenharmonie
     \item vinylový efekt
-    \item Další inspiraci jsem si vzal například ze skladeb „It’s Just a Burning Memory“ (The Caretaker), „Moog City 2“ (C418) a „Resonance“ (Home).
+    \item Další inspirace byla převzata například ze skladeb „It’s Just a Burning Memory“ (The Caretaker) \cite{caretaker-burning-memory}, „Moog City 2“ (C418) nebo`' „Resonance“ (Home).
 \end{itemize}
 
 \subsection{SFX}

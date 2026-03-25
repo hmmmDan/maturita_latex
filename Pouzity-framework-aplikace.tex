@@ -1,55 +1,46 @@
 \chapter{Použitý framework aplikace}
 
 \section{Operační systém}
-V týmu jako hlavní operační systém pro vývoj Surreal Bowling: Salvation Path používáme operační systém Linux. Já konkrétně používám distribuci Arch Linux, ale v našem týmu můžeme najít i Fedora Linux nebo Ubuntu. Rozhodli jsme se tak, jelikož Linux z většiny používáme jako náš každodenní operační systém a nabízí rychlejší workflow než Windows. Také jsme těžkou cestou zjistili, že pokud na Unity pracují dva vývojáři, jeden z Linuxu a druhý z Windowsu, stává se, že se některé soubory v Unity projektu stanou poškozené. Této nepříjemné záležitosti jsme se chtěli vyvarovat a tak jsme se skupinově dohodli právě na Linuxu. Naštěstí vývoj videoher v operačním systému Linux je dnes celkem proveditelný a programy jako Unity Engine, VS Code nebo Git fungují stejně dobře, ne-li lépe, než na Windows. \cite{linux-gamedev}
-
-Jako window manager používám dynamický, dlaždicový Hyprland, který rychlost mé práce zvyšuje mnohonásobně oproti klasickému Windows. \cite{hyprland}
+V týmu je jako hlavní operační systém pro vývoj hry \emph{Surreal Bowling: Salvation Path} používán operační systém Linux. Bylo tak rozhodnuto, jelikož nabízí rychlejší workflow než Windows. Během práce také bylo zjištěno, že pokud na Unity pracují dva vývojáři, jeden na Linuxu a druhý na Windows, stává se, že se některé soubory v Unity projektu stanou poškozené. Vývoj videoher v operačním systému Linux je dnes proveditelný a programy jako Unity Engine, VS Code nebo Git fungují stejně dobře, ne-li lépe, než na Windows. \cite{linux-gamedev}
 
 \section{Programování}
 
 \subsection{C\#}
-Pro psaní kódu jsme použili multiplatformní programovací jazyk C\#, mimo jiné i nejpopulárnější jazyk pro .NET. \cite{csharp} Více o C\# v části \ref{sec:herni-engine}.
+Pro psaní kódu byl použit multiplatformní programovací jazyk C\#, mimo jiné i nejpopulárnější jazyk pro .NET. \cite{csharp} Více o C\# v části \ref{sec:herni-engine}.
 
-\subsection{IDE}
-Co se týče IDE, osobně přeskakuji mezi různými modifikacemi binárek programu VS Code, takže jsem používal například VSCodium nebo čistý Code OSS, ale momentálně používám klasický VS Code z důvodu kompatibility s nejvíce pluginy třetích stran. \cite{vscode-vs-codium}
+\subsection{Textový editor}
+Co se textového editoru týče, byl použit VS Code z důvodu kompatibility s nejvíce pluginy třetích stran. \cite{vscode-vs-codium}
 
 \subsection{Version Control}
-Pro spolupráci ve vývojářském týmu používáme Git – systém pro správu verzí, neboli „version control system“ (VCS). Přes Git posíláme lokální změny do online repozitáře našeho projektu na webovou platformu GitHub, kde má přístup i náš mentor práce, aby měl bohatý přehled o tom, jak se nám s vývojem vede. \cite{git-intro} 
-
-\subsection{Vim}
-Dále, stejně jako Hyprland pro Linux, i pro VS Code používám software, který mi zjednodušuje a urychluje práci – plugin Vim (vscodevim), což je emulátor funkcí „Vim movements“ pro VS Code. Vim je originálně nejznámější modulární textový editor, který je populární díky své rigidní funkci práce s textem a orientaci v něm. \cite{vim}
+Pro spolupráci ve vývojářském týmu byl použit Git – systém pro správu verzí, neboli „version control system“ (VCS). Přes Git jsou posílány lokální změny do online repozitáře projektu na webovou platformu GitHub, kde má přístup i náš mentor práce, aby měl přehled o tom, jak se s vývojem vede. \cite{git-intro} 
 
 \subsection{AI (Umělá Inteligence)}
-Pro usnadnění psaní kódu, provádění repetitivních úkolů nebo přesouvání větších objemů dat jsem použil AI asistenty ChatGPT \cite{chatgpt} a Augment Code \cite{augment}. Později jsem zprovoznil vlastní lokální LLM (Large Language Model) v programu LM Studio \cite{lmstudio} (konkrétně qwen/qwen3.5-9b \cite{qwen}) a ten jsem integroval do nástroje OpenCode \cite{opencode}, což mi umožňuje daný model používat jako agenta v terminálu, který dokáže indexovat celé projekty a provádět v nich úpravy. Díky tomuto řešení tak nejsem omezen žádným předplatným a všechna data zůstávají offline na mém disku.
+Pro usnadnění psaní kódu, provádění repetitivních úkolů nebo přesouvání větších objemů dat byly použity AI asistenty ChatGPT \cite{chatgpt} a Augment Code \cite{augment}. Později i lokální LLM (Large Language Model) v programu LM Studio \cite{lmstudio} (konkrétně qwen/qwen3.5-9b \cite{qwen}) integrovaný do nástroje OpenCode \cite{opencode}, což umožnilo daný model používat jako agenta v terminálu, který dokáže indexovat celé projekty a provádět v nich úpravy.
 
 \section{Herní engine}
 \label{sec:herni-engine}
-Jakožto nejdůležitější software pro vývoj videohry dnes je herní engine. Pro náš případ jsme zvolili multiplatformní herní engine Unity vyvinutý společností Unity Technologies \cite{unity} z několika prostých důvodů. Jeden z nejzákladnějších je ten, že v Unity se defaultně programuje v programovacím jazyce C\#, přičemž my, jakožto studenti oboru IT na SPŠ Karviná s nástupem v roce 2022, jsme se programování v C\# začali učit už v prvním ročníku v předmětu Programování. Díky tomu jsme měli už potřebné znalosti syntaxe a pravidel, ve kterých C\# funguje.
+Jakožto nejdůležitější software pro vývoj videohry dnes je herní engine. Pro tento projekt byl zvolen multiplatformní herní engine Unity vyvinutý společností Unity Technologies \cite{unity} z několika prostých důvodů. Jeden z nejhlavnějších je ten, že v Unity se defaultně programuje v programovacím jazyce C\#.
 
-Dále jsme také brali v potaz licence různých herních enginů. Mezi nejznámější patří právě Unity, Unreal Engine, Godot Engine nebo GameMaker. Unity nám prozatím přišlo jako nejrozumnější cesta, kde vydávat videohry můžeme pod Unity Free License \cite{unity-pricing}, pokud jednotlivec nebo tým z výdělku z videohry nebo od sponzora přijímá méně než 200 000 amerických dolarů za posledních 12 měsíců. Jedna z největších nevýhod je, že při startu zadarmo vyvinuté videohry v Unity se při startu videohry objeví úvodní obrazovka (splash screen) s nápisem „Made with Unity“, což našemu týmu momentálně zas tak nevadí.
+Dále byly také brány v potaz licence různých herních enginů. Mezi nejznámější patří právě Unity, Unreal Engine, Godot Engine nebo GameMaker. Unity prozatím stačilo jako nejrozumnější cesta, kde je možné videohry vydávat pod Unity Free License \cite{unity-pricing}, pokud jednotlivec nebo tým z výdělku z videohry nebo od sponzora přijímá méně než 200 000 amerických dolarů za posledních 12 měsíců. Jedna z největších nevýhod je, že při startu zadarmo vyvinuté videohry v Unity se při startu videohry objeví úvodní obrazovka (splash screen) s nápisem „Made with Unity“, což pro účely této práce zas tak nevadí.
 
-Naše videohra také není nijak složitá v porovnání s dnešním videoherním standardem a Unity se obecně považuje jako příjemnější volba pro menší projekty \cite{unity-small-projects}, jako mohou být mobilní aplikace nebo právě jednoduchý 2D projekt, jako je naše videohra.
+Videohra vyvíjena v této práci také není nijak složitá v porovnání s dnešním videoherním standardem a Unity se obecně považuje jako příjemnější volba pro menší projekty \cite{unity-small-projects}, jako mohou být mobilní aplikace nebo právě jednoduché 2D projekty.
 
 \section{Hudba a zvuk}
 
 \subsection{FL Studio}
-Pro tvorbu hudby a zvukových efektů používám osobně vlastněný program FL Studio. Je to můj nejoblíbenější software, ve kterém ze všech zmíněných trávím nejvíce času.
+Pro tvorbu hudby a zvukových efektů byl použit program FL Studio.
 
 FL Studio je software (Digital Audio Workstation) pro skládání, produkci a mix hudby za pomocí digitálních nástrojů, pluginů, samplů a MIDI signálů.
 
-Je důležité zmínit, že FL Studio neexistuje pro Linux. Experimentoval jsem s různými alternativami -- Wine, Bottles i Virtual Machine -- ale FL Studio pracuje s velkým množstvím externích souborů a binárních dat, jako jsou zvukové efekty a pluginy třetích stran. Tyto závislosti je v izolovaném prostředí těchto metod velmi obtížné zprovoznit a udržet funkční. Z tohoto důvodu je FL Studio jediným softwarem, který mě nutí přecházet na Windows. V rámci jednoho produktivního týdne tak několikrát přecházím mezi operačními systémy -- typicky když pracuji na audio obsahu pro game jam, střídám Linux a Windows podle toho, kterou část projektu zrovna řeším.
-
-Mezi pluginy třetích stran, které často používám pro tvorbu či modifikaci zvuku, patří LABS \cite{labs}, FLEX \cite{flex}, Sytrus \cite{sytrus} a Deelay \cite{deelay}. Plugin Deelay využívám především pro jeho pokročilé možnosti filtrace, časové a výškové modifikace a efekty jako Chamber nebo vrstvené komplexní delaye, které dodávají zvukům glitcheovou, zkorumpovanou atmosféru. \cite{flstudio}
+Mezi pluginy třetích stran, které byly frekventovaně používány pro tvorbu či modifikaci zvuku, patří LABS \cite{labs}, FLEX \cite{flex}, Sytrus \cite{sytrus} a Deelay \cite{deelay}. Plugin Deelay využívám především pro jeho pokročilé možnosti filtrace, časové a výškové modifikace a efekty jako Chamber nebo vrstvené komplexní delaye, které dodávají zvukům glitcheovou, zkorumpovanou atmosféru. \cite{flstudio}
 
 \subsection{FMOD Studio}
 \label{sec:fmod-studio}
-Původně jsem pro implementaci zvuku do naší hry používal low-level nástroje přímo od Unity, například AudioSource, AudioListener a AudioMixer.
+Původně byly pro implementaci zvuku do této hry používány low-level nástroje přímo od Unity, například AudioSource, AudioListener a AudioMixer.
 
-FMOD Studio jsem náhodou objevil během účasti na Brackeys Game Jam 2026.1 \cite{brackeys-jam}, kde jsem ihned využil příležitosti tento software využít v praxi. FMOD Studio je profesionální nástroj (audio middleware) pro úpravu a implementaci zvuku do videoher, vyvinutý společností Firelight Technologies \cite{fmod}. Umožňuje sound designerům vytvářet komplexní zvukové systémy pomocí přívětivého rozhraní bez nutnosti složitého programování, zatímco vývojáři mohou tyto zvuky snadno propojit s kódem pomocí Unity integrace. FMOD nabízí pokročilé funkce jako pocit 3D prostoru, automatizace zvuku nebo nejrůznější zvukové efekty (např. reverb).
-
-Poznatky z game jamu jsem následně aplikoval i v maturitní práci, jelikož FMOD výrazně zjednodušuje správu zvukových efektů a umožňuje mi oddělit audio design od programování.
+Později bylo implementováno FMOD Studio -- profesionální nástroj (audio middleware) pro úpravu a implementaci zvuku do videoher, vyvinutý společností Firelight Technologies \cite{fmod}. FMOD Studio umožňuje sound designerům vytvářet komplexní zvukové systémy pomocí přívětivého rozhraní bez nutnosti složitého programování, zatímco vývojáři mohou tyto zvuky snadno propojit s kódem pomocí Unity integrace. FMOD studio nabízí pokročilé funkce jako pocit 3D prostoru, automatizace zvuku nebo nejrůznější zvukové efekty (např. reverb).
 
 \section{Ostatní}
-Pro efektivní spolupráci v týmu používáme poznámkový software Obsidian \cite{obsidian}, u kterého jsme si společně koupili předplatné Obsidian Sync, což nám zefektivňuje práci jak každodenně, tak například i na game jamech. Toto předplatné nám umožní ve stejný čas přistupovat ke všem našim informacím, nápadům, řešením, skriptům a zapisovat nové, aniž bychom si museli cokoli manuálně přeposílat přes komunikační médium.
+Pro efektivní spolupráci v týmu je používán poznámkový software Obsidian \cite{obsidian}, kde předplatné Obsidian Sync zefektivňuje práci jak každodenně, tak například i na game jamech. Toto předplatné umožňuje ve stejný čas přistupovat ke všem informacím, nápadům, řešením, skriptům a zapisovat nové, aniž by bylo třeba cokoli manuálně přeposílat přes komunikační médium.
 
-Pro komunikaci používáme platformu Discord \cite{discord}, kde máme založený server pod názvem Still Thinking Studio, na kterém jsou všichni členové týmu i spolupracující zvenčí. Discord nám umožňuje psát si jako v každé běžné chatovací aplikaci, spravovat desítky různých textových a hovorových kanálů (oprávnění, přístup, kategorie…) a rychle si posílat obrázky, zvukové soubory nebo videa pro nápady a zpětnou vazbu od ostatních členů týmu.
+Pro komunikaci je v týmu používána platforma Discord \cite{discord} v založeném serveru pod názvem \emph{Still Thinking Studio}, na kterém jsou všichni členové týmu i spolupracující zvenčí. Discord umožňuje psát si jako v každé běžné chatovací aplikaci, spravovat desítky různých textových a hovorových kanálů (oprávnění, přístup, kategorie…) a rychle si posílat obrázky, zvukové soubory nebo videa pro nápady a zpětnou vazbu od ostatních členů týmu.

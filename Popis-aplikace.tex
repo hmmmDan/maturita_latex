@@ -416,11 +416,11 @@ public static class UIToolkitAudioBinding
 
 Pro osvětlení 2D scény využívám systém \emph{Light 2D}, který je součástí \emph{Universal Render Pipeline}. Na rozdíl od tradičního 3D osvětlení, kde jsou světelné paprsky vysílány ze zdrojů a odrazy osvětlují okolní prostředí, Light 2D funguje invertovaně -- každý objekt ve scéně nese informaci o tom, jak má být osvětlen, a globální světlo tyto vlastnosti zprůměruje a aplikuje. Tento přístup je výrazně méně náročný na výkon a ideální pro stylizované 2D hry.
 
-Jedním z nejdůležitějších prvků osvětlení je \texttt{Light2D} typu \emph{Spot} připojený jako child object k objektu hráče. Toto řešení bylo inspirováno hrou \emph{Ori and the Blind Forest}, kde je postava neustále obklopena jemným světelným polem, které jí umožňuje vidět v temném prostředí. Díky tomu, že je \texttt{GameObject} světla child objectem hráče, automaticky se pohybuje spolu s ním bez nutnosti dalšího kódu.
+Jedním z nejdůležitějších prvků osvětlení je \texttt{Light2D} typu \emph{Spot} připojený jako child object k objektu hráče. Toto řešení bylo inspirováno hrou \emph{Ori and the Blind Forest} \cite{ori-blind-forest}, kde je postava neustále obklopena jemným světelným polem, které jí umožňuje vidět v temném prostředí. Díky tomu, že je \texttt{GameObject} světla child objectem hráče, automaticky se pohybuje spolu s ním bez nutnosti dalšího kódu.
 
 Kromě individuálních zdrojů světla je ve scéně přítomno také \emph{Global Light 2D}, které nastavuje základní intenzitu a barvu osvětlení pro celou scénu. Tím se zajistí, že objekty bez vlastního zdroje světla nejsou zcela ponořeny do tmy, ale zároveň jsou dostatečně kontrastní, aby vynikla atmosféra temnějších částí levelu.
 
-Dalším typem zdroje světla jsou \emph{světlušky} (\emph{Firefly Lights}) v korunách stromů. Každá instance komponenty \texttt{FireflyLight} řídí intenzitu připojeného \texttt{Light2D} pomocí funkce \texttt{Mathf.PingPong}, která vrací hodnotu v rozsahu 0 až 1 tak, že postupně roste a pak zase klesá, dokola -- výsledkem je hladké rozjasňování a zhasínání světla. Každá instance má navíc náhodný \texttt{randomOffset} (viz ukázka kódu), takže jednotlivé světlušky pulzují nezávisle na sobě a vytvářejí dynamičtější a přirozenější efekt:
+Dalším typem zdroje světla jsou světlušky (\emph{Firefly Lights}) v korunách stromů. Každá instance komponenty \texttt{FireflyLight} řídí intenzitu připojeného \texttt{Light2D} pomocí funkce \texttt{Mathf.PingPong}, která vrací hodnotu v rozsahu 0 až 1 tak, že postupně roste a pak zase klesá, dokola -- výsledkem je hladké rozjasňování a zhasínání světla. Každá instance má navíc náhodný \texttt{randomOffset} (viz ukázka kódu), takže jednotlivé světlušky pulzují nezávisle na sobě a vytvářejí dynamičtější a přirozenější efekt:
 
 \begin{lstlisting}[caption={FireflyLight -- pulzující světlo}, label={lst:firefly-light}]
 void Update()
@@ -853,17 +853,17 @@ Sytrus je jeden z mých primárních synth pluginů. Jedná se o pokročilý FM 
 
 Na obrázku \ref{fig:flstudio-sytrus} je zobrazeno rozhraní Sytrus s několika aktivními operátory a nastavením modulační matice.
 
-\subsubsection{LABs}
-LABs je bezplatný plugin od Spitfire Audio, který nabízí rozsáhlou knihovnu realisticky znějících a atmosferických nástrojů. Plugin poskytuje intuitivní ovládání nad základními parametry jako je reverb, hlasitost nebo citlivost, což umožňuje rychle přizpůsobit nástroj požadovanému kontextu bez nutnosti složitého nastavení.
+\subsubsection{LABS}
+LABS je bezplatný plugin od Spitfire Audio, který nabízí rozsáhlou knihovnu realisticky znějících a atmosferických nástrojů. Plugin poskytuje intuitivní ovládání nad základními parametry jako je reverb, hlasitost nebo citlivost, což umožňuje rychle přizpůsobit nástroj požadovanému kontextu bez nutnosti složitého nastavení.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=1\textwidth]{img/flstudio/flstudio-labs.png}
-    \caption{FL Studio -- LABs plugin}
+    \caption{FL Studio -- LABS plugin}
     \label{fig:flstudio-labs}
 \end{figure}
 
-Na obrázku \ref{fig:flstudio-labs} je zobrazeno rozhraní LABs pluginu s několika dostupnými nástroji.
+Na obrázku \ref{fig:flstudio-labs} je zobrazeno rozhraní LABS pluginu s několika dostupnými nástroji.
 
 \subsubsection{Deelay}
 Deelay je delay plugin, který využívám pro vytváření prostorových echo efektů. Plugin nabízí pokročilé možnosti nastavení oproti běžným delayům -- různé módy filtrace, time/pitch modifikace a synchronizaci na tempo projektu. Speciálně se zaměřuji na využití efektu \emph{Chamber} a tvorbu komplexních, vrstvených delayů, které vytvářejí glitched/corrupted atmosférické zvuky. Tyto techniky přímo korespondují s narativem surrealistické hry, kde zvuková estetika odráží fragmentovanou a deformovanou realitu.
@@ -896,7 +896,7 @@ Kromě externích nástrojů využívám řadu vestavěných (nativních) plugin
 
 \textbf{Destructor} je nástroj původně navržený pro simulaci zkreslení kytarových aparátů, ale jeho potenciál je širší. V mé práci jej používám pro přidání agresivity a textury k syntetickým zvukům nebo pro tvrdší údernost u různých efektů. Plugin nabízí širokou škálu přetížení a harmonického zkreslení, od jemné saturace až po plnohodnotné destruktivní zpracování.
 
-Tato sestava pluginů -- Sytrus a LABs pro generování zvuku, Deelay pro prostorové efekty, následované Destructorem a Fruity Reverb pro další zpracování -- vytváří komplexní, ale přehledný workflow, který mi umožňuje dosahovat profesionálně znějících výsledků.
+Tato sestava pluginů -- Sytrus a LABS pro generování zvuku, Deelay pro prostorové efekty, následované Destructorem a Fruity Reverb pro další zpracování -- vytváří komplexní, ale přehledný workflow, který mi umožňuje dosahovat profesionálně znějících výsledků.
 
 \subsection{Kategorizace zvuků}
 \label{sec:kategorizace-zvuku}
