@@ -85,12 +85,12 @@ public class CursorManager : MonoBehaviour
 
 Skript využívá metodu \texttt{DontDestroyOnLoad}, aby instance manažeru přetrvávala mezi scénami. V metodě \texttt{Update()} se každým snímkem kontroluje stav levého tlačítka myši – při změně stavu se zavolá \texttt{UpdateCursorSprite()}, která nastaví odpovídající texturu kurzoru.
 
-Na Linuxu se mi vyskytly problémy se zpožděním kurzoru, proto skript obsahuje dodatečná složitější řešení z internetu, která na něm zajišťují lepší odezvu.
+Na Linuxu se během práce vyskytovaly problémy se zpožděním kurzoru, proto skript obsahuje dodatečná složitější řešení z internetu, která na něm zajišťují lepší odezvu.
 
 \subsection{Input systém}
 \label{sec:input-system}
 
-Input systém je jedním z více témat, ke kterému se dá přistupovat více způsoby. Můžeme ho řešit nízkoúrovňově, jako v tomto případě, kdy nasloucháme stisknutí kláves přímo pomocí C\#:
+Input systém je jedním z více témat, ke kterému se dá přistupovat více způsoby. Je možné ho řešit nízkoúrovňově, jako v tomto případě, kdy systém naslouchá stisknutí kláves přímo pomocí C\#:
 
 \begin{lstlisting}[caption={Nízkoúrovňové zpracování vstupu}, label={lst:low-level-input}]
 if (Event.current.isKey)
@@ -109,9 +109,9 @@ Pro tento účel však existuje modernější systém, který zajišťuje mnohem
     \label{fig:unity-input-system}
 \end{figure}
 
-Jak můžeme vidět na obrázku \ref{fig:unity-input-system}, v tomto rozhraní můžeme vytvářet \emph{Action Maps} (vlevo). Naše videohra momentálně využívá dvě \emph{Action Maps}, jednu pro herní mechaniky a druhou pro orientaci v uživatelském rozhraní. Toto velmi usnadňuje řešení toho, jaké akce chceme od hráče vyžadovat.
+Jak je vidět na obrázku \ref{fig:unity-input-system}, v tomto rozhraní je možné vytvářet \emph{Action Maps} (vlevo). Tato videohra momentálně využívá dvě \emph{Action Maps}, jednu pro herní mechaniky a druhou pro orientaci v uživatelském rozhraní. Toto velmi usnadňuje řešení otázky, jaké akce chceme od hráče vyžadovat.
 
-Například jedním z nepříjemných problémů, které \emph{Action Maps} řeší, je následující: V minulosti, když jsem vstup řešil ještě zastaralým způsobem, UI fungovalo tak, že i když hráč pozastavil hru a dostal se do \emph{Pause Menu}, čas se zastavil – viz ukázka kódu \ref{lst:pause-code-old}.
+Například jedním z nepříjemných problémů, které \emph{Action Maps} řeší, je následující: V minulosti, když byl vstup řešen ještě zastaralým způsobem, UI fungovalo tak, že i když hráč pozastavil hru a dostal se do \emph{Pause Menu}, čas se zastavil -- viz ukázka kódu \ref{lst:pause-code-old}.
 
 \newpage
 
@@ -134,7 +134,7 @@ private void SetPauseState(bool pause)
 }
 \end{lstlisting}
 
-Toto řešení zastavilo veškerý pohyb ve hře. Všechny vstupní akce však zůstaly povolené a byly rozházené po projektu ve skriptech pro ovládání hráče, střelbu nebo animace. Proto, i přes zastavený čas, když hráč například spustil akci pro střelbu, i v \emph{Pause Menu} se hráči objevila střela u těla a hned jak hráč hru znovu spustil, střela odpalovala. Nebo pokud se hráč pokoušel hýbat v \emph{Pause Menu}, fyzicky se hýbat nemohl, ale animace fungovaly a hráč se tak mohl stále otáčet ze strany na stranu. To vypadalo neprofesionálně.
+Toto řešení zastavilo veškerý pohyb ve hře. Všechny vstupní akce však zůstaly povolené a byly rozházené po projektu ve skriptech pro ovládání hráče, střelbu nebo animace. Proto, i přes zastavený čas, když hráč například spustil akci pro střelbu, i v \emph{Pause Menu} se hráči objevila střela u těla a hned jak hráč hru znovu spustil, střela odpalovala. Nebo pokud se hráč pokoušel hýbat v \emph{Pause Menu}, fyzicky se hýbat nemohl, ale animace fungovaly a hráč se tak mohl stále otáčet ze strany na stranu. Takové chování není profesionální.
 
 Za pomoci \emph{Action Maps} však složité ošetřování těchto chyb rychle mizí – viz ukázka \ref{lst:pause-code-new}.
 
@@ -156,9 +156,9 @@ private void SetPauseState(bool pause)
 }
 \end{lstlisting}
 
-Přes skript \texttt{UIManager.cs} mohu k \emph{Input Actions} souboru přistoupit a deaktivovat celou jednu \emph{Action Map}, která obsahuje jednotlivé \emph{Input Actions}. To znamená, že pokud hráč pozastaví hru a dostane se do \emph{Pause Menu}, mohu jednoduše zakázat \emph{Action Map} s názvem \emph{Player}, která obsahuje všechny možnosti ovládání herních mechanik, jako pohyb, speciální schopnosti nebo interakce se světem, a aktivovat \emph{Action Map} s názvem \emph{UI}, protože hráč se vskutku v daném momentu nachází v panelu uživatelského rozhraní, kde potřebuje pouze tyto \emph{Input Actions} včetně stisknutí klávesy \texttt{Esc}, která deaktivuje \emph{Pause Panel}, vrátí hráče do hry, deaktivuje \emph{Action Map} pro UI a aktivuje \emph{Action Map} pro ovládání hráče.
+Přes skript \texttt{UIManager.cs} je možné k \emph{Input Actions} souboru přistoupit a deaktivovat celou jednu \emph{Action Map}, která obsahuje jednotlivé \emph{Input Actions}. To znamená, že pokud hráč pozastaví hru a dostane se do \emph{Pause Menu}, je možné jednoduše zakázat \emph{Action Map} s názvem \emph{Player}, která obsahuje všechny možnosti ovládání herních mechanik, jako pohyb, speciální schopnosti nebo interakce se světem, a aktivovat \emph{Action Map} s názvem \emph{UI}, protože hráč se vskutku v daném momentu nachází v panelu uživatelského rozhraní, kde potřebuje pouze tyto \emph{Input Actions} včetně stisknutí klávesy \texttt{Esc}, která deaktivuje \emph{Pause Panel}, vrátí hráče do hry, deaktivuje \emph{Action Map} pro UI a aktivuje \emph{Action Map} pro ovládání hráče.
 
-Napravo od sekce \emph{Action Maps} se nachází sekce \emph{Actions}, kde již nastavujeme konkrétní \emph{Input Actions}. Ve verzi pro tuto maturitní práci využívám pro \emph{Action Map} hráče následující akce:
+Napravo od sekce \emph{Action Maps} se nachází sekce \emph{Actions}, kde již jsou nastavovány konkrétní \emph{Input Actions}. Ve verzi pro tuto maturitní práci je pro \emph{Action Map} hráče využívána následující akce:
 
 \begin{itemize}
     \item \textbf{Move} -- pohyb (WASD / šipky)
@@ -187,13 +187,13 @@ Ke každé \emph{Input Action} lze v sekci \emph{Action Properties} nastavit typ
 
 Mezi hlavní prvky ve scéně patří:
 
-\textbf{Kamera} -- díky ní může hráč vidět, co se děje. S kamerou je možno dělat mnoho věcí, na které se podíváme později.
+\textbf{Kamera} -- díky ní může hráč vidět, co se děje.
 
-\textbf{GameObject hráče} -- objekt, na kterém je renderován sprite hráče a animace (viz obrázek \ref{fig:unity-gameobject-player}). Jsou na něm připnuty skripty jako \texttt{PlayerController.cs}, sloužící pro základní kontroly jako je pohyb, zvukový emitor atd. V naší hře je objekt hráče vždy na očích v oblasti středu okna aplikace.
+\textbf{GameObject hráče} -- objekt, na kterém je renderován sprite hráče a animace (viz obrázek \ref{fig:unity-gameobject-player}). Jsou na něm připnuty skripty jako \texttt{PlayerController.cs}, sloužící pro základní kontroly jako je pohyb, zvukový emitor atd. V této videohře je objekt hráče vždy na očích v oblasti středu okna aplikace.
 
-\textbf{Uživatelské rozhraní} -- to může být řešeno více způsoby. Způsob, který najdeme ve většině tutoriálů, je \emph{Canvas} (viz podkapitola \ref{sec:ui-toolkit}). V hierarchii Unity se přidá GameObject Canvas a do něj lze přidávat jednotlivé UI elementy jako další objekty (tlačítka, slidery, panely, text).
+\textbf{Uživatelské rozhraní} -- to může být řešeno více způsoby. Způsob, který lze najít ve většině tutoriálů, je \emph{Canvas} (viz podkapitola \ref{sec:ui-toolkit}). V hierarchii Unity se přidá GameObject Canvas a do něj lze přidávat jednotlivé UI elementy jako další objekty (tlačítka, slidery, panely, text).
 
-Na již dříve zmíněném Brackeys Game Jam 2026.1 (viz podkapitola \ref{sec:fmod-studio}) jsem kromě jiného přišel k lepší alternativě i zde -- \emph{UI Toolkit}. Toto řešení vyžaduje mít ve scéně \emph{UI Document} (kde se řeší struktura) a \emph{UI Manager}, který s ním komunikuje a binduje k němu ostatní skripty.
+I zde je však modernější alternativa -- \emph{UI Toolkit}. Toto řešení vyžaduje mít ve scéně \emph{UI Document} (kde se řeší struktura) a \emph{UI Manager}, který s ním komunikuje a binduje k němu ostatní skripty.
 
 Hierarchie scény je zobrazena na obrázku \ref{fig:unity-hierarchy} úplně vlevo.
 
@@ -220,13 +220,13 @@ Hierarchie scény je zobrazena na obrázku \ref{fig:unity-hierarchy} úplně vle
 
 UI Toolkit je relativně novější způsob řešení uživatelského rozhraní než původní systém \emph{Canvas}. Od něj se liší například tím, že pro sestavení a stylizaci vizuálních elementů nepoužívá klasickou \emph{GameObject} strukturu, ale jazyky UXML (struktura) a USS (stylizace), které se svým provedením více podobají webovému vývoji.
 
-Psát UXML nebo USS kód však vůbec není nutné. UI Toolkit má své grafické rozhraní, ve kterém je možné elementy přidávat myší a v inspektoru jim upravovat různé parametry jako pozici, velikost, margin, padding, velikost textu, barvu pozadí nebo jaký sprite by kurzor myši měl nad daným elementem zobrazovat. Toto grafické rozhraní je napojeno na \emph{UIDocument}, který ve scéně musí být také.
+Psát UXML nebo USS kód však vůbec není nutné. UI Toolkit má své grafické rozhraní, ve kterém je možné elementy přidávat myší a v inspektoru jim upravovat různé parametry jako pozici, velikost, margin, padding, velikost textu, barvu pozadí nebo určování toho, jaký sprite by kurzor myši měl nad daným elementem zobrazovat. Toto grafické rozhraní je napojeno na \emph{UIDocument}, který ve scéně musí být také.
 
 UI Toolkit však nepoužívá singleton logiku na \emph{UIDocument} -- ten není omezen na jednu scénu a je globální, podobně jako prefaby. Místo toho je singleton vzor aplikován na \emph{UIManager}, který drží reference na jednotlivé panely a spravuje jejich stav pomocí \emph{GameState} enumu. Tím se UI odděluje od datové vrstvy -- struktura UI je definována v UXML, zatímco logika je soustředěna v jednom centrálním skriptu.
 
 Strukturu uživatelského rozhraní lze rozdělit na dvě hlavní kategorie: UI a HUD. UI je obecný pojem pro všechny elementy uživatelského rozhraní, se kterými hráč může interagovat -- tlačítka, inventář, textové oblasti dialogů. Naproti tomu HUD (Heads-Up Display) se skládá z elementů, které jsou perzistentně zobrazovány na obrazovce hráče během hraní -- ukazatel zdraví, počítadlo nábojů nebo malá mapa na kraji obrazovky.
 
-Jak jsem postupně přecházel z \emph{Canvas} na UI Toolkit, mohl jsem porovnat obě řešení. Ve starších verzích bylo UI postaveno na principech:
+Jak workflow projektu postupně přecházela z \emph{Canvas} na UI Toolkit, bylo možné porovnat obě řešení. Ve starších verzích bylo UI postaveno na principech:
 
 \begin{itemize}
     \item Více samostatných \emph{Canvas} objektů ve scéně (např. \texttt{CanvasGameOver}, \texttt{Canvas HUD})
@@ -414,13 +414,13 @@ public static class UIToolkitAudioBinding
 \subsection{Light 2D}
 \label{sec:light-2d}
 
-Pro osvětlení 2D scény využívám systém \emph{Light 2D}, který je součástí \emph{Universal Render Pipeline}. Na rozdíl od tradičního 3D osvětlení, kde jsou světelné paprsky vysílány ze zdrojů a odrazy osvětlují okolní prostředí, Light 2D funguje invertovaně -- každý objekt ve scéně nese informaci o tom, jak má být osvětlen, a globální světlo tyto vlastnosti zprůměruje a aplikuje. Tento přístup je výrazně méně náročný na výkon a ideální pro stylizované 2D hry.
+Pro osvětlení 2D scény je využíván systém \emph{Light 2D}, který je součástí \emph{Universal Render Pipeline}. Na rozdíl od tradičního 3D osvětlení, kde je simulován fyzikální odraz paprsků od povrchů, funguje 2D systém na principu míchání barevných vrstev v prostoru obrazovky \cite{unity-light-2d}. Tento přístup je výrazně méně náročný na výkon a ideální pro stylizované 2D hry.
 
 Jedním z nejdůležitějších prvků osvětlení je \texttt{Light2D} typu \emph{Spot} připojený jako child object k objektu hráče. Toto řešení bylo inspirováno hrou \emph{Ori and the Blind Forest} \cite{ori-blind-forest}, kde je postava neustále obklopena jemným světelným polem, které jí umožňuje vidět v temném prostředí. Díky tomu, že je \texttt{GameObject} světla child objectem hráče, automaticky se pohybuje spolu s ním bez nutnosti dalšího kódu.
 
 Kromě individuálních zdrojů světla je ve scéně přítomno také \emph{Global Light 2D}, které nastavuje základní intenzitu a barvu osvětlení pro celou scénu. Tím se zajistí, že objekty bez vlastního zdroje světla nejsou zcela ponořeny do tmy, ale zároveň jsou dostatečně kontrastní, aby vynikla atmosféra temnějších částí levelu.
 
-Dalším typem zdroje světla jsou světlušky (\emph{Firefly Lights}) v korunách stromů. Každá instance komponenty \texttt{FireflyLight} řídí intenzitu připojeného \texttt{Light2D} pomocí funkce \texttt{Mathf.PingPong}, která vrací hodnotu v rozsahu 0 až 1 tak, že postupně roste a pak zase klesá, dokola -- výsledkem je hladké rozjasňování a zhasínání světla. Každá instance má navíc náhodný \texttt{randomOffset} (viz ukázka kódu), takže jednotlivé světlušky pulzují nezávisle na sobě a vytvářejí dynamičtější a přirozenější efekt:
+Dalším příkladem zdroje světla jsou světlušky (\emph{Firefly Lights}) v korunách stromů. Každá instance komponenty \texttt{FireflyLight} řídí intenzitu připojeného \texttt{Light2D} pomocí funkce \texttt{Mathf.PingPong}, která vrací hodnotu v rozsahu 0 až 1 tak, že postupně roste a pak zase klesá, dokola -- výsledkem je hladké rozjasňování a zhasínání světla. Každá instance má navíc náhodný \texttt{randomOffset} (viz ukázka kódu), takže jednotlivé světlušky pulzují nezávisle na sobě a vytvářejí dynamičtější a přirozenější efekt:
 
 \begin{lstlisting}[caption={FireflyLight -- pulzující světlo}, label={lst:firefly-light}]
 void Update()
@@ -516,13 +516,13 @@ Další vizuální efekt, který zasahuje do herní mechaniky, je komponenta \te
 \subsection{Audio systém}
 \label{sec:audio-system}
 
-Práce se zvukem ve hrách je komplexní téma, které zahrnuje správu mnoha souběžných zvukových stop, jejich prostorové umístění, míchání hlasitostí jednotlivých kanálů a plynulé přechody mezi stavy. V rámci vývoje \emph{Surreal Bowling: Salvation Path} jsem prošel evolucí od čistě Unity AudioMixer řešení k profesionálnímu nástroji FMOD Studio, což přineslo výrazné zlepšení v organizaci, flexibilitě i kvalitě výsledného audia.
+Práce se zvukem ve hrách je komplexní téma, které zahrnuje správu mnoha souběžných zvukových stop, jejich prostorové umístění, míchání hlasitostí jednotlivých kanálů a plynulé přechody mezi stavy. Projekt \emph{Surreal Bowling: Salvation Path} prošel evolucí od čistě Unity AudioMixer řešení k profesionálnímu nástroji FMOD Studio, které přineslo výrazné zlepšení v organizaci, flexibilitě i kvalitě výsledného audia.
 
 %%%%% ---- PŮVODNÍ ŘEŠENÍ ---- %%%%%
 \subsubsection{Původní řešení -- Unity AudioMixer}
 \label{sec:puvodni-audiomixer}
 
-V původní verzi projektu byl audio systém postaven na Unity vestavěném \texttt{AudioMixeru}   a centralizovaném skriptu \texttt{AudioManager.cs}, který využíval singleton vzor. Tento manažer spravoval tři hlavní zvukové kanály -- \emph{Music}, \emph{Diegetic} a \emph{Ambience} -- a byl perzistentní mezi scénami díky metodě \texttt{DontDestroyOnLoad}.
+V původní verzi projektu byl audio systém postaven na Unity vestavěném \texttt{AudioMixer} frameworku a centralizovaném skriptu \texttt{AudioManager.cs}, který využíval singleton vzor. Tento manažer spravoval tři hlavní zvukové kanály -- \emph{Music}, \emph{Diegetic} a \emph{Ambience} -- a byl perzistentní mezi scénami díky metodě \texttt{DontDestroyOnLoad}.
 
 \paragraph{Hierarchie AudioMixeru}
 Hierarchie AudioMixeru začíná na kořenovém kanálu \emph{Master}, pod nímž se nacházejí dva hlavní kanály: \emph{Music\_Player} a \emph{SFX\_Player} (viz obrázek \ref{fig:unity-audiomixer}). Kanál \emph{Music\_Player} obsahuje podřízený kanál \emph{Music\_Pause}, který řídí hlasitost hudby při pozastavení hry, a pod ním \emph{Music\_Internal}, kam směřuje samotný \texttt{AudioSource} přehrávající hudbu. Kanál \emph{SFX\_Player} se pak větví na \emph{SFX\_UI} pro uživatelské rozhraní, \emph{SFX\_Pause} pro diegetické zvuky při pauze, \emph{SFX\_Internal} jako centrální kanál pro všechny SFX, a ten se dále dělí na \emph{SFX\_Diegetic\_Ambience} (environmentální ambientní smyčky) a \emph{SFX\_Diegetic\_Player} (zvuky vztahující se k hráči).
@@ -573,7 +573,7 @@ public static void PlaySound(SoundType sound, AudioSource audioSource, float vol
 \end{lstlisting}
 
 \paragraph{Nevýhody původního přístupu}
-Nevýhodou tohoto přístupu byla centralizace veškeré logiky do jednoho skriptu a absence nativní podpory pro pokročilé zvukové techniky jako je crossfading, shuffle (náhodný výběr z více variant s garantovanou unikátností) nebo prostorové zvuky. Proto jsem při přechodu na nejnovější verzi zvolil profesionální nástroj FMOD Studio.
+Nevýhodou tohoto přístupu byla centralizace veškeré logiky do jednoho skriptu a absence nativní podpory pro pokročilé zvukové techniky jako je crossfading, shuffle (náhodný výběr z více variant s garantovanou unikátností) nebo prostorové zvuky. Proto byl při přechodu na nejnovější verzi zvolen profesionální nástroj FMOD Studio.
 
 %%%%% ---- FMOD STUDIO ---- %%%%%
 \subsubsection{FMOD Studio}
@@ -701,7 +701,7 @@ Na objektu CF jsou tedy dva \texttt{StudioEventEmitter} komponenty -- první se 
     \label{fig:fmod-unity-emitter}
 \end{figure}
 
-Druhý přístup pro one-shot objekty spočívá ve využití \texttt{RuntimeManager.PlayOneShot()} přímo v kódu, což je vhodné pro situace, kdy chceme mít plnou kontrolu nad timingem přehrávání.
+Druhý přístup pro one-shot objekty spočívá ve využití \texttt{RuntimeManager.PlayOneShot()} přímo v kódu, což je vhodné pro situace, kdy je žádána plná kontrola nad timingem přehrávání.
 
 \newpage
 
@@ -730,7 +730,7 @@ Na obrázku \ref{fig:fmod-unity-animation-event} je vidět, jak tyto Animation E
     \label{fig:fmod-unity-animation-event}
 \end{figure}
 
-Tyto events volají metodu \texttt{PlayFootsteps()} na skriptu \texttt{PlayerMovementAudio.cs}, který je připojen k objektu hráče:
+Tyto eventy volají metodu \texttt{PlayFootsteps()} na skriptu \texttt{PlayerMovementAudio.cs}, který je připojen k objektu hráče:
 
 \newpage
 
@@ -789,7 +789,7 @@ public class AudioManager : MonoBehaviour
 }
 \end{lstlisting}
 
-Pro přepínání hudby a ambience mezi scénami využívám systémy \texttt{MusicChangeTrigger} a   \texttt{AmbienceChangeTrigger}, které reagují na událost \texttt{SceneManager.sceneLoaded}. Každá scéna má definovanou odpovídající hodnotu parametru:
+Pro přepínání hudby a ambience mezi scénami jsou využívány systémy \texttt{MusicChangeTrigger} a \texttt{AmbienceChangeTrigger}, které reagují na událost \texttt{SceneManager.sceneLoaded}. Každá scéna má definovanou odpovídající hodnotu parametru:
 
 \begin{lstlisting}[caption={SceneMusic enum -- mapování scén na FMOD parametry}, label={lst:scenemusic-enum}]
 public enum SceneMusic
@@ -827,10 +827,10 @@ Systém \texttt{AmbienceChangeTrigger} funguje identicky, pouze s enumem \texttt
 \subsection{Tvorba v FL Studio}
 \label{sec:tvorba-v-fl-studio}
 
-Práce v FL Studio je jádrem mé audio workflow. Struktura projektu je navržena tak, aby podporovala jak jednotlivé skladby, tak jejich vzájemnou konzistenci v rámci budoucího alba.
+Práce v FL Studio je jádrem vytváření audia pro tuto videohru. Struktura projektu je navržena tak, aby podporovala jak jednotlivé skladby, tak jejich vzájemnou konzistenci v rámci budoucího alba.
 
 \subsubsection{Workflow pomocí Arrangements}
-Jedním z hlavních prvků mojí workflow je systém \emph{Arrangements} (Arrangement view). V jediném projektu vytvářím více arrangements, z nichž každý reprezentuje jednu skladbu nebo skupinu   zvukových efektů. Důležité je, že všechny arrangements sdílejí stejnou sadu pluginových presetů a jsou napojeny na shodné Mixer kanály. Tím je zajištěno, že nástroje a zvuky použité napříč různými skladbami zní jednotně -- stejný syntezátor v odlišném arrangements posílá signál do stejného Mixer kanálu, což vytváří koherentní zvukový profil celého alba. Tento přístup eliminuje problém rozdílně nastavených kanálů mezi skladbami a značně zjednodušuje finální mix.
+Jedním z hlavních prvků hudební workflow je systém \emph{Arrangements} (Arrangement view). V jediném projektu je vytvořeno více \emph{arrangements}, z nichž každý reprezentuje jednu skladbu nebo skupinu zvukových efektů. Důležité je, že všechny \emph{arrangements} sdílejí stejnou sadu pluginových presetů a jsou napojeny na shodné Mixer kanály. Tím je zajištěno, že nástroje a zvuky použité napříč různými skladbami zní jednotně -- stejný syntezátor v odlišném \emph{arrangementu} posílá signál do stejného Mixer kanálu, což vytváří koherentní zvukový profil celého alba. Tento přístup eliminuje problém rozdílně nastavených kanálů mezi skladbami a značně zjednodušuje finální mix.
 
 \begin{figure}[h!]
     \centering
@@ -839,10 +839,10 @@ Jedním z hlavních prvků mojí workflow je systém \emph{Arrangements} (Arrang
     \label{fig:flstudio-arrangement}
 \end{figure}
 
-Jak je vidět na obrázku \ref{fig:flstudio-arrangement}, každý arrangement obsahuje více stop (tracks), přičemž každá stopa může obsahovat jeden nebo více zvukových vzorků (samples) nebo MIDI stop. Toto uspořádání umožňuje přehlednou organizaci i komplexních projektů.
+Jak je vidět na obrázku \ref{fig:flstudio-arrangement}, každý \emph{arrangement} obsahuje více stop (tracks), přičemž každá stopa může obsahovat jeden nebo více zvukových vzorků (samples) nebo MIDI stop. Toto uspořádání umožňuje přehlednou organizaci i komplexních projektů.
 
 \subsubsection{Sytrus}
-Sytrus je jeden z mých primárních synth pluginů. Jedná se o pokročilý FM syntezátor s možností importu \emph{scale souborů} (souborů s definicí stupnic). Tyto soubory podporují různé EDO (Equal Divisions of the Octave) formáty, což umožňuje pracovat s netemperovanými stupnicemi   a mikrotonálním laděním. Tato schopnost je podrobněji rozebrána v podkapitole \ref{sec:hudba}.
+Sytrus je jeden z primárně užívaných synth pluginů pro OST této videohry. Jedná se o pokročilý FM syntezátor s možností importu \emph{scale souborů} (souborů s definicí stupnic). Tyto soubory podporují různé EDO (Equal Divisions of the Octave) formáty, což umožňuje pracovat s netemperovanými stupnicemi   a mikrotonálním laděním.
 
 \begin{figure}[h!]
     \centering
@@ -851,10 +851,10 @@ Sytrus je jeden z mých primárních synth pluginů. Jedná se o pokročilý FM 
     \label{fig:flstudio-sytrus}
 \end{figure}
 
-Na obrázku \ref{fig:flstudio-sytrus} je zobrazeno rozhraní Sytrus s několika aktivními operátory a nastavením modulační matice.
+Na obrázku \ref{fig:flstudio-sytrus} je zobrazeno rozhraní Sytrus s různými nastaveními jako je například modulační matice.
 
 \subsubsection{LABS}
-LABS je bezplatný plugin od Spitfire Audio, který nabízí rozsáhlou knihovnu realisticky znějících a atmosferických nástrojů. Plugin poskytuje intuitivní ovládání nad základními parametry jako je reverb, hlasitost nebo citlivost, což umožňuje rychle přizpůsobit nástroj požadovanému kontextu bez nutnosti složitého nastavení.
+LABS je bezplatný plugin od Spitfire Audio, který nabízí rozsáhlou knihovnu realisticky znějících a atmosferických nástrojů. Plugin poskytuje intuitivní ovládání základních parametrů jako jsou reverb, hlasitost nebo citlivost, což umožňuje rychle přizpůsobit nástroj požadovanému kontextu bez nutnosti složitého nastavování.
 
 \begin{figure}[h!]
     \centering
@@ -866,7 +866,7 @@ LABS je bezplatný plugin od Spitfire Audio, který nabízí rozsáhlou knihovnu
 Na obrázku \ref{fig:flstudio-labs} je zobrazeno rozhraní LABS pluginu s několika dostupnými nástroji.
 
 \subsubsection{Deelay}
-Deelay je delay plugin, který využívám pro vytváření prostorových echo efektů. Plugin nabízí pokročilé možnosti nastavení oproti běžným delayům -- různé módy filtrace, time/pitch modifikace a synchronizaci na tempo projektu. Speciálně se zaměřuji na využití efektu \emph{Chamber} a tvorbu komplexních, vrstvených delayů, které vytvářejí glitched/corrupted atmosférické zvuky. Tyto techniky přímo korespondují s narativem surrealistické hry, kde zvuková estetika odráží fragmentovanou a deformovanou realitu.
+Deelay je delay plugin, který je využíván pro vytváření prostorových echo efektů. Plugin nabízí pokročilé možnosti nastavení oproti běžným delayům -- různé módy filtrace, time/pitch modifikace a synchronizaci na tempo projektu. V této videohře je značné využití efektu \emph{Chamber} a tvorbu komplexních, vrstvených delayů, které vytvářejí tzv. „glitched“/„corrupted“ atmosférické zvuky. Tyto techniky přímo korespondují s narativem surrealistické hry, kde zvuková estetika odráží fragmentovanou a deformovanou realitu.
 
 \begin{figure}[h!]
     \centering
@@ -878,7 +878,7 @@ Deelay je delay plugin, který využívám pro vytváření prostorových echo e
 Na obrázku \ref{fig:flstudio-deelay} je zobrazeno rozhraní Deelay pluginu s pokročilými možnostmi nastavení.
 
 \subsubsection{Zvukové efekty -- ZAPSPLAT}
-Většina zvukových efektů použitých ve hře pochází z knihovny ZAPSPLAT. Jsem zde Premium Member s aktivním předplatným \emph{Monthly Gold Access}, které mi umožňuje přístup k rozsáhlé databázi profesionálně nahraných zvuků. Tato knihovna pokrývá široké spektrum potřeb -- od prostých UI zvuků až po komplexní prostředí a diegetické efekty.
+Většina zvukových efektů použitých ve videohře pochází z knihovny ZAPSPLAT \cite{zapsplat}. Tato knihovna pokrývá široké spektrum potřeb -- od prostých UI zvuků až po komplexní prostředí a diegetické efekty.
 
 \begin{figure}[h!]
     \centering
@@ -887,16 +887,16 @@ Většina zvukových efektů použitých ve hře pochází z knihovny ZAPSPLAT. 
     \label{fig:flstudio-sfx}
 \end{figure}
 
-Na obrázku \ref{fig:flstudio-sfx} je zobrazena má workflow pro práci se zvukovými efekty. Všechny zvukové efekty mám rozmístěny v jednom dlouhém arrangements, kde každý zvuk zabírá specifickou část časové osy. Při exportu vždy renderuji pouze konkrétní zvuk -- pomocí \emph{Solo} funkce (odmutuje pouze danou stopu) exportuji zvuk do FLAC formátu. Tento přístup mi umožňuje mít rychlý přístup ke všem podobným nebo souvisejícím zvukům na jednom místě a snadno tvořit zvuk celého herního světa. Každý zvuk je tak vždy po ruce a mohu jej kdykoliv upravit či nahradit bez složitého hledání v adresářové struktuře.
+Na obrázku \ref{fig:flstudio-sfx} je zobrazena workflow v projektu pro práci se zvukovými efekty. Všechny zvukové efekty jsou rozmístěny v jednom dlouhém \emph{arrangement}, kde každý zvuk zabírá specifickou část časové osy. Při exportu je vždy renderován pouze konkrétní zvuk -- pomocí \emph{Solo} funkce (odmutuje pouze danou stopu) je následně exportován zvuk do FLAC formátu. Tento přístup umožňuje rychlý přístup ke všem podobným nebo souvisejícím zvukům na jednom místě a snadnou tvorbu zvuku pro celý herní svět. Každý zvuk je tak vždy po ruce a je možné jej kdykoliv upravit či nahradit bez složitého hledání.
 
 \subsubsection{Nativní FL Studio pluginy pro zpracování zvuku}
-Kromě externích nástrojů využívám řadu vestavěných (nativních) pluginů FL Studia pro finální zpracování zvuku. Tyto pluginy tvoří základ mého signálového řetězce na jednotlivých Mixer kanálech.
+Kromě externích nástrojů je využívána řada vestavěných (nativních) pluginů FL Studia pro finální zpracování zvuku. Tyto pluginy tvoří základ signálového řetězce na jednotlivých Mixer kanálech.
 
-\textbf{Fruity Reverb} je můj primární reverb plugin, který používám jak na nástroje, tak na zvukové efekty. Umožňuje nastavit parametry jako \emph{Room Size}, \emph{Damping}, \emph{Freeze} nebo \emph{Dry/Wet} poměr, díky čemuž lze dosáhnout efektů od malých uzavřených prostorů až po rozsáhlé haly.
+\textbf{Fruity Reverb} je primární reverb plugin pro tento projekt, který je používán jak na nástroje, tak na zvukové efekty. Umožňuje nastavit parametry jako \emph{Room Size}, \emph{Damping}, \emph{Freeze} nebo \emph{Dry/Wet} poměr, díky čemuž lze dosáhnout efektů od malých uzavřených prostorů až po rozsáhlé haly.
 
-\textbf{Destructor} je nástroj původně navržený pro simulaci zkreslení kytarových aparátů, ale jeho potenciál je širší. V mé práci jej používám pro přidání agresivity a textury k syntetickým zvukům nebo pro tvrdší údernost u různých efektů. Plugin nabízí širokou škálu přetížení a harmonického zkreslení, od jemné saturace až po plnohodnotné destruktivní zpracování.
+\textbf{Destructor} je nástroj původně navržený pro simulaci zkreslení zvuku z kytary, ale jeho potenciál je širší. V této práci je používán pro přidání agresivity a textury k syntetickým zvukům nebo pro tvrdší údernost u různých efektů. Plugin nabízí širokou škálu přetížení a harmonického zkreslení, od jemné saturace až po plnohodnotné destruktivní zpracování.
 
-Tato sestava pluginů -- Sytrus a LABS pro generování zvuku, Deelay pro prostorové efekty, následované Destructorem a Fruity Reverb pro další zpracování -- vytváří komplexní, ale přehledný workflow, který mi umožňuje dosahovat profesionálně znějících výsledků.
+Tato sestava pluginů -- Sytrus a LABS pro generování zvuku, Deelay pro prostorové efekty, následované Destructorem a Fruity Reverb pro další zpracování -- vytváří komplexní, ale přehledný workflow, který umožňuje dosahovat profesionálně znějících výsledků.
 
 \subsection{Kategorizace zvuků}
 \label{sec:kategorizace-zvuku}
@@ -908,13 +908,13 @@ Základní organizace zvukových zdrojů ve hře vychází z klasického dělen�
 \textbf{Nediegetické zvuky} existují mimo herní svět -- nejsou součástí příběhu a hráč je slyší pouze jako prostředek komunikace. Patří sem uživatelské rozhraní (kliknutí tlačítek, otevření menu), atmosférické prvky, které nejsou součástí prostředí (například pulzující drone podkres), a samozřejmě hudba.
 
 \subsubsection{Výběr zvukového formátu}
-Volba zvukového formátu má přímý dopad na kvalitu i funkčnost zvukového obsahu. Vyzkoušel jsem několik přístupů.
+Volba zvukového formátu má přímý dopad na kvalitu i funkčnost zvukového obsahu. Během této bylo vyzkoušeno několik přístupů.
 
 MP3 formát není vhodný pro zvuky, které mají být loopované (opakovaně přehrávané v smyčce). Přestože je MP3 oblíbený pro svou malou velikost, na konec audio souboru vždy přidává metadata, která při loopování vytvářejí nepatrný, ale znatelný klik. Tento zvuk, byť krátký, dokáže zničit atmosféru u jinak plynulé smyčky prostředí.
 
-WAV je můj standardní pracovní formát v FL Studiu. Jelikož nevyužívá žádnou kompresi,   zachovává veškerý detail původního zvuku. Pro export do herního projektu se však nehodí kvůli velikosti souborů -- hudební stopy a delší ambience by zabíraly zbytečně mnoho místa.
+WAV je standardní pracovní formát v FL Studiu. Jelikož nevyužívá žádnou kompresi,   zachovává veškerý detail původního zvuku. Pro export do herního projektu se však nehodí kvůli velikosti souborů -- hudební stopy a delší ambience by zabíraly zbytečně mnoho místa.
 
-Experimentoval jsem také s OGG, ale nakonec jsem dospěl k formátu FLAC. Ten nabízí podobnou kvalitu jako WAV, ale umožňuje nastavit vyšší úroveň komprese. Důležité je, že na rozdíl od MP3 formát FLAC na konec souboru nepřidává žádné dodatečné informace, které by při loopování vytvářely klikavé zvuky. FLAC tak představuje ideální kompromis mezi kvalitou, velikostí souborů a spolehlivostí loopování.
+V potaz přišel i OGG, ale nakonec byl zvolen formát FLAC. Ten nabízí podobnou kvalitu jako WAV, ale umožňuje nastavit vyšší úroveň komprese. Důležité je, že na rozdíl od MP3 formát FLAC na konec souboru nepřidává žádné dodatečné informace, které by při loopování vytvářely klikavé zvuky. FLAC tak představuje ideální kompromis mezi kvalitou, velikostí souborů a spolehlivostí loopování.
 
 \subsection{Hudba}
 \label{sec:hudba}
@@ -925,7 +925,7 @@ V rámci této verze maturitní práce vznikly tři hudební stopy: \emph{Main M
 Úvodní skladba main menu je pojata retro stylem, který evokuje éru ragtime hudby z dvacátých let dvacátého století. Hudebně využívá stupnici D Mixolydian, která svým charakteristickým mollovým sedmým stupněm dodává skladbě jazzovou atmosféru. Na celou nahrávku je aplikován efekt \emph{low cut filter}, simulující frekvenční omezení starých audio technologií té doby. Dále je nasimulován charakteristický šum starého vinylového gramofonu. Tyto volby nejsou náhodné -- přímo korespondují s narativem videohry, kde hlavní komunikátor (\emph{The Manager}), bowling alley manažer, promlouvá k hráči (\emph{Pin}) skrze jeho sny pomocí gramofonu. Retro estetika skladby tak vytváří bezprostřední spojení mezi hudební složkou a příběhem.
 
 \subsubsection{Caves -- The Chase}
-Tento track patří do úrovně \emph{Caves} a reprezentuje akční pasáže ve stylu \emph{The Chase}. Skladba využívá pětičtvrťový takt (5/4), který svým nepravidelným rytmem vyvolává pocit neznáma a napětí -- posluchač není tolik seznámen s tím, kdy přijde další strong beat. Hlavním nástrojem je krystalická celesta, která svým jasným, zvonivým tónem vytváří kontrast s temným prostředím jeskyní. Hudebně skladba pracuje se stupnicí D\# Phrygian, jež svým sníženým druhým stupněm přidává typický orientální, napjatý charakter. Kromě rytmické linky obsahuje rozsáhlé atmosférické soundscapes s glitch efekty, které budují napětí a evokují nebezpečí blížícího se pronásledujícího Ball.
+Tento track patří do úrovně \emph{Caves} a reprezentuje akční pasáže ve stylu \emph{The Chase}. Skladba využívá pětičtvrťový takt (5/4), který svým nepravidelným rytmem vyvolává pocit neznáma a napětí. Hlavním nástrojem je krystalická celesta, která svým jasným, zvonivým tónem vytváří kontrast s temným prostředím jeskyní. Hudebně skladba pracuje se stupnicí D\# Phrygian, jež svým sníženým druhým stupněm přidává typický orientální, napjatý charakter. Kromě rytmické linky obsahuje rozsáhlé atmosférické „soundscapes“ s „glitch“ efekty, které budují napětí a evokují nebezpečí blížícího se pronásledujícího Ball.
 
 \subsubsection{Outer Space -- The Chase}
 Třetí stopa je koncipována jako sci-fi atmosférický track. Její \emph{arpeggio} linka okamžitě vtahuje posluchače do vesmírného prostředí. Hudebně využívá stupnici G Harmonic Minor. V pozdější části skladby se objevují mikrotonální melodie využívající formát EDO 24 (24 rovnoměrných dělení oktávy), což dále posiluje atmosféru neznáma a surrealismu typickou pro celou hru.
@@ -933,12 +933,12 @@ Třetí stopa je koncipována jako sci-fi atmosférický track. Její \emph{arpe
 \subsubsection{Plány do budoucna -- leitmotif a struktura alba}
 Standardem v herním průmyslu je komponovat hudební stopy s ohledem na jednotlivé postavy, emoce nebo herní situace. Leitmotif je hudební technika, kdy je určitému tématu (postavě, místu, konceptu) přiřazena specifická melodická nebo harmonická fráze, která se vrací v různých obměnách napříč celým dílem. Tím se vytváří silné emocionální a narativní propojení.
 
-V budoucnu plánuji mít pro všech devět levelů dvě hlavní skladby: jednu pro pasáže \emph{The Chase} (akčnější, rytmická, upoutávající pozornost, zdůrazňující rychlé tempo a napětí z útěku před Ball) a jednu pro pasáže \emph{The Exploration} (uklidňující, převážně ambientní, která nevyžaduje pozornost posluchače, ale spíše jej podněcuje k hlubšímu soustředění a zamyšlení). Kromě toho budou vytvořeny specifické skladby pro důležité momenty a postavy. V tomto kontextu začíná hrát leitmotif klíčovou roli -- \emph{The Manager}, \emph{The Ball} i další prvky si postupně vybudují své vlastní hudební identity, které se budou vracet napříč celým albem.
+V budoucnu je v plánu mít pro všech devět levelů dvě hlavní skladby: jednu pro pasáže \emph{The Chase} (akčnější, rytmická, upoutávající pozornost, zdůrazňující rychlé tempo a napětí z útěku před Ball) a jednu pro pasáže \emph{The Exploration} (uklidňující, převážně ambientní, která nevyžaduje pozornost posluchače, ale spíše jej podněcuje k hlubšímu soustředění a zamyšlení). Kromě toho budou vytvořeny specifické skladby pro důležité momenty a postavy. V tomto kontextu začíná hrát leitmotif klíčovou roli -- \emph{The Manager}, \emph{The Ball} i další prvky si postupně vybudují své vlastní hudební identity, které se budou vracet napříč celým albem.
 
 \section{Post-processing hry}
 \label{sec:post-processing-hry}
 
-Post-processing je klíčovou součástí moderního vizuálního stylu videohry, jelikož dokáže   transformovat i jednoduchou grafiku v něco vizuálně působivého. V rámci \emph{Surreal Bowling: Salvation Path} využívám Unity Universal Render Pipeline (URP), která poskytuje výkonný a flexibilní systém pro aplikaci grafických efektů.
+Post-processing je klíčovou součástí moderního vizuálního stylu videohry, jelikož dokáže transformovat i jednoduchou grafiku v něco vizuálně působivého. V rámci \emph{Surreal Bowling: Salvation Path} je využívána Unity Universal Render Pipeline (URP), která poskytuje výkonný a flexibilní systém pro aplikaci grafických efektů.
 
 
 \subsection{Global Volume}
@@ -955,12 +955,12 @@ Global Volume je nakonfigurován tak, aby pokrýval celou herní plochu (\emph{G
     \label{fig:unity-global-volume}
 \end{figure}
 
-Každý efekt v rámci Global Volume má svou prioritu a intenzitu. Priorita určuje pořadí aplikace efektů, zatímco intenzita umožňuje jemné doladění -- například plný bloom může být příliš agresivní, a proto jej nastavuji na 60\% intenzitu.
+Každý efekt v rámci Global Volume má svou prioritu a intenzitu. Priorita určuje pořadí aplikace efektů, zatímco intenzita umožňuje jemné doladění -- například plný bloom může být příliš agresivní, a proto je nastaven na 60\% intenzitu.
 
 \subsection{Použité efekty, jejich nastavení a bindnutí do kódu}
 \label{sec:pouzite-efekty}
 
-V rámci post-processingu využívám několik specifických efektů, které dohromady vytvářejí charakteristický vizuální styl hry.
+V rámci post-processingu je využito několik specifických efektů, které dohromady vytvářejí charakteristický vizuální styl hry.
 
 \subsubsection{Bloom}
 Bloom je jeden z nejdůležitějších efektů pro celkovou vizuální kvalitu hry. Princip spočívá v tom, že jasné části obrazu prosakují do okolních pixelů, čímž vzniká charakteristické záření kolem světelných zdrojů. V kontextu hry bloom zdůrazňuje světlušky v korunách stromů, collectible objekty i světelný efekt kolem hráče. Toto nastavení je dostatečně výrazné, aby hra působila vizuálně zajímavě, ale ne natolik agresivní, aby rušilo herní mechaniky.
@@ -1048,16 +1048,16 @@ private void ActivateDeathEffect()
 }
 \end{lstlisting}
 
-Kromě snižování exposure může \texttt{DeathEffect.cs} v budoucnu ovlivňovat i saturaci (snížení na 0 pro černobílý efekt) a přidávat vinceetting (tmavé rohy obrazovky), čímž se ještě více zdůrazní cinematický charakter úmrtí.
+Kromě snižování exposure může \texttt{DeathEffect.cs} v budoucnu ovlivňovat i saturaci (snížení na 0 pro černobílý efekt) a přidávat vinětaci (tmavé rohy obrazovky), čímž se ještě více zdůrazní cinematický charakter úmrtí.
 
 \subsection{Vizuální styl hry}
 \label{sec:vizualni-styl-hry}
 
 Vizuální styl \emph{Surreal Bowling: Salvation Path} je záměrně navržen tak, aby vyvolával pocit snu, surrealismu a melancholie. Kombinace výše zmíněných post-processing efektů vytváří jedinečnou atmosféru, která hru odlišuje od začátečnických indie herních projektů a blíží se profesionálním designovým standardům.
 
-Temný prostředí (díky post-exposure -0.5) vytváří pocit nebezpečí a tajemna. Hráč se pohybuje v temném prostředí, což podporuje explorativní herní mechaniky \emph{The Exploration} pasáží.
+Temné prostředí (díky post-exposure -0.5) vytváří pocit nebezpečí a tajemna. To mimo jiné podporuje explorativní herní mechaniky \emph{The Exploration} pasáží.
 
-Chromatic aberration a mírný bloom dodávají hře surreální vzhled. Hranice mezi světem hry a snem se rozmazávají, což odpovídá celkovému příběhu o hledání cesty ke spasení.
+Chromatic aberration a mírný bloom dodávají hře surreální vzhled. To vše dpovídá konceptu celkového příběhu o hledání cesty z oné noční můry.
 
 V budoucnu je plánováno rozšíření vizuálního stylu o další prvky:
 \begin{itemize}

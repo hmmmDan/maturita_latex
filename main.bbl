@@ -778,6 +778,28 @@
     \field{year}{2014}
   \endentry
 
+  \entry{unity-light-2d}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=TU}{%
+         family={Technologies},
+         familyi={T\bibinitperiod},
+         given={Unity},
+         giveni={U\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TU1}
+    \strng{fullhash}{TU1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-25]}
+    \field{note}{Unity Technologies}
+    \field{title}{2D Lights}
+    \verb{url}
+    \verb https://docs.unity3d.com/Packages/com.unity.render-pipelines.universa
+    \verb l@7.1/manual/2DLightProperties.html
+    \endverb
+  \endentry
+
   \entry{ori-blind-forest}{misc}{}{}
     \name{author}{1}{}{%
       {{hash=SM}{%
@@ -796,6 +818,25 @@
     \field{title}{Ori and the Blind Forest}
     \verb{url}
     \verb https://www.orithegame.com/blind-forest/
+    \endverb
+  \endentry
+
+  \entry{zapsplat}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=Z}{%
+         family={ZAPSPLAT},
+         familyi={Z\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{Z1}
+    \strng{fullhash}{Z1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-25]}
+    \field{note}{ZAPSPLAT}
+    \field{title}{ZAPSPLAT}
+    \verb{url}
+    \verb https://www.zapsplat.com/
     \endverb
   \endentry
 \enddatalist
