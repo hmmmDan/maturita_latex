@@ -669,6 +669,50 @@
     \endverb
   \endentry
 
+  \entry{ghibli}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=GS}{%
+         family={Ghibli},
+         familyi={G\bibinitperiod},
+         given={Studio},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GS1}
+    \strng{fullhash}{GS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-25]}
+    \field{note}{Studio Ghibli}
+    \field{title}{Studio Ghibli}
+    \verb{url}
+    \verb https://www.ghibli.jp/
+    \endverb
+  \endentry
+
+  \entry{hisaishi-path-wind}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=HJ}{%
+         family={Hisaishi},
+         familyi={H\bibinitperiod},
+         given={Joe},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HJ1}
+    \strng{fullhash}{HJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-25]}
+    \field{note}{Studio Ghibli. Spotify}
+    \field{title}{The Path of the Wind - Instrumental}
+    \verb{url}
+    \verb https://open.spotify.com/track/2KLjcZ67h7Dad8QjW1IvE4?si=e50022d48498
+    \verb 4b57
+    \endverb
+    \field{year}{1988}
+  \endentry
+
   \entry{caretaker-burning-memory}{misc}{}{}
     \name{author}{1}{}{%
       {{hash=CT}{%
@@ -683,12 +727,55 @@
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{addendum}{[cit. 2026-03-25]}
-    \field{note}{Spotify}
+    \field{note}{LEITER. Spotify}
     \field{title}{A1 - It's just a burning memory}
     \verb{url}
     \verb https://open.spotify.com/track/0uEec9a0RsYeQiaeyJapjY?si=8b6991c2de98
     \verb 4340
     \endverb
+    \field{year}{2023}
+  \endentry
+
+  \entry{c418-moog-city-2}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=C}{%
+         family={C418},
+         familyi={C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{C1}
+    \strng{fullhash}{C1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-25]}
+    \field{note}{C418. Spotify}
+    \field{title}{Moog City 2}
+    \verb{url}
+    \verb https://open.spotify.com/track/4ZN7u9FmQa7Lp1TCafAgsn?si=250867b51182
+    \verb 402f
+    \endverb
+    \field{year}{2013}
+  \endentry
+
+  \entry{home-resonance}{misc}{}{}
+    \name{author}{1}{}{%
+      {{hash=H}{%
+         family={Home},
+         familyi={H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{H1}
+    \strng{fullhash}{H1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{addendum}{[cit. 2026-03-25]}
+    \field{note}{Home. Spotify}
+    \field{title}{Resonance}
+    \verb{url}
+    \verb https://open.spotify.com/track/2NHkwSwm6C6eAX3z6xm7Uy?si=3575b2c4a055
+    \verb 46b1
+    \endverb
+    \field{year}{2014}
   \endentry
 
   \entry{ori-blind-forest}{misc}{}{}

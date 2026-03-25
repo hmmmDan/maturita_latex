@@ -7,7 +7,7 @@
 \subsection{Struktura scén}
 \label{sec:struktura-scen}
 
-V Unity představují scény základní prostředí, ve kterých videohra operuje. Mohou to být například jednotlivé úrovně, avšak jejich využití je širší – mohou rovněž sloužit jako hlavní menu, nastavení, nebo jakékoliv jiné samostatné prostředí. V rámci této práce pracujeme se třemi základními scénami: \emph{MainMenu}, \emph{Level1} a \emph{Level2}.
+V Unity představují scény základní prostředí, ve kterých videohra operuje. Mohou to být například jednotlivé úrovně, avšak jejich využití je širší – mohou rovněž sloužit jako hlavní menu, nastavení, nebo jakékoliv jiné samostatné prostředí. V rámci této práce se pracuje se třemi základními scénami: \emph{MainMenu}, \emph{Level1} a \emph{Level2}.
 
 První scénou, se kterou se hráč setká po spuštění aplikace, je hlavní menu (\emph{MainMenu}). To nabízí několik základních možností: vstup do herního prostředí, přizpůsobení nastavení nebo ukončení aplikace. Logiku k přechodu z menu do první úrovně řeším ve skriptu \texttt{UIManager.cs} pomocí metody \texttt{PlayGame()}, která využívá vestavěnou třídu \texttt{SceneManager}:
 
@@ -32,7 +32,7 @@ Po úspěšném dokončení úrovně \emph{Level1} je hráč automaticky přesun
 
 \subsection{Herní manažery}
 \label{sec:herni-manazery}
-Herní manažery představují klíčové komponenty architektury videohry, které řídí specifické herní systémy a zajišťují komunikaci mezi různými částmi aplikace. V aktuální verzi využívám tři hlavní manažery:
+Herní manažery představují klíčové komponenty architektury videohry, které řídí specifické herní systémy a zajišťují komunikaci mezi různými částmi aplikace. V aktuální verzi jsou využívané tři hlavní manažery:
 \begin{itemize}
     \item \emph{UI Manager}
     \item \emph{Audio Manager}
