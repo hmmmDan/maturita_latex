@@ -24,7 +24,7 @@ public class UIManager : MonoBehaviour
 }
 \end{lstlisting}
 
-Pro práci se scénami v Unity je nutné nejprve přidat požadované scény do seznamu scén v tzv. \emph{Build Settings}. V Unity editoru se tento seznam nachází v menu File > Build Settings > Scene List. Scéna musí být před přidáním otevřena v editoru a následně přidána pomocí tlačítka \emph{Add Open Scenes}. Po přidání lze na scénu odkazovat buď pomocí jejího indexu v seznamu, nebo pomocí jejího názvu. Já preferuji odkazování názvem pro lepší čitelnost kódu.
+Pro práci se scénami v Unity je nutné nejprve přidat požadované scény do seznamu scén v tzv. \emph{Build Settings}. V Unity editoru se tento seznam nachází v menu File > Build Settings > Scene List. Scéna musí být před přidáním otevřena v editoru a následně přidána pomocí tlačítka \emph{Add Open Scenes}. Po přidání lze na scénu odkazovat buď pomocí jejího indexu v seznamu, nebo pomocí jejího názvu.
 
 Po úspěšném dokončení úrovně \emph{Level1} je hráč automaticky přesunut do \emph{Level2}. Z jakékoliv úrovně se hráč může vrátit do hlavního menu pozastavením hry a aktivací panelu \emph{Pause Menu}, což je podrobněji popsáno v podkapitole \ref{sec:ui-prvky}.
 
@@ -90,7 +90,7 @@ Na Linuxu se během práce vyskytovaly problémy se zpožděním kurzoru, proto 
 \subsection{Input systém}
 \label{sec:input-system}
 
-Input systém je jedním z více témat, ke kterému se dá přistupovat více způsoby. Je možné ho řešit nízkoúrovňově, jako v tomto případě, kdy systém naslouchá stisknutí kláves přímo pomocí C\#:
+Input systém je jedním z více témat, ke kterému se dá přistupovat více způsoby. Lze ho řešit nízkoúrovňově, jako v tomto případě, kdy systém naslouchá stisknutí kláves přímo pomocí C\#:
 
 \begin{lstlisting}[caption={Nízkoúrovňové zpracování vstupu}, label={lst:low-level-input}]
 if (Event.current.isKey)
@@ -134,9 +134,9 @@ private void SetPauseState(bool pause)
 }
 \end{lstlisting}
 
-Toto řešení zastavilo veškerý pohyb ve hře. Všechny vstupní akce však zůstaly povolené a byly rozházené po projektu ve skriptech pro ovládání hráče, střelbu nebo animace. Proto, i přes zastavený čas, když hráč například spustil akci pro střelbu, i v \emph{Pause Menu} se hráči objevila střela u těla a hned jak hráč hru znovu spustil, střela odpalovala. Nebo pokud se hráč pokoušel hýbat v \emph{Pause Menu}, fyzicky se hýbat nemohl, ale animace fungovaly a hráč se tak mohl stále otáčet ze strany na stranu. Takové chování není profesionální.
+Toto řešení zastavilo veškerý pohyb ve hře. Všechny vstupní akce však zůstaly povolené a byly rozházené po projektu ve skriptech pro ovládání hráče, střelbu nebo animace. Proto, i přes zastavený čas, když hráč například spustil akci pro střelbu, i v \emph{Pause Menu} se hráči objevila střela u těla a hned jak hráč hru znovu spustil, střela odpalovala. Nebo pokud se hráč pokoušel hýbat v \emph{Pause Menu}, fyzicky se hýbat nemohl, ale animace fungovaly a hráč se tak mohl stále otáčet ze strany na stranu. Takové chování není žádoucí.
 
-Za pomoci \emph{Action Maps} však složité ošetřování těchto chyb rychle mizí – viz ukázka \ref{lst:pause-code-new}.
+Za pomoci \emph{Action Maps} však složité ošetřování těchto chyb rychle odpadá – viz ukázka \ref{lst:pause-code-new}.
 
 \begin{lstlisting}[caption={Moderní řešení pozastavení pomocí Input System}, label={lst:pause-code-new}]
 private void SetPauseState(bool pause)

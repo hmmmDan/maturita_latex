@@ -1,7 +1,7 @@
 \chapter{Celková koncepce řešení}
 
 \section{Game Manager}
-Videohry se obvykle skládají z různých scén, které mohou představovat jednotlivé levely, tutorial část, hlavní menu nebo závěrečné titulky. Kdyby videohry musely načítat všechny tyto scény najednou, zabralo by to zbytečně moc času a výpočetní síly i přesto, že se hráč nachází jen na jednom z těchto míst. To je jeden z příkladů optimalizace a logiky, které jsou klíčové pro příjemný chod videohry. Pro tyto účely je jsou používány objekty typu \emph{Game Manager} (dále také „herní manažer“).
+Videohry se obvykle skládají z různých scén, které mohou představovat jednotlivé levely, tutorial část, hlavní menu nebo závěrečné titulky. Kdyby videohry musely načítat všechny tyto scény najednou, zabralo by to zbytečně moc času a výpočetní síly i přesto, že se hráč nachází jen na jednom z těchto míst. To je jeden z příkladů optimalizace a logiky, které jsou klíčové pro plynulý chod videohry. Pro tyto účely je jsou používány objekty typu \emph{Game Manager} (dále také „herní manažer“).
 
 Herních manažerů se ve videoherních projektech vyskytuje hned několik a každý má na starosti odlišnou funkční část videohry: Game Manager (základ -- stará se o přepínání mezi scénami, správné zmrazení času, jednoduché uživatelské rozhraní…), Audio Manager (zajišťuje správný chod veškeré logiky zvuku   v prostředí hry nebo v UI), Cursor Manager (upravuje vlastnosti kurzoru počítače pro účely videohry) a další manažery, které nejsou zas tak časté, ale mohou se hodit pro konkrétní případy (Tutorial Manager, Collectible Manager, DontDestroyOnLoad, Death Manager).
 
@@ -10,7 +10,7 @@ Herní manažer je (zejména v Unity) tedy „empty GameObject“ ve scéně, kt
 \section{Umírání}
 Videohra je navrnuta tak, že každý level má dvě části: \emph{The Chase} a \emph{The Exploration}. V \emph{The Chase} je hráč naháněn masivní bowlingovou koulí, která, pokud hráče dožene a přejede ho, tím ho i zabije a hráč bude muset začít znovu. Toto je způsob smrti \emph{hard death}, kdy se po zabití hráče znovu načte celý level, všechny parametry se restartují a hráč si tak musí \emph{The Chase} zapamatovat celou nazpaměť včetně všech překážek.
 
-\emph{The Exploration} využívá více milosrdnou \emph{soft death}, kdy, pokud hráč spadne nebo se mu nějak jinak povede zemřít, místo toho, aby se scéna načetla od začátku, tak je hráč jen přemístěn   k poslednímu aktivovanému checkpointu. Je možné říct, že tato videohra tak používá hybridní systém smrti.
+\emph{The Exploration} využívá více milosrdnou \emph{soft death}, kdy, pokud hráč spadne nebo se mu nějak jinak povede zemřít, místo toho, aby se scéna načetla od začátku, tak je hráč jen přemístěn k poslednímu aktivovanému checkpointu. Lze říct, že tato videohra tak používá hybridní systém smrti.
 
 \subsection{Checkpoint System}
 Do této videohry je dobrý nápad zakomponovat \emph{Checkpoint System}, který zajistí, že pokud hráč bude umírat v pozdějších fázích daného levelu, nemusí celým levelem procházet znova, ale hra ho transportuje k nejbližšímu checkpointu, který si uložil.
