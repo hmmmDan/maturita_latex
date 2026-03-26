@@ -8,7 +8,7 @@
 \usepackage{setspace}
 \setstretch{1.15}
 \usepackage{geometry}
-;
+
 \usepackage{fontspec}
 \setmainfont{Times New Roman}
 \setsansfont{Arial}
@@ -19,7 +19,9 @@
 \usepackage{xcolor}
 \usepackage{url}
 \usepackage[backend=bibtex,style=numeric,sorting=none]{biblatex}
-\usepackage{microtype}
+\AtBeginBibliography{\hypersetup{colorlinks=false}}
+
+\DefineBibliographyExtras{czech}{\def\urldateformat{czech}}
 
 \setlength{\emergencystretch}{3em}
 
@@ -27,24 +29,24 @@
 \patchcmd{\blx@theformat@labelnumber}{\the\value{instcount}}{\arabic{instcount}}{}{}
 \makeatother
 
+\AtBeginBibliography{\hypersetup{colorlinks=false}}
+
 \addbibresource{Zdroje.bib}
 \DeclareLanguageMapping{czech}{czech}
 \usepackage{hyperref}
 
 \hypersetup{
     colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,
-    urlcolor=cyan,
+    linkcolor=black,
+    filecolor=black,
+    urlcolor=black,
     pdftitle={\@title},
     pdfpagemode=UseNone,
 }
 
 \lstset{
     basicstyle=\ttfamily\small,
-    numbers=left,
-    numberstyle=\tiny,
-    numbersep=5pt,
+    numbers=none,
     tabsize=4,
     frame=none,
     breaklines=true,

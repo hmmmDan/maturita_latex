@@ -83,4 +83,3 @@
 \contentsline {subsubsection}{Bloom}{54}{subsubsection*.29}%
 \contentsline {subsubsection}{Chromatic Aberration}{54}{subsubsection*.30}%
 \contentsline {subsection}{\numberline {5.5.3}Vizuální styl hry}{57}{subsection.5.5.3}%
-\contentsline {chapter}{\numberline {6}Závěr}{58}{chapter.6}%
